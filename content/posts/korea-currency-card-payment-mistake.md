@@ -4,7 +4,6 @@ date: 2026-08-25
 category: Money-saving
 description: The card payment mistake that quietly costs you extra on every purchase, and the one situation where "cashless Korea" isn't actually true.
 image_query: korean won cash market
-image: https://images.pexels.com/photos/18936011/pexels-photo-18936011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 ---
 
 Korean cities are largely cashless — most cafes, convenience stores, and restaurants take card, including foreign Visa/Mastercard. That's true right up until you're standing at a traditional market stall or a small rural spot that's cash-only, and by then it's too late to have planned for it.
