@@ -26,4 +26,4 @@ Kakao T is the go-to app for calling a taxi reliably in Korea, especially late a
 
 ## The one setup step people skip
 
-Download Naver Map, Papago, and Kakao T *before* you land — some functions work more reliably with a local IP or an active Korean SIM/eSIM, and fumbling with app store downloads on spotty airport Wi-Fi is a bad first impression of a trip. If you haven't sorted your data plan yet, see our [eSIM comparison](/posts/korea-esim-comparison.html) for which option fits your trip length.
+Download Naver Map, Papago, and Kakao T *before* you land — some functions work more reliably with a local IP or an active Korean SIM/eSIM, and fumbling with app store downloads on spotty airport Wi-Fi is a bad first impression of a trip. If you haven't sorted your data plan yet, see our [eSIM comparison](https://solusupport-bot.github.io/land-in-korea-blog/posts/korea-esim-comparison.html) for which option fits your trip length.

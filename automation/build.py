@@ -139,7 +139,7 @@ def md_to_html(md):
 LOGO_ASSET_PATH = os.path.join("assets", "logo.jpg")
 
 
-def brand_markup(cfg):
+def brand_markup(cfg, base):
     """
     Uses the real logo file at site/assets/logo.jpg once it's been dropped in
     (see automation/assets/logo.jpg -> copied by build()). The real logo
@@ -150,7 +150,7 @@ def brand_markup(cfg):
     """
     real_logo = os.path.join(SITE, LOGO_ASSET_PATH)
     if os.path.exists(real_logo):
-        return f'<img class="brand-logo" src="/{LOGO_ASSET_PATH}" alt="{html.escape(cfg["site_name"])}">'
+        return f'<img class="brand-logo" src="{base}/{LOGO_ASSET_PATH}" alt="{html.escape(cfg["site_name"])}">'
     return f'<span class="brand-mark" aria-hidden="true">⌂</span>{html.escape(cfg["site_name"])}'
 
 
@@ -171,13 +171,13 @@ def goatcounter_script(cfg):
 
 
 # ---------- shared layout ----------
-def page(cfg, title, description, body, canonical, is_post=False):
-    brand_html = brand_markup(cfg)
+def page(cfg, base, title, description, body, canonical, is_post=False):
+    brand_html = brand_markup(cfg, base)
     nav = (
-        '<a href="/index.html">Home</a>'
-        '<a href="/about.html">About</a>'
-        '<a href="/affiliate-disclosure.html">Disclosure</a>'
-        '<a href="/contact.html">Contact</a>'
+        f'<a href="{base}/index.html">Home</a>'
+        f'<a href="{base}/about.html">About</a>'
+        f'<a href="{base}/affiliate-disclosure.html">Disclosure</a>'
+        f'<a href="{base}/contact.html">Contact</a>'
     )
     year = datetime.now().year
     return f"""<!doctype html>
@@ -191,11 +191,11 @@ def page(cfg, title, description, body, canonical, is_post=False):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="{base}/style.css">
 {goatcounter_script(cfg)}</head>
 <body>
 <header class="site-header">
-  <a class="brand" href="/index.html">
+  <a class="brand" href="{base}/index.html">
     {brand_html}
   </a>
   <p class="tagline">{html.escape(cfg['site_tagline'])}</p>
@@ -206,11 +206,11 @@ def page(cfg, title, description, body, canonical, is_post=False):
 </main>
 <footer class="site-footer">
   <p>&copy; {year} {html.escape(cfg['site_name'])}. Some links on this site are affiliate links (Klook, Trip.com, GetYourGuide) —
-  we may earn a commission at no extra cost to you. See our <a href="/affiliate-disclosure.html">disclosure</a>.
+  we may earn a commission at no extra cost to you. See our <a href="{base}/affiliate-disclosure.html">disclosure</a>.
   Prices and rules change — always confirm on the official site before booking.</p>
-  <p><a href="/about.html">About</a> ·
-  <a href="/affiliate-disclosure.html">Disclosure</a> ·
-  <a href="/contact.html">Contact</a></p>
+  <p><a href="{base}/about.html">About</a> ·
+  <a href="{base}/affiliate-disclosure.html">Disclosure</a> ·
+  <a href="{base}/contact.html">Contact</a></p>
 </footer>
 </body>
 </html>
@@ -270,9 +270,9 @@ def build():
             f'{hero}'
             f'{p["_body_html"]}'
             f'</article>'
-            f'<p class="back"><a href="/index.html">← Back to all guides</a></p>'
+            f'<p class="back"><a href="{base}/index.html">← Back to all guides</a></p>'
         )
-        out = page(cfg, p["title"], p["description"], article,
+        out = page(cfg, base, p["title"], p["description"], article,
                    f'{base}/posts/{p["slug"]}.html', is_post=True)
         with open(os.path.join(POSTS_OUT, f'{p["slug"]}.html'), "w", encoding="utf-8") as f:
             f.write(out)
@@ -283,7 +283,7 @@ def build():
     for p in posts:
         thumb = f'<img class="card-thumb" src="{html.escape(p["image"])}" alt="{html.escape(p["title"])}">' if p.get("image") else ""
         cards += (
-            f'<a class="card" href="/posts/{p["slug"]}.html">'
+            f'<a class="card" href="{base}/posts/{p["slug"]}.html">'
             f'{thumb}'
             f'<span class="cat" data-cat="{cat_slug(p["category"])}">{html.escape(p["category"])}</span>'
             f'<h2>{html.escape(p["title"])}</h2>'
@@ -295,7 +295,7 @@ def build():
              f'<p>Pick the situation you\'re actually facing — every guide below runs the real comparison, not another list of tips.</p></section>'
              f'<section class="grid">{cards or "<p>No guides yet.</p>"}</section>')
     with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as f:
-        f.write(page(cfg, "Home", cfg["site_tagline"], intro, f"{base}/index.html"))
+        f.write(page(cfg, base, "Home", cfg["site_tagline"], intro, f"{base}/index.html"))
 
     write_static_pages(cfg, base)
     write_sitemap(cfg, base, posts)
@@ -317,10 +317,10 @@ worth the money, which eSIM option is genuinely cheaper, whether a tour pass pay
 <ul>
 <li>We compare real options side by side instead of just describing one.</li>
 <li>Some links are affiliate links (Klook, Trip.com, GetYourGuide) — see our
-<a href="/affiliate-disclosure.html">disclosure</a>.</li>
+<a href="{base}/affiliate-disclosure.html">disclosure</a>.</li>
 <li>Prices, thresholds, and rules change — always confirm on the official site before you book or travel.</li>
 </ul>
-<p>Contact: <a href="/contact.html">contact page</a></p>
+<p>Contact: <a href="{base}/contact.html">contact page</a></p>
 """
     disclosure = f"""
 <h1>Affiliate Disclosure</h1>
@@ -330,7 +330,7 @@ commission — at no extra cost to you.</p>
 <p>We only link to services relevant to the guide you're reading. Our comparisons reflect our own research
 and opinion; they are not paid placements unless explicitly marked as such.</p>
 <p>Questions about a specific link or recommendation? Reach out via our
-<a href="/contact.html">contact page</a>.</p>
+<a href="{base}/contact.html">contact page</a>.</p>
 """
     privacy = f"""
 <h1>Privacy Policy</h1>
@@ -358,7 +358,7 @@ platform's own privacy policy for details.</p>
         ("contact", "Contact", contact),
     ]:
         with open(os.path.join(SITE, f"{name}.html"), "w", encoding="utf-8") as f:
-            f.write(page(cfg, title, f"{title} - {cfg['site_name']}", body, f"{base}/{name}.html"))
+            f.write(page(cfg, base, title, f"{title} - {cfg['site_name']}", body, f"{base}/{name}.html"))
 
 
 def write_sitemap(cfg, base, posts):
