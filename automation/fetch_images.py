@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
-Fills in a real, high-resolution, Korea-confirmed photo for every post that
-has an `image_query` in its front matter but no `image` yet. Mirrors the
-same safety logic used for the SNS pipeline (lib/ingestion/pexels_image.js):
+Fills in a real photo for every post that has an `image_query` in its front
+matter but no `image` yet. Tries the Korea Tourism Organization's Odii
+(관광지 오디오 가이드정보) API FIRST — real official images of actual named
+attractions — since that beats stock photography when it actually has a
+match. Odii's database is attraction-specific (경복궁, 남산타워, etc.), so it
+won't have anything for generic topics (eSIM, T-money, tax refund) — those
+fall through to Pexels exactly as before. Mirrors the same Pexels safety
+logic used for the SNS pipeline (lib/ingestion/pexels_image.js):
 
   - the actual search sent to Pexels always has " south korea" appended,
     regardless of what image_query says
@@ -33,6 +38,61 @@ POSTS_SRC = os.path.join(BASE, "content", "posts")
 SEARCH_URL = "https://api.pexels.com/v1/search"
 MIN_ORIGINAL_WIDTH = 3000
 KOREA_SIGNAL = re.compile(r"korea|korean|seoul|incheon|busan|hanok", re.IGNORECASE)
+
+ODII_URL = "https://apis.data.go.kr/B551011/Odii/themeSearchList"
+
+
+def normalize_tourapi_key(value):
+    """data.go.kr의 일반 인증키는 포털에 Encoding(퍼센트 인코딩)으로 표시된다 —
+    그대로 쓰면 urllib이 다시 인코딩해 이중 인코딩 오류가 난다. % 포함 시 한 번 decode."""
+    key = (value or "").strip()
+    if not key:
+        return key
+    if "%" in key:
+        try:
+            return urllib.parse.unquote(key)
+        except Exception:
+            return key
+    return key
+
+
+def find_tourapi_image(keyword):
+    """한국관광공사 Odii 오디오가이드 API에서 keyword로 검색해 실제 imageUrl이
+    있는 첫 결과를 반환한다. 이 API는 특정 관광지(경복궁 등) DB라 일반적인
+    주제(esim, 세금환급 등)에는 매칭이 없는 게 정상이며, 그 경우 None을 반환해
+    호출부가 Pexels로 자연스럽게 넘어가게 한다. 억지로 무관한 결과를 쓰지 않는다."""
+    api_key = normalize_tourapi_key(os.environ.get("TOUR_AUDIO_GUIDE_API_KEY"))
+    if not api_key:
+        return None
+    params = urllib.parse.urlencode({
+        "serviceKey": api_key,
+        "MobileOS": "ETC",
+        "MobileApp": "LandInKoreaBlog",
+        "_type": "json",
+        "numOfRows": 10,
+        "pageNo": 1,
+        "keyword": keyword,
+        "langCode": "ko",
+    })
+    req = urllib.request.Request(
+        f"{ODII_URL}?{params}",
+        headers={"User-Agent": "Mozilla/5.0 (compatible; LandInKoreaBlogBot/1.0)"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as res:
+            data = json.loads(res.read().decode("utf-8"))
+    except Exception as err:
+        print(f"  !! TourAPI Odii 검색 실패(\"{keyword}\"): {err}")
+        return None
+    items = data.get("response", {}).get("body", {}).get("items", {}).get("item", [])
+    if isinstance(items, dict):
+        items = [items]
+    for item in items:
+        url = item.get("imageUrl")
+        if url:
+            print(f"  -> TourAPI 실제 이미지 확보(\"{keyword}\", {item.get('title', '')}): {url}")
+            return url
+    return None
 
 
 def search_pexels(api_key, query, page):
@@ -144,11 +204,19 @@ def main():
 
         if "image" not in meta and "image_query" in meta:
             print(f"{fn}: searching \"{meta['image_query']}\"")
+            url = None
             try:
-                url = find_korea_photo(api_key, meta["image_query"], used_urls)
-            except Exception as err:  # one post's failure shouldn't block the rest
-                print(f"  !! search failed for {fn}: {err}")
-                url = None
+                url = find_tourapi_image(meta["image_query"])
+            except Exception as err:
+                print(f"  !! TourAPI search failed for {fn}: {err}")
+            if url and url in used_urls:
+                url = None  # 다른 글이 이미 쓴 관광공사 이미지면 중복 방지 원칙대로 건너뜀
+            if not url:
+                try:
+                    url = find_korea_photo(api_key, meta["image_query"], used_urls)
+                except Exception as err:  # one post's failure shouldn't block the rest
+                    print(f"  !! search failed for {fn}: {err}")
+                    url = None
             if url:
                 used_urls.add(url)
                 end = raw.find("\n---", 3)
