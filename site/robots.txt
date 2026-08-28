@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://solusupport-bot.github.io/land-in-korea-blog/sitemap.xml

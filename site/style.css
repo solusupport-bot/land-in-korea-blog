@@ -1,0 +1,61 @@
+:root{
+  --fg:#221f1a;--muted:#7a7264;--bg:#f4efe3;--soft:#ece4d3;--card:#faf7ef;
+  --gold:#b8923f;--red:#a63a35;--blue:#274b6d;--green:#3f6b45;--line:#ddd2ba;
+  --font-display:'Nanum Myeongjo',Georgia,'Times New Roman',serif;
+  --font-body:'Inter',-apple-system,'Segoe UI',sans-serif
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-body);color:var(--fg);background:var(--bg);line-height:1.75}
+h1,h2,h3{font-family:var(--font-display)}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,.card:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+.site-header{border-bottom:2px solid var(--gold);padding:30px 20px;text-align:center;background:var(--card)}
+.brand{font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--fg);display:inline-flex;align-items:center;gap:10px}
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;
+  background:linear-gradient(180deg,var(--red),var(--blue));color:#f4efe3;font-size:1.1rem}
+.brand-logo{height:96px;width:auto;display:block;border-radius:12px;box-shadow:0 6px 18px rgba(34,31,26,.16)}
+.tagline{color:var(--muted);margin:8px 0 14px;max-width:480px;margin-left:auto;margin-right:auto}
+nav a{margin:0 10px;font-weight:600;font-size:.92rem;color:var(--fg)}
+nav a:hover{color:var(--red)}
+main{max-width:760px;margin:0 auto;padding:28px 20px}
+.hero{text-align:center;padding:24px 0 8px}
+.hero h1{font-size:1.9rem;margin:.2em 0;color:var(--fg)}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+.card{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);transition:.15s}
+.card:hover{transform:translateY(-2px);text-decoration:none;box-shadow:0 8px 22px rgba(34,31,26,.12)}
+.card-thumb{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.card h2,.card p,.card .cat,.card .date{padding-left:18px;padding-right:18px}
+.card h2{font-size:1.12rem;margin:12px 0 8px}
+.card p{color:var(--muted);font-size:.94rem;margin:6px 0}
+.card .date{display:block;padding-bottom:16px}
+.cat{display:inline-block;font-size:.75rem;font-weight:700;color:#fff;background:var(--blue);padding:3px 10px;border-radius:999px;margin-top:16px}
+.cat[data-cat="comparisons"]{background:var(--blue)}
+.cat[data-cat="money-saving"]{background:var(--green)}
+.cat[data-cat="etiquette-mistakes"]{background:var(--red)}
+.cat[data-cat="airport-transit"]{background:var(--gold);color:var(--fg)}
+.cat[data-cat="practical-info"]{background:var(--muted)}
+.post .meta .cat{margin-top:0}
+.date{font-size:.8rem;color:var(--muted)}
+.hero-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin:16px 0 8px}
+.post-img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin:1.4em 0}
+.post h1{font-size:1.7rem;line-height:1.35;color:var(--fg)}
+.post h2{margin-top:1.6em;border-left:4px solid var(--gold);padding-left:10px;color:var(--fg)}
+.post .meta{color:var(--muted);font-size:.88rem}
+.post table{width:100%;border-collapse:collapse;margin:1.2em 0}
+.post th,.post td{border:1px solid var(--line);padding:9px 11px;text-align:left}
+.post th{background:var(--soft);color:var(--fg)}
+.post tbody tr:nth-child(even){background:var(--soft)}
+blockquote{border-left:4px solid var(--gold);margin:1.2em 0;padding:4px 16px;color:var(--muted);background:var(--soft)}
+.back{margin-top:32px}
+
+/* 제휴/외부 링크(CTA)는 본문 텍스트 링크와 다르게, 실제 클릭해야 할 버튼처럼 보이게 처리 */
+.post p a[rel~="sponsored"]{
+  display:inline-block;background:var(--red);color:#fff;font-weight:600;font-size:.92rem;
+  padding:9px 16px;border-radius:6px;margin:4px 6px 4px 0
+}
+.post p a[rel~="sponsored"]:hover{background:var(--gold);text-decoration:none}
+.post p a[rel~="sponsored"]:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.site-footer{border-top:2px solid var(--gold);margin-top:40px;padding:24px 20px;text-align:center;color:var(--muted);font-size:.82rem;background:var(--card)}
+.site-footer a{color:var(--muted)}

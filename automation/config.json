@@ -1,0 +1,21 @@
+{
+  "site_name": "Land in Korea",
+  "site_tagline": "Real comparisons for first-time visitors and foreign residents in Korea — not another generic tips list.",
+  "author": "Land in Korea Desk",
+  "base_url": "https://solusupport-bot.github.io/land-in-korea-blog",
+  "email": "solu.support@gmail.com",
+  "language": "en",
+  "categories": [
+    "Comparisons",
+    "Money-saving",
+    "Etiquette & mistakes",
+    "Airport & transit",
+    "Practical info"
+  ],
+  "affiliate_links": {
+    "klook": "https://www.klook.com/",
+    "tripcom": "https://www.trip.com/",
+    "getyourguide": "https://www.getyourguide.com/"
+  },
+  "goatcounter_code": ""
+}
