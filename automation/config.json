@@ -2,7 +2,7 @@
   "site_name": "Land in Korea",
   "site_tagline": "Real comparisons for first-time visitors and foreign residents in Korea — not another generic tips list.",
   "author": "Land in Korea Desk",
-  "base_url": "https://solusupport-bot.github.io/land-in-korea-blog",
+  "base_url": "https://landinkorea.com",
   "email": "solu.support@gmail.com",
   "language": "en",
   "categories": [
@@ -17,5 +17,6 @@
     "tripcom": "https://www.trip.com/",
     "getyourguide": "https://www.getyourguide.com/"
   },
-  "goatcounter_code": ""
+  "goatcounter_code": "",
+  "custom_domain": "landinkorea.com"
 }

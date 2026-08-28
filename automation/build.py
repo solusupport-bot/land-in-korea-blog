@@ -300,6 +300,7 @@ def build():
     write_static_pages(cfg, base)
     write_sitemap(cfg, base, posts)
     write_robots(base)
+    write_cname(cfg)
     write_css()
 
     print(f"Build complete: {len(posts)} posts + static pages")
@@ -378,6 +379,16 @@ def write_sitemap(cfg, base, posts):
 def write_robots(base):
     with open(os.path.join(SITE, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n")
+
+
+def write_cname(cfg):
+    domain = cfg.get("custom_domain", "").strip()
+    cname_path = os.path.join(SITE, "CNAME")
+    if domain:
+        with open(cname_path, "w", encoding="utf-8") as f:
+            f.write(domain + "\n")
+    elif os.path.exists(cname_path):
+        os.remove(cname_path)
 
 
 def write_css():
