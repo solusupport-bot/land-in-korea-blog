@@ -30,8 +30,12 @@ Usage:
 import json
 import os
 import re
+import time
 import urllib.request
 import urllib.parse
+
+from watermark import apply_watermark
+from github_host import upload_media_file
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POSTS_SRC = os.path.join(BASE, "content", "posts")
@@ -133,6 +137,25 @@ def find_korea_photo(api_key, raw_query, used_urls, strict=False):
     return None
 
 
+def watermark_and_host(original_url, tag):
+    """원본 이미지 URL에 브랜드 로고를 합성해 media-assets 브랜치에 올리고 그 새
+    URL을 반환한다. GITHUB_TOKEN이 없거나 합성/호스팅이 실패하면 원본 URL을
+    그대로 반환한다 — 워터마크 없이 쓰는 게 아예 이미지 없이 발행하는 것보다
+    낫다는 SNS 파이프라인과 동일한 원칙(desktop-tutorial/lib/media/watermark_images.js)."""
+    github_token = os.environ.get("GITHUB_TOKEN")
+    if not github_token:
+        print("  !! GITHUB_TOKEN이 없어 워터마크 합성을 건너뜁니다(원본 이미지 그대로 사용).")
+        return original_url
+    buf = apply_watermark(original_url)
+    if not buf:
+        return original_url
+    try:
+        return upload_media_file(github_token, buf, f"images/{tag}-{int(time.time() * 1000)}.jpg")
+    except Exception as err:
+        print(f"  !! 워터마크 이미지 호스팅 실패, 원본 사용: {err}")
+        return original_url
+
+
 GALLERY_TOKEN = re.compile(r"[ \t]*\{\{gallery:(.*?)\}\}[ \t]*\n?")
 
 
@@ -154,9 +177,10 @@ def resolve_gallery_tokens(api_key, body, used_urls):
         if not url:
             print(f"  !! no Korea-confirmed match for \"{query}\" — dropping this image, not guessing")
             return ""
-        used_urls.add(url)
+        used_urls.add(url)  # 중복 체크는 항상 원본 URL 기준 — 워터마크 자산 URL은 매번 새로 생겨 의미가 없음
+        hosted_url = watermark_and_host(url, re.sub(r"[^a-z0-9]+", "-", query.lower()).strip("-") or "gallery")
         print(f"  gallery: resolved \"{query}\"")
-        return f"![{query}]({url})\n\n"
+        return f"![{query}]({hosted_url})\n\n"
 
     new_body = GALLERY_TOKEN.sub(replace_one, body)
     return new_body, changed
@@ -218,9 +242,10 @@ def main():
                     print(f"  !! search failed for {fn}: {err}")
                     url = None
             if url:
-                used_urls.add(url)
+                used_urls.add(url)  # 중복 체크는 항상 원본 URL 기준 — 워터마크 자산 URL은 매번 새로 생겨 의미가 없음
+                hosted_url = watermark_and_host(url, fn.replace(".md", ""))
                 end = raw.find("\n---", 3)
-                raw = f"{raw[:end]}\nimage: {url}{raw[end:]}"
+                raw = f"{raw[:end]}\nimage: {hosted_url}{raw[end:]}"
                 front_matter_changed = True
                 print(f"  wrote image: to {fn}")
             else:

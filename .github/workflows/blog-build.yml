@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -20,12 +20,33 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install image/watermark dependencies
+        run: pip install pillow
+
       - name: Fetch Korea-confirmed post images
+        # GITHUB_TOKEN이 있어야 워터마크 합성 후 media-assets 브랜치에 호스팅할 수 있다
+        # (2026-08-30, SNS 캡션 파이프라인과 동일한 워터마크 기준을 블로그 대표 이미지에도 적용).
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd automation
           python3 fetch_images.py
+
+      - name: Commit fetched/watermarked image fields
+        # fetch_images.py가 content/posts/*.md에 써넣은 image: 값이 지금까지 한 번도
+        # 커밋된 적이 없었다(2026-08-30 실측 — 매 빌드마다 처음부터 다시 검색해야 했음).
+        # 커밋해둬야 다음 빌드부터 이미 있는 이미지를 재사용하고, 검색 API 호출도 줄어든다.
+        run: |
+          if git diff --quiet -- content/posts/; then
+            echo "No image field changes; no commit required."
+            exit 0
+          fi
+          git config user.name "sns-automation-bot"
+          git config user.email "actions@github.com"
+          git add content/posts/
+          git commit -m "chore: persist fetched/watermarked post images"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Build site
         run: |
