@@ -5,6 +5,7 @@ category: Comparisons
 description: For a Seoul-to-Busan-length trip, the real choice isn't just KTX vs.
 slug: korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel
 image_query: KTX vs. SRT vs. intercity bus for long-distance travel travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel-1788111242708.jpg
 ---
 ## The short version
 
