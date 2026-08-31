@@ -5,6 +5,7 @@ category: Practical info
 description: Bukchon isn't a museum — real families live in these hanok houses. Here's how to visit respectfully and avoid the worst of the crowds.
 slug: korea-bukchon-hanok-village
 image_query: Bukchon Hanok Village traditional houses alley Seoul
+image: https://images.pexels.com/photos/20325768/pexels-photo-20325768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 ---
 ## It's a neighborhood, not an exhibit
 

@@ -5,6 +5,7 @@ category: Practical info
 description: Gyeongbokgung closes on Tuesdays, the guard ceremony runs on a schedule, and wearing a hanbok gets you in free. Here's what actually matters before you go.
 slug: korea-gyeongbokgung-palace
 image_query: Gyeongbokgung Palace guard ceremony Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-gyeongbokgung-palace-1788153610914.jpg
 ---
 ## The detail that catches almost everyone off guard
 

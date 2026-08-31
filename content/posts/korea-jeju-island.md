@@ -5,6 +5,7 @@ category: Practical info
 description: Jeju isn't on Korea's train network at all — only a flight or ferry gets you there. Here's what else surprises first-time visitors.
 slug: korea-jeju-island
 image_query: Jeju Island Hallasan volcanic coastline
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-jeju-island-1788153612591.jpg
 ---
 ## No trains, no KTX
 

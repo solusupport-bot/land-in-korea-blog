@@ -5,6 +5,7 @@ category: Practical info
 description: The Myeongdong street food scene everyone posts about doesn't exist at lunchtime — here's when it actually shows up, and how to shop smart.
 slug: korea-myeongdong-shopping-district
 image_query: Myeongdong shopping street Seoul evening
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-myeongdong-shopping-district-1788153613992.jpg
 ---
 ## The timing mistake almost everyone makes
 

@@ -5,6 +5,7 @@ category: Practical info
 description: You don't have to pay for the view at N Seoul Tower — the free plaza and a 30-40 minute hike from Myeongdong already deliver most of it.
 slug: korea-n-seoul-tower-namsan
 image_query: N Seoul Tower Namsan skyline view
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-n-seoul-tower-namsan-1788153615389.jpg
 ---
 ## The view most people pay for is already free
 
