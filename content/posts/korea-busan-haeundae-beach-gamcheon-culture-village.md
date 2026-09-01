@@ -29,3 +29,17 @@ KTX from Seoul to Busan takes roughly 2.5-3 hours. In summer especially, it's wo
 - Haeundae is the beach-and-restaurants stop, busiest in summer
 - Gamcheon is a hillside art village with steep stairs throughout — wear real shoes
 - KTX from Seoul takes about 2.5-3 hours; book ahead in summer
+
+## Frequently Asked Questions
+
+### Can I visit Haeundae Beach and Gamcheon Culture Village in one day?
+
+Yes, but budget real transit time — they sit on opposite sides of Busan, so plan one for the morning and the other for the afternoon.
+
+### What should I wear to Gamcheon Culture Village?
+
+Comfortable shoes — the neighborhood is almost entirely stairs and slopes.
+
+### How long does it take to get to Busan from Seoul?
+
+KTX takes roughly 2.5-3 hours; book ahead in summer since seats sell out.

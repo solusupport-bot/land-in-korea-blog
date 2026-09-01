@@ -29,3 +29,17 @@ Bukchon sits between Gyeongbokgung and Changdeokgung, which is why most visitors
 - Some alleys have posted quiet hours out of respect for residents
 - The Gahoe-dong photo spot is best early on a weekday
 - It sits conveniently between Gyeongbokgung and Changdeokgung
+
+## Frequently Asked Questions
+
+### Is Bukchon Hanok Village a museum?
+
+No — it's a real, lived-in neighborhood. People still live behind those tiled roofs, which is why some alleys post quiet-hours signs.
+
+### When's the best time to visit the famous photo spot?
+
+Early on a weekday, before tour groups arrive mid-morning and crowd the sloped alley near Gahoe-dong.
+
+### Can I combine Bukchon with a palace visit?
+
+Yes — it sits between Gyeongbokgung and Changdeokgung, so most visitors walk it as a connector between the two rather than a separate trip.

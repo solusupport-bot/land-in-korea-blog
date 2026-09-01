@@ -30,3 +30,17 @@ Look for 1+1 or 2+1 stickers, especially on drinks and snacks — these are real
 ## When it's genuinely the better option over a restaurant
 
 Late at night, between attractions with no real restaurant nearby, or on a travel day when you don't want to sit down for a full meal — a convenience store meal isn't a compromise in Korea the way it might be elsewhere. The hot-food counter selection is a legitimate, fast option, not just a backup.
+
+## Frequently Asked Questions
+
+### Can I get breakfast at a Korean convenience store?
+
+Yes — a coffee and toast or sandwich combo is a fast, cheap breakfast option, and many locations have microwaves and hot water for heat-and-eat meals.
+
+### Do Korean convenience stores sell medicine?
+
+Many sell single-dose painkillers and cold medicine, useful given how limited Korean pharmacy hours can be, though selection is basic.
+
+### Are the discount stickers on drinks and snacks real deals?
+
+Yes — 1+1 and 2+1 stickers are genuine bundle discounts, not a pricing trick, and they add up over a week-long trip.

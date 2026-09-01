@@ -34,3 +34,17 @@ Bukchon Hanok Village sits within walking distance, making it a natural add-on a
 - A full hanbok gets you in free
 - Budget more than 20 minutes — it's Seoul's largest palace with a museum on-site
 - Bukchon Hanok Village is a short walk away
+
+## Frequently Asked Questions
+
+### What day is Gyeongbokgung Palace closed?
+
+Tuesdays — unless that Tuesday is a public holiday, in which case it stays open and the closure shifts to the next non-holiday day.
+
+### How do I get free admission to Gyeongbokgung?
+
+Wear a complete hanbok that meets the palace's official guidelines — rental shops cluster right outside the gates.
+
+### When does the royal guard-changing ceremony happen?
+
+At set times, currently around 10:00 and 14:00, with a shorter guard dispatch ceremony at 11:00 and 13:00 — it doesn't run continuously.

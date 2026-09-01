@@ -29,3 +29,17 @@ The fence of "love locks" near the base is a genuine, still-growing tradition, n
 - Hiking from Myeongdong takes about 30-40 minutes and costs nothing
 - Sunset is the busiest time — early afternoon or opening avoids the crowd
 - The paid deck is an upgrade, not a requirement
+
+## Frequently Asked Questions
+
+### Do I have to pay to see a view from N Seoul Tower?
+
+No — the free plaza around the tower's base already sits near the top of Namsan, above most of Seoul's skyline. The paid deck is an upgrade, not a requirement.
+
+### How long does the hike up Namsan take?
+
+About 30-40 minutes from Myeongdong via a marked trail, mostly stairs and paved path.
+
+### When is N Seoul Tower least crowded?
+
+Early afternoon or right after opening — sunset is by far the busiest time to visit.

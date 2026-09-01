@@ -12,3 +12,17 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 For a Seoul-to-Busan-length trip, the real choice isn't just KTX vs. the bus — it's KTX vs. SRT, and most first-timers don't even know SRT exists. Both are high-speed rail on similar routes with comparable speeds, but they depart from different stations in Seoul (KTX mainly from Seoul Station, SRT from Suseo Station), so the right pick often depends on which side of the city you're starting from, not the train itself. Both require booking a specific seat and departure time, unlike a hop-on bus.
 
 Intercity and express buses cost less than high-speed rail and reach smaller towns that trains skip entirely, but take meaningfully longer on the same long-distance routes — worth it when the destination isn't near a KTX/SRT station, or when the schedule matters more than shaving an hour off the trip. For short layovers or tight connections, the extra buffer time a bus needs is easy to underestimate. Booking apps for both rail and bus let you compare exact departure times before choosing, rather than defaulting to whichever option you've heard of.
+
+## Frequently Asked Questions
+
+### What's the difference between KTX and SRT?
+
+Both are high-speed rail with comparable speeds on similar routes, but KTX departs mainly from Seoul Station and SRT from Suseo Station — the right pick often depends on which side of the city you're starting from.
+
+### When should I take an intercity bus instead of the train?
+
+When your destination isn't near a KTX/SRT station, or the schedule matters more than saving an hour — buses cost less and reach smaller towns trains skip entirely.
+
+### Do I need to book a specific seat for KTX or SRT?
+
+Yes — unlike a hop-on bus, both require booking a specific seat and departure time in advance.

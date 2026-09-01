@@ -27,3 +27,17 @@ Kakao T is the go-to app for calling a taxi reliably in Korea, especially late a
 ## The one setup step people skip
 
 Download Naver Map, Papago, and Kakao T *before* you land — some functions work more reliably with a local IP or an active Korean SIM/eSIM, and fumbling with app store downloads on spotty airport Wi-Fi is a bad first impression of a trip. If you haven't sorted your data plan yet, see our [eSIM comparison](https://landinkorea.com/posts/korea-esim-comparison.html) for which option fits your trip length.
+
+## Frequently Asked Questions
+
+### Does Google Maps work well in Korea?
+
+Not really — it has real gaps in local transit and walking-direction data that most first-timers don't discover until they're already lost.
+
+### Which map app should I use instead in Korea?
+
+Naver Map or KakaoMap — both show real-time subway and bus arrivals, platform-level transfer directions, and walking routes that match Korean street data.
+
+### What app should I use for taxis in Korea?
+
+Kakao T — it's the go-to app for reliably calling a taxi, with fares estimated upfront before you confirm.

@@ -39,3 +39,17 @@ Booking a private transfer for the *return* trip too. On the way home you alread
 Compare current arrival transfer prices and confirm your exact terminal (T1 vs T2 matters) before booking: [Klook's Incheon Airport transfers]({{klook}}) or [Trip.com's airport transfer listings]({{tripcom}}).
 
 Prices, train schedules, and terminal assignments change — always confirm the current fare and your terminal on the official AREX site or your airline's confirmation before you fly.
+
+## Frequently Asked Questions
+
+### Which is the cheapest way from Incheon Airport to Seoul?
+
+AREX (Airport Railway Express) is the cheapest and fastest option, best for solo travelers with light luggage staying near Seoul Station or Hongdae.
+
+### Should I book a private transfer for my return trip too?
+
+Usually not — a private transfer is worth it for the jet-lagged arrival, but on the way home AREX or the limousine bus is almost always the better value since you already know the city.
+
+### What's the better option for a group of 3 or more?
+
+A private transfer often ties or beats the per-seat train price once you're splitting the cost across three or more people.

@@ -34,3 +34,17 @@ Currency exchange counters near Myeongdong and Hongdae typically beat airport ki
 ## Mobile pay isn't the shortcut it looks like
 
 Samsung Pay and Naver Pay are widely used locally, but usually require a Korean bank account to set up — not something you can activate as a short-term visitor. For most trips, a normal card (charged in won) stays the simplest option throughout.
+
+## Frequently Asked Questions
+
+### Should I choose to be charged in my home currency or Korean won?
+
+Always choose Korean won (KRW) — accepting the home-currency option (Dynamic Currency Conversion) adds a hidden markup on top of your bank's exchange rate.
+
+### Is Korea fully cashless?
+
+No — traditional markets and some rural or older independent restaurants remain cash-preferred or cash-only, so carrying a modest cash buffer helps.
+
+### Can I use Samsung Pay or Naver Pay as a short-term visitor?
+
+Usually not — both typically require a Korean bank account to set up, so a normal card charged in won is the simplest option for most trips.

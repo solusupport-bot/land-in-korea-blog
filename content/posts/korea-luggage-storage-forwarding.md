@@ -36,3 +36,17 @@ Same-day luggage forwarding sends your bags from your hotel straight to the airp
 Some hotels will hold luggage even after checkout at no extra charge — always ask at the front desk before paying for outside storage. It's the cheapest option on this list when it's available, and most visitors never think to ask.
 
 Booking an airport transfer for departure day anyway? [Klook]({{klook}}) lists luggage forwarding and airport transfer options together, which is worth checking before arranging them separately.
+
+## Frequently Asked Questions
+
+### Are subway coin lockers reliable for luggage storage?
+
+Not guaranteed — they fill up fast on weekends and holidays, so they work best for a few off-peak hours, not as your only plan.
+
+### What is same-day luggage forwarding?
+
+A service that sends your bags from your hotel straight to the airport or another hotel — but it needs booking at least a day ahead, so it isn't a same-day fallback.
+
+### Is there a free luggage storage option?
+
+Some hotels hold luggage even after checkout at no extra charge — always ask the front desk before paying for outside storage.

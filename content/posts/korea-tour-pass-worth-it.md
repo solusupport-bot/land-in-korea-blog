@@ -33,3 +33,17 @@ Groups or families doing a dense 2-3 day sightseeing block hitting palaces + a t
 ## Check current pass pricing and inclusions
 
 Passes and included attractions change over time — see current Seoul pass options on [GetYourGuide]({{getyourguide}}) or bundled tour/attraction combos on [Klook]({{klook}}), and run the math above against your actual itinerary before buying.
+
+## Frequently Asked Questions
+
+### How do I know if a Seoul attraction pass is worth buying?
+
+Add up the individual entry prices for attractions you'll realistically visit and compare that total to the pass price — if your realistic list already costs more, buy the pass.
+
+### Who is an attraction pass best for?
+
+Groups or families doing a dense 2-3 day sightseeing block hitting palaces, a tower, and a museum back to back.
+
+### What's the most common mistake when buying a pass?
+
+Padding the list with 'maybe' attractions you don't end up visiting, or forgetting the pass has an expiry window that doesn't match a spread-out itinerary.

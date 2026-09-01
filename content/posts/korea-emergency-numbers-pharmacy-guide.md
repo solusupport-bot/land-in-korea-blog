@@ -27,3 +27,17 @@ For anything beyond a pharmacy visit, large hospitals in Seoul — Severance Hos
 ## Two small things that make a pharmacy visit faster
 
 Over-the-counter medicine names differ from Western brands, so showing the pharmacist a translated symptom list (Papago's camera translation works well for this) speeds things up considerably. And if you don't already have travel insurance, get it before you land — Korean hospitals generally require upfront payment, with reimbursement handled afterward through your insurer, not at the point of care.
+
+## Frequently Asked Questions
+
+### What number should travelers actually call first for a travel problem?
+
+1330, the Korea Travel Hotline — a free, 24/7 multilingual line for lost passports, interpreters, scam disputes, and general travel issues, not just genuine emergencies like 112 or 119.
+
+### Are pharmacies open 24 hours in Korea?
+
+Not usually — unlike convenience stores, 24-hour pharmacies are uncommon. Look for a green cross sign or ask your hotel front desk for the nearest late-night option.
+
+### What should I bring to a Korean pharmacy?
+
+A translated symptom list (Papago's camera translation works well), since over-the-counter medicine names differ from Western brands.

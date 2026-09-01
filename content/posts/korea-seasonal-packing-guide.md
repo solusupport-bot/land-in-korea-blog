@@ -30,3 +30,16 @@ Quick-dry fabric beats cotton, both for comfort and for not smelling faintly of 
 
 ![seoul summer rain street](https://images.pexels.com/photos/17691635/pexels-photo-17691635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 
+## Frequently Asked Questions
+
+### What's the biggest Korea packing mistake?
+
+Packing only for the weather outside and ignoring how strong indoor heating and AC run — you can be freezing outside and overheated indoors in winter, or humid outside and aggressively cold indoors in summer.
+
+### What kind of clothing works best in Korea?
+
+Removable layers you can peel off and stuff in a bag, rather than one thick 'warm enough' coat.
+
+### What should I pack for Korea's monsoon season (July)?
+
+Quick-dry fabric and a compact umbrella — more useful than a heavy rain jacket for the short, intense bursts typical of Korean summer rain.

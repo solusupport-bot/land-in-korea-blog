@@ -29,3 +29,17 @@ Not every store with Korean-tourist-friendly pricing actually participates in Ta
 The refund threshold applies per single receipt at a participating store, not your total spending across a trip. Consolidating purchases at one store instead of spreading them across several small ones is often the difference between qualifying and not.
 
 Planning a shopping-heavy day in Seoul? [Klook]({{klook}}) and [Trip.com]({{tripcom}}) both list guided shopping-district tours that build refund stops into the itinerary, which is one less thing to track yourself.
+
+## Frequently Asked Questions
+
+### What's the biggest mistake that loses tourists their Tax Free refund?
+
+Packing the item into checked luggage before showing it, unused, at the refund step — the refund gets denied on the spot if you can't show the item.
+
+### When should I process my Tax Free refund?
+
+Before you check in your luggage, not after — keep any items you're claiming Tax Free on in your carry-on until the refund is processed.
+
+### Is the Tax Free minimum spend per trip or per receipt?
+
+Per single receipt at a participating store, not your total trip spending — consolidating purchases at one store instead of several small ones often makes the difference.

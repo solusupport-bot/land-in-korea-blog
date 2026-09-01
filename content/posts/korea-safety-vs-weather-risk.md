@@ -27,3 +27,17 @@ If your trip falls in July–September or December–February, build one flexibl
 - Save 112 (police) and 119 (fire/medical) before you land — both have English-language phone support.
 
 Hotels and hostel staff can usually help translate in a pinch if you're ever unsure whether a situation needs official help — you don't need to already speak Korean to ask for that kind of help.
+
+## Frequently Asked Questions
+
+### Is Korea safe for travelers?
+
+Yes — Korea has low violent crime even late at night in major cities, beating most Western capitals by that measure.
+
+### What actually disrupts trips to Korea?
+
+Weather, not crime — typhoons (summer through early fall) and heavy snow (winter) can disrupt trains and flights with very little warning.
+
+### How should I plan around typhoon or snow season?
+
+Build one flexible buffer day into your itinerary if traveling July-September or December-February.

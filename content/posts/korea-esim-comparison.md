@@ -35,3 +35,17 @@ Buying data for the exact number of calendar days you're in Korea, arrival day t
 ## Compare current plans
 
 [Klook's Korea eSIM listings]({{klook}}) and [Trip.com's Korea SIM/Wi-Fi options]({{tripcom}}) both let you filter by trip length — check current pricing there before you land, since plans and data caps get updated.
+
+## Frequently Asked Questions
+
+### Should I get an eSIM, physical SIM, or pocket Wi-Fi in Korea?
+
+eSIM suits solo travelers with a compatible phone, pocket Wi-Fi suits couples or families sharing one data plan, and physical SIM fits older phones without eSIM support.
+
+### What's the most common Korea data plan mistake?
+
+Buying a plan for the exact number of calendar days instead of checking whether a longer fixed block (5-day, 8-day) is only marginally more expensive.
+
+### Is pocket Wi-Fi worth it for a long trip?
+
+Usually not — for trips over 10 days, carrying and charging a separate device gets old, so eSIM or a physical SIM age better.

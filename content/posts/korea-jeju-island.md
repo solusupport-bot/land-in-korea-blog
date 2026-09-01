@@ -29,3 +29,17 @@ Weather on Jeju's coast shifts quickly, even in summer. A packable rain layer is
 - Home to Hallasan, Korea's tallest mountain, plus black sand beaches
 - Renting a car is the practical way to get around
 - Coastal weather changes fast — pack a rain layer even in summer
+
+## Frequently Asked Questions
+
+### Can I take a train to Jeju Island?
+
+No — Jeju has no train or KTX access at all. You can only get there by flight or a long ferry from the mainland.
+
+### Do I need to rent a car on Jeju?
+
+Yes, it's genuinely the practical option — bus routes are sparser than in Seoul or Busan and real distances are longer than they look on a map.
+
+### What is Jeju Island known for?
+
+Hallasan, South Korea's tallest mountain, plus black sand beaches and a local dialect distinct enough that some words differ from standard Korean.

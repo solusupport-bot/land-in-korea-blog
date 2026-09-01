@@ -25,3 +25,17 @@ Handing over cash, a card, or an item to someone — especially someone older �
 
 
 None of these are rules with real consequences if you miss one — Koreans generally extend first-timers plenty of grace. They're just the difference between blending in a little and standing out as visibly unfamiliar with the room you're in.
+
+## Frequently Asked Questions
+
+### What's a bigger etiquette mistake in Korea than not tipping?
+
+Passing items with one hand, especially to someone older — using both hands, or supporting your extended arm, is the well-received gesture.
+
+### Do I need to take my shoes off indoors in Korea?
+
+Yes, at traditional guesthouses (hanok stays) and restaurants with floor seating — look for a shoe rack or raised floor at the entrance.
+
+### Is splitting the bill common at Korean restaurants?
+
+No — many smaller places have no split-bill custom, so plan to settle the full bill on one card or in cash rather than splitting per person.

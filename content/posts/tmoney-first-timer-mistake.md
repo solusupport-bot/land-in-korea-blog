@@ -30,3 +30,16 @@ Unused T-money balance can be partially refunded before you leave Korea, in cash
 
 T-money cards are sold at convenience stores and station kiosks on arrival — no need to pre-book. If you'd rather sort out transit before you land, [Klook]({{klook}}) and [Trip.com]({{tripcom}}) also list Korea transit card bundles.
 
+## Frequently Asked Questions
+
+### What's the T-money mistake that actually costs first-timers money?
+
+Not tapping out when getting off a bus — skipping it silently forfeits the transfer discount, so you pay full fare on your next ride without any indication anything went wrong.
+
+### Can I get a refund for unused T-money balance?
+
+Yes, partially, in cash at station customer service counters before you leave — but not all stations offer this, and it usually excludes the original card fee.
+
+### Where do I buy a T-money card?
+
+At convenience stores and station kiosks on arrival — no pre-booking needed.

@@ -29,3 +29,17 @@ Weekends turn the main street into a slow, shoulder-to-shoulder shuffle. A weekd
 - It's Seoul's biggest cosmetics and fashion district
 - Look for the Tax Free sticker before buying
 - Weekday evenings avoid the worst of the weekend crowds
+
+## Frequently Asked Questions
+
+### What time does Myeongdong's street food scene actually start?
+
+Late afternoon — most stalls don't open at lunchtime, so plan your visit for late afternoon into the evening if street food is the goal.
+
+### How do I know if a store offers Tax Free shopping?
+
+Look for the Tax Free sticker in the window before you buy — not every store participates.
+
+### When's the best time to avoid crowds in Myeongdong?
+
+Weekday evenings — weekends turn the main street into a slow, shoulder-to-shoulder shuffle.
