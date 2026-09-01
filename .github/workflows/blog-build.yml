@@ -5,6 +5,17 @@ on:
     branches: [ main ]
   workflow_dispatch: {}
 
+# sync-blog-posts.js가 새 글을 여러 개 연달아 푸시하면(한 번에 여러 주제가 밀려 있을
+# 때) push 이벤트마다 이 워크플로가 거의 동시에 여러 번 트리거된다 — 각 실행이
+# fetch_images.py에서 찾은 이미지를 content/posts/에 커밋해 되돌려 푸시하려 하는데,
+# 동시 실행끼리 서로의 푸시를 앞지르면 "rejected (fetch first)"로 밀려서 그 실행은
+# build/deploy 단계까지 가지도 못하고 죽는다(2026-08-31 실측 — 관광지 주제 6개를 한
+# 번에 추가했을 때 6번 중 5번이 이렇게 실패함). daily-topic.yml과 동일한 방식으로
+# 동시 실행을 막아 순서대로만 돌게 한다.
+concurrency:
+  group: land-in-korea-blog-build
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pages: write
