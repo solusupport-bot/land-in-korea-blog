@@ -50,26 +50,51 @@ def parse_front_matter(text):
 
 
 def apply_affiliate_tokens(text, cfg):
+    """
+    2026-09-02: AdSense 신청을 위해 정보성 콘텐츠로 먼저 심사받기로 결정 —
+    승인 전까지 제휴 링크를 사이트 전체에서 끈다(affiliate_links_enabled=false).
+    마크다운 소스는 그대로 [Klook's listings]({{klook}}) 형태를 유지하되, 꺼져
+    있으면 링크를 걷어내고 순수 텍스트만 남긴다 — 승인 후 config.json 값만
+    true로 바꾸면 기존 문구 그대로 다시 링크가 살아난다(본문을 다시 쓸 필요 없음).
+    """
     links = cfg.get("affiliate_links", {})
+    enabled = cfg.get("affiliate_links_enabled", False)
     for key, url in links.items():
-        text = text.replace(f"{{{{{key}}}}}", url)
+        token = f"{{{{{key}}}}}"
+        if enabled:
+            text = text.replace(token, url)
+        else:
+            text = re.sub(r"\[([^\]]+)\]\(" + re.escape(token) + r"\)", r"\1", text)
+            text = text.replace(token, "")
     return text
 
 
 # ---------- minimal markdown -> HTML ----------
-def inline(text):
+def link_attrs(href, base_url):
+    """
+    2026-09-02: 처음엔 본문에 나오는 링크가 전부 제휴 링크였어서 모든 링크에
+    rel="sponsored"를 붙여도 문제가 없었다. 이제 글 사이 내부 링크(SEO에 좋은
+    관행)를 추가하면서, 내부 링크에까지 "sponsored"를 붙이면 검색엔진에 잘못된
+    신호를 주게 된다 — 링크 목적지에 따라 속성을 구분한다.
+    """
+    if href.startswith(base_url) or href.startswith("/"):
+        return ""
+    return ' rel="sponsored noopener" target="_blank"'
+
+
+def inline(text, base_url=""):
     text = html.escape(text)
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", text)
     text = re.sub(
         r"\[(.+?)\]\((.+?)\)",
-        r'<a href="\2" rel="sponsored noopener" target="_blank">\1</a>',
+        lambda m: f'<a href="{m.group(2)}"{link_attrs(m.group(2), base_url)}>{m.group(1)}</a>',
         text,
     )
     return text
 
 
-def md_to_html(md):
+def md_to_html(md, base_url=""):
     lines = md.split("\n")
     out, i, n = [], 0, len(lines)
     while i < n:
@@ -91,7 +116,7 @@ def md_to_html(md):
         m = re.match(r"^(#{1,4})\s+(.*)$", s)
         if m:
             lvl = len(m.group(1))
-            out.append(f"<h{lvl}>{inline(m.group(2))}</h{lvl}>")
+            out.append(f"<h{lvl}>{inline(m.group(2), base_url)}</h{lvl}>")
             i += 1
             continue
         if s.startswith(">"):
@@ -99,7 +124,7 @@ def md_to_html(md):
             while i < n and lines[i].strip().startswith(">"):
                 buf.append(lines[i].strip()[1:].strip())
                 i += 1
-            out.append(f"<blockquote>{inline(' '.join(buf))}</blockquote>")
+            out.append(f"<blockquote>{inline(' '.join(buf), base_url)}</blockquote>")
             continue
         if s.startswith("|") and i + 1 < n and re.match(r"^\|[\s:|-]+\|$", lines[i + 1].strip()):
             header = [c.strip() for c in s.strip("|").split("|")]
@@ -108,10 +133,10 @@ def md_to_html(md):
             while i < n and lines[i].strip().startswith("|"):
                 rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")])
                 i += 1
-            th = "".join(f"<th>{inline(c)}</th>" for c in header)
+            th = "".join(f"<th>{inline(c, base_url)}</th>" for c in header)
             body = ""
             for r in rows:
-                body += "<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>"
+                body += "<tr>" + "".join(f"<td>{inline(c, base_url)}</td>" for c in r) + "</tr>"
             out.append(f"<table><thead><tr>{th}</tr></thead><tbody>{body}</tbody></table>")
             continue
         if re.match(r"^\d+\.\s+", s):
@@ -119,20 +144,20 @@ def md_to_html(md):
             while i < n and re.match(r"^\d+\.\s+", lines[i].strip()):
                 buf.append(re.sub(r"^\d+\.\s+", "", lines[i].strip()))
                 i += 1
-            out.append("<ol>" + "".join(f"<li>{inline(x)}</li>" for x in buf) + "</ol>")
+            out.append("<ol>" + "".join(f"<li>{inline(x, base_url)}</li>" for x in buf) + "</ol>")
             continue
         if re.match(r"^[-*]\s+", s):
             buf = []
             while i < n and re.match(r"^[-*]\s+", lines[i].strip()):
                 buf.append(re.sub(r"^[-*]\s+", "", lines[i].strip()))
                 i += 1
-            out.append("<ul>" + "".join(f"<li>{inline(x)}</li>" for x in buf) + "</ul>")
+            out.append("<ul>" + "".join(f"<li>{inline(x, base_url)}</li>" for x in buf) + "</ul>")
             continue
         buf = []
         while i < n and lines[i].strip() and not re.match(r"^(#{1,4}\s|>|\||[-*]\s|\d+\.\s|---+$)", lines[i].strip()):
             buf.append(lines[i].strip())
             i += 1
-        out.append(f"<p>{inline(' '.join(buf))}</p>")
+        out.append(f"<p>{inline(' '.join(buf), base_url)}</p>")
     return "\n".join(out)
 
 
@@ -171,7 +196,8 @@ def goatcounter_script(cfg):
 
 
 # ---------- shared layout ----------
-def page(cfg, base, title, description, body, canonical, is_post=False):
+def page(cfg, base, title, description, body, canonical, is_post=False,
+         og_type="website", image=None, published=None, jsonld=None):
     brand_html = brand_markup(cfg, base)
     nav = (
         f'<a href="{base}/index.html">Home</a>'
@@ -180,6 +206,17 @@ def page(cfg, base, title, description, body, canonical, is_post=False):
         f'<a href="{base}/contact.html">Contact</a>'
     )
     year = datetime.now().year
+    affiliate_enabled = cfg.get("affiliate_links_enabled", False)
+    footer_note = (
+        'Some links on this site are affiliate links (Klook, Trip.com, GetYourGuide) — '
+        'we may earn a commission at no extra cost to you. See our '
+        f'<a href="{base}/affiliate-disclosure.html">disclosure</a>. '
+        if affiliate_enabled else
+        'This site is currently pure editorial content with no affiliate links. '
+    )
+    img_tag = f'<meta property="og:image" content="{html.escape(image)}">\n<meta name="twitter:image" content="{html.escape(image)}">\n' if image else ""
+    published_tag = f'<meta property="article:published_time" content="{published}">\n' if published else ""
+    jsonld_tag = f'<script type="application/ld+json">{jsonld}</script>\n' if jsonld else ""
     return f"""<!doctype html>
 <html lang="{cfg['language']}">
 <head>
@@ -188,11 +225,19 @@ def page(cfg, base, title, description, body, canonical, is_post=False):
 <title>{html.escape(title)} | {html.escape(cfg['site_name'])}</title>
 <meta name="description" content="{html.escape(description)}">
 <link rel="canonical" href="{canonical}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta property="og:type" content="{og_type}">
+<meta property="og:site_name" content="{html.escape(cfg['site_name'])}">
+<meta property="og:title" content="{html.escape(title)}">
+<meta property="og:description" content="{html.escape(description)}">
+<meta property="og:url" content="{canonical}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(title)}">
+<meta name="twitter:description" content="{html.escape(description)}">
+{img_tag}{published_tag}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="{base}/style.css">
-{goatcounter_script(cfg)}</head>
+{goatcounter_script(cfg)}{jsonld_tag}</head>
 <body>
 <header class="site-header">
   <a class="brand" href="{base}/index.html">
@@ -205,8 +250,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False):
 {body}
 </main>
 <footer class="site-footer">
-  <p>&copy; {year} {html.escape(cfg['site_name'])}. Some links on this site are affiliate links (Klook, Trip.com, GetYourGuide) —
-  we may earn a commission at no extra cost to you. See our <a href="{base}/affiliate-disclosure.html">disclosure</a>.
+  <p>&copy; {year} {html.escape(cfg['site_name'])}. {footer_note}
   Prices and rules change — always confirm on the official site before booking.</p>
   <p><a href="{base}/about.html">About</a> ·
   <a href="{base}/affiliate-disclosure.html">Disclosure</a> ·
@@ -233,7 +277,7 @@ def read_posts(cfg):
         meta.setdefault("date", datetime.now().strftime("%Y-%m-%d"))
         meta.setdefault("category", "Comparisons")
         meta.setdefault("description", meta["title"])
-        meta["_body_html"] = md_to_html(body)
+        meta["_body_html"] = md_to_html(body, cfg["base_url"].rstrip("/"))
         meta["_reading"] = max(1, len(body) // 1000)
         posts.append(meta)
     posts.sort(key=lambda p: p["date"], reverse=True)
@@ -272,8 +316,21 @@ def build():
             f'</article>'
             f'<p class="back"><a href="{base}/index.html">← Back to all guides</a></p>'
         )
+        article_jsonld = json.dumps({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": p["title"],
+            "description": p["description"],
+            "datePublished": p["date"],
+            "dateModified": p["date"],
+            "author": {"@type": "Organization", "name": cfg["author"]},
+            "publisher": {"@type": "Organization", "name": cfg["site_name"]},
+            "image": p["image"] if p.get("image") else None,
+            "mainEntityOfPage": {"@type": "WebPage", "@id": f'{base}/posts/{p["slug"]}.html'}
+        }, ensure_ascii=False)
         out = page(cfg, base, p["title"], p["description"], article,
-                   f'{base}/posts/{p["slug"]}.html', is_post=True)
+                   f'{base}/posts/{p["slug"]}.html', is_post=True, og_type="article",
+                   image=p.get("image"), published=p["date"], jsonld=article_jsonld)
         with open(os.path.join(POSTS_OUT, f'{p["slug"]}.html'), "w", encoding="utf-8") as f:
             f.write(out)
 
@@ -308,6 +365,15 @@ def build():
 
 
 def write_static_pages(cfg, base):
+    affiliate_enabled = cfg.get("affiliate_links_enabled", False)
+    about_affiliate_bullet = (
+        '<li>Some links are affiliate links (Klook, Trip.com, GetYourGuide) — see our '
+        f'<a href="{base}/affiliate-disclosure.html">disclosure</a>.</li>'
+        if affiliate_enabled else
+        '<li>This site currently carries no affiliate links or ads — every recommendation here is '
+        'purely editorial. See our <a href="{base}/affiliate-disclosure.html">disclosure</a> page for '
+        'our policy going forward.</li>'.format(base=base)
+    )
     about = f"""
 <h1>About Land in Korea</h1>
 <p><strong>{html.escape(cfg['site_name'])}</strong> writes for people landing in Korea for the first time —
@@ -317,13 +383,21 @@ worth the money, which eSIM option is genuinely cheaper, whether a tour pass pay
 <h2>How we work</h2>
 <ul>
 <li>We compare real options side by side instead of just describing one.</li>
-<li>Some links are affiliate links (Klook, Trip.com, GetYourGuide) — see our
-<a href="{base}/affiliate-disclosure.html">disclosure</a>.</li>
+{about_affiliate_bullet}
 <li>Prices, thresholds, and rules change — always confirm on the official site before you book or travel.</li>
 </ul>
 <p>Contact: <a href="{base}/contact.html">contact page</a></p>
 """
     disclosure = f"""
+<h1>Affiliate Disclosure</h1>
+<p>{html.escape(cfg['site_name'])} does not currently use affiliate links or run ads. Every recommendation
+on this site reflects our own research and opinion, not a paid placement.</p>
+<p>We may add affiliate links in the future (we've reserved the option to link to services like Klook,
+Trip.com, and GetYourGuide). If and when we do, this page will be updated first, and any post containing
+such a link will disclose it in the text itself.</p>
+<p>Questions about a specific recommendation? Reach out via our
+<a href="{base}/contact.html">contact page</a>.</p>
+""" if not affiliate_enabled else f"""
 <h1>Affiliate Disclosure</h1>
 <p>{html.escape(cfg['site_name'])} participates in affiliate programs including Klook, Trip.com, and
 GetYourGuide. When you click certain links on this site and make a booking or purchase, we may earn a
@@ -334,6 +408,16 @@ and opinion; they are not paid placements unless explicitly marked as such.</p>
 <a href="{base}/contact.html">contact page</a>.</p>
 """
     privacy = f"""
+<h1>Privacy Policy</h1>
+<p>{html.escape(cfg['site_name'])} does not require account registration and does not directly collect
+personal information such as your name or email address.</p>
+<h2>Cookies &amp; third-party tracking</h2>
+<p>This site does not currently use affiliate tracking or advertising cookies. If that changes, this page
+will be updated to reflect exactly what is added — see our
+<a href="{base}/affiliate-disclosure.html">disclosure</a> page for the current status.</p>
+<h2>Contact</h2>
+<p>Privacy questions: <a href="mailto:{html.escape(cfg['email'])}">{html.escape(cfg['email'])}</a></p>
+""" if not affiliate_enabled else f"""
 <h1>Privacy Policy</h1>
 <p>{html.escape(cfg['site_name'])} does not require account registration and does not directly collect
 personal information such as your name or email address.</p>

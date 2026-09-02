@@ -12,6 +12,7 @@
     "Airport & transit",
     "Practical info"
   ],
+  "affiliate_links_enabled": false,
   "affiliate_links": {
     "klook": "https://www.klook.com/",
     "tripcom": "https://www.trip.com/",
