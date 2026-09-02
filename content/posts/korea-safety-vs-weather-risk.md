@@ -15,13 +15,13 @@ This is the question first-timers ask more than any other safety question, and i
 
 ## The risk nobody plans around: weather disruption
 
-Typhoons (summer through early fall) and heavy snow (winter) can disrupt trains and flights with very little warning. This is the disruption that actually derails itineraries — not crime, not scams, just a canceled train or a delayed flight with no buffer day built in to absorb it. Korea also experiences occasional minor earthquakes, though at a much lower frequency and intensity than neighboring Japan — worth knowing exists, not worth planning your trip around.
+Typhoons (summer through early fall) and heavy snow (winter) can disrupt trains and flights with very little warning. This is the disruption that actually derails itineraries — not crime, not scams, just a [canceled train](https://landinkorea.com/posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel.html) or a delayed flight with no buffer day built in to absorb it. Korea also experiences occasional minor earthquakes, though at a much lower frequency and intensity than neighboring Japan — worth knowing exists, not worth planning your trip around.
 
 ![seoul street rain umbrella](https://images.pexels.com/photos/31858129/pexels-photo-31858129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 
 ## The fix: one buffer day if you're traveling in typhoon or snow season
 
-If your trip falls in July–September or December–February, build one flexible day into your itinerary rather than a schedule that assumes every train and flight runs on time. It costs you nothing if the weather cooperates, and it's the difference between a delay and a missed connecting flight if it doesn't. Spring travelers should also check air quality for fine dust days rather than assuming clear skies — our [seasonal packing guide](https://landinkorea.com/posts/korea-seasonal-packing-guide.html) covers this month by month.
+If your trip falls in July–September or December–February, build one flexible day into your itinerary rather than a schedule that assumes every train and flight runs on time. It costs you nothing if the weather cooperates, and it's the difference between a delay and a missed connecting flight if it doesn't. Spring travelers should also check air quality for fine dust days rather than assuming clear skies — our [seasonal packing guide](https://landinkorea.com/posts/korea-seasonal-packing-guide.html) covers this month by month, and you may want to consider [luggage storage services](https://landinkorea.com/posts/korea-luggage-storage-forwarding.html) if a delayed flight threatens your onward connection.
 
 ## What to actually check before you land
 
