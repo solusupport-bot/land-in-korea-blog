@@ -37,7 +37,7 @@ The hillside location that makes Bukchon photogenic also means a lot of the alle
 
 ## It connects two palaces (and Insadong isn't far either)
 
-Bukchon sits between Gyeongbokgung and Changdeokgung, which is why most visitors treat it as a walking connector between the two rather than a standalone destination. If you're already doing one palace, adding Bukchon on the way to (or from) the other costs very little extra time. Insadong, Seoul's traditional handicraft and tea shopping street, is also within walking distance to the south, making it easy to string all three together into one day.
+Bukchon sits between [Gyeongbokgung](https://landinkorea.com/posts/korea-gyeongbokgung-palace.html) and Changdeokgung, which is why most visitors treat it as a walking connector between the two rather than a standalone destination. If you're already doing one palace, adding Bukchon on the way to (or from) the other costs very little extra time. Insadong, Seoul's traditional handicraft and tea shopping street, is also within walking distance to the south, making it easy to string all three together into one day.
 
 ## The short version
 
@@ -68,4 +68,4 @@ No — it's a public residential neighborhood, so walking the streets is free. I
 
 ### Can I combine Bukchon with a palace visit?
 
-Yes — it sits between Gyeongbokgung and Changdeokgung, so most visitors walk it as a connector between the two rather than a separate trip, and Insadong's shopping street is close enough to add as a third stop.
+Yes — it sits between Gyeongbokgung and Changdeokgung, so most visitors walk it as a connector between the two rather than a separate trip, and Insadong's shopping street is close enough to add as a third stop. And if you're renting a [hanbok (traditional Korean dress) for photos](https://landinkorea.com/posts/korea-etiquette-mistakes.html), expect to take off your shoes indoors at certain areas — familiarize yourself with basic Korean customs first.

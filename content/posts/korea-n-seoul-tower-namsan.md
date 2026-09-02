@@ -17,13 +17,13 @@ Namsan itself is a modest mountain in the middle of the city, and the tower stru
 
 ## Three ways up, not just one
 
-- **Walk it**: a marked hiking trail runs from Myeongdong to the summit and takes roughly 30-40 minutes, mostly stairs and paved path — shorter than most people assume before they check. It's free, and it isn't the only trailhead — routes also start from the Namsan Public Library side and from near Hannam-dong (close to Itaewon), which is useful if you're staying in a different neighborhood and don't want to backtrack to Myeongdong first.
+- **Walk it**: a marked hiking trail runs from [Myeongdong](https://landinkorea.com/posts/korea-myeongdong-shopping-district.html) to the summit and takes roughly 30-40 minutes, mostly stairs and paved path — shorter than most people assume before they check. It's free, and it isn't the only trailhead — routes also start from the Namsan Public Library side and from near Hannam-dong (close to Itaewon), which is useful if you're staying in a different neighborhood and don't want to backtrack to Myeongdong first.
 - **Cable car**: Korea's oldest cable car line runs up part of the mountain and shortens the climb considerably. It's a separate ticket from the tower's indoor observation deck, so budget for both if you want the cable car ride and the paid deck.
 - **Shuttle bus**: a circular bus route loops around Namsan and up to the summit area, which is worth knowing about if walking uphill isn't something you want to do but you'd rather not pay for the cable car either.
 
 ## Hours and getting the timing right
 
-The observatory generally runs from mid-morning until 22:00 on weekdays and until later on weekends and holidays, with last admission 30 minutes before closing — though hours can shift for weather or maintenance, so it's worth checking the day of. Sunset is by far the busiest time to visit; if you'd rather have the view without the crowd, early afternoon or right after opening is the better call. One practical caveat worth knowing before you plan a sunset trip specifically for the view: on hazy or high-pollution days, visibility from the deck can drop noticeably, so a clear-looking day from ground level is a better predictor of a good view than the time of day is.
+The observatory generally runs from mid-morning until 22:00 on weekdays and until later on weekends and holidays, with last admission 30 minutes before closing — though hours can shift for weather or maintenance, so it's worth checking the day of. Sunset is by far the busiest time to visit; if you'd rather have the view without the crowd, early afternoon or right after opening is the better call. One practical caveat worth knowing before you plan a sunset trip specifically for the view: on [hazy or high-pollution days](https://landinkorea.com/posts/korea-seasonal-packing-guide.html), visibility from the deck can drop noticeably, so a clear-looking day from ground level is a better predictor of a good view than the time of day is.
 
 ## It changes color at night
 

@@ -11,7 +11,7 @@ Everyone tells you to "ask for the Tax Free form" when shopping in Korea. That's
 
 ## The mistake: packing the item before you refund it
 
-Tax Free items have to be shown, unused, at the refund step — either an in-store instant refund or an airport kiosk before you check your bag. If you've already packed the item into checked luggage by the time you reach the refund kiosk, you can't show it, and the refund gets denied on the spot. This happens constantly with clothing and shoes bought early in a trip and packed away days before departure.
+Tax Free items have to be shown, unused, at the refund step — either an in-store instant refund or an airport kiosk before you check your bag. If you've already packed the item into checked luggage by the time you reach the refund kiosk, you can't show it, and the refund gets denied on the spot. This happens constantly with clothing and shoes bought early in a trip and packed away days before departure. If you're buying a lot and don't want to manage separate bags all trip, keep in mind that [luggage forwarding services](https://landinkorea.com/posts/korea-luggage-storage-forwarding.html) can send your shopping bags straight to the airport on your last day, freeing you to claim tax refunds hands-free beforehand.
 
 ## The fix: refund before you check in, not after
 
@@ -25,7 +25,7 @@ Not every store with Korean-tourist-friendly pricing actually participates in Ta
 
 ## Immediate discount vs. claim-it-later refund
 
-Korea actually runs two different Tax Free mechanisms, and it's worth knowing which one you're dealing with at checkout. Some larger stores can apply the discount immediately at the point of sale for purchases under a certain amount, so you simply pay the already-discounted price and there's nothing left to claim later. The more common version, especially for larger purchases, is the standard method: you pay full price, get a Tax Free form or receipt, and claim the VAT back afterward — either at a downtown refund kiosk (Myeongdong has several) for partial immediate cash, or at the airport before you fly. Ask which system a store uses if it isn't obvious, since it changes what you need to do later.
+Korea actually runs two different Tax Free mechanisms, and it's worth knowing which one you're dealing with at checkout. Some larger stores can apply the discount immediately at the point of sale for purchases under a certain amount, so you simply pay the already-discounted price and there's nothing left to claim later. The more common version, especially for larger purchases, is the standard method: you pay full price, get a Tax Free form or receipt, and claim the VAT back afterward — either at a downtown refund kiosk ([Myeongdong has several](https://landinkorea.com/posts/korea-myeongdong-shopping-district.html)) for partial immediate cash, or at the airport before you fly. Ask which system a store uses if it isn't obvious, since it changes what you need to do later.
 
 ## One more thing: the minimum spend is per receipt, not per trip
 

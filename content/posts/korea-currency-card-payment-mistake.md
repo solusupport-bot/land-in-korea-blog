@@ -15,7 +15,7 @@ When a card terminal in Korea asks whether to charge you in your home currency o
 
 ## Where cash still matters
 
-Small traditional markets, some rural areas, and a handful of older independent restaurants remain cash-preferred or cash-only. Carrying a modest cash buffer — enough for a market meal or a small shop — avoids getting stuck. One thing worth knowing if you do carry cash: Korea has been actively pushing a "coinless society" initiative for years, encouraging stores to let customers round small change into a T-money card balance or a donation instead of handing back physical coins — so don't be surprised if a cashier offers that instead of jingling change, and don't assume every till has small coins on hand to break a large bill.
+Small traditional markets, some rural areas, and a handful of older independent restaurants remain cash-preferred or cash-only. Carrying a modest cash buffer — enough for a market meal or a small shop — avoids getting stuck. One thing worth knowing if you do carry cash: Korea has been actively pushing a "coinless society" initiative for years, encouraging stores to let customers round small change into a [T-money card](https://landinkorea.com/posts/tmoney-first-timer-mistake.html) balance or a donation instead of handing back physical coins — so don't be surprised if a cashier offers that instead of jingling change, and don't assume every till has small coins on hand to break a large bill.
 
 ## Getting cash without getting stung
 
@@ -25,7 +25,7 @@ Look for ATMs marked "Global" or with a foreign card logo — Woori, KEB Hana, a
 
 ## Better exchange rates, if you're converting cash
 
-Currency exchange counters near Myeongdong and Hongdae typically beat airport kiosk rates by a noticeable margin. Exchange only what covers your first day or two at the airport, then top up in the city once you've found a better rate. Kiosk-based prepaid traveler card machines (WOWPASS is one well-known example found in areas like Myeongdong and some transit hubs) are another option — they let you exchange cash and load it onto a card usable like a debit card around the city, which can be convenient if you'd rather not carry a large amount of loose cash.
+Currency exchange counters near [Myeongdong](https://landinkorea.com/posts/korea-myeongdong-shopping-district.html) and Hongdae typically beat airport kiosk rates by a noticeable margin. Exchange only what covers your first day or two at the airport, then top up in the city once you've found a better rate. Kiosk-based prepaid traveler card machines (WOWPASS is one well-known example found in areas like Myeongdong and some transit hubs) are another option — they let you exchange cash and load it onto a card usable like a debit card around the city, which can be convenient if you'd rather not carry a large amount of loose cash.
 
 ![currency exchange counter myeongdong](https://images.pexels.com/photos/13679285/pexels-photo-13679285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 

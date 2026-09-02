@@ -9,7 +9,7 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 ---
 ## No trains, no KTX
 
-Mainland Korea's rail network is one of its biggest conveniences for travelers, which is exactly why Jeju surprises so many first-timers: the island isn't reachable by train at all. Getting there means a flight or a long ferry from the mainland — there's no KTX extension across the water.
+Mainland Korea's rail network is one of its biggest conveniences for travelers, which is exactly why Jeju surprises so many first-timers: the island isn't reachable by train at all. Getting there means a flight or a long ferry from the mainland — there's no [KTX extension](https://landinkorea.com/posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel.html) across the water.
 
 ## A UNESCO triple designation, not just a beach island
 
@@ -33,7 +33,7 @@ Weather on Jeju's coast shifts quickly, even in summer. A packable rain layer is
 
 ## Getting there
 
-Flights between Jeju and Gimpo (and several other major domestic airports) are frequent and short — around an hour in the air — and this route is consistently one of the busiest domestic air corridors in the world, so seats are rarely the bottleneck, though peak holiday weekends still sell out ahead. Ferries run from several mainland ports, including Wando, Mokpo, and Busan; they take considerably longer than flying, often run overnight, and are mainly worth it if you want to bring your own vehicle across rather than rent one on the island.
+Flights between Jeju and [Gimpo airport](https://landinkorea.com/posts/incheon-airport-transfer-comparison.html) (and several other major domestic airports) are frequent and short — around an hour in the air — and this route is consistently one of the busiest domestic air corridors in the world, so seats are rarely the bottleneck, though peak holiday weekends still sell out ahead. Ferries run from several mainland ports, including Wando, Mokpo, and Busan; they take considerably longer than flying, often run overnight, and are mainly worth it if you want to bring your own vehicle across rather than rent one on the island.
 
 ## The short version
 

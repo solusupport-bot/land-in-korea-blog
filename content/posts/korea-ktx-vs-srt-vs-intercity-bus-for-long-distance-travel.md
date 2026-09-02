@@ -9,7 +9,7 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 ---
 ## The choice most first-timers don't know they have
 
-For a Seoul-to-Busan-length trip, the real choice isn't just train vs. bus — it's KTX vs. SRT vs. two different kinds of bus, and most first-timers don't even know SRT exists as a separate thing from KTX. Getting this wrong doesn't ruin a trip, but it usually means paying more or booking through the wrong app at the worst possible moment.
+For a Seoul-to-[Busan](https://landinkorea.com/posts/korea-busan-haeundae-beach-gamcheon-culture-village.html)-length trip, the real choice isn't just train vs. bus — it's KTX vs. SRT vs. two different kinds of bus, and most first-timers don't even know SRT exists as a separate thing from KTX. Getting this wrong doesn't ruin a trip, but it usually means paying more or booking through the wrong app at the worst possible moment.
 
 ## KTX vs. SRT: same kind of train, different company and station
 
@@ -33,7 +33,7 @@ Korea actually has two separate categories of long-distance bus, and the terms a
 
 ## Book ahead around Korean holidays
 
-If any part of your trip overlaps with Seollal or Chuseok, book your train or bus as early as tickets go on sale — both often sell out within minutes for popular routes, and standing tickets or a different transport mode entirely may be your only options if you wait.
+If any part of your trip overlaps with Seollal or Chuseok, book your train or bus as early as tickets go on sale — both often sell out within minutes for popular routes, and standing tickets or a different transport mode entirely may be your only options if you wait. Also worth knowing: natural events like [typhoons and heavy snow can disrupt trains and flights](https://landinkorea.com/posts/korea-safety-vs-weather-risk.html) with little warning during certain seasons, so building buffer time into your long-distance travel plans during summer/early fall or winter is a reasonable precaution.
 
 ## The short version
 

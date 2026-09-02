@@ -23,13 +23,13 @@ For anything beyond a pharmacy visit, large hospitals in Seoul — Severance Hos
 
 ## The 24-hour assumption that's usually wrong
 
-24-hour convenience stores are everywhere in Korea. 24-hour pharmacies are not — they're far less common, and most travelers only discover this at the worst possible time. Look for a green cross sign, and if you can't find one open, ask hotel front desk staff — they'll usually know the nearest late-night option.
+[24-hour convenience stores](https://landinkorea.com/posts/korea-convenience-store-guide.html) are everywhere in Korea. 24-hour pharmacies are not — they're far less common, and most travelers only discover this at the worst possible time. Look for a green cross sign, and if you can't find one open, ask hotel front desk staff — they'll usually know the nearest late-night option.
 
 ![pharmacy green cross sign](https://images.pexels.com/photos/19271533/pexels-photo-19271533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 
 ## Two small things that make a pharmacy visit faster
 
-Over-the-counter medicine names differ from Western brands, so showing the pharmacist a translated symptom list (Papago's camera translation works well for this) speeds things up considerably. And if you don't already have travel insurance, get it before you land — Korean hospitals and clinics generally require upfront payment at the point of care, with reimbursement handled afterward through your own insurer rather than billed directly to it, which catches visitors used to a different system off guard.
+Over-the-counter medicine names differ from Western brands, so showing the pharmacist a translated symptom list ([Papago's camera translation](https://landinkorea.com/posts/korea-travel-apps-comparison.html) works well for this) speeds things up considerably. And if you don't already have travel insurance, get it before you land — Korean hospitals and clinics generally require upfront payment at the point of care, with reimbursement handled afterward through your own insurer rather than billed directly to it, which catches visitors used to a different system off guard.
 
 ## Before you need any of this
 

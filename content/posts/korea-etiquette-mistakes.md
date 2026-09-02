@@ -30,7 +30,7 @@ This is where a lot of well-meaning visitors get it backwards, because they've r
 
 - **Escalators**: there's a customary standing side in many cities, though it varies — watch what locals around you are doing rather than assuming one universal rule.
 - **Restaurants**: many smaller places are cash-preferred or card-only, with no split-bill custom — plan to settle the full bill on one card or in cash rather than splitting per person at the table.
-- **Shoes off indoors**: expected at traditional guesthouses (hanok stays) and restaurants with floor seating — look for a shoe rack or raised floor at the entrance as the cue.
+- **Shoes off indoors**: expected at traditional guesthouses ([hanok stays](https://landinkorea.com/posts/korea-bukchon-hanok-village.html)) and restaurants with floor seating — look for a shoe rack or raised floor at the entrance as the cue.
 - **Shared meals**: it's common to pour drinks for others at the table rather than pouring your own, and to wait for the eldest person or host to start eating first.
 - **Phone calls on transit**: loud calls on the subway or bus are frowned upon — most locals keep calls short or step off first.
 
