@@ -1,6 +1,6 @@
 ---
 title: Myeongdong Shopping District - What First-Timers Actually Need to Know
-date: 2026-08-31
+date: 2026-09-02
 category: Practical info
 description: The Myeongdong street food scene everyone posts about doesn't exist at lunchtime — here's when it actually shows up, how tax-free shopping works there, and what's in the district beyond the cosmetics stores.
 slug: korea-myeongdong-shopping-district

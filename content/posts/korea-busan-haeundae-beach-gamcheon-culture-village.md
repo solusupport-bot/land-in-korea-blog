@@ -1,6 +1,6 @@
 ---
 title: Busan Haeundae Beach & Gamcheon Culture Village - What First-Timers Actually Need to Know
-date: 2026-08-31
+date: 2026-09-02
 category: Practical info
 description: Haeundae and Gamcheon get grouped into one Busan day trip constantly, but they sit on opposite sides of the city and need different transit. Here's how to actually plan the day, and what's worth doing at each stop.
 slug: korea-busan-haeundae-beach-gamcheon-culture-village

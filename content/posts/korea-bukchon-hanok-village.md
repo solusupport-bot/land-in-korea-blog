@@ -1,6 +1,6 @@
 ---
 title: Bukchon Hanok Village - What First-Timers Actually Need to Know
-date: 2026-08-31
+date: 2026-09-02
 category: Practical info
 description: Bukchon isn't a museum — real families live in these hanok houses. Here's the history behind the neighborhood, the official viewpoint route, and how to visit respectfully without adding to the crowding residents complain about.
 slug: korea-bukchon-hanok-village

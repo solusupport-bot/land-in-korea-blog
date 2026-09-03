@@ -1,6 +1,6 @@
 ---
 title: Gyeongbokgung Palace - What First-Timers Actually Need to Know
-date: 2026-08-31
+date: 2026-09-02
 category: Practical info
 description: Gyeongbokgung closes on Tuesdays, the guard ceremony runs on a schedule, and wearing a hanbok gets you in free. Here's the layout, the history, and the timing details that actually matter before you go.
 slug: korea-gyeongbokgung-palace

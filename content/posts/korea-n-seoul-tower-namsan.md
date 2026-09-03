@@ -1,6 +1,6 @@
 ---
 title: N Seoul Tower (Namsan) - What First-Timers Actually Need to Know
-date: 2026-08-31
+date: 2026-09-02
 category: Practical info
 description: You don't have to pay for the view at N Seoul Tower — the free plaza and a 30-40 minute hike from Myeongdong already deliver most of it. Here's how the cable car, tower deck, and hiking trails actually differ.
 slug: korea-n-seoul-tower-namsan
