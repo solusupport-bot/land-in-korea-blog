@@ -1,6 +1,6 @@
 ---
 title: "Coin Locker, Storage Counter, or Forwarding Service? Korea's Luggage Options Compared"
-date: 2026-08-25
+date: 2026-08-28
 category: Airport & transit
 description: Coin lockers at Korean subway stations look like the easy answer for luggage — until you try to find an empty one on a weekend, or realize your suitcase doesn't fit the standard size.
 image_query: seoul station luggage travelers

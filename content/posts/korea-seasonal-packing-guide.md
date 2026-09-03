@@ -1,6 +1,6 @@
 ---
 title: The Korea Packing Mistake That Has Nothing to Do With the Weather Outside
-date: 2026-08-25
+date: 2026-08-28
 category: Practical info
 description: Packing for Korea's weather outside isn't the hard part — it's the indoor heating and AC swings, the socks you didn't think about, and the month-by-month quirks (fine dust, monsoon, typhoon season) that wreck most people's plan.
 image_query: seoul street autumn season

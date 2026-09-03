@@ -1,6 +1,6 @@
 ---
 title: "112, 119, or 1330? The Korea Emergency Number Most Travelers Call Wrong"
-date: 2026-08-25
+date: 2026-08-28
 category: Practical info
 description: 112 and 119 both work in English in Korea — but neither is the number most travelers actually need first, and neither one can replace a lost passport either.
 image_query: seoul pharmacy street sign

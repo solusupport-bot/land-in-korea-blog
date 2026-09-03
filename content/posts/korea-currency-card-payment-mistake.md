@@ -1,6 +1,6 @@
 ---
 title: "Korea Looks Cash-Optional — Until It Isn't: A Currency & Card Guide"
-date: 2026-08-25
+date: 2026-08-28
 category: Money-saving
 description: The card payment mistake that quietly costs you extra on every purchase, why Korea is trying to phase out coins, and the one situation where "cashless Korea" isn't actually true.
 image_query: korean won cash market

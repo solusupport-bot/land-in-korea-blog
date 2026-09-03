@@ -1,6 +1,6 @@
 ---
 title: The One T-money Mistake That Actually Costs First-Timers Money
-date: 2026-08-23
+date: 2026-08-28
 category: Etiquette & mistakes
 description: Not "how T-money works" — the one specific mistake that quietly costs first-time visitors real money, plus what the card can do besides transit and where it does and doesn't work nationwide.
 image_query: seoul city bus street

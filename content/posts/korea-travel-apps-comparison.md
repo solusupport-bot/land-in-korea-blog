@@ -1,6 +1,6 @@
 ---
 title: "Google Maps vs. Naver Map vs. KakaoMap: Which Actually Works in Korea"
-date: 2026-08-25
+date: 2026-08-28
 category: Comparisons
 description: Google Maps quietly stops being useful the moment you land in Korea, and there's a real regulatory reason why — here's which app actually replaces it, and how to set it up before you land.
 image_query: seoul subway map smartphone

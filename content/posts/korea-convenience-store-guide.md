@@ -1,6 +1,6 @@
 ---
 title: "What Korean Convenience Stores Actually Do Besides Sell Snacks"
-date: 2026-08-25
+date: 2026-08-28
 category: Money-saving
 description: CU, GS25, 7-Eleven, and Emart24 do a lot more than sell snacks — most tourists use maybe 10% of what's actually available at the counter, from bill payment to parcel forwarding to T-money top-ups.
 image_query: cu gs25 convenience store korea

@@ -1,6 +1,6 @@
 ---
 title: Is a Seoul Attraction Pass Actually Worth It? A Simple Way to Check Before You Buy
-date: 2026-08-23
+date: 2026-08-28
 category: Money-saving
 description: Attraction passes only pay off past a certain number of visits, and they're a different product than the government-run palace combo ticket. Here's the quick math to run before buying one instead of paying per attraction.
 image_query: gyeongbokgung palace seoul tourists

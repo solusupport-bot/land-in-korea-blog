@@ -1,6 +1,6 @@
 ---
 title: "What Actually Disrupts Trips to Korea: Crime Risk vs. Weather Risk"
-date: 2026-08-25
+date: 2026-08-28
 category: Practical info
 description: Korea's crime stats beat most Western capitals, and the North Korea question worries first-timers more than it should — but neither is the risk that actually catches travelers off guard. Here's the one that is.
 image_query: seoul city skyline rain

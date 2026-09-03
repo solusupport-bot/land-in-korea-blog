@@ -1,6 +1,6 @@
 ---
 title: Most Tourists Lose Their Korea Tax Refund Before They Even Reach the Airport
-date: 2026-08-25
+date: 2026-08-28
 category: Money-saving
 description: The VAT refund mistake that has nothing to do with paperwork — it's about when you pack the item, which refund network the store uses, and whether you're claiming it later or getting it off the price instantly.
 image_query: myeongdong shopping street

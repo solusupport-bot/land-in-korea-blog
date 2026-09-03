@@ -1,6 +1,6 @@
 ---
 title: The Etiquette Mistake in Korea That's Quieter Than Tipping
-date: 2026-08-25
+date: 2026-08-28
 category: Etiquette & mistakes
 description: Everyone knows not to tip in Korea. The gesture that actually reads as rude to older Koreans is smaller and easier to miss — plus the eating, drinking, and greeting customs that don't transfer over from Japan or China the way visitors assume.
 image_query: korean traditional market people
