@@ -1,111 +1,141 @@
 ---
-title: "한국 첫 방문할 때 꼭 하는 실수들 - 한국인이 말해주는 에티켓"
+title: 10 Mistakes Visitors Make in Korea (And Why Koreans Actually Notice Them)
 date: 2026-09-04
 category: Etiquette & mistakes
-description: "한국 첫 여행에서 한국인들이 불쾌하게 느끼는 행동들, 그리고 그걸 피하는 간단한 방법들을 정리했다."
-image_query: "Korean culture etiquette travelers manners"
-image: https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
+description: You won't get in trouble for these, but Korean people will notice. Here's what to avoid and why it matters.
+slug: korea-first-timer-etiquette-common-mistakes
+image_query: Korean culture etiquette travelers manners
 ---
+Korea welcomes millions of international visitors annually. Myeongdong, Gangnam, Insadong—all packed with tourists. Most Korean people are genuinely tolerant and understanding toward visitors unfamiliar with local customs.
 
-한국은 관광객이 정말 많은 나라다. 명동, 강남, 인사동 어디 가든 외국인이 넘친다. 다행히 대부분의 한국인은 관광객들한테 관대하다. 하지만 '관대함'이 '뭐든 괜찮다'는 뜻은 아니다.
+But tolerance isn't the same as approval. And there's a meaningful difference between "you won't offend anyone" and "Koreans will think less of you for doing this."
 
-한국에서 10년을 살면서 본 것들, 한국 친구들이 흉본 외국인 관광객들의 행동들, 그리고 "아, 그래서 한국인이 화난 거구나"라고 깨달은 순간들을 정리했다.
+I've lived in Seoul for over ten years. I've watched countless interactions between tourists and Korean people. I've heard Korean friends explain their reactions to specific tourist behaviors. And I've observed subtle moments when a Korean person's demeanor shifts slightly—not from anger, but from recognition that the visitor isn't making much effort to respect local norms.
 
-## 1. 마스크 안 쓰고 다니기 (감기 걸렸는데도)
+This guide covers ten things tourists frequently do in Korea that Koreans actively notice and judge (mildly, not harshly). None of these will get you arrested or even scolded. But they will make Korean people think: "That person doesn't understand Korean culture."
 
-한국인들은 감기 걸렸으면 마스크를 쓴다. 특히 대중교통이나 식당에서. 이건 다른 사람을 배려하는 기본 에티켓인데, 외국 관광객들은 이걸 모르는 경우가 많다.
+## 1. Wearing a Mask During Illness Is a Cultural Baseline, Not Optional
 
-몇 년 전, 코로나 이후로는 더 심해졌다. 한국인들은 감기 걸렸으면 무조건 마스크를 쓰는데, 외국인은 기침을 그냥 한다. 지하철에서 옆에 앉은 외국인이 기침을 계속하는데 마스크를 안 써 있으면... 한국인들의 반감이 생긴다.
+In Korea, if you have a cold, cough, or any respiratory illness, you wear a mask. Period. It's not a suggestion. It's not a personal choice. It's basic consideration for others.
 
-**해결책:** 감기 걸렸으면 편의점에서 마스크를 사서 쓸 것. 한국에서는 이게 기본이다.
+Korean people instinctively wear masks when sick. On subways, in restaurants, in offices—if a Korean person is sniffling, they have a mask on. This is drilled in from childhood and reinforced constantly.
 
-## 2. 식당에서 통화하기 (큰 목소리로)
+When an international visitor is coughing and sneezing without a mask on public transportation, Korean people notice. They don't confront you, but they think: "That person is sick and doesn't care about spreading it to others." This is considered rude.
 
-이건 진짜 자주 본다. 외국인 관광객이 식당 앉아서 갑자기 휴대폰으로 통화를 한다. "헬로? 네 내가 지금 서울이야!" 이러면서. 한국 식당 문화에서는 이게... 아주 실례다.
+**What to do:** If you feel sick with any respiratory symptoms, buy a mask from a convenience store (they're everywhere, cost 1,000-2,000 won for a pack) and wear it consistently on public transportation and in enclosed spaces.
 
-한국인들은 공공 장소에서 통화를 안 한다. 진짜 급할 땐 나가서 한다. 식당은 유독 더 그렇다. 음식에 집중해야 하고, 다른 사람들한테 폐를 끼치지 말아야 한다는 인식이 강하다.
+## 2. Taking Phone Calls in Restaurants
 
-**해결책:** 식당 안에서는 통화하지 말 것. 밖으로 나가서 할 것. 카톡·라인 메시지 보내면 충분하다.
+Korean food culture places significant value on quiet dining environments. When a restaurant is filled with the sound of your voice on a phone call, it disrupts that experience for everyone.
 
-## 3. 절대로 팁 주기
+Most Korean people don't take phone calls inside restaurants. If it's urgent, they step outside, take the call, and return. Making phone calls at your table—especially loud ones—registers as inconsiderate.
 
-팁 준다고 한국인들이 고마워하는 게 아니다. 오히려 이상해한다. 한국은 팁 문화가 없는 나라다.
+It's particularly jarring when tourists are visiting restaurants in tourist-heavy areas and loudly calling friends back home: "Hi! I'm in Seoul right now! Guess where I am?" Meanwhile, Korean families at surrounding tables are trying to enjoy their meal.
 
-외국인 관광객들, 특히 미국에서 온 사람들은 습관적으로 팁을 주려고 한다. 카페에서 "팁 얼마 줄까?" 이러고, 식당에서 "서빙 잘 해줬으니까 팁" 이런 식. 한국인들은 이걸 봤을 때 "뭐야, 나한테 동정하는 건가?" 이렇게 느낀다.
+**What to do:** If you need to make a call, excuse yourself and step outside the restaurant. Text instead of calling. Send a WhatsApp or Telegram message. Korean restaurants appreciate quiet dining.
 
-**해결책:** 팁을 주지 말 것. 정말이다. 한국은 팁 없는 나라다. 그 대신 음식을 남기지 말고, 친절하게 대해주는 것만으로도 충분하다.
+## 3. Offering Tips Is Not Appreciated—And Can Even Feel Patronizing
 
-## 4. 코인 충전소에서 "누군가" 만나기 (밤 11시 이후)
+Korea has no tipping culture. None. Tipping is not a norm. It's not expected. And in many contexts, it's awkward.
 
-이건 에티켓이라기보다 안전 문제인데, 한국 여행 게시판에서 자주 봤던 상황이다.
+International visitors, especially Americans, instinctively reach for their wallets to add a tip after a meal or service. "Good service deserves a tip," they think. But Korean restaurant servers, taxi drivers, and service workers don't expect or particularly want tips.
 
-"강남역 코인 충전소에서 누군가 소개받았어요" 이런 식의 글들. 외국 여행자들이 밤에 몰려다니면서 술도 마시고, 낯선 한국인한테 말을 걸고... 이건 사기 위험이 높다. (위에서 얘기한 이태원 바 사기와 같은 맥락)
+When a tourist insists on leaving a tip, Korean service workers sometimes interpret it oddly. "Is this person suggesting I'm poor?" or "Is this person trying to be condescending?" It's not a common reaction, but it's possible.
 
-**해결책:** 밤 10시 이후엔 유명한 관광지와 주요 상점가만 다니자. 낯선 지역, 낯선 사람한테 따라가지 말 것.
+**What to do:** Don't tip. Not at restaurants, not at cafes, not at hotels (bellhops are slightly different, but tips aren't standard). Your politeness and gratitude are sufficient. If you insist on showing appreciation, a simple "감사합니다" (kamsahamnida—thank you) carries more weight than money.
 
-## 5. 수업 중인 학원에 들어가서 사진 찍기
+## 4. Giving Seats to Elderly and Pregnant Passengers Is Mandatory, Not Optional
 
-한국의 학원 (hagwon)은... 한국인들의 교육열을 보여주는 상징 같은 곳인데, 외국 관광객들이 "오, 한국 교육 시스템!" 이러면서 우르르 들어가서 사진을 찍는다.
+On buses and subways in Korea, when an elderly person, pregnant woman, or person with a child boards, younger passengers are expected to give up their seats. This is behavioral baseline, not a suggestion.
 
-이건 정말 무례하다. 학생들이 집중할 수 없고, 강사한테도 방해가 되고, 부모들이 봤을 때는 정말 기분 나쁘다.
+Korean schools teach children this explicitly. It's a consistent norm across all socioeconomic levels. When a young tourist remains seated while an elderly Korean person stands, Korean people notice.
 
-**해결책:** 학원 안으로 절대 들어가지 말 것. 밖에서 봐도 충분하다.
+It's not an emergency. Nobody will demand the seat. But there's a moment of judgment.
 
-## 6. 노래방에서 정치 노래 부르기
+**What to do:** If you're seated and you see an elderly person, someone clearly pregnant, or a parent with a young child board, stand up and offer your seat. This applies to all public transportation.
 
-노래방은 한국의 대표 놀이 문화다. 외국인들도 자주 온다. 그런데 가끔 외국인이 정치적인 노래나 "I hate China" 같은 노래를 부르는데, 한국인 친구들이 옆에 있으면 진짜 어색해진다.
+## 5. Loud Voices in Public Spaces (Especially Neighborhoods)
 
-**해결책:** 노래방에서는 정치적인 주제나 특정 나라를 비난하는 노래는 피할 것. 팝, K-pop, 신나는 노래 부르면 된다.
+Korean people speak at indoor volumes even outdoors. When a group of tourists walks through a residential neighborhood loudly laughing, talking, or taking photos while being very audible, it stands out.
 
-## 7. 사진 찍을 때 "랜덤 한국인" 피하기 (아무것도 묻지 않고)
+Residential areas in Seoul are quiet. People value that quiet. When tourists pass through being loud—whether they're drunk from club-hopping or just excited and speaking their normal outdoor-voice volume—residents notice.
 
-외국 여행자들이 자주 하는 거: 거리에서 만난 한국인한테 "사진 좀 찍어줄래?" 이러면서 카메라를 던진다. 그리고 대기하는 사람이 "고마워!" 하고 떠난다.
+**What to do:** Be more aware of noise levels in non-touristy areas. Keep conversation volume moderate. Respect that some neighborhoods are residential, not entertainment zones.
 
-솔직히 한국인 대부분은 도와준다. 하지만 "Excuse me, could you take a photo of us please?" 하는 것과 그냥 카메라 던지는 거는 느낌이 다르다.
+## 6. Eating While Walking on the Street Is Casual Disregard for Norms
 
-**해결책:** 사진 찍어 달라고 할 때도 "Could you help me take a photo?" 같은 기본적인 인사를 할 것. 카메라를 던지지 말고, 정중하게 건넬 것.
+This is subtle, but it matters. Eating while walking is generally avoided in Korean culture. You sit down, eat, and finish. Then you leave.
 
-## 8. 버스/지하철에서 "노인분, 임산부께" 자리 비기를 안 하기
+When a tourist walks through a shopping district eating food from a street vendor, it reads as slightly uncouth. It's not forbidden, and you won't be scolded, but it's marked as the behavior of someone unaware of norms.
 
-한국에서는 버스나 지하철에 타면, 노인분이나 임산부, 어린 아이 동반한 사람한테 자리를 비켜준다. 이건 문화적인 규칙이 아니라... 거의 의무다.
+**What to do:** When you buy street food, find a bench or seating area and eat there. Don't walk while eating. It takes minimal extra time and shows basic cultural awareness.
 
-외국인 관광객들은 이걸 모르는 경우가 많아서 그냥 앉아있다. 노인분이 서 있는데 젊은 외국인이 앉아있으면... 한국인들이 불편하게 본다.
+## 7. Photography in Hagwon (Academies/Cram Schools) Is Trespassing
 
-**해결책:** 버스나 지하철에서 노인, 임산부, 아이 보이면 일단 일어나. 한국의 에티켓이다.
+Hagwons are intense cram schools where Korean students attend after public school to study intensively. They're foundational to Korean education culture.
 
-## 9. 식당에서 "이걸 어떻게 먹어?" 하며 리액션하기
+Tourists sometimes see a hagwon and think: "Oh interesting, let me get a photo" or "Let me look inside." They'll enter or take photos through windows.
 
-한국 음식은 낯선 음식이 많다. 김, 된장, 고추장... 외국인들이 처음 봤을 때 반응이 큰 건 자연스럽다. 하지만 식당 직원이 봤을 때 "우리 음식이 이상하다는 건가?" 이렇게 느낄 수 있다.
+From a parent's or academy's perspective, this is an unwelcome intrusion. Students are concentrating. Staff is working. You're a stranger with a camera entering private study space. It's disruptive and feels invasive.
 
-특히 SNS에 "한국 음식 왜 이래?" 같은 댓글 달면서 웃는 사진을 올리는 건... 한국인들이 봤을 때 기분 별로다.
+**What to do:** Don't enter hagwons. Don't photograph through the windows. If you want to understand Korean education culture, read about it online or ask a Korean friend. Don't turn it into a tourism photo opportunity.
 
-**해결책:** 낯선 음식이어도 긍정적으로 반응할 것. "오, 처음인데 재밌네!" 정도면 충분하다.
+## 8. Bathroom Slippers: Use Them Correctly
 
-## 10. 사소하지만 중요한 것들
+Korean bathrooms typically have special slippers designated for bathroom use. When you exit the bathroom, you change back into your regular shoes or indoor slippers.
 
-- **실내 화장실에서 슬리퍼 안 신고 이동:** 한국은 화장실 슬리퍼가 따로 있다. 일반 신발로 화장실에서 나온 발로 집 바닥을 밟는 건 정말 실례다.
-- **식사할 때 손으로 음식 쓰다듬기:** 한국에서는 젓가락으로 집는 게 기본. 손으로 빵 같은 걸 만지작거리면 불결해 보인다.
-- **큰 소리로 "한국은 더워/추워" 계속 말하기:** 한국인들한테는 이미 익숙한 날씨다. 자꾸 불평하면 좋은 인상이 아니다.
-- **사진 많이 찍으면서 실제 경험을 안 하기:** "SNS에 올릴 사진!" 이러면서 경주 불국사에서 1분만 있고 가는 관광객들. 한국인들은 이걸 봤을 때 "저 사람, 진짜 여행을 하는 건가 싶다"고 생각한다.
+Tourists sometimes forget this and walk around the rest of the building (restaurant, hotel, etc.) in bathroom slippers. Or worse, they wear the same shoes they wore in the bathroom on the rest of the restaurant/cafe floor.
 
-## 가장 중요한 거
+Korean people find this... unhygienic and disrespectful. Bathrooms are considered the "dirtiest" area of a space, and bathroom items should stay in the bathroom.
 
-한국인들은 외국인이 한국 문화를 모르는 걸 이해한다. 하지만 "노력하려는 태도"는 본다. 마스크를 쓰려고 노력하고, 에티켓을 지키려고 노력하고, 한국 음식을 존중하려고 노력하는 모습. 그걸 본다.
+**What to do:** If you use a bathroom with designated slippers, use them only in the bathroom. Change back to your regular footwear before exiting. Don't walk around the dining area or hallways in bathroom slippers.
 
-완벽할 필요는 없다. 다만 "한국에 왔으니 한국 방식을 존중해보자"는 마음가짐. 그게 가장 중요하다.
+## 9. Negotiating Prices or Complaining About Prices (Outside Markets)
+
+In Korea, especially outside traditional markets, prices are fixed. They don't negotiate. You don't haggle with restaurant owners or shop clerks.
+
+When a tourist tries to negotiate the price of food at a restaurant or clothing at a regular shop (not a street market), it's considered insulting. "You want to lower the price? You think we're overcharging?"
+
+Inside traditional Myeongdong or open markets, some negotiation happens. But in regular restaurants and shops, prices are non-negotiable.
+
+**What to do:** Accept menu prices and shop prices as stated. If you think something is expensive, you don't have to buy it. But don't try to bargain unless you're in a traditional outdoor market, and even then, approach it respectfully.
+
+## 10. Disrespectful Reactions to Korean Food
+
+This is probably the most personal one. Korean food is a source of pride. When international visitors react negatively to Korean cuisine—scrunching their faces, commenting on smell, or posting "Why does Korean food look like this?" on social media—Koreans notice.
+
+None of this is "wrong," but it registers as disrespectful toward Korean culture.
+
+What might feel like casual humor to a tourist ("This smells weird" or "I'm not sure about this") feels like mockery from a Korean perspective.
+
+**What to do:** If a dish is unfamiliar, approach it with curiosity rather than judgment. "I've never seen this before. What is it?" is infinitely better than facial expressions of disgust. If you don't like something, simply don't eat it. But express that politely, not mockingly.
+
+## The Broader Pattern
+
+If I had to summarize all ten mistakes into one principle, it would be this: **make visible effort to respect local norms, even if you're not perfect at following them.**
+
+Korean people understand that tourists don't know everything. They expect cultural mistakes. What they don't appreciate is visible disregard.
+
+Wear a mask when sick? You're showing respect.
+Take your phone call outside? You're showing respect.
+Give your seat to an elderly person? You're showing respect.
+
+These aren't hard rules enforced by authorities. They're signals to Korean people that you're trying to fit into their culture, not just passing through and doing whatever's comfortable for you.
+
+That effort is noticed. And it makes a genuine difference in how people respond to you.
 
 ---
 
 ## Frequently Asked Questions
 
-### 한국에서 절대 하면 안 되는 게 뭐야?
+### Will I Actually Get in Trouble for Breaking These Norms?
 
-몇 가지: (1) 감기 걸렸는데 마스크 안 쓰고 다니기 (2) 공공장소에서 큰 목소리로 통화 (3) 팁 주기 (4) 낯선 사람 따라가기 (5) 식당에서 음식에 대해 무례하게 리액션
+No. Korean people are remarkably tolerant of foreigners. You won't be arrested, fined, or even scolded. At worst, someone might comment or give you a disapproving look. These are guidelines for being respectful, not laws. That said, visible effort to follow them changes how Korean people perceive and interact with you. You'll get better service, more friendliness, and a better overall experience.
 
-### 한국 식당 문화가 다르다고 하는데, 어떻게 다르지?
+### What's the Most Important Thing Not to Do in Korea?
 
-한국 식당은 조용한 분위기를 소중하게 생각한다. 통화하지 말고, 식사에 집중하고, 서빙 직원분한테 감사를 표현하되 팁은 주지 않는 게 기본. 그리고 마지막엔 "맛있게 먹었습니다!" 하고 나가는 게 예의다.
+The bar scam (covered in the Seoul Safety guide). That's a genuine financial risk. Beyond that, the things listed here are about respect and cultural awareness, not safety. If you had to prioritize: wear a mask if sick, don't follow strangers into bars, give your seat to elderly people, and be respectful toward Korean culture. Everything else flows from these basics.
 
-### 버스나 지하철에서 항상 자리를 비워야 해?
+### Korean friends told me some of these things. Is it that serious?
 
-노인, 임산부, 아이 동반 부모, 장애인이 보이면 자리를 비켜야 한다. 이건 에티켓이 아니라 기본이다. 한국 학교에서도 어릴 때부터 배운다. 한국 여행을 제대로 하려면 이건 꼭 지켜야 한다.
+Your Korean friends probably gave you this feedback because they want you to have a better experience. When a Korean friend mentions that people noticed you eating while walking, they're trying to save you from future situations. Take it as caring guidance, not criticism. The fact that they told you means they want you to integrate better. That's a good sign.
