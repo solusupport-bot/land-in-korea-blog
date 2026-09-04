@@ -5,6 +5,7 @@ category: Comparisons
 description: Arriving at Incheon Airport? Here's the actual breakdown: cost, travel time, convenience, and which option is genuinely best for your situation.
 slug: korea-airport-transfer-options
 image_query: Incheon Airport transfer bus train taxi Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-airport-transfer-options-1788533126040.jpg
 ---
 You've just landed at Incheon International Airport, and your phone buzzes with arrival notifications. Now comes decision number one: how do you get to Seoul?
 

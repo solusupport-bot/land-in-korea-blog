@@ -5,6 +5,7 @@ category: Practical info
 description: Korea is statistically one of the safest countries in the world, but tourists face specific, targeted schemes. Learn what actually happens, how to recognize it, and exactly what to do.
 slug: korea-travel-advisories-safety-notices
 image_query: Seoul night street travelers safety Korea
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-travel-advisories-safety-notices-1788533130939.jpg
 ---
 You've probably heard that Korea is safe. But what does "safe" actually mean when you're stepping off a plane for the first time in Seoul?
 

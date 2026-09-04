@@ -5,6 +5,7 @@ category: Etiquette & mistakes
 description: You won't get in trouble for these, but Korean people will notice. Here's what to avoid and why it matters.
 slug: korea-first-timer-etiquette-common-mistakes
 image_query: Korean culture etiquette travelers manners
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-first-timer-etiquette-common-mistakes-1788533128590.jpg
 ---
 Korea welcomes millions of international visitors annually. Myeongdong, Gangnam, Insadong—all packed with tourists. Most Korean people are genuinely tolerant and understanding toward visitors unfamiliar with local customs.
 
