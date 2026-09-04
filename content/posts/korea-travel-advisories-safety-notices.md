@@ -5,6 +5,7 @@ category: Practical info
 description: Korea is one of the safest countries for travelers, but there are specific scams targeting tourists and real emergencies to know about. Here's what actually matters.
 slug: korea-travel-advisories-safety-notices
 image_query: Seoul street safety night travel Korea
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-travel-advisories-safety-notices-1788502646123.jpg
 ---
 ## Korea's actual safety reputation isn't overstated
 

@@ -5,6 +5,7 @@ category: Etiquette & mistakes
 description: Tipping in Korea doesn't just go unused — it can actively confuse the person you hand it to.
 slug: korea-first-timer-etiquette-common-mistakes
 image_query: First-timer etiquette & common mistakes travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-first-timer-etiquette-common-mistakes-1788502644252.jpg
 ---
 ## The short version
 

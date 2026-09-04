@@ -5,6 +5,7 @@ category: Comparisons
 description: Four ways to get from Incheon to Seoul, and the 'cheapest' one on paper isn't always the best deal once you count your luggage.
 slug: korea-airport-transfer-options
 image_query: Airport transfer options travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-airport-transfer-options-1788502642337.jpg
 ---
 ## The short version
 
