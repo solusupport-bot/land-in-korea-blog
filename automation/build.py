@@ -264,6 +264,27 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
 """
 
 
+FAQ_SECTION = re.compile(r"^##\s+Frequently Asked Questions\s*$", re.MULTILINE)
+FAQ_ITEM = re.compile(r"^###\s+(.+?)\s*\n+((?:(?!^###\s|^##\s).+\n?)+)", re.MULTILINE)
+
+
+def extract_faq(body):
+    """마크다운 본문에서 '## Frequently Asked Questions' 아래 '### 질문 / 답변'
+    쌍을 뽑아 FAQPage 구조화 데이터에 쓴다 — 애드센스 심사와는 무관하지만
+    검색결과 FAQ 리치 스니펫 기회를 늘린다(2026-09-04, 콘텐츠 점검 중 추가)."""
+    m = FAQ_SECTION.search(body)
+    if not m:
+        return []
+    section = body[m.end():]
+    items = []
+    for qm in FAQ_ITEM.finditer(section):
+        question = qm.group(1).strip()
+        answer = " ".join(line.strip() for line in qm.group(2).strip().splitlines())
+        if question and answer:
+            items.append({"question": question, "answer": answer})
+    return items
+
+
 def read_posts(cfg):
     posts = []
     if not os.path.isdir(POSTS_SRC):
@@ -282,6 +303,7 @@ def read_posts(cfg):
         meta.setdefault("description", meta["title"])
         meta["_body_html"] = md_to_html(body, cfg["base_url"].rstrip("/"))
         meta["_reading"] = max(1, len(body) // 1000)
+        meta["_faq"] = extract_faq(body)
         posts.append(meta)
     posts.sort(key=lambda p: p["date"], reverse=True)
     return posts
@@ -333,8 +355,7 @@ def build():
             f'</article>'
             f'<p class="back"><a href="{base}/index.html">← Back to all guides</a></p>'
         )
-        article_jsonld = json.dumps({
-            "@context": "https://schema.org",
+        graph = [{
             "@type": "Article",
             "headline": p["title"],
             "description": p["description"],
@@ -344,7 +365,20 @@ def build():
             "publisher": {"@type": "Organization", "name": cfg["site_name"]},
             "image": p["image"] if p.get("image") else None,
             "mainEntityOfPage": {"@type": "WebPage", "@id": f'{base}/posts/{p["slug"]}.html'}
-        }, ensure_ascii=False)
+        }]
+        if p.get("_faq"):
+            graph.append({
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": item["question"],
+                        "acceptedAnswer": {"@type": "Answer", "text": item["answer"]}
+                    }
+                    for item in p["_faq"]
+                ]
+            })
+        article_jsonld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
         out = page(cfg, base, p["title"], p["description"], article,
                    f'{base}/posts/{p["slug"]}.html', is_post=True, og_type="article",
                    image=p.get("image"), published=p["date"], jsonld=article_jsonld)
