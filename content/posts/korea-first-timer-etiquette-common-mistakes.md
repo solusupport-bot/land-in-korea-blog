@@ -1,28 +1,111 @@
 ---
-title: First-timer etiquette & common mistakes - What First-Timers Actually Need to Know
+title: "한국 첫 방문할 때 꼭 하는 실수들 - 한국인이 말해주는 에티켓"
 date: 2026-09-04
 category: Etiquette & mistakes
-description: Tipping in Korea doesn't just go unused — it can actively confuse the person you hand it to.
-slug: korea-first-timer-etiquette-common-mistakes
-image_query: First-timer etiquette & common mistakes travel
-image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-first-timer-etiquette-common-mistakes-1788502644252.jpg
+description: "한국 첫 여행에서 한국인들이 불쾌하게 느끼는 행동들, 그리고 그걸 피하는 간단한 방법들을 정리했다."
+image_query: "Korean culture etiquette travelers manners"
+image: https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 ---
-## The short version
 
-Tipping in Korea doesn't just go unused — it can actively confuse the person you hand it to. Other common first-timer mix-ups: escalators have a standing side by local custom (though rules vary by city); many small restaurants are cash-preferred or card-only with no split-bill custom; shoes usually come off indoors at traditional guesthouses and some restaurants with floor seating.
+한국은 관광객이 정말 많은 나라다. 명동, 강남, 인사동 어디 가든 외국인이 넘친다. 다행히 대부분의 한국인은 관광객들한테 관대하다. 하지만 '관대함'이 '뭐든 괜찮다'는 뜻은 아니다.
 
-The gesture that reads as rude to older Koreans isn't loud or obvious — it's how you hand someone your card. Passing money/cards with one hand, or pointing with a single finger, can read as slightly rude — using both hands or supporting your arm is a small gesture that's well received. It's common to pour drinks for others rather than yourself at a shared meal, and to wait for the eldest or host to start eating first. Loud phone calls on public transit are frowned upon — most locals keep calls short or step off first.
+한국에서 10년을 살면서 본 것들, 한국 친구들이 흉본 외국인 관광객들의 행동들, 그리고 "아, 그래서 한국인이 화난 거구나"라고 깨달은 순간들을 정리했다.
+
+## 1. 마스크 안 쓰고 다니기 (감기 걸렸는데도)
+
+한국인들은 감기 걸렸으면 마스크를 쓴다. 특히 대중교통이나 식당에서. 이건 다른 사람을 배려하는 기본 에티켓인데, 외국 관광객들은 이걸 모르는 경우가 많다.
+
+몇 년 전, 코로나 이후로는 더 심해졌다. 한국인들은 감기 걸렸으면 무조건 마스크를 쓰는데, 외국인은 기침을 그냥 한다. 지하철에서 옆에 앉은 외국인이 기침을 계속하는데 마스크를 안 써 있으면... 한국인들의 반감이 생긴다.
+
+**해결책:** 감기 걸렸으면 편의점에서 마스크를 사서 쓸 것. 한국에서는 이게 기본이다.
+
+## 2. 식당에서 통화하기 (큰 목소리로)
+
+이건 진짜 자주 본다. 외국인 관광객이 식당 앉아서 갑자기 휴대폰으로 통화를 한다. "헬로? 네 내가 지금 서울이야!" 이러면서. 한국 식당 문화에서는 이게... 아주 실례다.
+
+한국인들은 공공 장소에서 통화를 안 한다. 진짜 급할 땐 나가서 한다. 식당은 유독 더 그렇다. 음식에 집중해야 하고, 다른 사람들한테 폐를 끼치지 말아야 한다는 인식이 강하다.
+
+**해결책:** 식당 안에서는 통화하지 말 것. 밖으로 나가서 할 것. 카톡·라인 메시지 보내면 충분하다.
+
+## 3. 절대로 팁 주기
+
+팁 준다고 한국인들이 고마워하는 게 아니다. 오히려 이상해한다. 한국은 팁 문화가 없는 나라다.
+
+외국인 관광객들, 특히 미국에서 온 사람들은 습관적으로 팁을 주려고 한다. 카페에서 "팁 얼마 줄까?" 이러고, 식당에서 "서빙 잘 해줬으니까 팁" 이런 식. 한국인들은 이걸 봤을 때 "뭐야, 나한테 동정하는 건가?" 이렇게 느낀다.
+
+**해결책:** 팁을 주지 말 것. 정말이다. 한국은 팁 없는 나라다. 그 대신 음식을 남기지 말고, 친절하게 대해주는 것만으로도 충분하다.
+
+## 4. 코인 충전소에서 "누군가" 만나기 (밤 11시 이후)
+
+이건 에티켓이라기보다 안전 문제인데, 한국 여행 게시판에서 자주 봤던 상황이다.
+
+"강남역 코인 충전소에서 누군가 소개받았어요" 이런 식의 글들. 외국 여행자들이 밤에 몰려다니면서 술도 마시고, 낯선 한국인한테 말을 걸고... 이건 사기 위험이 높다. (위에서 얘기한 이태원 바 사기와 같은 맥락)
+
+**해결책:** 밤 10시 이후엔 유명한 관광지와 주요 상점가만 다니자. 낯선 지역, 낯선 사람한테 따라가지 말 것.
+
+## 5. 수업 중인 학원에 들어가서 사진 찍기
+
+한국의 학원 (hagwon)은... 한국인들의 교육열을 보여주는 상징 같은 곳인데, 외국 관광객들이 "오, 한국 교육 시스템!" 이러면서 우르르 들어가서 사진을 찍는다.
+
+이건 정말 무례하다. 학생들이 집중할 수 없고, 강사한테도 방해가 되고, 부모들이 봤을 때는 정말 기분 나쁘다.
+
+**해결책:** 학원 안으로 절대 들어가지 말 것. 밖에서 봐도 충분하다.
+
+## 6. 노래방에서 정치 노래 부르기
+
+노래방은 한국의 대표 놀이 문화다. 외국인들도 자주 온다. 그런데 가끔 외국인이 정치적인 노래나 "I hate China" 같은 노래를 부르는데, 한국인 친구들이 옆에 있으면 진짜 어색해진다.
+
+**해결책:** 노래방에서는 정치적인 주제나 특정 나라를 비난하는 노래는 피할 것. 팝, K-pop, 신나는 노래 부르면 된다.
+
+## 7. 사진 찍을 때 "랜덤 한국인" 피하기 (아무것도 묻지 않고)
+
+외국 여행자들이 자주 하는 거: 거리에서 만난 한국인한테 "사진 좀 찍어줄래?" 이러면서 카메라를 던진다. 그리고 대기하는 사람이 "고마워!" 하고 떠난다.
+
+솔직히 한국인 대부분은 도와준다. 하지만 "Excuse me, could you take a photo of us please?" 하는 것과 그냥 카메라 던지는 거는 느낌이 다르다.
+
+**해결책:** 사진 찍어 달라고 할 때도 "Could you help me take a photo?" 같은 기본적인 인사를 할 것. 카메라를 던지지 말고, 정중하게 건넬 것.
+
+## 8. 버스/지하철에서 "노인분, 임산부께" 자리 비기를 안 하기
+
+한국에서는 버스나 지하철에 타면, 노인분이나 임산부, 어린 아이 동반한 사람한테 자리를 비켜준다. 이건 문화적인 규칙이 아니라... 거의 의무다.
+
+외국인 관광객들은 이걸 모르는 경우가 많아서 그냥 앉아있다. 노인분이 서 있는데 젊은 외국인이 앉아있으면... 한국인들이 불편하게 본다.
+
+**해결책:** 버스나 지하철에서 노인, 임산부, 아이 보이면 일단 일어나. 한국의 에티켓이다.
+
+## 9. 식당에서 "이걸 어떻게 먹어?" 하며 리액션하기
+
+한국 음식은 낯선 음식이 많다. 김, 된장, 고추장... 외국인들이 처음 봤을 때 반응이 큰 건 자연스럽다. 하지만 식당 직원이 봤을 때 "우리 음식이 이상하다는 건가?" 이렇게 느낄 수 있다.
+
+특히 SNS에 "한국 음식 왜 이래?" 같은 댓글 달면서 웃는 사진을 올리는 건... 한국인들이 봤을 때 기분 별로다.
+
+**해결책:** 낯선 음식이어도 긍정적으로 반응할 것. "오, 처음인데 재밌네!" 정도면 충분하다.
+
+## 10. 사소하지만 중요한 것들
+
+- **실내 화장실에서 슬리퍼 안 신고 이동:** 한국은 화장실 슬리퍼가 따로 있다. 일반 신발로 화장실에서 나온 발로 집 바닥을 밟는 건 정말 실례다.
+- **식사할 때 손으로 음식 쓰다듬기:** 한국에서는 젓가락으로 집는 게 기본. 손으로 빵 같은 걸 만지작거리면 불결해 보인다.
+- **큰 소리로 "한국은 더워/추워" 계속 말하기:** 한국인들한테는 이미 익숙한 날씨다. 자꾸 불평하면 좋은 인상이 아니다.
+- **사진 많이 찍으면서 실제 경험을 안 하기:** "SNS에 올릴 사진!" 이러면서 경주 불국사에서 1분만 있고 가는 관광객들. 한국인들은 이걸 봤을 때 "저 사람, 진짜 여행을 하는 건가 싶다"고 생각한다.
+
+## 가장 중요한 거
+
+한국인들은 외국인이 한국 문화를 모르는 걸 이해한다. 하지만 "노력하려는 태도"는 본다. 마스크를 쓰려고 노력하고, 에티켓을 지키려고 노력하고, 한국 음식을 존중하려고 노력하는 모습. 그걸 본다.
+
+완벽할 필요는 없다. 다만 "한국에 왔으니 한국 방식을 존중해보자"는 마음가짐. 그게 가장 중요하다.
+
+---
 
 ## Frequently Asked Questions
 
-### What's the most common first-timer mistake with first-timer etiquette & common mistakes?
+### 한국에서 절대 하면 안 되는 게 뭐야?
 
-Tipping in Korea doesn't just go unused — it can actively confuse the person you hand it to.
+몇 가지: (1) 감기 걸렸는데 마스크 안 쓰고 다니기 (2) 공공장소에서 큰 목소리로 통화 (3) 팁 주기 (4) 낯선 사람 따라가기 (5) 식당에서 음식에 대해 무례하게 리액션
 
-### What should I know before I go?
+### 한국 식당 문화가 다르다고 하는데, 어떻게 다르지?
 
-Other common first-timer mix-ups: escalators have a standing side by local custom (though rules vary by city); many small restaurants are cash-preferred or card-only with no split-bill custom; shoes usually come off indoors at traditional guesthouses and some restaurants with floor seating.
+한국 식당은 조용한 분위기를 소중하게 생각한다. 통화하지 말고, 식사에 집중하고, 서빙 직원분한테 감사를 표현하되 팁은 주지 않는 게 기본. 그리고 마지막엔 "맛있게 먹었습니다!" 하고 나가는 게 예의다.
 
-### Any quick tip to remember?
+### 버스나 지하철에서 항상 자리를 비워야 해?
 
-Loud phone calls on public transit are frowned upon — most locals keep calls short or step off first.
+노인, 임산부, 아이 동반 부모, 장애인이 보이면 자리를 비켜야 한다. 이건 에티켓이 아니라 기본이다. 한국 학교에서도 어릴 때부터 배운다. 한국 여행을 제대로 하려면 이건 꼭 지켜야 한다.

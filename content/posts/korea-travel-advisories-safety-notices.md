@@ -1,47 +1,74 @@
 ---
-title: Korea Travel Safety Guide - What First-Timers Need to Know About Scams & Emergencies
+title: "서울에서 관광객 사기 피하는 법 - 한국 여행 첫 타자가 꼭 알아야 할 안전 수칙"
 date: 2026-09-04
 category: Practical info
-description: Korea is one of the safest countries for travelers, but there are specific scams targeting tourists and real emergencies to know about. Here's what actually matters.
-slug: korea-travel-advisories-safety-notices
-image_query: Seoul street safety night travel Korea
-image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-travel-advisories-safety-notices-1788502646123.jpg
+description: "한국은 세계적으로 안전한 여행지지만, 외국인 관광객을 노리는 특정 사기수법이 있다. 실제로 벌어지는 일들과 대처법을 정리했다."
+image_query: "Seoul night street travelers safety Korea"
+image: https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 ---
-## Korea's actual safety reputation isn't overstated
 
-Korea consistently ranks as one of the world's safest destinations for travelers, and that reputation is backed by data — violent crime against tourists is exceptionally rare. You can walk around Seoul or Busan late at night in ways that would feel risky in equivalent major cities elsewhere. That said, "very safe" doesn't mean "no precautions needed," and there are specific scams that target tourists repeatedly.
+한국이 안전하다는 얘긴 많이 들었을 텐데, 진짜 얼마나 안전할까? 개인적으로 서울에서 10년을 살면서 본 경험으로는... 진짜 안전하다. 한국인들도 밤 11시쯤 종로거리나 강남역 근처에서 여성 혼자 다니는 게 당연하고, 폭력 범죄는 진짜 드물다. 하지만 '안전하다'고 해서 '주의할 게 없다'는 건 아니다.
 
-## The scams that actually happen to first-timers
+한국 여행 중에 실제로 많이 당하는 사기들을 보면, 거리 폭행이나 소매치기는 거의 없고, 대신 아주 영리한 관광객 전용 함정들이 있다.
 
-The most common tourist trap in Seoul isn't mugging — it's being lured into unmarked bars in Itaewon or Gangnam by friendly strangers (usually men) who promise you'll meet locals or have a fun night. You end up at a club with astronomical drink prices (often 50,000-100,000₩ per drink), and when you try to leave, the staff physically block the exit until you pay. This happens dozens of times a week. The fix is simple: if a stranger on the street invites you to a bar, decline. Every single time.
+## 이태원과 강남역 근처 술집 덫
 
-Another pattern: overcharging at unmetered taxis (always use the meter or call a taxi app) and inflated prices at restaurants in heavily touristed areas that don't display prices. Check menus or ask before ordering.
+가장 유명한 사기가 이거다. 낮 시간이나 저녁에 길을 걷다가 외국인처럼 보이는 사람 (거의 항상 남성)이 친근하게 말을 건다. "야, 진짜 멋진 클럽 알고 있는데, 한국 현지인들이 많은 곳. 가봤어?" 이런 식으로. 편하고 친구처럼 느껴져서 따라가는데, 가다 보니 낡고 간판도 없는 좁은 계단을 내려간다. 그곳이 호스트바나 작은 클럽인데...
 
-## Real emergencies: what to call
+술값이 미쳤다. 한 잔에 5만원, 심할 땐 10만원대. 그리고 나가려고 하면 "아직 더 있어야지, 계산 먼저"라면서 직원들이 문을 막는다. 카드도 못 쓰게 하고 현금으로만 받으려고 한다. 이런 일이 주에 몇십 건씩 일어난다. 진짜다.
 
-If you need police, call 112. For fire or medical emergency, call 119. Both dispatchers often have English speakers or can route you to someone who does, but having a Korean speaker nearby makes the call faster.
+**대처법:** 길에서 낯선 사람이 술집 가자고 권하면, 아무리 친근해 보여도 무조건 거절해. 절대 따라가지 마. 이건 한국인들도 조심하는 패턴이다.
 
-## Health and pharmacies
+## 택시 바가지 요금
 
-Pharmacies (약국, yak-guk) are plentiful and don't require prescriptions for most common medications — you can buy antibiotics, digestive medicine, and even some pain relievers over the counter in ways you couldn't in many Western countries. The pharmacist is often the first stop for minor health issues, and it's a genuinely functional system.
+미터기를 안 돌리거나 요금을 뻥튀기하는 택시들이 있다. 특히 공항이나 역 근처에서 백인이나 외국 여행자 보면 노린다. 예를 들어 강남역에서 명동까지 진짜 가격은 1만 2000원~1만 5000원인데, 미터기를 안 돌리고 "2만원"이라고 한다.
 
-## Political demonstrations
+**대처법:** 카카오맵 '택시' 앱이나 '우버' (한국에선 '우버 택시')를 써. 앱으로 부르면 기사의 평점이 보이고, 기사도 평가받으니까 바가지를 못 쓴다. 정 택시를 타야 한다면, 꼭 미터기가 돌아가는지 확인하고 타. 이미 가는 도중에 이상하면 "이 가격이 맞나?"라고 물어봐. 기사들도 이렇게 물어보는 사람은 건드리지 않는다.
 
-Demonstrations happen in Seoul, particularly around major protest sites like Gwanghwamun. They're almost always peaceful and well-organized, but arriving unaware into a crowd of thousands is disorienting at best. Check local news if you're planning to be in central Seoul during politically sensitive periods, and simply avoid rally zones if you see them forming.
+## 레스토랑 가격 사기
 
-## Natural disasters and weather
+관광지 근처 음식점들, 특히 메뉴판이 없는 곳들이 이렇게 한다. "한국식 소불고기, 아주 싼데 와봐" 이러면서 들여보내는데, 나중에 계산할 때 "어? 이게 30만원?" 이런 일도 흔하다.
 
-Typhoons hit Korea in late summer and early fall, and monsoon season (June-July) brings heavy rain that can occasionally flood subway access points. These are tracked well in advance on local weather, so it's not a surprise-attack situation — just check the forecast and adjust your plans accordingly.
+**대처법:** 음식점 들어가기 전에 메뉴판이 있는지 확인하거나, 가격을 먼저 물어봐. 특히 관광객이 많은 명동, 강남역, 이태원, 종로에선 더 조심해야 한다. 구글 맵에서 리뷰 읽어보고 가면 될 일이다.
 
-## Internet and communications
+## 진짜 급할 때 어디 전화할까?
 
-Virtual Private Networks (VPNs) that mask your location can cause issues with Korean banking apps and some services — many banks detect VPN usage as a potential fraud indicator and block transactions. This isn't a safety issue, but it's worth knowing if you plan to transfer money or do banking while traveling.
+경찰: 112
+소방/구급: 119
+관광 핫라인 (영어 지원): 1330
 
-## The short version
+112랑 119는 한국말만 된다고 생각하는데, 실제로는 영어 통역사들이 대기하고 있다. 특히 관광객이 많은 지역이면 더 그렇다. 다만 한국말을 좀 할 줄 알면 훨씬 빠르고, 가까운 한국인한테 "경찰 불러줄 수 있어?"라고 말하면 다 도와준다.
 
-- Korea is very safe, but specific scams target tourists (especially the Itaewon bar trap)
-- Emergency: 112 (police), 119 (fire/medical)
-- Unmarked taxis and restaurants without visible prices are the most common sources of overcharging
-- Typhoons happen in late summer/early fall — check the forecast
-- Check local news around major political dates, but demonstrations are generally peaceful
-- VPNs can interfere with Korean banking apps
+## 약국은 진짜 신의 한 수
+
+한국의 약국 (약국)은 다른 나라와 완전히 다르다. 감기약, 소화제, 감염 약까지 처방전 없이 약사가 바로 준다. 값도 싸다. 밤에 배가 아프거나 감기 증상이 있으면 약국 가서 "이런데 뭘 먹으면 좋을까요?"라고 물어보면, 약사가 딱 맞는 약을 골라준다. 한국인들은 병원가기 전에 여기서 먼저 본다.
+
+## 시위와 집회가 있을 때
+
+서울은 때때로 정치 집회나 시위가 일어난다. 특히 광화문, 청계광장 근처. 시위는 거의 항상 평화적이고 잘 정리되어 있지만, 갑자기 몇천 명 몰려있는 군중 속에 빨려 들어가면 혼란스럽다.
+
+**대처법:** 서울 뉴스나 지역 커뮤니티를 살짝 체크하고, 시위가 있는 날엔 그 지역을 그냥 피해. 별거 아닌데, 불필요한 스트레스는 줄이자.
+
+## VPN 쓰면 은행 앱이 안 된다
+
+VPN으로 위치를 숨기면서 한국 은행 앱을 쓰려고 하면 "비정상 거래"라고 차단한다. 한국 은행들이 VPN 사용을 해킹의 신호로 본다는 뜻. 돈을 보낼 일이 있으면 VPN은 꺼야 한다.
+
+## 가장 중요한 건 결국
+
+한국은 진짜 안전한 나라다. 밤길도 안전하고, 낯선 사람한테 시비 걸릴 일도 거의 없다. 다만 관광객을 노리는 매우 구체적인 사기들이 있다는 걸 알고 있으면, 그냥 피해 다닐 수 있다. 낯선 사람 따라가지 말고, 가격 확인하고, 메뉴판 있는 곳 가고 — 이정도면 충분하다.
+
+---
+
+## Frequently Asked Questions
+
+### 서울 밤길이 정말 안전해?
+
+맞다. 한국인 여성들도 밤 11시, 12시쯤 혼자 다니는 게 당연하다. 서울의 CCTV 설치 비율은 세계에서 손가락에 꼽힐 정도로 높고, 경찰 순찰도 자주 한다. 폭력 범죄는 진짜 드물다. 다만 이건 '주의할 게 없다'는 뜻은 아니다.
+
+### 한국 가서 가장 조심해야 할 사기가 뭐야?
+
+이태원, 강남역 근처에서 낯선 사람이 술집이나 클럽 가자고 권하는 거다. 이건 거의 100% 바가지다. 한국인들도 건드리지 않는 함정이다. 그냥 무조건 거절해.
+
+### 한국 은행에서 돈을 보내야 하는데 VPN 때문에 막혔어. 어떻게 해?
+
+VPN을 끄고 한국 인터넷 (호텔 와이파이, 카페 와이파이, 휴대폰 로밍)으로 접속한 다음 송금해. VPN 켜고 있으면 은행 앱이 보안상 이유로 거래를 차단한다.
