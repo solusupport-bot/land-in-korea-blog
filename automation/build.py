@@ -204,6 +204,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
         f'<a href="{base}/about.html">About</a>'
         f'<a href="{base}/affiliate-disclosure.html">Disclosure</a>'
         f'<a href="{base}/contact.html">Contact</a>'
+        f'<a href="{base}/terms-of-service.html">Terms</a>'
     )
     year = datetime.now().year
     affiliate_enabled = cfg.get("affiliate_links_enabled", False)
@@ -254,6 +255,8 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
   Prices and rules change — always confirm on the official site before booking.</p>
   <p><a href="{base}/about.html">About</a> ·
   <a href="{base}/affiliate-disclosure.html">Disclosure</a> ·
+  <a href="{base}/privacy.html">Privacy</a> ·
+  <a href="{base}/terms-of-service.html">Terms</a> ·
   <a href="{base}/contact.html">Contact</a></p>
 </footer>
 </body>
@@ -295,11 +298,25 @@ def copy_logo_asset():
         fdst.write(fsrc.read())
 
 
+def remove_stale_posts(posts):
+    """content/posts/에서 삭제되거나 슬러그가 바뀐 글의 예전 HTML이 site/posts/에
+    그대로 남아 있으면(빌드는 새 파일만 쓰고 지우지 않으므로) 중복/죽은 URL이
+    계속 라이브로 남는다 — 2026-09-04, 중복 콘텐츠 정리 중 실측."""
+    if not os.path.isdir(POSTS_OUT):
+        return
+    valid = {f'{p["slug"]}.html' for p in posts}
+    for fn in os.listdir(POSTS_OUT):
+        if fn.endswith(".html") and fn not in valid:
+            os.remove(os.path.join(POSTS_OUT, fn))
+            print(f"Removed stale post output: {fn}")
+
+
 def build():
     cfg = load_config()
     os.makedirs(POSTS_OUT, exist_ok=True)
     copy_logo_asset()
     posts = read_posts(cfg)
+    remove_stale_posts(posts)
     base = cfg["base_url"].rstrip("/")
 
     for p in posts:
@@ -380,12 +397,24 @@ def write_static_pages(cfg, base):
 tourists and new foreign residents alike. We don't repeat the same generic "how to use T-money" listicle
 you've already seen a hundred times. Instead, we run the actual comparisons: which airport transfer is
 worth the money, which eSIM option is genuinely cheaper, whether a tour pass pays for itself.</p>
+<h2>Who writes this</h2>
+<p>{html.escape(cfg['site_name'])} is written and maintained by a long-term Seoul resident with over a
+decade of direct, on-the-ground experience navigating Korean transit, banking, healthcare, and everyday
+etiquette as a foreign resident. Every guide on this site reflects something we've personally used, tested,
+or verified — not information copied from other travel sites. When prices, procedures, or app names change,
+we go back and confirm before republishing rather than leaving outdated advice live.</p>
 <h2>How we work</h2>
 <ul>
 <li>We compare real options side by side instead of just describing one.</li>
+<li>Every claim is grounded in direct experience or verifiable public information — we don't invent details
+to fill space.</li>
 {about_affiliate_bullet}
 <li>Prices, thresholds, and rules change — always confirm on the official site before you book or travel.</li>
 </ul>
+<h2>Editorial standards</h2>
+<p>We correct errors when readers point them out, and we don't accept payment in exchange for a positive
+review or a favorable comparison result. If you spot something outdated or wrong, tell us — see our
+<a href="{base}/contact.html">contact page</a>.</p>
 <p>Contact: <a href="{base}/contact.html">contact page</a></p>
 """
     disclosure = f"""
@@ -407,26 +436,90 @@ and opinion; they are not paid placements unless explicitly marked as such.</p>
 <p>Questions about a specific link or recommendation? Reach out via our
 <a href="{base}/contact.html">contact page</a>.</p>
 """
+    goatcounter_bullet = (
+        f'<p>We use <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>, '
+        'a privacy-respecting, cookieless analytics service, to see how many people visit each page. '
+        "GoatCounter does not use cookies and does not track you across other websites. See "
+        '<a href="https://www.goatcounter.com/privacy" rel="noopener" target="_blank">GoatCounter\'s privacy '
+        'policy</a> for details.</p>'
+    )
     privacy = f"""
 <h1>Privacy Policy</h1>
+<p>Last updated: {datetime.now().strftime('%Y-%m-%d')}</p>
 <p>{html.escape(cfg['site_name'])} does not require account registration and does not directly collect
-personal information such as your name or email address.</p>
+personal information such as your name or email address, except when you voluntarily send us a message
+through our <a href="{base}/contact.html">contact page</a> or by email.</p>
+<h2>Analytics</h2>
+{goatcounter_bullet}
 <h2>Cookies &amp; third-party tracking</h2>
 <p>This site does not currently use affiliate tracking or advertising cookies. If that changes, this page
 will be updated to reflect exactly what is added — see our
 <a href="{base}/affiliate-disclosure.html">disclosure</a> page for the current status.</p>
+<h2>Data retention</h2>
+<p>Messages sent through our contact page or by email are kept only as long as needed to respond to your
+inquiry and are not shared with third parties except where required by law.</p>
+<h2>Your rights</h2>
+<p>You may ask us what information we hold about you, request a correction, or request deletion at any
+time — contact us using the details below.</p>
+<h2>Changes to this policy</h2>
+<p>We may update this policy as the site evolves. Material changes will be reflected here with an updated
+date at the top of this page.</p>
 <h2>Contact</h2>
 <p>Privacy questions: <a href="mailto:{html.escape(cfg['email'])}">{html.escape(cfg['email'])}</a></p>
 """ if not affiliate_enabled else f"""
 <h1>Privacy Policy</h1>
+<p>Last updated: {datetime.now().strftime('%Y-%m-%d')}</p>
 <p>{html.escape(cfg['site_name'])} does not require account registration and does not directly collect
-personal information such as your name or email address.</p>
+personal information such as your name or email address, except when you voluntarily send us a message
+through our <a href="{base}/contact.html">contact page</a> or by email.</p>
+<h2>Analytics</h2>
+{goatcounter_bullet}
 <h2>Cookies &amp; affiliate tracking</h2>
 <p>Links to Klook, Trip.com, and GetYourGuide may set tracking cookies on their own sites once you click
 through, used to attribute bookings to this site. We do not control these third-party cookies — see each
 platform's own privacy policy for details.</p>
+<h2>Data retention</h2>
+<p>Messages sent through our contact page or by email are kept only as long as needed to respond to your
+inquiry and are not shared with third parties except where required by law.</p>
+<h2>Your rights</h2>
+<p>You may ask us what information we hold about you, request a correction, or request deletion at any
+time — contact us using the details below.</p>
+<h2>Changes to this policy</h2>
+<p>We may update this policy as the site evolves. Material changes will be reflected here with an updated
+date at the top of this page.</p>
 <h2>Contact</h2>
 <p>Privacy questions: <a href="mailto:{html.escape(cfg['email'])}">{html.escape(cfg['email'])}</a></p>
+"""
+    terms = f"""
+<h1>Terms of Service</h1>
+<p>Last updated: {datetime.now().strftime('%Y-%m-%d')}</p>
+<p>By using {html.escape(cfg['site_name'])} ("the Site"), you agree to the following terms.</p>
+<h2>Content accuracy</h2>
+<p>We do our best to keep prices, procedures, and rules current, but travel information changes quickly.
+Always confirm important details (prices, visa rules, transit schedules) on the relevant official source
+before you rely on them for a booking or a trip.</p>
+<h2>Not professional advice</h2>
+<p>Nothing on this Site is legal, medical, financial, or immigration advice. For anything with real
+consequences — visas, taxes, medical concerns — consult a licensed professional or the relevant government
+authority.</p>
+<h2>Use of content</h2>
+<p>You're welcome to link to our articles or share short quoted excerpts with attribution and a link back.
+Reproducing full articles elsewhere without permission is not allowed. Contact us if you'd like to reprint
+or syndicate something.</p>
+<h2>Affiliate links</h2>
+{about_affiliate_bullet}
+<h2>Limitation of liability</h2>
+<p>{html.escape(cfg['site_name'])} is provided "as is" without warranties of any kind. We are not liable
+for losses, missed connections, financial cost, or any other outcome resulting from decisions made using
+information on this Site.</p>
+<h2>External links</h2>
+<p>This Site links to third-party services and websites. We are not responsible for the content, accuracy,
+or privacy practices of sites we don't control.</p>
+<h2>Changes to these terms</h2>
+<p>We may revise these terms as the site evolves. Continued use of the Site after a change means you accept
+the updated terms.</p>
+<h2>Contact</h2>
+<p>Questions about these terms: <a href="mailto:{html.escape(cfg['email'])}">{html.escape(cfg['email'])}</a></p>
 """
     contact = f"""
 <h1>Contact</h1>
@@ -440,6 +533,7 @@ platform's own privacy policy for details.</p>
         ("about", "About", about),
         ("affiliate-disclosure", "Affiliate Disclosure", disclosure),
         ("privacy", "Privacy Policy", privacy),
+        ("terms-of-service", "Terms of Service", terms),
         ("contact", "Contact", contact),
     ]:
         with open(os.path.join(SITE, f"{name}.html"), "w", encoding="utf-8") as f:
@@ -447,7 +541,7 @@ platform's own privacy policy for details.</p>
 
 
 def write_sitemap(cfg, base, posts):
-    urls = ["", "about.html", "affiliate-disclosure.html", "privacy.html", "contact.html"]
+    urls = ["", "about.html", "affiliate-disclosure.html", "privacy.html", "terms-of-service.html", "contact.html"]
     urls += [f"posts/{p['slug']}.html" for p in posts]
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     body = '<?xml version="1.0" encoding="UTF-8"?>\n'

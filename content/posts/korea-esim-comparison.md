@@ -22,7 +22,7 @@ Almost every Korea travel guide tells you "get an eSIM" and moves on. That's fin
 This is the part most guides skip, and it's where people get caught off guard on arrival day.
 
 - **eSIM**: you buy it online before you fly and receive a QR code by email. You install the eSIM profile by scanning that code in your phone's settings — and this step needs an internet connection to complete, so do it on your home Wi-Fi *before* you board, not after you land with no signal yet. Activation itself (when the Korean network turns on) usually happens automatically once you land and your phone connects to a Korean tower.
-- **Physical SIM**: picked up in person at counters in the arrivals hall at [Incheon (ICN) or Gimpo (GMP) airport](https://landinkorea.com/posts/incheon-airport-transfer-comparison.html), or at telecom stores in the city. You'll need your passport, and during peak travel seasons the counters can have real lines — reserving online ahead of time and just picking up your reserved SIM speeds this up considerably.
+- **Physical SIM**: picked up in person at counters in the arrivals hall at [Incheon (ICN) or Gimpo (GMP) airport](https://landinkorea.com/posts/korea-airport-transfer-options.html), or at telecom stores in the city. You'll need your passport, and during peak travel seasons the counters can have real lines — reserving online ahead of time and just picking up your reserved SIM speeds this up considerably.
 - **Pocket Wi-Fi**: reserved online in advance, picked up at a counter (again, usually airport arrivals) and returned at a marked drop box or counter before departure. Losing the device or the charging cable typically comes with a replacement fee, so treat it like a rental, not a purchase.
 
 ## Where each one wins

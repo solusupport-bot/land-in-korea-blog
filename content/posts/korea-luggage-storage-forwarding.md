@@ -23,7 +23,7 @@ Despite the name, plenty of Korean "coin lockers" today accept card payment or a
 
 ## When a storage counter beats a coin locker
 
-If you have a late flight after checkout and need your bags held for most of a day, a storage counter near a major station or neighborhood is the more dependable option — you're paying a flat rate specifically for the certainty a coin locker can't guarantee on a busy day. Incheon Airport itself also has storage counters and lockers on-site, which is worth knowing if your [airport transfer](https://landinkorea.com/posts/incheon-airport-transfer-comparison.html) plans mean you'll be back at the airport with time to spare before a flight.
+If you have a late flight after checkout and need your bags held for most of a day, a storage counter near a major station or neighborhood is the more dependable option — you're paying a flat rate specifically for the certainty a coin locker can't guarantee on a busy day. Incheon Airport itself also has storage counters and lockers on-site, which is worth knowing if your [airport transfer](https://landinkorea.com/posts/korea-airport-transfer-options.html) plans mean you'll be back at the airport with time to spare before a flight.
 
 ![subway station coin locker](https://images.pexels.com/photos/8799349/pexels-photo-8799349.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 
