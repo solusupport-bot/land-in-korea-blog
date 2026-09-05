@@ -38,9 +38,19 @@ Groups or families doing a dense 2-3 day sightseeing block hitting palaces, a to
 
 ![namsan seoul tower view](https://images.pexels.com/photos/18041009/pexels-photo-18041009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 
+## Read the terms before you assume the pass covers it
+
+Two passes at the same price can behave very differently once you're using them, and the differences are in the fine print rather than the marketing:
+
+- **When the clock starts.** Some passes count down from first use, others from the moment of purchase or activation. If yours starts on purchase and you buy it a week before you fly, you've already burned part of what you paid for.
+- **Consecutive days versus flexible days.** A "3-day" pass is usually three consecutive calendar days, not three days of your choosing spread across the trip. Passes that let you pick non-consecutive days exist, but they're a different product and usually cost more.
+- **Whether "included" means free or discounted.** Plenty of pass listings mix full free admission with partner discounts in the same list of benefits. A discount is only worth counting in your math if you were going to buy that thing anyway at full price.
+- **Reservation requirements.** Some included attractions still need a timed reservation, and popular slots go early. A pass doesn't skip that step, and discovering it on the day can cost you an attraction you counted on.
+- **Whether transit is bundled.** Some passes include transit credit and some don't. If yours doesn't, you still need a [T-money card](https://landinkorea.com/posts/tmoney-first-timer-mistake.html) on top, which belongs in the total you're comparing.
+
 ## Check current pass pricing and inclusions
 
-Passes and included attractions change over time — see current Seoul pass options on GetYourGuide or bundled tour/attraction combos on Klook, and run the math above against your actual itinerary before buying.
+Passes and included attractions change over time — see current Seoul pass options on [GetYourGuide]({{getyourguide}}) or bundled tour/attraction combos on Klook, and run the math above against your actual itinerary before buying.
 
 ## Frequently Asked Questions
 

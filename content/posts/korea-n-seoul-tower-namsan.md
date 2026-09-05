@@ -33,6 +33,16 @@ Beyond the standard evening illumination, N Seoul Tower has at times used its ni
 
 The fence of "love locks" near the base is a genuine, still-growing tradition, not just a tourist photo prop — worth a look even if you're not adding one yourself. Padlocks and pens for writing a message are sold by vendors right at the fence, so you don't need to bring your own if you decide to join in.
 
+## Practical things to sort out before you go up
+
+A few details decide whether this is a smooth hour or a frustrating one:
+
+- **Wear shoes you can climb stairs in.** Even if you take the cable car or the shuttle, there's still a stretch of steps and slope between where they drop you and the tower plaza. The Myeongdong trail in particular is mostly stairs, which is fine in trainers and unpleasant in anything else.
+- **Bring a layer.** The summit is noticeably windier and cooler than street level, and the difference is most obvious after sunset — the exact time most people go up in whatever they were wearing while shopping.
+- **Eat before or plan to pay tourist prices.** Food and drink at the summit are priced for a captive audience. Having dinner in Myeongdong first and coming up for the view afterward is the cheaper order of operations.
+- **Check the day's visibility, not just the forecast.** Rain isn't the problem; haze is. If the skyline already looks washed out from the ground, the paid deck won't fix it, and the free plaza is the better use of that hour.
+- **Combine it with the neighborhood below.** Namsan sits directly above Myeongdong, so the tower works better as the end of an afternoon there than as a standalone trip across the city.
+
 ## The short version
 
 - The free plaza view already beats most of the city skyline

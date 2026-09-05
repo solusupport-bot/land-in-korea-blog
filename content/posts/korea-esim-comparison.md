@@ -51,7 +51,7 @@ Plenty of Korea travel SIM and eSIM plans are marketed as "unlimited," but read 
 
 ## Compare current plans
 
-Klook's Korea eSIM listings and Trip.com's Korea SIM/Wi-Fi options both let you filter by trip length — check current pricing there before you land, since plans and data caps get updated.
+[Klook]({{klook}})'s Korea eSIM listings and Trip.com's Korea SIM/Wi-Fi options both let you filter by trip length — check current pricing there before you land, since plans and data caps get updated.
 
 ## Frequently Asked Questions
 

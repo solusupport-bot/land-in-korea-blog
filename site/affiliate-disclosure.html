@@ -31,11 +31,30 @@
 <main class="page">
 
 <h1>Affiliate Disclosure</h1>
-<p>Land in Korea does not currently use affiliate links or run ads. Every recommendation
-on this site reflects our own research and opinion, not a paid placement.</p>
-<p>We may add affiliate links in the future (we've reserved the option to link to services like Klook,
-Trip.com, and GetYourGuide). If and when we do, this page will be updated first, and any post containing
-such a link will disclose it in the text itself.</p>
+<p><strong>Current status: affiliate links are disabled.</strong></p>
+<p>Land in Korea uses a token-based affiliate link system managed in configuration, not in
+content. As of 2026-09-05, <code>affiliate_links_enabled</code> is set to
+<code>false</code> in our build configuration, so all affiliate references are displayed as plain text
+without links. When enabled, this will be clearly indicated on each post.</p>
+<h2>What "token-based" means here</h2>
+<p>Some of our guides mention booking platforms such as Klook, Trip.com, and GetYourGuide as places to
+compare current prices. In the source of those articles, each mention is written as a placeholder token
+(for example <code>{{klook}}</code>) rather than a hard-coded URL. At build time, our generator reads
+<code>automation/config.json</code>:</p>
+<ul>
+<li>While <code>affiliate_links_enabled</code> is <code>false</code>, every token is stripped and the brand
+name is rendered as ordinary text — no outbound affiliate link, no tracking parameter, and no ad code is
+served anywhere on this site.</li>
+<li>If it is ever switched to <code>true</code>, the same tokens resolve to the real partner URLs in one
+place, so the disclosure status of the whole site can never drift out of sync with the articles.</li>
+</ul>
+<h2>Our plan if we activate affiliate links</h2>
+<p>We may enable this system in the future. If and when we do: this page will be updated first with the
+programs we have joined and the date the change took effect; every post containing such a link will carry a
+visible disclosure in the article itself; and the links will be marked <code>rel="sponsored"</code> so
+search engines and readers can identify them. Commissions, if any, would come at no extra cost to you, and
+our comparisons would still reflect our own research — we do not accept payment for a positive review or a
+favorable comparison result.</p>
 <p>Questions about a specific recommendation? Reach out via our
 <a href="https://landinkorea.com/contact.html">contact page</a>.</p>
 

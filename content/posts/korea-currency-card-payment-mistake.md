@@ -33,6 +33,12 @@ Currency exchange counters near [Myeongdong](https://landinkorea.com/posts/korea
 
 Samsung Pay and Naver Pay are widely used locally, but usually require a Korean bank account to set up — not something you can activate as a short-term visitor. This is different if you're a foreign resident with an Alien Registration Card rather than a tourist: opening a Korean bank account (and then setting up local mobile pay) is realistically possible once you have resident status, even though it isn't for a short tourist trip. For most short trips, a normal card charged in won stays the simplest option throughout — and it's worth knowing that contactless tap-to-pay support on Korean card terminals has historically been less universal than in Europe or North America, so having a physical chip card as a backup to a phone-based tap payment is a reasonable precaution.
 
+## How much cash to actually carry
+
+"Carry some cash" is easy advice to give and hard to act on, so here's a more concrete way to think about it. Cash in Korea is a fallback, not a primary payment method — you want enough to cover a market meal, a taxi if an app payment fails, and a small independent shop, without walking around with a week's budget in your pocket. Topping up every few days from a convenience store ATM costs less in fees than most people assume and beats one large withdrawal you then have to look after.
+
+A few notes on handling it. Korean banknotes come in 1,000, 5,000, 10,000, and 50,000 won denominations, and small stalls can genuinely struggle to break a 50,000 note early in the day — keeping some 1,000s and 10,000s for street food and market purchases makes those transactions faster. Hand cash and cards over with both hands, or with one hand supporting the other, the same as any other item; it's a small gesture that's noticed. And keep any leftover won in mind before your departure day: exchanging it back at the airport gives a worse rate than you got buying it, so spending down the balance on the way out — a meal, snacks, something from the duty-free shelf — usually beats converting it twice.
+
 ## The short version
 
 - Always choose to be charged in Korean won, never your home currency, at the terminal

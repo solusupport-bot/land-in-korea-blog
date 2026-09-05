@@ -44,6 +44,17 @@ Quick-dry fabric beats cotton, both for comfort and for not smelling faintly of 
 
 Heated indoor air in winter tends to be very dry, not just warm — a small lip balm and a travel-size moisturizer are worth packing even if dry skin isn't usually something you plan around at home.
 
+## Small items that punch above their weight
+
+None of these take real space, and each one solves a problem that comes up more often in Korea than most packing lists admit:
+
+- **A daypack you can actually carry all day.** Layers only work if you have somewhere to put the one you just took off. A packable bag turns the heating-and-AC problem from an annoyance into a non-issue.
+- **A power bank.** Navigation, translation, transit cards, and photos all run off the same battery, and a full day of walking drains a phone faster than you'd expect. Korea uses the round two-pin Type C/F plug at 220V, so bring the right adapter rather than counting on borrowing one.
+- **A compact umbrella, year-round.** Summer rain arrives fast and passes fast, and in spring and autumn it doubles as sun cover on an exposed palace courtyard.
+- **A foldable tote.** Free shopping bags are restricted at Korean retail, so you'll be offered a paid one at almost every store — a tote you already have saves that repeatedly.
+- **Blister plasters, packed before you need them.** Korean itineraries involve more stairs and more walking than most city trips, and buying these mid-day means finding a pharmacy during its actual opening hours.
+- **A refillable water bottle.** Tap water is treated and considered safe, and public buildings, cafés, and transit stations commonly have water dispensers, so refilling is easy once you're carrying something to refill.
+
 ## The short version
 
 - Pack for indoor heating/AC swings, not just the weather outside

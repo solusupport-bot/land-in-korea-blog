@@ -39,6 +39,16 @@ Weekends turn the main street into a slow, shoulder-to-shoulder shuffle. A weekd
 - **Prices at chain cosmetics stores are fixed** — don't expect to negotiate there — but some smaller independent stalls, especially in adjacent market areas like Namdaemun, are more open to it, particularly for multiple-item purchases.
 - **Keep your receipts** if you're planning to claim a tax refund; the store needs to see the item and receipt together, and some refund methods also want to see your passport at the point of purchase.
 
+## Eating in Myeongdong without the guesswork
+
+The street food stalls are the draw, but they run on a few unwritten rules that catch first-timers out:
+
+- **Most stalls are cash-friendly, some are cash-only.** Card readers have become common, but the smaller carts still aren't guaranteed to have one. Keeping a small amount of cash on you avoids losing a spot in line.
+- **Portions are sized for grazing, not for a meal.** The point is to buy one thing at a stall, eat it, and move on. Ordering a full meal's worth at the first cart you see is how people end up too full for the rest of the street.
+- **Eat where you buy.** Many stalls expect you to finish nearby and put the stick or cup in their own bin rather than carrying food down the street. Public bins are genuinely scarce in Korean cities, so handing it back at the stall is the easy option.
+- **Prices are posted, not negotiated.** Street food carts display prices, and they're the same for everyone — there's no haggling and no separate tourist rate to worry about.
+- **The side streets are cheaper.** One block off the main pedestrian strip, restaurants aimed more at office workers than visitors serve a proper sit-down meal for less than the main-street equivalents, which is worth knowing if the stalls aren't open yet.
+
 ## The short version
 
 - Street food mostly starts in the late afternoon, not at lunch

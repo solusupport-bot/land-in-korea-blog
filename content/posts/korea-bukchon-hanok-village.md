@@ -39,6 +39,14 @@ The hillside location that makes Bukchon photogenic also means a lot of the alle
 
 Bukchon sits between [Gyeongbokgung](https://landinkorea.com/posts/korea-gyeongbokgung-palace.html) and Changdeokgung, which is why most visitors treat it as a walking connector between the two rather than a standalone destination. If you're already doing one palace, adding Bukchon on the way to (or from) the other costs very little extra time. Insadong, Seoul's traditional handicraft and tea shopping street, is also within walking distance to the south, making it easy to string all three together into one day.
 
+## How to plan the visit itself
+
+Bukchon takes less time than most people set aside for it, and that's a feature rather than a disappointment. An unhurried walk through the main lanes and the marked viewpoints runs about an hour; adding a tea house, a craft workshop, or a hanok interior turns it into two. Building a half day around it usually means padding the schedule with time spent circling the same alleys, which is exactly the behavior residents find wearing.
+
+A few practical notes for the walk itself. There's no ticket gate and no single entrance, so start from Anguk Station on Line 3 and walk uphill — the neighborhood reveals itself gradually rather than opening onto one main street. Public toilets are scarce inside the residential lanes, so use the facilities at the station or at the Bukchon Traditional Culture Center rather than counting on finding one mid-walk. Bring water in summer; the slopes and the lack of shade add up faster than the short distances suggest. And go on a clear day if you have the flexibility, since the appeal is almost entirely outdoors and the tiled rooflines lose a lot in flat grey light.
+
+If your visit falls on a weekend or a mid-morning when the lanes are already busy, the honest answer is to walk through, take the view from the marked viewpoints, and move on to Changdeokgung or Insadong rather than waiting out the crowd. The neighborhood doesn't reward persistence the way a museum might — the quiet version of it only exists early.
+
 ## The short version
 
 - It's a real, lived-in neighborhood — not a museum

@@ -36,6 +36,16 @@ This is where a lot of well-meaning visitors get it backwards, because they've r
 
 ![hanok guesthouse shoes entrance](https://images.pexels.com/photos/37436295/pexels-photo-37436295.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
 
+## Small habits that go further than any single rule
+
+If you remember nothing else, these are the low-effort behaviors that consistently read well and don't require knowing any Korean:
+
+- **Learn two words, not twenty.** *Annyeonghaseyo* (hello) and *gamsahamnida* (thank you) cover most interactions, and using them with a small nod is worth more than a memorized phrasebook you deliver awkwardly. Nobody expects a visitor to be fluent; they notice the attempt.
+- **Match the volume of the room.** Korean cafés, restaurants, and transit are generally quieter than their equivalents in a lot of Western countries. Talking at the level of the people around you is the single easiest way to not stand out.
+- **Handle the bill without a production.** Since splitting per person often isn't the custom, deciding who pays before you're standing at the counter avoids the awkward back-and-forth. If someone insists on covering the meal, a common way to balance it is to pick up the next round — coffee or dessert afterward — rather than arguing at the register.
+- **Let people off before you get on.** On a crowded subway platform this is the norm, and pushing forward against the flow is one of the more visible things a visitor can do wrong.
+- **Leave the priority seats alone.** The marked seats at the ends of subway cars often stay empty even when the car is full, because they're reserved for elderly, pregnant, and disabled passengers. An empty seat there isn't an invitation.
+
 None of these are rules with real consequences if you miss one — Koreans generally extend first-timers plenty of grace. They're just the difference between blending in a little and standing out as visibly unfamiliar with the room you're in.
 
 ## Frequently Asked Questions

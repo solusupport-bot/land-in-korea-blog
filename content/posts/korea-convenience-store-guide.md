@@ -41,6 +41,16 @@ Korean convenience stores are known for frequent limited-edition and collaborati
 
 Late at night, between attractions with no real restaurant nearby, or on a travel day when you don't want to sit down for a full meal — a convenience store meal isn't a compromise in Korea the way it might be elsewhere. The hot-food counter selection is a legitimate, fast option, not just a backup.
 
+## How to actually use one without fumbling at the counter
+
+The layout is consistent enough across chains that learning it once covers the whole trip:
+
+- **Hot water and microwaves are self-service**, usually on a counter near the seating area rather than behind the till. Cup noodles have a fill line inside; chopsticks, lids, and disposable spoons sit next to the dispenser, and there's a bin for the empty cup when you're done.
+- **Ask before you heat.** Boxed meals and packaged rice need to be microwaved, and the staff will usually do it if you hold the item up and gesture toward the microwave — no shared language required.
+- **Bags aren't automatic.** Korea restricts free plastic bags at retail, so expect to be asked whether you want one and to pay a small amount for it. Carrying a foldable tote saves that small friction several times a day.
+- **Paying is fast.** Tap-to-pay works on most foreign contactless cards, and a T-money card with a balance also works for small purchases. Cash is fine everywhere; tipping is not a thing here any more than anywhere else in Korea.
+- **Seating isn't guaranteed.** Some branches have a proper counter with stools, others have nothing at all. If you're planning to eat in, glance through the window for seating before committing to a hot meal.
+
 ## The short version
 
 - CU, GS25, 7-Eleven, and Emart24 are functionally interchangeable — pick whichever is closest

@@ -33,6 +33,16 @@ Kakao T is the go-to app for calling a taxi reliably in Korea, especially late a
 
 Download Naver Map, Papago, and Kakao T *before* you land, and switch the map apps to English in settings while you're at it — some functions work more reliably with a local IP or an active Korean SIM/eSIM, and fumbling with app store downloads and language settings on spotty airport Wi-Fi is a bad first impression of a trip. If you haven't sorted your data plan yet, see our [eSIM comparison](https://landinkorea.com/posts/korea-esim-comparison.html) for which option fits your trip length.
 
+## Getting more out of the map app once you have it
+
+Installing Naver Map or KakaoMap is the easy part; a few habits make it genuinely better than what you're used to:
+
+- **Search by the Korean name when English fails.** Copying a place name in Korean from a review, a website, or a translated menu into the search bar finds listings that the romanized spelling misses entirely. Romanization isn't standardized, so the same restaurant can appear under two or three different English spellings.
+- **Trust the exit numbers.** Korean subway stations are large, and coming out of the wrong exit can mean a ten-minute detour and a road crossing. The app names a specific exit number for a reason — follow it rather than heading for the nearest daylight.
+- **Read the transfer walking time as real time.** Some interchange stations involve a long underground walk between lines. The app accounts for it; itineraries built on the assumption that a transfer is instant do not.
+- **Check the last-train time before a late night out.** The subway stops running around midnight in most cities, and the app will show you the last departure for your route. Missing it means a taxi, which is where Kakao T earns its place on your phone.
+- **Save your accommodation as a favorite on day one.** Being able to route home from anywhere, in one tap, without retyping an address you can't spell in Korean, is worth the thirty seconds it takes.
+
 ## The short version
 
 - Google Maps has real, structural gaps in Korea due to long-standing local data restrictions — it isn't a temporary bug

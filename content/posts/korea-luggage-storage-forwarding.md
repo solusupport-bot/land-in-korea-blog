@@ -41,7 +41,18 @@ Whichever option you use, avoid packing valuables, fragile items, or liquids you
 
 Some hotels will hold luggage even after checkout at no extra charge — always ask at the front desk before paying for outside storage. It's the cheapest option on this list when it's available, and most visitors never think to ask.
 
-Booking an airport transfer for departure day anyway? Klook lists luggage forwarding and airport transfer options together, which is worth checking before arranging them separately.
+Booking an airport transfer for departure day anyway? [Klook]({{klook}}) lists luggage forwarding and airport transfer options together, which is worth checking before arranging them separately.
+
+## Matching the option to the day you're actually having
+
+Most of the confusion here comes from treating "luggage storage" as one decision when it's really four different days:
+
+- **Arrival day, hotel check-in isn't until afternoon.** Ask the hotel to hold your bags — this is standard, free, and available before check-in as well as after checkout. Paying for a locker on arrival day is the most common avoidable expense on this list.
+- **Checkout morning, late-evening flight.** Hotel storage again if you're coming back through the neighborhood, or a storage counter if you aren't. If you'd rather not return for the bags at all, forwarding to the airport is the option worth having booked the day before.
+- **Moving between cities.** Forward the bag ahead to your next hotel and travel the leg unencumbered, or use a station storage counter if you're only killing a few hours between trains.
+- **A single afternoon out with a carry-on.** This is the one case where a coin locker is genuinely the right tool — cheap, quick, and you're back well before closing.
+
+Two details worth checking whichever you pick. First, closing times: station and neighborhood counters keep business hours, and getting back after they close means your bag is stuck until morning. Second, take a photo of the locker number or hold the printed claim tag somewhere you won't lose it — retrieving a bag without the tag turns a two-minute errand into a long conversation.
 
 ## The short version
 

@@ -35,6 +35,12 @@ Over-the-counter medicine names differ from Western brands, so showing the pharm
 
 A few minutes of prep before your trip makes all of the above faster if you ever need it: save your embassy or consulate's Seoul contact information in your phone, keep a translated note of any serious allergies or existing medical conditions and your blood type, and keep your travel insurance policy number somewhere accessible offline, not only in an email you might not be able to load in a hurry.
 
+## Choosing between a pharmacy, a clinic, and a hospital
+
+Knowing which door to walk through saves both money and hours. A pharmacy (약국, *yakguk*) is the right first stop for the ordinary things — a cold, a headache, an upset stomach, blisters, motion sickness — and the pharmacist can hand you an over-the-counter option without an appointment. A neighborhood clinic (의원, *uiwon*), usually a small practice on an upper floor of a commercial building with a specialty on the sign, is the step up when you need to actually be seen: a persistent fever, an infection, something that needs a prescription. A large hospital's emergency room is for genuine emergencies, and using it for a minor complaint means a long wait behind people who need it more, at a higher cost.
+
+Two practical notes that surprise visitors. Pharmacies in Korea are independent shops rather than counters inside a supermarket, so you're looking for a standalone storefront with a green cross — and one is very often located on the ground floor of the same building as a clinic, which makes filling a prescription a short walk rather than a second errand. And keep every receipt and document you're given, in Korean, even if you can't read it: your insurer will usually want the itemized receipt and the diagnosis statement to process a reimbursement claim after you get home, and asking for those at the counter before you leave is far easier than requesting them from another country weeks later.
+
 ## The short version
 
 - 112 is police, 119 is fire/ambulance/medical — know which one you actually need

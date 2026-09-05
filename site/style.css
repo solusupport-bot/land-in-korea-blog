@@ -48,6 +48,7 @@ main{max-width:760px;margin:0 auto;padding:28px 20px}
 .post th{background:var(--soft);color:var(--fg)}
 .post tbody tr:nth-child(even){background:var(--soft)}
 blockquote{border-left:4px solid var(--gold);margin:1.2em 0;padding:4px 16px;color:var(--muted);background:var(--soft)}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.9em;word-break:break-word}
 .back{margin-top:32px}
 
 /* 제휴/외부 링크(CTA)는 본문 텍스트 링크와 다르게, 실제 클릭해야 할 버튼처럼 보이게 처리 */

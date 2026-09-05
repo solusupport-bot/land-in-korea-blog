@@ -31,6 +31,12 @@ If your trip falls in July–September or December–February, build one flexibl
 
 Hotels and hostel staff can usually help translate in a pinch if you're ever unsure whether a situation needs official help — you don't need to already speak Korean to ask for that kind of help.
 
+## What a disrupted day actually looks like on the ground
+
+Weather disruption in Korea rarely arrives as a total shutdown. What usually happens is narrower and easier to work around if you know the pattern. Island and coastal routes go first: flights to and from Jeju are the most weather-sensitive leg in the country, because a typhoon passing anywhere near the strait can ground them while Seoul is still merely wet. Long-distance rail is more resilient than flying, but heavy snow or track flooding can still slow or suspend services, and ferry routes to smaller islands are the least reliable of all in bad weather. Inside a city, the practical effect is smaller — subways keep running, and the day turns into an indoor one rather than a lost one.
+
+Two habits make this much easier to handle. First, if you're on a Korean SIM or eSIM, leave government emergency alert messages switched on rather than muting them the first time one arrives in Korean — the timing alone tells you something is happening, and a translation app will handle the text. Second, check the operator's own site or app (the airline, the rail operator, the ferry company) before you head to the station or airport, since cancellations are posted there before anyone tells you in person. If a flight or train is cancelled, rebooking through the operator's app is usually faster than joining the counter line every other affected passenger is already standing in.
+
 ## The short version
 
 - Crime is low even late at night in major cities — normal city precautions are enough

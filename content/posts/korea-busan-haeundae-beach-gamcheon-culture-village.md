@@ -31,6 +31,14 @@ Haeundae is straightforward — Haeundae Station on Busan Metro Line 2 puts you 
 
 KTX from Seoul to Busan takes roughly 2.5-3 hours and is the fastest option if you're not driving. In summer especially, it's worth booking ahead rather than assuming same-day seats will be available. A domestic flight between Gimpo and Gimhae airports is faster in the air but the total door-to-door time often ends up similar once you account for airport transit on both ends, and an intercity bus is the cheapest option if time isn't the priority — see our [comparison of KTX, SRT, and intercity buses](https://landinkorea.com/posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel.html) for how to actually choose between them.
 
+## How to order the day so it actually works
+
+The order you do these two in isn't arbitrary, and getting it right saves both crowding and effort.
+
+Gamcheon rewards an earlier start. It's a hillside neighborhood with almost no shade on the main routes, the alleys narrow quickly once tour groups arrive, and the queue at the most photographed viewpoints grows through the day. Going first thing also means climbing the stairs before the afternoon heat in summer. Haeundae works better later: the beachfront is pleasant in the afternoon, the restaurants along the strip come alive in the evening, and if you're there in warmer months the sunset over the water is a better closing note than a mid-morning visit would be.
+
+Reversing that order is still fine if your train times force it — just build in more transit slack, since crossing Busan at rush hour takes longer than the map suggests. A few other planning notes: Busan uses the same tap-to-ride transit cards as Seoul, so a [T-money card](https://landinkorea.com/posts/tmoney-first-timer-mistake.html) that worked in the capital works here too. Both stops are largely outdoors, which makes them weather-dependent in a way indoor attractions aren't — a rainy forecast is a good reason to swap the day around rather than push through. And if you're doing Busan as a day trip from Seoul rather than an overnight, book the return train before you leave, not after dinner, when the last convenient departures fill up first.
+
 ## The short version
 
 - Haeundae and Gamcheon are on opposite sides of Busan — budget real transit time

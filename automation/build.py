@@ -453,11 +453,30 @@ review or a favorable comparison result. If you spot something outdated or wrong
 """
     disclosure = f"""
 <h1>Affiliate Disclosure</h1>
-<p>{html.escape(cfg['site_name'])} does not currently use affiliate links or run ads. Every recommendation
-on this site reflects our own research and opinion, not a paid placement.</p>
-<p>We may add affiliate links in the future (we've reserved the option to link to services like Klook,
-Trip.com, and GetYourGuide). If and when we do, this page will be updated first, and any post containing
-such a link will disclose it in the text itself.</p>
+<p><strong>Current status: affiliate links are disabled.</strong></p>
+<p>{html.escape(cfg['site_name'])} uses a token-based affiliate link system managed in configuration, not in
+content. As of {datetime.now().strftime('%Y-%m-%d')}, <code>affiliate_links_enabled</code> is set to
+<code>false</code> in our build configuration, so all affiliate references are displayed as plain text
+without links. When enabled, this will be clearly indicated on each post.</p>
+<h2>What "token-based" means here</h2>
+<p>Some of our guides mention booking platforms such as Klook, Trip.com, and GetYourGuide as places to
+compare current prices. In the source of those articles, each mention is written as a placeholder token
+(for example <code>{{{{klook}}}}</code>) rather than a hard-coded URL. At build time, our generator reads
+<code>automation/config.json</code>:</p>
+<ul>
+<li>While <code>affiliate_links_enabled</code> is <code>false</code>, every token is stripped and the brand
+name is rendered as ordinary text — no outbound affiliate link, no tracking parameter, and no ad code is
+served anywhere on this site.</li>
+<li>If it is ever switched to <code>true</code>, the same tokens resolve to the real partner URLs in one
+place, so the disclosure status of the whole site can never drift out of sync with the articles.</li>
+</ul>
+<h2>Our plan if we activate affiliate links</h2>
+<p>We may enable this system in the future. If and when we do: this page will be updated first with the
+programs we have joined and the date the change took effect; every post containing such a link will carry a
+visible disclosure in the article itself; and the links will be marked <code>rel="sponsored"</code> so
+search engines and readers can identify them. Commissions, if any, would come at no extra cost to you, and
+our comparisons would still reflect our own research — we do not accept payment for a positive review or a
+favorable comparison result.</p>
 <p>Questions about a specific recommendation? Reach out via our
 <a href="{base}/contact.html">contact page</a>.</p>
 """ if not affiliate_enabled else f"""
@@ -657,6 +676,7 @@ main{max-width:760px;margin:0 auto;padding:28px 20px}
 .post th{background:var(--soft);color:var(--fg)}
 .post tbody tr:nth-child(even){background:var(--soft)}
 blockquote{border-left:4px solid var(--gold);margin:1.2em 0;padding:4px 16px;color:var(--muted);background:var(--soft)}
+code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.9em;word-break:break-word}
 .back{margin-top:32px}
 
 /* 제휴/외부 링크(CTA)는 본문 텍스트 링크와 다르게, 실제 클릭해야 할 버튼처럼 보이게 처리 */

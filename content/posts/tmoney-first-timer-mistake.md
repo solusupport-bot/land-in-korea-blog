@@ -39,7 +39,19 @@ Unused T-money balance can be partially refunded before you leave Korea, in cash
 
 ## Where to get a card if you haven't yet
 
-T-money cards are sold at convenience stores and station kiosks on arrival — no need to pre-book, and basic cards cost only a few thousand won plus whatever balance you load. Branded or character-design cards are also sold as souvenirs at a higher price but work exactly the same way as the plain version. If you'd rather sort out transit before you land, Klook and Trip.com also list Korea transit card bundles.
+T-money cards are sold at convenience stores and station kiosks on arrival — no need to pre-book, and basic cards cost only a few thousand won plus whatever balance you load. Branded or character-design cards are also sold as souvenirs at a higher price but work exactly the same way as the plain version. If you'd rather sort out transit before you land, [Klook]({{klook}}) and Trip.com also list Korea transit card bundles.
+
+## Riding buses without second-guessing yourself
+
+The tap-out habit is easier to keep if the rest of the bus routine isn't a surprise:
+
+- **Board at the front, exit at the middle or back.** Tap the reader as you board, and tap the reader by the exit door on your way off. Both readers are there for exactly this.
+- **Press the stop button early.** Korean city buses don't stop unless someone requests it, and drivers pull away quickly. Pressing it as the previous stop is announced rather than as yours arrives is the safer timing.
+- **Hold on before you sit.** Buses accelerate and brake harder than most visitors expect, and standing passengers are expected to be holding something.
+- **One card per person.** Some readers allow tapping multiple fares from one card for a group, but it isn't universal, and a failed group tap on a crowded bus is a bad place to troubleshoot. Separate cards keep transfer discounts working cleanly for everyone too.
+- **Keep enough balance for the tap-out.** If the card is short at the exit reader, the transfer discount is the thing you lose. Topping up at a convenience store when the balance gets low is quicker than doing it at a station machine mid-journey.
+
+The same tap-in, tap-out logic covers the subway, where the gates enforce it for you — buses are the only place the habit has to be yours.
 
 ## The short version
 
