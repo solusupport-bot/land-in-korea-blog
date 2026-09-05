@@ -35,7 +35,7 @@ The refund threshold applies per single receipt at a participating store, not yo
 
 Tax Free eligibility is also tied to how soon you actually leave the country after buying the item — refund schemes like this typically require export within a limited window after purchase, commonly a matter of a few months. It's rarely an issue on a normal vacation, but it matters if you're buying early in a long stay and not flying out again for a while, or shipping items rather than carrying them out yourself.
 
-Planning a shopping-heavy day in Seoul? [Klook]({{klook}}) and Trip.com both list guided shopping-district tours that build refund stops into the itinerary, which is one less thing to track yourself.
+Planning a shopping-heavy day in Seoul? [Klook]({{klook}}) and [Trip.com]({{tripcom}}) both list guided shopping-district tours that build refund stops into the itinerary, which is one less thing to track yourself.
 
 ## The short version
 

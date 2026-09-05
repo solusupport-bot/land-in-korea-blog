@@ -39,7 +39,7 @@ Unused T-money balance can be partially refunded before you leave Korea, in cash
 
 ## Where to get a card if you haven't yet
 
-T-money cards are sold at convenience stores and station kiosks on arrival — no need to pre-book, and basic cards cost only a few thousand won plus whatever balance you load. Branded or character-design cards are also sold as souvenirs at a higher price but work exactly the same way as the plain version. If you'd rather sort out transit before you land, [Klook]({{klook}}) and Trip.com also list Korea transit card bundles.
+T-money cards are sold at convenience stores and station kiosks on arrival — no need to pre-book, and basic cards cost only a few thousand won plus whatever balance you load. Branded or character-design cards are also sold as souvenirs at a higher price but work exactly the same way as the plain version. If you'd rather sort out transit before you land, [Klook]({{klook}}) and [Trip.com]({{tripcom}}) also list Korea transit card bundles.
 
 ## Riding buses without second-guessing yourself
 

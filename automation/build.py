@@ -203,6 +203,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
         f'<a href="{base}/index.html">Home</a>'
         f'<a href="{base}/about.html">About</a>'
         f'<a href="{base}/affiliate-disclosure.html">Disclosure</a>'
+        f'<a href="{base}/privacy.html">Privacy</a>'
         f'<a href="{base}/contact.html">Contact</a>'
         f'<a href="{base}/terms-of-service.html">Terms</a>'
     )
@@ -400,7 +401,17 @@ def build():
             f'</a>'
         )
     intro = (f'<section class="hero"><h1>{html.escape(cfg["site_name"])}</h1>'
-             f'<p>Pick the situation you\'re actually facing — every guide below runs the real comparison, not another list of tips.</p></section>'
+             f'<p>Pick the situation you\'re actually facing — every guide below runs the real comparison, not another list of tips.</p>'
+             f'<p class="hero-sub">Most Korea travel advice tells you what exists. It rarely tells you which option is '
+             f'right for <em>your</em> trip length, group size, or budget — so you end up guessing at the airport counter '
+             f'anyway. These guides are written the other way round: each one takes a single decision a first-time visitor '
+             f'or new foreign resident actually has to make — airport transfer, data plan, transit card, tax refund, '
+             f'attraction pass — lays the options side by side, and says plainly which one wins in which situation, '
+             f'including when the answer is "none of them, skip it."</p>'
+             f'<p class="hero-sub">Prices, opening hours, and procedures in Korea change often. Every guide notes where a '
+             f'detail is time-sensitive and points you to the official source to confirm before you book. We correct '
+             f'errors when readers report them — see the <a href="{base}/about.html">about page</a> for how we work, '
+             f'or <a href="{base}/contact.html">tell us</a> if something here is out of date.</p></section>'
              f'<section class="grid">{cards or "<p>No guides yet.</p>"}</section>')
     with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as f:
         f.write(page(cfg, base, "Home", cfg["site_tagline"], intro, f"{base}/index.html"))
@@ -649,6 +660,7 @@ nav a:hover{color:var(--red)}
 main{max-width:760px;margin:0 auto;padding:28px 20px}
 .hero{text-align:center;padding:24px 0 8px}
 .hero h1{font-size:1.9rem;margin:.2em 0;color:var(--fg)}
+.hero-sub{text-align:left;max-width:640px;margin:12px auto 0;font-size:.95rem;line-height:1.7;color:var(--muted)}
 .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
 @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
 .card{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);transition:.15s}

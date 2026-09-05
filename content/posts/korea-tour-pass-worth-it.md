@@ -50,7 +50,7 @@ Two passes at the same price can behave very differently once you're using them,
 
 ## Check current pass pricing and inclusions
 
-Passes and included attractions change over time — see current Seoul pass options on [GetYourGuide]({{getyourguide}}) or bundled tour/attraction combos on Klook, and run the math above against your actual itinerary before buying.
+Passes and included attractions change over time — see current Seoul pass options on [GetYourGuide]({{getyourguide}}) or bundled tour/attraction combos on [Klook]({{klook}}), and run the math above against your actual itinerary before buying.
 
 ## Frequently Asked Questions
 
