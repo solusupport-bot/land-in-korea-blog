@@ -11,7 +11,7 @@ Korea welcomes millions of international visitors annually. Myeongdong, Gangnam,
 
 But tolerance isn't the same as approval. And there's a meaningful difference between "you won't offend anyone" and "Koreans will think less of you for doing this."
 
-I've lived in Seoul for over ten years. I've watched countless interactions between tourists and Korean people. I've heard Korean friends explain their reactions to specific tourist behaviors. And I've observed subtle moments when a Korean person's demeanor shifts slightly—not from anger, but from recognition that the visitor isn't making much effort to respect local norms.
+The reaction is rarely anger. It's a small shift in demeanor — a slight cooling, a step back in warmth — that signals the visitor isn't making much effort to respect local norms. Because nobody says anything, most tourists never learn which habit caused it, which is exactly why these ten keep repeating.
 
 This guide covers ten things tourists frequently do in Korea that Koreans actively notice and judge (mildly, not harshly). None of these will get you arrested or even scolded. But they will make Korean people think: "That person doesn't understand Korean culture."
 

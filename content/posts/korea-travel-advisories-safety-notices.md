@@ -9,11 +9,11 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 ---
 You've probably heard that Korea is safe. But what does "safe" actually mean when you're stepping off a plane for the first time in Seoul?
 
-After living in Seoul for over a decade, I can tell you this: Korea is genuinely safe. Korean women walk alone at 11 PM or midnight in areas like Jongno and Gangnam Station without hesitation. Violent crime is rare. The CCTV coverage is among the highest in the world, and police patrols are frequent.
+By the numbers, Korea is genuinely safe. It ranks consistently near the top of global safety indices, violent crime is rare, CCTV coverage is among the highest in the world, and police patrols are frequent. It is unremarkable for women to walk alone late at night in busy districts like Jongno or Gangnam Station.
 
 But here's the crucial distinction: being safe from random violence doesn't mean there are zero things to watch out for. Korea, like every major tourist destination on Earth, has specific scams that target international visitors. The difference is that these scams are remarkably consistent and entirely avoidable if you know what to look for.
 
-I've watched these situations unfold. I've heard firsthand accounts from travelers and friends. And I've had multiple conversations with Korean friends about "that thing" tourists keep falling for. This guide covers the real schemes you're likely to encounter and exactly how to navigate around them.
+What follows are the schemes that come up again and again in traveler reports, embassy advisories, and Korean police warnings to tourists — not hypotheticals, but the specific, repeatable setups visitors actually run into, and exactly how to step around each one.
 
 ## Itaewon and Gangnam Bar Traps: The Most Infamous Tourist Scam
 

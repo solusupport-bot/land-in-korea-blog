@@ -443,16 +443,21 @@ tourists and new foreign residents alike. We don't repeat the same generic "how 
 you've already seen a hundred times. Instead, we run the actual comparisons: which airport transfer is
 worth the money, which eSIM option is genuinely cheaper, whether a tour pass pays for itself.</p>
 <h2>Who writes this</h2>
-<p>{html.escape(cfg['site_name'])} is written and maintained by a long-term Seoul resident with over a
-decade of direct, on-the-ground experience navigating Korean transit, banking, healthcare, and everyday
-etiquette as a foreign resident. Every guide on this site reflects something we've personally used, tested,
-or verified — not information copied from other travel sites. When prices, procedures, or app names change,
-we go back and confirm before republishing rather than leaving outdated advice live.</p>
+<p>{html.escape(cfg['site_name'])} is an independent editorial project run from Seoul. Guides are researched
+and compiled from official Korean sources — the Korea Tourism Organization, operators such as Korail and the
+airport railroad, the National Tax Service's tax-refund rules, and the transit and map apps themselves —
+combined with local familiarity with how those systems work in practice.</p>
+<p>Drafts are assembled with the help of editorial tooling and then checked against those sources before a
+guide goes live. We say this plainly because we would rather you know how the site is made than imply a
+first-hand travel diary it isn't: what we promise is that every specific in these guides traces back to a
+source we can point to, not that a person personally re-tested each fare and opening time the week you read
+it. Where a detail is time-sensitive — prices, thresholds, seasonal schedules — the guide says so and sends
+you to the official source to confirm.</p>
 <h2>How we work</h2>
 <ul>
 <li>We compare real options side by side instead of just describing one.</li>
-<li>Every claim is grounded in direct experience or verifiable public information — we don't invent details
-to fill space.</li>
+<li>Every claim is grounded in verifiable public information from an official or operator source — we don't
+invent details to fill space.</li>
 {about_affiliate_bullet}
 <li>Prices, thresholds, and rules change — always confirm on the official site before you book or travel.</li>
 </ul>
@@ -593,12 +598,21 @@ the updated terms.</p>
 </ul>
 <p>We reply within a few business days. We can't provide individual visa, legal, or tax advice.</p>
 """
+    # GitHub Pages는 404.html이 없으면 자사 기본 오류 페이지를 보여준다 — 방문자가
+    # 사이트를 벗어난 것처럼 보이고, 심사 크롤러에게도 미완성 사이트로 읽힌다.
+    not_found = f"""
+<h1>Page not found</h1>
+<p>That link doesn't point to a guide on this site — it may have been moved, or the address may have a typo.</p>
+<p>Try the <a href="{base}/index.html">list of guides</a>, or
+<a href="{base}/contact.html">tell us</a> which page you were looking for and we'll fix the link.</p>
+"""
     for name, title, body in [
         ("about", "About", about),
         ("affiliate-disclosure", "Affiliate Disclosure", disclosure),
         ("privacy", "Privacy Policy", privacy),
         ("terms-of-service", "Terms of Service", terms),
         ("contact", "Contact", contact),
+        ("404", "Page not found", not_found),
     ]:
         with open(os.path.join(SITE, f"{name}.html"), "w", encoding="utf-8") as f:
             f.write(page(cfg, base, title, f"{title} - {cfg['site_name']}", body, f"{base}/{name}.html"))

@@ -11,7 +11,7 @@ You've just landed at Incheon International Airport, and your phone buzzes with 
 
 There are three main options: airport bus (limousine bus), taxi (reserved taxi), or airport railroad (AREX). Each has legitimate strengths. Each has real drawbacks. And crucially, the "best" option depends entirely on your specific situation.
 
-I've used all three methods multiple times and watched countless travelers choose each option. I've also seen plenty of people choose wrong and then spend 90 minutes regretting their decision. This guide breaks down all the data you need to make an informed choice.
+The wrong pick isn't usually a disaster — it's 90 minutes you didn't need to spend, or several times the fare you needed to pay. This guide lays out the actual cost, time, and luggage trade-offs for each so you can match one to your arrival time, your budget, and where in Seoul you're headed.
 
 ## Option 1: Airport Limousine Bus (공항리무진)
 
