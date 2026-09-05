@@ -4,6 +4,7 @@ date: 2026-09-06
 category: Etiquette & mistakes
 description: The nudity rule at a Korean jjimjilbang is stricter than most first-timers expect, and the uniform rule right next to it is the opposite. Here's which parts are non-negotiable and which are just first-visit anxiety.
 image_query: korean sauna spa relaxation
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-jjimjilbang-guide-1788621649316.jpg
 ---
 
 Jjimjilbang guides tend to either oversell the awkwardness or undersell the one rule that actually matters. The real answer is that a Korean bathhouse runs two completely different dress codes in two adjacent areas, and mixing them up is the only way to actually cause a scene.
@@ -20,7 +21,8 @@ For first-timers, the nudity requirement is usually the biggest source of anxiet
 
 Korean attitudes toward tattoos in bathhouses have shifted considerably — most modern jjimjilbangs, especially larger or foreigner-frequented ones, don't restrict visitors with tattoos, and it's genuinely common to see them without any issue. That said, policy isn't universal: some older or more conservative establishments still discourage or restrict visible tattoos, particularly larger ones. If you have significant visible tattoos and you're set on a specific location, a quick call ahead or checking recent reviews avoids an awkward turn-away at the door.
 
-{{gallery:korean bathhouse sauna interior}}
+![korean bathhouse sauna interior](https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korean-bathhouse-sauna-interior-1788621651744.jpg)
+
 
 ## What it actually costs and how long you can stay
 

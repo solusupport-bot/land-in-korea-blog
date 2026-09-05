@@ -4,6 +4,7 @@ date: 2026-09-06
 category: Etiquette & mistakes
 description: Sorting recyclables isn't what trips people up in Korea — it's using the wrong bag. The country's volume-based trash system fines residents for using any bag except the official one for their district, and tourists in short-term rentals hit it too.
 image_query: apartment trash recycling bins korea
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-trash-recycling-rules-1788621660532.jpg
 ---
 
 Most "how to recycle in Korea" guides focus on sorting — plastic here, paper there. That part is genuinely similar to systems in a lot of other countries. The part that actually catches people, especially foreign residents and anyone staying somewhere longer than a hotel, is a rule tourists rarely hear about until they've already broken it: you can't just bag your trash and put it out. It has to be in the *right* bag.
@@ -20,7 +21,8 @@ The official bags are sold at [convenience stores](https://landinkorea.com/posts
 
 General waste and food waste are never combined in Korea — food scraps go through their own disposal stream, often using either a separate designated food-waste bag or, in many modern apartment buildings, an RFID-enabled communal bin that weighs what you dispose of and charges accordingly. The test for what counts as food waste is simpler than the category list makes it sound: if an animal could safely eat it, it's food waste. Meat and fish bones, shellfish shells, eggshells, hard fruit pits, and onion or garlic skins are the common exceptions — those go in general waste, not food waste, even though they're food-adjacent.
 
-{{gallery:korea apartment building recycling area}}
+![korea apartment building recycling area](https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-apartment-building-recycling-area-1788621662403.jpg)
+
 
 ## Recyclables are sorted by material, not thrown in one bin
 

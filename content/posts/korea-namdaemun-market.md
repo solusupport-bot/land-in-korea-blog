@@ -4,6 +4,7 @@ date: 2026-09-06
 category: Practical info
 description: Namdaemun looks like just another Seoul shopping street from outside, but it runs on different hours, different rules, and a different crowd than the malls next door. Here's what actually changes if you go.
 image_query: korean traditional market street stalls
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-namdaemun-market-1788621653768.jpg
 ---
 
 Namdaemun sits a 10-minute walk from [Myeongdong](https://landinkorea.com/posts/korea-myeongdong-shopping-district.html), and a lot of itineraries treat the two as one stop. They're not the same kind of shopping at all — one is a Joseon-era wholesale market that still runs largely on cash and negotiation, the other is duty-free storefronts and K-beauty flagships. Mixing up which one you're walking into is the actual mistake, not anything about the market itself.
@@ -20,7 +21,8 @@ Namdaemun runs on a schedule closer to a wholesale market than a tourist attract
 
 The market is organized into rough sections rather than one continuous strip: clothing, eyewear, kitchenware, imported goods, stationery, hats, ginseng, and camping and fishing gear all have their own clusters. It's also one of the better places in Seoul to eat street food that isn't aimed purely at tourists — hotteok (sweet filled pancakes), tteokbokki (spicy rice cakes), and kalguksu (hand-cut noodle soup) all have stalls with long-running local followings. If you're picking a food stop over a sit-down restaurant, this is a reasonable place to do it.
 
-{{gallery:traditional Korean market food stall}}
+![traditional Korean market food stall](https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/traditional-korean-market-food-stall-1788621656194.jpg)
+
 
 ## No entrance fee, but bring cash and expect to bargain
 

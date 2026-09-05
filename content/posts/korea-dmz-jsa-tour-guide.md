@@ -4,6 +4,7 @@ date: 2026-09-06
 category: Practical info
 description: A DMZ tour and a JSA tour are not the same trip, the dress code isn't a suggestion, and a photocopy of your passport won't get you through the checkpoint. Here's what actually determines whether you get in.
 image_query: korea demilitarized zone border checkpoint
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-dmz-jsa-tour-guide-1788621644791.jpg
 ---
 
 Search "DMZ tour Seoul" and most results blur two different trips together. A general DMZ tour and a JSA (Joint Security Area / Panmunjom) tour are not interchangeable — one has a real dress code and passport checkpoint, the other doesn't. Booking the wrong assumption is the actual mistake, not anything about the tour itself.
@@ -24,7 +25,8 @@ Whichever tour you book, your **physical passport** is a hard requirement — no
 
 JSA tours in particular have a real, enforced dress code: no sleeveless shirts, no collarless t-shirts, no shorts, no skirts above the knee, no sandals or flip-flops, and no clothing with military patterns, national flags, or political slogans. Operators do turn people away at the checkpoint for violating this — it isn't a soft recommendation buried in the fine print. If you're unsure whether an outfit qualifies, err toward a plain collared shirt and closed-toe shoes; a general (non-JSA) DMZ tour is considerably more relaxed about this.
 
-{{gallery:seoul dmz tour bus observatory}}
+![seoul dmz tour bus observatory](https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/seoul-dmz-tour-bus-observatory-1788621647228.jpg)
+
 
 ## Age and nationality restrictions you should check before booking
 
