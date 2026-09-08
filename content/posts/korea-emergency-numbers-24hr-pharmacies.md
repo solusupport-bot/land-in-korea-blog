@@ -5,6 +5,7 @@ category: Practical info
 description: 112 and 119 both work in English in Korea — but neither is usually the number first-time travelers actually need.
 slug: korea-emergency-numbers-24hr-pharmacies
 image_query: Emergency numbers & 24hr pharmacies travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-emergency-numbers-24hr-pharmacies-1788891476523.jpg
 ---
 ## The short version
 

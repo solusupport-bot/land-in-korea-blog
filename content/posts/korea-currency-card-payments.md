@@ -5,6 +5,7 @@ category: Money-saving
 description: Korea uses the Korean won (₩). Here's exactly how to get cash, which cards work best, where to exchange currency, and how much to budget daily.
 slug: korea-currency-card-payments
 image_query: Korean won currency Korea payment cards cash Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-currency-card-payments-1788891472412.jpg
 ---
 Korea is primarily a card-based society, but cash still matters. Understanding the payment ecosystem before arrival saves you stress, fees, and confusion.
 

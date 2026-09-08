@@ -5,6 +5,7 @@ category: Practical info
 description: Sorting recyclables isn't what actually trips people up in Korea — it's using the wrong bag.
 slug: korea-trash-and-recycling-rules-for-residents
 image_query: Trash and recycling rules for residents travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-trash-and-recycling-rules-for-residents-1788891493186.jpg
 ---
 ## The short version
 

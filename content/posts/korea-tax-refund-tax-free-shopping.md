@@ -5,6 +5,7 @@ category: Money-saving
 description: Most tourists lose their Tax Free refund before they even reach the airport — not from missing paperwork, but from where they packed the item.
 slug: korea-tax-refund-tax-free-shopping
 image_query: Tax refund (Tax Free) shopping travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-tax-refund-tax-free-shopping-1788891490923.jpg
 ---
 ## The short version
 

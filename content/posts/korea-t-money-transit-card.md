@@ -5,6 +5,7 @@ category: Etiquette & mistakes
 description: The T-money card is Korea's universal transit payment system. Here's exactly how to buy one, load it, and use it on subways, buses, taxis, and even stores.
 slug: korea-t-money-transit-card
 image_query: T-money card Korea transit payment Seoul subway
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-t-money-transit-card-1788891488635.jpg
 ---
 When you arrive in Korea, one of the first things you should buy isn't food or souvenirs. It's a T-money card.
 

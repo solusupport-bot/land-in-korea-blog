@@ -5,6 +5,7 @@ category: Comparisons
 description: Staying connected in Korea is cheap and easy. Here's exactly how to get data using eSIM, local SIM cards, or WiFi — and which option is best for your situation.
 slug: korea-esim-mobile-data
 image_query: Korea mobile phone SIM card eSIM data Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-esim-mobile-data-1788891478556.jpg
 ---
 Landing in Korea without mobile data is a genuine problem. Google Maps won't work. Apps won't load. You'll be dependent on finding WiFi to navigate, communicate, or handle emergencies. Within five minutes of arrival, you need internet connectivity.
 

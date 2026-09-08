@@ -5,6 +5,7 @@ category: Practical info
 description: A DMZ tour and a JSA (Joint Security Area/Panmunjom) tour get blurred together in most search results, but they're not the same trip.
 slug: korea-dmz-and-jsa-tours
 image_query: DMZ and JSA tours travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-dmz-and-jsa-tours-1788891474457.jpg
 ---
 ## The short version
 

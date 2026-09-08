@@ -5,6 +5,7 @@ category: Airport & transit
 description: Coin lockers at Korean subway stations look like the easy answer — until you actually try to find an empty one on a weekend.
 slug: korea-luggage-storage-forwarding-services
 image_query: Luggage storage & forwarding services travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-luggage-storage-forwarding-services-1788891483867.jpg
 ---
 ## The short version
 

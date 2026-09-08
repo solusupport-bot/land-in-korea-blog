@@ -5,6 +5,7 @@ category: Etiquette & mistakes
 description: A jjimjilbang is a Korean public bathhouse with saunas, pools, and sleeping areas. Here's how to use one without embarrassment or breaking rules.
 slug: korea-jjimjilbang-etiquette
 image_query: Jjimjilbang Korean spa sauna public bath Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-jjimjilbang-etiquette-1788891480950.jpg
 ---
 A jjimjilbang (찜질방) is a Korean public bathhouse complex. It's part spa, part sauna, part hostel. You pay a small entry fee (10,000-15,000 won, or $7-11 USD), remove your shoes, and access bathrooms, saunas, pools, resting areas, and sometimes sleeping rooms.
 

@@ -5,6 +5,7 @@ category: Comparisons
 description: Google Maps won't work reliably in Korea. Here are the essential apps you actually need: navigation, food, transportation, language, and emergency.
 slug: korea-useful-travel-apps
 image_query: Korea travel apps mobile smartphone Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-useful-travel-apps-1788891495039.jpg
 ---
 Korea is a technologically advanced country with apps for everything. But some of those apps are Korean-only, and some Western apps don't function reliably here. This creates a specific problem: you land with your familiar apps and immediately discover half of them don't work as expected.
 

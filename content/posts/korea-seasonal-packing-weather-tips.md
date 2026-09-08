@@ -5,6 +5,7 @@ category: Practical info
 description: The season that looks easiest to pack for in Korea is usually the one that catches the most travelers off guard.
 slug: korea-seasonal-packing-weather-tips
 image_query: Seasonal packing & weather tips travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-seasonal-packing-weather-tips-1788891485992.jpg
 ---
 ## The short version
 

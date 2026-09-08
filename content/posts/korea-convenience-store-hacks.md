@@ -5,6 +5,7 @@ category: Money-saving
 description: CU, GS25, and 7-Eleven in Korea do a lot more than sell snacks — most tourists use maybe 10% of what's actually available at the counter.
 slug: korea-convenience-store-hacks
 image_query: Convenience store hacks travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-convenience-store-hacks-1788891470445.jpg
 ---
 ## The short version
 
