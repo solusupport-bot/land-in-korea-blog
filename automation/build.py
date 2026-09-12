@@ -179,6 +179,23 @@ def brand_markup(cfg, base):
     return f'<span class="brand-mark" aria-hidden="true">⌂</span>{html.escape(cfg["site_name"])}'
 
 
+def adsense_script(cfg):
+    """
+    애드센스가 사이트 검토 시 <script> 태그(또는 ads.txt)로 소유권/코드 설치 여부를
+    확인한다 — 이 사이트엔 여태 이 태그도 ads.txt도 없어서(2026-09-13 실측 확인,
+    /ads.txt가 404) 반려 사유 중 하나였을 가능성이 높다. config.json의
+    google_adsense_pub_id가 비어 있으면 아무것도 넣지 않는다(goatcounter_script와
+    동일한 패턴 — 미설정 시 조용히 생략, 깨진 스크립트 태그를 넣지 않음).
+    """
+    pub_id = cfg.get("google_adsense_pub_id", "").strip()
+    if not pub_id:
+        return ""
+    return (
+        f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{pub_id}" '
+        f'crossorigin="anonymous"></script>\n'
+    )
+
+
 def goatcounter_script(cfg):
     """
     GoatCounter is a free, cookieless page-view counter. Blank until the
@@ -239,7 +256,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="{base}/style.css">
-{goatcounter_script(cfg)}{jsonld_tag}</head>
+{adsense_script(cfg)}{goatcounter_script(cfg)}{jsonld_tag}</head>
 <body>
 <header class="site-header">
   <a class="brand" href="{base}/index.html">
@@ -419,6 +436,7 @@ def build():
     write_static_pages(cfg, base)
     write_sitemap(cfg, base, posts)
     write_robots(base)
+    write_ads_txt(cfg)
     write_cname(cfg)
     write_css()
 
@@ -635,6 +653,19 @@ def write_sitemap(cfg, base, posts):
 def write_robots(base):
     with open(os.path.join(SITE, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n")
+
+
+def write_ads_txt(cfg):
+    """
+    /ads.txt가 없으면 애드센스 검토 시 경고/반려 사유가 된다(2026-09-13 실측 확인 —
+    landinkorea.com/ads.txt가 404였음). google_adsense_pub_id가 비어 있으면
+    아무것도 쓰지 않는다.
+    """
+    pub_id = cfg.get("google_adsense_pub_id", "").strip()
+    if not pub_id:
+        return
+    with open(os.path.join(SITE, "ads.txt"), "w", encoding="utf-8") as f:
+        f.write(f"google.com, {pub_id}, DIRECT, f08c47fec0942fa0\n")
 
 
 def write_cname(cfg):
