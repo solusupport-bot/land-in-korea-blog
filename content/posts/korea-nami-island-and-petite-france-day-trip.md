@@ -5,6 +5,7 @@ category: Practical info
 description: Nami Island isn't actually reachable by a bridge you can just walk across — it's a half-moon-shaped island in Gapyeong reached only by a short ferry ride (
 slug: korea-nami-island-and-petite-france-day-trip
 image_query: Nami Island and Petite France day trip travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-nami-island-and-petite-france-day-trip-1789274189378.jpg
 ---
 ## The short version
 
