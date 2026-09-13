@@ -5,6 +5,7 @@ category: Practical info
 description: Hongdae (named for Hongik University) runs on a schedule most visitors don't expect — it's quiet in the afternoon and doesn't really start until evening, e
 slug: korea-hongdae-nightlife-and-youth-culture-district
 image_query: Hongdae nightlife and youth culture district travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-hongdae-nightlife-and-youth-culture-district-1789265383348.jpg
 ---
 ## The practical rundown
 
