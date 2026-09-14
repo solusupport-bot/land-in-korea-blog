@@ -5,6 +5,7 @@ category: Practical info
 description: Hwaseong Fortress isn't a ruin you view from outside — it's a UNESCO World Heritage fortress wall you actually walk along, built in 1796 and still encircli
 slug: korea-suwon-hwaseong-fortress
 image_query: Suwon Hwaseong Fortress travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-suwon-hwaseong-fortress-1789351721396.jpg
 ---
 ## The practical rundown
 
