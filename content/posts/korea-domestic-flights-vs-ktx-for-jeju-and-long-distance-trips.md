@@ -5,6 +5,7 @@ category: Comparisons
 description: Jeju Island has zero rail connection to the mainland — no KTX, no regular ferry option fast enough for most trip lengths — so flying is effectively the onl
 slug: korea-domestic-flights-vs-ktx-for-jeju-and-long-distance-trips
 image_query: Domestic flights vs. KTX for Jeju and long-distance trips travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-domestic-flights-vs-ktx-for-jeju-and-long-distance-trips-1789360966302.jpg
 ---
 ## What matters here
 
