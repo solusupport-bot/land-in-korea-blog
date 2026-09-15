@@ -5,6 +5,7 @@ category: Practical info
 description: Chuseok (harvest festival) and Seollal (Lunar New Year) aren't just Korean holidays that closed a few shops — they're the two periods each year when a huge
 slug: korea-korean-public-holidays-that-disrupt-travel-plans
 image_query: Korean public holidays that disrupt travel plans travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-korean-public-holidays-that-disrupt-travel-plans-1789447404462.jpg
 ---
 ## The practical rundown
 
