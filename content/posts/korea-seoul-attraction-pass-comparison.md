@@ -5,6 +5,7 @@ category: Comparisons
 description: A Seoul attraction pass (bundling entry to multiple paid sites, sometimes with transit included) only pays off past a specific number of paid attractions p
 slug: korea-seoul-attraction-pass-comparison
 image_query: Seoul attraction pass comparison travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-seoul-attraction-pass-comparison-1789438228455.jpg
 ---
 ## What matters here
 
