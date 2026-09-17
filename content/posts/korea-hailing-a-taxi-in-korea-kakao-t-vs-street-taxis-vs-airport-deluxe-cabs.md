@@ -5,6 +5,7 @@ category: Airport & transit
 description: An honest guide to taxis in Korea: when Kakao T beats street hailing, what deluxe cabs really cost you, and practical tips on fares, cards and surcharges.
 slug: korea-hailing-a-taxi-in-korea-kakao-t-vs-street-taxis-vs-airport-deluxe-cabs
 image_query: orange taxi Seoul night street
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-hailing-a-taxi-in-korea-kakao-t-vs-street-taxis-vs-airport-deluxe-cabs-1789620619897.jpg
 ---
 Standing on a curb in Korea with your arm out is not the default anymore. It works — but you're doing it the way most Koreans stopped doing it years ago. The bigger problem isn't catching a taxi; it's explaining where you want to go once you're inside.
 
