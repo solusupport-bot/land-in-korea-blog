@@ -447,12 +447,11 @@ worth the money, which eSIM option is genuinely cheaper, whether a tour pass pay
 and compiled from official Korean sources — the Korea Tourism Organization, operators such as Korail and the
 airport railroad, the National Tax Service's tax-refund rules, and the transit and map apps themselves —
 combined with local familiarity with how those systems work in practice.</p>
-<p>Drafts are assembled with the help of editorial tooling and then checked against those sources before a
-guide goes live. We say this plainly because we would rather you know how the site is made than imply a
-first-hand travel diary it isn't: what we promise is that every specific in these guides traces back to a
-source we can point to, not that a person personally re-tested each fare and opening time the week you read
-it. Where a detail is time-sensitive — prices, thresholds, seasonal schedules — the guide says so and sends
-you to the official source to confirm.</p>
+<p>Each guide is compiled from those sources and checked against them before it goes live. We say this plainly
+because we would rather you know how the site is made than imply a first-hand travel diary it isn't: what we
+promise is that every specific in these guides traces back to a source we can point to, not that a person
+personally re-tested each fare and opening time the week you read it. Where a detail is time-sensitive —
+prices, thresholds, seasonal schedules — the guide says so and sends you to the official source to confirm.</p>
 <h2>How we work</h2>
 <ul>
 <li>We compare real options side by side instead of just describing one.</li>
@@ -521,9 +520,14 @@ through our <a href="{base}/contact.html">contact page</a> or by email.</p>
 <h2>Analytics</h2>
 {goatcounter_bullet}
 <h2>Cookies &amp; third-party tracking</h2>
-<p>This site does not currently use affiliate tracking or advertising cookies. If that changes, this page
-will be updated to reflect exactly what is added — see our
-<a href="{base}/affiliate-disclosure.html">disclosure</a> page for the current status.</p>
+<p>This site does not currently use affiliate tracking cookies. This site may show ads served through the
+Google AdSense program; if ads are displayed, Google and its advertising partners may use cookies to serve
+ads based on your visits to this site and other sites. You can opt out of personalized advertising via
+<a href="https://adssettings.google.com/" rel="noopener" target="_blank">Google's Ad Settings</a>, and read
+more about how Google uses this data at
+<a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">Google's
+partner sites policy</a>. See our <a href="{base}/affiliate-disclosure.html">disclosure</a> page for the
+current status of any other tracking.</p>
 <h2>Data retention</h2>
 <p>Messages sent through our contact page or by email are kept only as long as needed to respond to your
 inquiry and are not shared with third parties except where required by law.</p>
@@ -545,8 +549,11 @@ through our <a href="{base}/contact.html">contact page</a> or by email.</p>
 {goatcounter_bullet}
 <h2>Cookies &amp; affiliate tracking</h2>
 <p>Links to Klook, Trip.com, and GetYourGuide may set tracking cookies on their own sites once you click
-through, used to attribute bookings to this site. We do not control these third-party cookies — see each
-platform's own privacy policy for details.</p>
+through, used to attribute bookings to this site. This site may also show ads served through the Google
+AdSense program; if ads are displayed, Google and its advertising partners may use cookies to serve ads
+based on your visits to this site and other sites. You can opt out of personalized advertising via
+<a href="https://adssettings.google.com/" rel="noopener" target="_blank">Google's Ad Settings</a>. We do not
+control these third-party cookies — see each platform's own privacy policy for details.</p>
 <h2>Data retention</h2>
 <p>Messages sent through our contact page or by email are kept only as long as needed to respond to your
 inquiry and are not shared with third parties except where required by law.</p>
