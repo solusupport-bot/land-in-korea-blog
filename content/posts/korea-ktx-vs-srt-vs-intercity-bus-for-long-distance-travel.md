@@ -1,8 +1,8 @@
 ---
-title: KTX vs SRT vs Bus: Korea Long-Distance Travel
+title: KTX vs SRT vs Intercity Bus for Long-Distance Travel
 date: 2026-08-29
 category: Comparisons
-description: For a Seoul-to-Busan trip, the real choice isn't just train vs. bus — it's KTX vs. SRT vs. regional trains vs. two kinds of bus, and most first-timers only know one.
+description: For a Seoul-to-Busan trip, the real choice isn't train vs. bus — it's KTX vs. SRT vs. regional trains vs. two kinds of bus, and most travelers know only one.
 slug: korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel
 image_query: KTX vs. SRT vs. intercity bus for long-distance travel travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel-1788111242708.jpg

@@ -1,5 +1,5 @@
 ---
-title: Korea Luggage Storage & Forwarding Services Guide
+title: Korea Luggage Storage and Forwarding Services Guide
 date: 2026-09-08
 category: Airport & transit
 description: Coin lockers at Korean subway stations look like the easy answer — until you actually try to find an empty one on a weekend.

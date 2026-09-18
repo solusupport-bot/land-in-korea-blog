@@ -1,8 +1,8 @@
 ---
-title: N Seoul Tower (Namsan): A Visitor's Guide
+title: N Seoul Tower and Namsan: A Complete Visitor's Guide
 date: 2026-09-02
 category: Practical info
-description: You don't have to pay for the view at N Seoul Tower — the free plaza and a 30-40 minute hike already deliver most of it. Here's how the cable car and trails differ.
+description: You don't have to pay for the view at N Seoul Tower — the free plaza and a 30-40 minute hike already deliver most of it. Here's how the cable car differs.
 slug: korea-n-seoul-tower-namsan
 image_query: N Seoul Tower Namsan skyline view
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-n-seoul-tower-namsan-1788153615389.jpg

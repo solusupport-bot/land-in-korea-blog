@@ -1,5 +1,5 @@
 ---
-title: Korea Emergency Numbers & 24hr Pharmacies Guide
+title: Korea Emergency Numbers and 24-Hour Pharmacies Guide
 date: 2026-09-08
 category: Practical info
 description: 112 and 119 both work in English in Korea, but neither is usually the number travelers need. The 1330 Travel Hotline covers most situations.

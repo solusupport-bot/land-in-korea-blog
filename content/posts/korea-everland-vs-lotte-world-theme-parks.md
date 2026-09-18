@@ -1,5 +1,5 @@
 ---
-title: Everland vs Lotte World: Which Theme Park to Pick
+title: Everland vs Lotte World: Which Theme Park to Choose
 date: 2026-09-12
 category: Comparisons
 description: Everland and Lotte World both get called 'Korea's Disneyland,' but picking the wrong one for your trip wastes half a day on transit.

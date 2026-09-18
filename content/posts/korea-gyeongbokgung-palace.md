@@ -1,8 +1,8 @@
 ---
-title: Gyeongbokgung Palace: A First-Timer's Visit Guide
+title: Gyeongbokgung Palace Guide: Hours, Tickets, and Tips
 date: 2026-09-02
 category: Practical info
-description: Gyeongbokgung closes on Tuesdays, the guard ceremony runs on a schedule, and wearing a hanbok gets you in free. Here's the layout and timing details that matter.
+description: Gyeongbokgung closes on Tuesdays, the guard ceremony runs on a schedule, and wearing a hanbok gets you in free. Here's the layout and timing that matters.
 slug: korea-gyeongbokgung-palace
 image_query: Gyeongbokgung Palace guard ceremony Seoul
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-gyeongbokgung-palace-1788153610914.jpg

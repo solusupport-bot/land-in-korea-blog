@@ -1,5 +1,5 @@
 ---
-title: Myeongdong Shopping District: A Visitor's Guide
+title: Myeongdong Shopping District: A Visitor's Full Guide
 date: 2026-09-02
 category: Practical info
 description: The Myeongdong street food scene everyone posts about doesn't exist at lunchtime — here's when it shows up and how tax-free shopping works there.

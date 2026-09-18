@@ -1,5 +1,5 @@
 ---
-title: Korea Seasonal Packing & Weather Tips Guide
+title: Korea Seasonal Packing and Weather Tips: Full Guide
 date: 2026-09-08
 category: Practical info
 description: The season that looks easiest to pack for in Korea usually catches travelers off guard — indoor heating and AC swings matter as much as the weather outside.

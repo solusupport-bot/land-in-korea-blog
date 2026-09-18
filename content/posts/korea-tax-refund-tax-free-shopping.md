@@ -1,5 +1,5 @@
 ---
-title: Korea Tax Refund: Tax-Free Shopping Guide
+title: Korea Tax Refund and Tax-Free Shopping: A Complete Guide
 date: 2026-09-08
 category: Money-saving
 description: Most tourists lose their Tax Free refund before they even reach the airport — not from missing paperwork, but from where they packed the item.

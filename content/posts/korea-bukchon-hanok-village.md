@@ -2,7 +2,7 @@
 title: Bukchon Hanok Village: A Visitor's Etiquette Guide
 date: 2026-09-02
 category: Practical info
-description: Bukchon isn't a museum — real families live in these hanok houses. Here's the history, the viewpoint route, and how to visit without adding to crowding complaints.
+description: Bukchon isn't a museum — real families live in these hanok houses. Here's the history, the viewpoint route, and how to visit without adding to crowding.
 slug: korea-bukchon-hanok-village
 image_query: Bukchon Hanok Village traditional houses alley Seoul
 image: https://images.pexels.com/photos/20325768/pexels-photo-20325768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940

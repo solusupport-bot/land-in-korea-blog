@@ -1,5 +1,5 @@
 ---
-title: Why Google Maps Fails in Korea — and How Road-Name Addresses Actually Work
+title: Why Google Maps Fails in Korea and How Addresses Work
 date: 2026-09-18
 category: Practical info
 description: An essential guide to navigating Korea: why Google Maps can't do driving directions, which apps locals use, and how to read Korean addresses.

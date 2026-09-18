@@ -1,5 +1,5 @@
 ---
-title: Jjimjilbang Etiquette: Korean Spa Rules Explained
+title: Jjimjilbang Etiquette: A Guide to Korean Spa Rules
 date: 2026-09-08
 category: Etiquette & mistakes
 description: A jjimjilbang is a Korean public bathhouse with saunas, pools, and sleeping areas. Here's how to use one without embarrassment or breaking rules.

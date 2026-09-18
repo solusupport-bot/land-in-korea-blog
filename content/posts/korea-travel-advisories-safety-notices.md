@@ -1,5 +1,5 @@
 ---
-title: Seoul Safety: How to Avoid Common Tourist Scams
+title: Korea Travel Safety: How to Avoid Common Tourist Scams
 date: 2026-09-04
 category: Practical info
 description: Korea is statistically one of the safest countries in the world, but tourists face specific, targeted schemes. Learn what happens and exactly what to do.

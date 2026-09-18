@@ -1,5 +1,5 @@
 ---
-title: Korea Trash & Recycling Rules for Residents
+title: Korea Trash and Recycling Rules for Residents Guide
 date: 2026-09-08
 category: Practical info
 description: Sorting recyclables isn't what actually trips people up in Korea — it's using the wrong district-specific bag, and a mismatched bag won't get collected.

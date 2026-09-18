@@ -2,7 +2,7 @@
 title: Insadong: Seoul's Traditional Culture Street Guide
 date: 2026-09-11
 category: Practical info
-description: Insadong looks like a tourist strip until you realize it's Seoul's real center for traditional Korean art, antiques, and hanji paper — not a themed recreation.
+description: Insadong looks like a tourist strip until you realize it's Seoul's real center for traditional Korean art, antiques, and hanji paper, not a themed recreation.
 slug: korea-insadong-traditional-culture-street
 image_query: Insadong traditional culture street travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-insadong-traditional-culture-street-1789137705764.jpg

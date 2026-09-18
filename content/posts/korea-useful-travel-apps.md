@@ -1,5 +1,5 @@
 ---
-title: Best Travel Apps for Korea (2026)
+title: Best Travel Apps for Korea: A Complete 2026 Travel Guide
 date: 2026-09-08
 category: Comparisons
 description: Google Maps won't work reliably in Korea. Here are the essential apps you actually need: navigation, food, transportation, language, and emergency.

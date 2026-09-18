@@ -1,8 +1,8 @@
 ---
-title: Busan: Haeundae Beach & Gamcheon Village Guide
+title: Busan Guide: Haeundae Beach and Gamcheon Culture Village
 date: 2026-09-02
 category: Practical info
-description: Haeundae and Gamcheon get grouped into one Busan day trip constantly, but they sit on opposite sides of the city and need different transit. Here's how to plan the day.
+description: Haeundae and Gamcheon get grouped into one Busan day trip, but they sit on opposite sides of the city and need different transit. Here's how to plan your day.
 slug: korea-busan-haeundae-beach-gamcheon-culture-village
 image_query: Gamcheon Culture Village colorful houses Busan
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-busan-haeundae-beach-gamcheon-culture-village-1788153609523.jpg
