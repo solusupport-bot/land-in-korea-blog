@@ -1,8 +1,8 @@
 ---
-title: Myeongdong Shopping District - What First-Timers Actually Need to Know
+title: Myeongdong Shopping District: A Visitor's Guide
 date: 2026-09-02
 category: Practical info
-description: The Myeongdong street food scene everyone posts about doesn't exist at lunchtime — here's when it actually shows up, how tax-free shopping works there, and what's in the district beyond the cosmetics stores.
+description: The Myeongdong street food scene everyone posts about doesn't exist at lunchtime — here's when it shows up and how tax-free shopping works there.
 slug: korea-myeongdong-shopping-district
 image_query: Myeongdong shopping street Seoul evening
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-myeongdong-shopping-district-1788153613992.jpg
@@ -23,7 +23,7 @@ Many cosmetics shops hand out free samples, which is worth factoring in if you'r
 
 ## Don't skip the Tax Free sticker
 
-Tax Free shopping is available at stores across the district — look for the sticker in the window before you buy, since not every store participates and the paperwork is easiest to sort out at the register rather than after the fact. Myeongdong is also one of the easier places in Seoul to find downtown tax refund kiosks, which let you get part of your refund immediately in cash or back to your card rather than only at the airport on departure day — worth checking for if you're making a larger purchase. For the full rundown on how the refund threshold and paperwork actually work, see [our tax refund guide](https://landinkorea.com/posts/korea-tax-refund-mistake.html).
+Tax Free shopping is available at stores across the district — look for the sticker in the window before you buy, since not every store participates and the paperwork is easiest to sort out at the register rather than after the fact. Myeongdong is also one of the easier places in Seoul to find downtown tax refund kiosks, which let you get part of your refund immediately in cash or back to your card rather than only at the airport on departure day — worth checking for if you're making a larger purchase. For the full rundown on how the refund threshold and paperwork actually work, see [our tax refund guide](https://landinkorea.com/posts/korea-tax-refund-tax-free-shopping.html).
 
 ## More than shopping: the cathedral and the market
 
@@ -35,7 +35,7 @@ Weekends turn the main street into a slow, shoulder-to-shoulder shuffle. A weekd
 
 ## Practical shopping tips
 
-- **Card payments are accepted almost everywhere** in Myeongdong's main stores, but small street food stalls sometimes prefer cash — carrying a modest amount of cash alongside your card avoids an awkward moment at a food cart. Our [currency and card payments guide](https://landinkorea.com/posts/korea-currency-card-payment-mistake.html) covers this in more depth for the rest of your trip.
+- **Card payments are accepted almost everywhere** in Myeongdong's main stores, but small street food stalls sometimes prefer cash — carrying a modest amount of cash alongside your card avoids an awkward moment at a food cart. Our [currency and card payments guide](https://landinkorea.com/posts/korea-currency-card-payments.html) covers this in more depth for the rest of your trip.
 - **Prices at chain cosmetics stores are fixed** — don't expect to negotiate there — but some smaller independent stalls, especially in adjacent market areas like Namdaemun, are more open to it, particularly for multiple-item purchases.
 - **Keep your receipts** if you're planning to claim a tax refund; the store needs to see the item and receipt together, and some refund methods also want to see your passport at the point of purchase.
 

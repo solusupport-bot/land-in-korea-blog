@@ -1,8 +1,8 @@
 ---
-title: Busan Haeundae Beach & Gamcheon Culture Village - What First-Timers Actually Need to Know
+title: Busan: Haeundae Beach & Gamcheon Village Guide
 date: 2026-09-02
 category: Practical info
-description: Haeundae and Gamcheon get grouped into one Busan day trip constantly, but they sit on opposite sides of the city and need different transit. Here's how to actually plan the day, and what's worth doing at each stop.
+description: Haeundae and Gamcheon get grouped into one Busan day trip constantly, but they sit on opposite sides of the city and need different transit. Here's how to plan the day.
 slug: korea-busan-haeundae-beach-gamcheon-culture-village
 image_query: Gamcheon Culture Village colorful houses Busan
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-busan-haeundae-beach-gamcheon-culture-village-1788153609523.jpg
@@ -37,7 +37,7 @@ The order you do these two in isn't arbitrary, and getting it right saves both c
 
 Gamcheon rewards an earlier start. It's a hillside neighborhood with almost no shade on the main routes, the alleys narrow quickly once tour groups arrive, and the queue at the most photographed viewpoints grows through the day. Going first thing also means climbing the stairs before the afternoon heat in summer. Haeundae works better later: the beachfront is pleasant in the afternoon, the restaurants along the strip come alive in the evening, and if you're there in warmer months the sunset over the water is a better closing note than a mid-morning visit would be.
 
-Reversing that order is still fine if your train times force it — just build in more transit slack, since crossing Busan at rush hour takes longer than the map suggests. A few other planning notes: Busan uses the same tap-to-ride transit cards as Seoul, so a [T-money card](https://landinkorea.com/posts/tmoney-first-timer-mistake.html) that worked in the capital works here too. Both stops are largely outdoors, which makes them weather-dependent in a way indoor attractions aren't — a rainy forecast is a good reason to swap the day around rather than push through. And if you're doing Busan as a day trip from Seoul rather than an overnight, book the return train before you leave, not after dinner, when the last convenient departures fill up first.
+Reversing that order is still fine if your train times force it — just build in more transit slack, since crossing Busan at rush hour takes longer than the map suggests. A few other planning notes: Busan uses the same tap-to-ride transit cards as Seoul, so a [T-money card](https://landinkorea.com/posts/korea-t-money-transit-card.html) that worked in the capital works here too. Both stops are largely outdoors, which makes them weather-dependent in a way indoor attractions aren't — a rainy forecast is a good reason to swap the day around rather than push through. And if you're doing Busan as a day trip from Seoul rather than an overnight, book the return train before you leave, not after dinner, when the last convenient departures fill up first.
 
 ## The short version
 

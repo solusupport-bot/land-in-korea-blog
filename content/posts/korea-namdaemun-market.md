@@ -1,8 +1,8 @@
 ---
-title: Namdaemun Market — What Actually Makes It Different From Myeongdong
+title: Namdaemun Market vs Myeongdong: What's Different
 date: 2026-09-06
 category: Practical info
-description: Namdaemun looks like just another Seoul shopping street from outside, but it runs on different hours, different rules, and a different crowd than the malls next door. Here's what actually changes if you go.
+description: Namdaemun looks like just another Seoul shopping street from outside, but it runs on different hours, rules, and crowd than the malls next door. Here's what changes.
 image_query: korean traditional market street stalls
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-namdaemun-market-1788621653768.jpg
 ---
@@ -26,15 +26,15 @@ The market is organized into rough sections rather than one continuous strip: cl
 
 ## No entrance fee, but bring cash and expect to bargain
 
-There's no ticket or entrance fee — you walk in and out freely, unlike some tourist-oriented markets that have started charging. What does differ from Myeongdong's fixed-price stores is that bargaining is normal and often expected here, especially at stalls selling clothing, accessories, or bulk goods. Card acceptance varies far more by individual stall than it does at chain stores nearby, so carrying [some cash](https://landinkorea.com/posts/korea-currency-card-payment-mistake.html) makes the visit smoother than assuming every vendor has a card reader.
+There's no ticket or entrance fee — you walk in and out freely, unlike some tourist-oriented markets that have started charging. What does differ from Myeongdong's fixed-price stores is that bargaining is normal and often expected here, especially at stalls selling clothing, accessories, or bulk goods. Card acceptance varies far more by individual stall than it does at chain stores nearby, so carrying [some cash](https://landinkorea.com/posts/korea-currency-card-payments.html) makes the visit smoother than assuming every vendor has a card reader.
 
 ## Tax Free shopping works differently here than in a department store
 
-Namdaemun does have Tax Free-affiliated stalls, but the sticker-at-the-register system that works reliably at Myeongdong's bigger stores is less consistent here — smaller, independent stalls are less likely to be affiliated with a refund network at all. If a Tax Free refund matters to your purchase, [check the sticker and confirm the operator](https://landinkorea.com/posts/korea-tax-refund-mistake.html) before you buy rather than assuming it works the same way it did at your last stop in Myeongdong.
+Namdaemun does have Tax Free-affiliated stalls, but the sticker-at-the-register system that works reliably at Myeongdong's bigger stores is less consistent here — smaller, independent stalls are less likely to be affiliated with a refund network at all. If a Tax Free refund matters to your purchase, [check the sticker and confirm the operator](https://landinkorea.com/posts/korea-tax-refund-tax-free-shopping.html) before you buy rather than assuming it works the same way it did at your last stop in Myeongdong.
 
 ## Navigating it takes longer than the map suggests
 
-The market's organic layout means alleys branch off at odd angles and section boundaries aren't marked the way a mall's directory would lay them out — a phone map gets you to the entrance, not to a specific stall inside. [Naver Map or KakaoMap](https://landinkorea.com/posts/korea-travel-apps-comparison.html) are more reliable than Google Maps for the surrounding streets, but once you're inside the market itself, expect to wander a bit more than the walking-time estimate implies. Budgeting extra time rather than treating it as a quick 15-minute stop makes the visit less rushed, especially if food is part of the plan.
+The market's organic layout means alleys branch off at odd angles and section boundaries aren't marked the way a mall's directory would lay them out — a phone map gets you to the entrance, not to a specific stall inside. [Naver Map or KakaoMap](https://landinkorea.com/posts/korea-useful-travel-apps.html) are more reliable than Google Maps for the surrounding streets, but once you're inside the market itself, expect to wander a bit more than the walking-time estimate implies. Budgeting extra time rather than treating it as a quick 15-minute stop makes the visit less rushed, especially if food is part of the plan.
 
 ## How it connects to the rest of your day
 

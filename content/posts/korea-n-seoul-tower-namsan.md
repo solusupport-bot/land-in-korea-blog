@@ -1,8 +1,8 @@
 ---
-title: N Seoul Tower (Namsan) - What First-Timers Actually Need to Know
+title: N Seoul Tower (Namsan): A Visitor's Guide
 date: 2026-09-02
 category: Practical info
-description: You don't have to pay for the view at N Seoul Tower — the free plaza and a 30-40 minute hike from Myeongdong already deliver most of it. Here's how the cable car, tower deck, and hiking trails actually differ.
+description: You don't have to pay for the view at N Seoul Tower — the free plaza and a 30-40 minute hike already deliver most of it. Here's how the cable car and trails differ.
 slug: korea-n-seoul-tower-namsan
 image_query: N Seoul Tower Namsan skyline view
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-n-seoul-tower-namsan-1788153615389.jpg
@@ -23,7 +23,7 @@ Namsan itself is a modest mountain in the middle of the city, and the tower stru
 
 ## Hours and getting the timing right
 
-The observatory generally runs from mid-morning until 22:00 on weekdays and until later on weekends and holidays, with last admission 30 minutes before closing — though hours can shift for weather or maintenance, so it's worth checking the day of. Sunset is by far the busiest time to visit; if you'd rather have the view without the crowd, early afternoon or right after opening is the better call. One practical caveat worth knowing before you plan a sunset trip specifically for the view: on [hazy or high-pollution days](https://landinkorea.com/posts/korea-seasonal-packing-guide.html), visibility from the deck can drop noticeably, so a clear-looking day from ground level is a better predictor of a good view than the time of day is.
+The observatory generally runs from mid-morning until 22:00 on weekdays and until later on weekends and holidays, with last admission 30 minutes before closing — though hours can shift for weather or maintenance, so it's worth checking the day of. Sunset is by far the busiest time to visit; if you'd rather have the view without the crowd, early afternoon or right after opening is the better call. One practical caveat worth knowing before you plan a sunset trip specifically for the view: on [hazy or high-pollution days](https://landinkorea.com/posts/korea-seasonal-packing-weather-tips.html), visibility from the deck can drop noticeably, so a clear-looking day from ground level is a better predictor of a good view than the time of day is.
 
 ## It changes color at night
 

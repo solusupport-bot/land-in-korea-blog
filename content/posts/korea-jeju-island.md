@@ -2,7 +2,7 @@
 title: Jeju Island - What First-Timers Actually Need to Know
 date: 2026-09-02
 category: Practical info
-description: Jeju isn't on Korea's train network at all — only a flight or ferry gets you there. Here's the UNESCO status, the regions worth knowing, the car rental rules, and what else surprises first-time visitors.
+description: Jeju isn't on Korea's train network — only a flight or ferry gets you there. Here's the UNESCO status, the regions worth knowing, and the car rental rules.
 slug: korea-jeju-island
 image_query: Jeju Island Hallasan volcanic coastline
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-jeju-island-1788153612591.jpg

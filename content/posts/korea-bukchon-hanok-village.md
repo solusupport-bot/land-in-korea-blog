@@ -1,8 +1,8 @@
 ---
-title: Bukchon Hanok Village - What First-Timers Actually Need to Know
+title: Bukchon Hanok Village: A Visitor's Etiquette Guide
 date: 2026-09-02
 category: Practical info
-description: Bukchon isn't a museum — real families live in these hanok houses. Here's the history behind the neighborhood, the official viewpoint route, and how to visit respectfully without adding to the crowding residents complain about.
+description: Bukchon isn't a museum — real families live in these hanok houses. Here's the history, the viewpoint route, and how to visit without adding to crowding complaints.
 slug: korea-bukchon-hanok-village
 image_query: Bukchon Hanok Village traditional houses alley Seoul
 image: https://images.pexels.com/photos/20325768/pexels-photo-20325768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
@@ -76,4 +76,4 @@ No — it's a public residential neighborhood, so walking the streets is free. I
 
 ### Can I combine Bukchon with a palace visit?
 
-Yes — it sits between Gyeongbokgung and Changdeokgung, so most visitors walk it as a connector between the two rather than a separate trip, and Insadong's shopping street is close enough to add as a third stop. And if you're renting a [hanbok (traditional Korean dress) for photos](https://landinkorea.com/posts/korea-etiquette-mistakes.html), expect to take off your shoes indoors at certain areas — familiarize yourself with basic Korean customs first.
+Yes — it sits between Gyeongbokgung and Changdeokgung, so most visitors walk it as a connector between the two rather than a separate trip, and Insadong's shopping street is close enough to add as a third stop. And if you're renting a [hanbok (traditional Korean dress) for photos](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html), expect to take off your shoes indoors at certain areas — familiarize yourself with basic Korean customs first.

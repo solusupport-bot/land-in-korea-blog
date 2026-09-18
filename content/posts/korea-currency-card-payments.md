@@ -1,5 +1,5 @@
 ---
-title: Money in Korea - Cash, Cards, and Currency Exchange (2026 Rates)
+title: Money in Korea: Cash, Cards & Currency Exchange (2026)
 date: 2026-09-08
 category: Money-saving
 description: Korea uses the Korean won (₩). Here's exactly how to get cash, which cards work best, where to exchange currency, and how much to budget daily.

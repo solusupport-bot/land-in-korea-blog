@@ -1,8 +1,8 @@
 ---
-title: Seoul Safety for First-Timers - How to Avoid Scams Targeting Tourists
+title: Seoul Safety: How to Avoid Common Tourist Scams
 date: 2026-09-04
 category: Practical info
-description: Korea is statistically one of the safest countries in the world, but tourists face specific, targeted schemes. Learn what actually happens, how to recognize it, and exactly what to do.
+description: Korea is statistically one of the safest countries in the world, but tourists face specific, targeted schemes. Learn what happens and exactly what to do.
 slug: korea-travel-advisories-safety-notices
 image_query: Seoul night street travelers safety Korea
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-travel-advisories-safety-notices-1788533130939.jpg

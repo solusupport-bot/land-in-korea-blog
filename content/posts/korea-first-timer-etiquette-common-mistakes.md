@@ -1,8 +1,8 @@
 ---
-title: 10 Mistakes Visitors Make in Korea (And Why Koreans Actually Notice Them)
+title: 10 Mistakes Visitors Make in Korea (And Why It Matters)
 date: 2026-09-04
 category: Etiquette & mistakes
-description: You won't get in trouble for these, but Korean people will notice. Here's what to avoid and why it matters.
+description: You won't get in trouble for these ten habits, but Korean people will notice and quietly judge. Here's what to avoid and why it matters.
 slug: korea-first-timer-etiquette-common-mistakes
 image_query: Korean culture etiquette travelers manners
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-first-timer-etiquette-common-mistakes-1788533128590.jpg

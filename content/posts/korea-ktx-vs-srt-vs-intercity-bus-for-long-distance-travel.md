@@ -1,8 +1,8 @@
 ---
-title: KTX vs. SRT vs. intercity bus for long-distance travel - What First-Timers Actually Need to Know
+title: KTX vs SRT vs Bus: Korea Long-Distance Travel
 date: 2026-08-29
 category: Comparisons
-description: For a Seoul-to-Busan-length trip, the real choice isn't just train vs. bus — it's KTX vs. SRT vs. regional trains vs. two different kinds of bus, and most first-timers only know about one of them.
+description: For a Seoul-to-Busan trip, the real choice isn't just train vs. bus — it's KTX vs. SRT vs. regional trains vs. two kinds of bus, and most first-timers only know one.
 slug: korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel
 image_query: KTX vs. SRT vs. intercity bus for long-distance travel travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel-1788111242708.jpg
@@ -33,7 +33,7 @@ Korea actually has two separate categories of long-distance bus, and the terms a
 
 ## Book ahead around Korean holidays
 
-If any part of your trip overlaps with Seollal or Chuseok, book your train or bus as early as tickets go on sale — both often sell out within minutes for popular routes, and standing tickets or a different transport mode entirely may be your only options if you wait. Also worth knowing: natural events like [typhoons and heavy snow can disrupt trains and flights](https://landinkorea.com/posts/korea-safety-vs-weather-risk.html) with little warning during certain seasons, so building buffer time into your long-distance travel plans during summer/early fall or winter is a reasonable precaution.
+If any part of your trip overlaps with Seollal or Chuseok, book your train or bus as early as tickets go on sale — both often sell out within minutes for popular routes, and standing tickets or a different transport mode entirely may be your only options if you wait. Also worth knowing: natural events like [typhoons and heavy snow can disrupt trains and flights](https://landinkorea.com/posts/korea-seasonal-packing-weather-tips.html) with little warning during certain seasons, so building buffer time into your long-distance travel plans during summer/early fall or winter is a reasonable precaution.
 
 ## The short version
 

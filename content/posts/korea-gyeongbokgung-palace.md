@@ -1,8 +1,8 @@
 ---
-title: Gyeongbokgung Palace - What First-Timers Actually Need to Know
+title: Gyeongbokgung Palace: A First-Timer's Visit Guide
 date: 2026-09-02
 category: Practical info
-description: Gyeongbokgung closes on Tuesdays, the guard ceremony runs on a schedule, and wearing a hanbok gets you in free. Here's the layout, the history, and the timing details that actually matter before you go.
+description: Gyeongbokgung closes on Tuesdays, the guard ceremony runs on a schedule, and wearing a hanbok gets you in free. Here's the layout and timing details that matter.
 slug: korea-gyeongbokgung-palace
 image_query: Gyeongbokgung Palace guard ceremony Seoul
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-gyeongbokgung-palace-1788153610914.jpg
@@ -25,7 +25,7 @@ The Royal Guard Changing Ceremony runs at the Heungnyemun Gate at set times, not
 
 ## The hanbok trick that actually works
 
-Wearing a complete hanbok that meets the palace's official guidelines gets you free admission — one of the few tourist perks in Seoul that's both genuinely useful and easy to use, since hanbok rental shops cluster right outside the palace gates, mainly along the street leading up to Gwanghwamun. It also makes for noticeably better photos than street clothes against the traditional architecture. Just note that a rental shop's promise isn't the same as the palace's actual guidelines, so a genuine hanbok (not just any traditional-looking outfit) is what qualifies — and most rentals run for a half-day or full-day block, so plan the palace visit and any nearby photo stops ([Bukchon](https://landinkorea.com/posts/korea-bukchon-hanok-village.html), for example) inside that rental window rather than cutting it close. Taking off shoes indoors at certain areas is expected, so review [Korean etiquette basics](https://landinkorea.com/posts/korea-etiquette-mistakes.html) if you're unfamiliar with temple or palace customs.
+Wearing a complete hanbok that meets the palace's official guidelines gets you free admission — one of the few tourist perks in Seoul that's both genuinely useful and easy to use, since hanbok rental shops cluster right outside the palace gates, mainly along the street leading up to Gwanghwamun. It also makes for noticeably better photos than street clothes against the traditional architecture. Just note that a rental shop's promise isn't the same as the palace's actual guidelines, so a genuine hanbok (not just any traditional-looking outfit) is what qualifies — and most rentals run for a half-day or full-day block, so plan the palace visit and any nearby photo stops ([Bukchon](https://landinkorea.com/posts/korea-bukchon-hanok-village.html), for example) inside that rental window rather than cutting it close. Taking off shoes indoors at certain areas is expected, so review [Korean etiquette basics](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html) if you're unfamiliar with temple or palace customs.
 
 ## Getting there and timing your visit
 
