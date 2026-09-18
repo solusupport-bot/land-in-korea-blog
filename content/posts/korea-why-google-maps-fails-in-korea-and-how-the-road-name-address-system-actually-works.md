@@ -5,6 +5,7 @@ category: Practical info
 description: An essential guide to navigating Korea: why Google Maps can't do driving directions, which apps locals use, and how to read Korean addresses.
 slug: korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works
 image_query: Seoul subway exit number sign
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works-1789705790395.jpg
 ---
 Here's the mistake almost every first-timer makes: landing at Incheon, opening Google Maps, typing in a restaurant, and getting either nothing or a vague blue line that stops making sense the moment you leave the subway station. It's not your phone. It's not bad Wi-Fi. Google Maps is genuinely crippled in Korea, and no amount of refreshing will fix it.
 
