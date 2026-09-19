@@ -195,6 +195,21 @@ def goatcounter_script(cfg):
     )
 
 
+def adsense_script(cfg):
+    """
+    Blank until automation/config.json's adsense_publisher_id is set (the
+    "ca-pub-..." client id AdSense issues on signup) — no id means no script,
+    not a broken page.
+    """
+    pub_id = cfg.get("adsense_publisher_id", "").strip()
+    if not pub_id:
+        return ""
+    return (
+        f'<script async src="https://pagead2.googlesyndication.com/pagead/js/'
+        f'adsbygoogle.js?client={pub_id}" crossorigin="anonymous"></script>\n'
+    )
+
+
 # ---------- shared layout ----------
 def page(cfg, base, title, description, body, canonical, is_post=False,
          og_type="website", image=None, published=None, jsonld=None):
@@ -239,7 +254,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="{base}/style.css">
-{goatcounter_script(cfg)}{jsonld_tag}</head>
+{goatcounter_script(cfg)}{adsense_script(cfg)}{jsonld_tag}</head>
 <body>
 <header class="site-header">
   <a class="brand" href="{base}/index.html">
@@ -420,6 +435,7 @@ def build():
     write_sitemap(cfg, base, posts)
     write_robots(base)
     write_cname(cfg)
+    write_ads_txt(cfg)
     write_css()
 
     print(f"Build complete: {len(posts)} posts + static pages")
@@ -652,6 +668,16 @@ def write_cname(cfg):
             f.write(domain + "\n")
     elif os.path.exists(cname_path):
         os.remove(cname_path)
+
+
+def write_ads_txt(cfg):
+    pub_id = cfg.get("adsense_publisher_id", "").strip()
+    ads_path = os.path.join(SITE, "ads.txt")
+    if pub_id:
+        with open(ads_path, "w", encoding="utf-8") as f:
+            f.write(f"google.com, {pub_id.removeprefix('ca-')}, DIRECT, f08c47fec0942fa0\n")
+    elif os.path.exists(ads_path):
+        os.remove(ads_path)
 
 
 def write_css():
