@@ -5,6 +5,7 @@ category: Airport & transit
 description: Essential tips on Seoul subway exit numbers, long transfer walks, express trains, extra fares and last train times so you arrive where you actually meant to.
 slug: korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train
 image_query: Seoul subway platform exit signs
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train-1789792525440.jpg
 ---
 The Seoul subway is genuinely easy. What trips people up isn't the system — it's the four details nobody mentions: which exit you take, how far you have to walk to transfer, whether your train actually stops where you think, and what "last train" really means.
 
