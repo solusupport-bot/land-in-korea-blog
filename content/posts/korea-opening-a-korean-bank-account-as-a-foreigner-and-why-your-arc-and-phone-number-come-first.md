@@ -5,6 +5,7 @@ category: Practical info
 description: An honest guide to opening a Korean bank account as a foreigner, with essential tips on ARC timing, phone numbers, name spellings and ATM access.
 slug: korea-opening-a-korean-bank-account-as-a-foreigner-and-why-your-arc-and-phone-number-come-first
 image_query: Korean bank branch counter interior
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-opening-a-korean-bank-account-as-a-foreigner-and-why-your-arc-and-phone-number-come-first-1789879470637.jpg
 ---
 Most people arrive in Korea and treat the bank account as step one. It's closer to step three. The order that actually works is **ARC first, phone number second, bank account third** — and getting it backwards is why so many new residents spend their first month paying rent in cash and borrowing a coworker's phone for verification codes.
 
