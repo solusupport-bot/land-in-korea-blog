@@ -5,6 +5,7 @@ category: Comparisons
 description: An honest guide to Korean housing options, from goshiwons to jeonse, with essential tips on deposits, lease registration, and avoiding rental fraud.
 slug: korea-short-term-vs-long-term-housing-in-korea-guesthouse-goshiwon-officetel-and-the-deposit-system
 image_query: narrow goshiwon room interior Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-short-term-vs-long-term-housing-in-korea-guesthouse-goshiwon-officetel-and-the-deposit-system-1789871021466.jpg
 ---
 Most people arriving in Korea for two months book a hotel for the first week and panic-search Airbnb for the rest. That's the expensive mistake. The gap between "tourist stay" and "signed a one-year lease" is exactly where Korea has options almost no first-timer knows about — and they cost a fraction of what you're about to pay.
 
