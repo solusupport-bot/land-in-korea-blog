@@ -5,6 +5,7 @@ category: Practical info
 description: A lot of Korean food is engineered for sharing, so a table for one can hit a wall. Free, essential tips inside.
 slug: korea-eating-alone-in-korea-which-restaurants-refuse-solo-diners-and-where-honbap-works
 image_query: Eating alone in Korea: which restaurants refuse solo diners and where honbap works travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-eating-alone-in-korea-which-restaurants-refuse-solo-diners-and-where-honbap-works-1789957324672.jpg
 ---
 ## What matters here
 
