@@ -5,6 +5,7 @@ category: Comparisons
 description: Korea's delivery ecosystem runs on a few big apps — Baemin, Coupang Eats, and Yogiyo — and the food itself arrives fast and cheap by global standards.
 slug: korea-food-delivery-apps-in-korea-why-signing-up-is-harder-than-ordering
 image_query: Food delivery apps in Korea: why signing up is harder than ordering travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-food-delivery-apps-in-korea-why-signing-up-is-harder-than-ordering-1789965761000.jpg
 ---
 ## The short version
 
