@@ -5,6 +5,7 @@ category: Practical info
 description: Driving is a real upgrade for some trips and a liability for others. Free, essential tips inside.
 slug: korea-renting-a-car-in-korea-when-it-s-smart-when-it-s-a-waste-and-what-the-rental-desk-will-ask-for
 image_query: Renting a car in Korea: when it's smart, when it's a waste, and what the rental desk will ask for travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-renting-a-car-in-korea-when-it-s-smart-when-it-s-a-waste-and-what-the-rental-desk-will-ask-for-1790042702319.jpg
 ---
 ## The short version
 
