@@ -5,6 +5,7 @@ category: Practical info
 description: Korea's flower and foliage seasons move geographically, and that's the whole planning trick. Free, essential tips inside.
 slug: korea-timing-cherry-blossoms-and-fall-foliage-in-korea-without-hitting-peak-crowds
 image_query: Timing cherry blossoms and fall foliage in Korea without hitting peak crowds travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-timing-cherry-blossoms-and-fall-foliage-in-korea-without-hitting-peak-crowds-1790043603811.jpg
 ---
 ## What matters here
 
