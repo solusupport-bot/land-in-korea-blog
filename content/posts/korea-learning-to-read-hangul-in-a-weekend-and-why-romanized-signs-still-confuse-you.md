@@ -5,6 +5,7 @@ category: Practical info
 description: Hangul was designed to be learnable, and that's not a marketing line — it's an alphabet of 24 basic letters assembled into square syllable blocks, and most
 slug: korea-learning-to-read-hangul-in-a-weekend-and-why-romanized-signs-still-confuse-you
 image_query: Learning to read Hangul in a weekend — and why romanized signs still confuse you travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-learning-to-read-hangul-in-a-weekend-and-why-romanized-signs-still-confuse-you-1790051958687.jpg
 ---
 ## What you actually need to know
 
