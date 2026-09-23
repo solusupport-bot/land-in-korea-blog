@@ -5,6 +5,7 @@ category: Comparisons
 description: Korea's medical system is tiered, and walking into a big university hospital for a sore throat is usually the slowest and most expensive choice.
 slug: korea-hospital-vs-clinic-vs-pharmacy-in-korea-where-to-actually-go-when-you-get-sick
 image_query: Hospital vs. clinic vs. pharmacy in Korea: where to actually go when you get sick travel
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-hospital-vs-clinic-vs-pharmacy-in-korea-where-to-actually-go-when-you-get-sick-1790129810248.jpg
 ---
 ## The short version
 
