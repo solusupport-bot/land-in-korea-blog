@@ -5,6 +5,7 @@ category: Airport & transit
 description: A practical guide to Seoul city buses covering what the colors mean, finding the right stop, flagging the driver, and why tapping off keeps transfers free.
 slug: korea-bus-travel-inside-korean-cities-color-codes-tag-off-transfers-and-why-you-must-flag-the-bus
 image_query: blue Seoul city bus stop
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-bus-travel-inside-korean-cities-color-codes-tag-off-transfers-and-why-you-must-flag-the-bus-1790216317698.jpg
 ---
 Standing politely at a Korean bus stop is one of the easiest ways to miss your bus. Drivers in Korean cities don't stop at every stop by default, and if nobody at the curb looks like they want that particular bus, it will often roll straight past. City buses here are fast, frequent, and cheap, but they reward a more assertive rider than the subway does. Here's what actually matters once you're off the train and onto the street.
 
