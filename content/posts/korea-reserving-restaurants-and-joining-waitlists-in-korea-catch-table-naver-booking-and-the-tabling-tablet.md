@@ -5,6 +5,7 @@ category: Practical info
 description: A practical guide to booking Korean restaurants and joining tablet waitlists on Naver, Catch Table and Tabling, even without a Korean phone number.
 slug: korea-reserving-restaurants-and-joining-waitlists-in-korea-catch-table-naver-booking-and-the-tabling-tablet
 image_query: restaurant waitlist tablet Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-reserving-restaurants-and-joining-waitlists-in-korea-catch-table-naver-booking-and-the-tabling-tablet-1790224359268.jpg
 ---
 The most common restaurant mistake visitors make in Korea isn't ordering wrong. It's showing up at 6:30 p.m. to a place with a two-hour line, or trying to phone a restaurant that stopped taking calls years ago. At popular Korean restaurants, the booking, the waitlist and even the "are you open?" question all run through apps and a tablet by the door, and almost every one of those systems assumes you have a Korean phone number.
 
