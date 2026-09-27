@@ -5,6 +5,7 @@ category: Practical info
 description: KTX is often the wrong train for a Seoul day trip, and this guide shows when Mugunghwa, ITX or a subway line to Chuncheon or Yangpyeong works better.
 slug: korea-day-tripping-from-seoul-by-regular-train-mugunghwa-itx-saemaeul-and-the-gyeongui-jungang-line
 image_query: Korean countryside commuter train
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-day-tripping-from-seoul-by-regular-train-mugunghwa-itx-saemaeul-and-the-gyeongui-jungang-line-1790494753918.jpg
 ---
 For most day trips out of Seoul, the KTX is the wrong train. It's built for Busan and Gwangju, not for a lake town an hour away, and on short hops the minutes it saves usually vanish in the trip to the KTX station. The smarter tools are the slower ones: Korail's conventional trains, and a subway network that quietly runs deep into Gyeonggi and Gangwon provinces on an ordinary transit card.
 
