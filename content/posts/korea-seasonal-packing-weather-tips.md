@@ -46,6 +46,10 @@ Skip a generic "Korea in [month]" article and check the Korea Meteorological Adm
 - Check the KMA forecast or a weather app close to your trip date, not a generic monthly guide
 - Comfortable walking shoes matter more than fashion in every season
 
+## Official sources
+
+This guide is checked against [Korea Meteorological Administration](https://www.kma.go.kr/neng/index.do). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### What's the rainy season (jangma) like in Korea, and when does it happen?

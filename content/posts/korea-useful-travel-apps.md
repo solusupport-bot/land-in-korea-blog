@@ -177,6 +177,10 @@ Apps like "Visit Seoul" or "Korea Tourism Organization" provide curated attracti
 
 ---
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Will Google Maps work in Korea?

@@ -44,6 +44,10 @@ Flights between Jeju and [Gimpo airport](https://landinkorea.com/posts/korea-air
 - Renting a car (with an International Driving Permit) is the practical way to get around
 - Coastal weather changes fast — pack a rain layer even in summer, and watch for typhoon season in late summer
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I take a train to Jeju Island?

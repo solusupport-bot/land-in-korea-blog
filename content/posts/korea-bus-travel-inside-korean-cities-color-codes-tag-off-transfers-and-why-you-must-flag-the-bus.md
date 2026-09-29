@@ -60,6 +60,10 @@ Stop screens, onboard displays, and card readers mix Korean and English, and the
 - **카드를 한 장만 대주세요**: "please tap only one card." The reader says this when it detects two cards in your wallet, and the tap fails.
 - **잔액이 부족합니다**: "insufficient balance." Top up at a convenience store before your next ride.
 
+## Official sources
+
+This guide is checked against [Seoul Metropolitan Government](https://english.seoul.go.kr) and [T-money](https://eng.tmoney.co.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I tap a foreign Visa or Mastercard contactless card on Seoul buses?

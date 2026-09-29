@@ -49,6 +49,10 @@ Namdaemun sits between Seoul Station and Myeongdong, which makes it a natural ad
 - Tax Free affiliation is less consistent than at bigger department stores — check before you buy if the refund matters
 - It sits between Seoul Station and Myeongdong, making it an easy add-on rather than a separate trip
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Is Namdaemun Market the same as Myeongdong?

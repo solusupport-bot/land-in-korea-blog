@@ -50,6 +50,10 @@ Anguk Station on subway Line 3 is the closest stop, within a short walk of both 
 - Traditional tea houses are for sitting and lingering, not a quick stop
 - Anguk Station (Line 3) is the closest subway access point
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Is Insadong open on Sundays?

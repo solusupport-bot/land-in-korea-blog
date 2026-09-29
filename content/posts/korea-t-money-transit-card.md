@@ -197,6 +197,10 @@ T-money cards don't expire. You can use the same card on multiple trips to Korea
 
 ---
 
+## Official sources
+
+This guide is checked against [T-money](https://eng.tmoney.co.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Do I have to buy a T-money card or can I just buy individual tickets?

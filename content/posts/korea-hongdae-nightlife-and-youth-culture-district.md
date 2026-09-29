@@ -46,6 +46,10 @@ Hongik University Station, on subway Line 2 and also served by the Airport Railr
 - Hongik University Station (Line 2) Exit 9 is the main access point; Exit 8 is a quieter alternative
 - Subway service stops around midnight to 1am — night buses or a taxi app cover the rest
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### What time does Hongdae nightlife actually start?

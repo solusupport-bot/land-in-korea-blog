@@ -61,6 +61,10 @@ Also watch for 라스트오더 (last order), which can come well before the post
 
 Install CatchTable Global before your trip and book your one or two must-eat restaurants there as soon as slots open. For everything else, pick restaurants from Naver Map, note their break time, and aim to arrive at opening or just after the lunch rush. If there's a tablet outside, register, ask the staff how long the wait is, and stay close. And when a place only books through Naver, let your hotel make the booking rather than fighting the verification screen.
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I use Catch Table in Korea without a Korean phone number?

@@ -1,8 +1,8 @@
 ---
-title: Opening a Korean Bank Account as a Foreigner — Why Your ARC and Phone Number Come First
+title: Opening a Korean Bank Account as a Foreigner: ARC First
 date: 2026-09-20
 category: Practical info
-description: An honest guide to opening a Korean bank account as a foreigner, with essential tips on ARC timing, phone numbers, name spellings and ATM access.
+description: An honest guide to opening a Korean bank account as a foreigner, with essential tips on ARC timing, phone number requirements, name spelling and ATM access.
 slug: korea-opening-a-korean-bank-account-as-a-foreigner-and-why-your-arc-and-phone-number-come-first
 image_query: Korean bank branch counter interior
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-opening-a-korean-bank-account-as-a-foreigner-and-why-your-arc-and-phone-number-come-first-1789879470637.jpg
@@ -47,6 +47,10 @@ Many domestic ATMs simply won't read a foreign-issued card. Look for machines ma
 4. Return with your ARC and upgrade to the full account.
 
 It's slower than you want. It's much faster than doing it twice.
+
+## Official sources
+
+This guide is checked against [HiKorea (Korea Immigration Service)](https://www.hikorea.go.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
 
 ## Frequently Asked Questions
 

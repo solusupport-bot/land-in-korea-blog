@@ -46,6 +46,10 @@ Bags that don't match your district, or trash left outside a bag entirely, gener
 - Clothes in good condition go in green donation bins; batteries and electronics have their own separate drop-off points
 - Fines for improper disposal are real and escalate with repeat violations — check your district office for exact numbers
 
+## Official sources
+
+This guide is checked against [Seoul Metropolitan Government](https://english.seoul.go.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### What happens if I use the wrong trash bag in Korea?

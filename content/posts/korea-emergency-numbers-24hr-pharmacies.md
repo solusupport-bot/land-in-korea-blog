@@ -50,6 +50,10 @@ Korean hospitals and clinics generally expect payment upfront, with reimbursemen
 - Describe symptoms rather than Western brand names at the pharmacy counter
 - Korean hospitals usually require upfront payment; keep every receipt for your insurer
 
+## Official sources
+
+This guide is checked against [National Emergency Medical Center](https://www.e-gen.or.kr/english/main.do). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### What number do I call for a lost passport in Korea?

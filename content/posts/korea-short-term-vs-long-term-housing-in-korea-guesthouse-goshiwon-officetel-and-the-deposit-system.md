@@ -1,8 +1,8 @@
 ---
-title: Short-Term vs. Long-Term Housing in Korea - Guesthouse, Goshiwon, Officetel, and the Deposit System
+title: Short-Term vs. Long-Term Housing in Korea: What to Know
 date: 2026-09-20
 category: Comparisons
-description: An honest guide to Korean housing options, from goshiwons to jeonse, with essential tips on deposits, lease registration, and avoiding rental fraud.
+description: An honest guide to Korean housing options, from goshiwons to jeonse leases, with essential tips on deposits, lease registration and avoiding rental fraud.
 slug: korea-short-term-vs-long-term-housing-in-korea-guesthouse-goshiwon-officetel-and-the-deposit-system
 image_query: narrow goshiwon room interior Seoul
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-short-term-vs-long-term-housing-in-korea-guesthouse-goshiwon-officetel-and-the-deposit-system-1789871021466.jpg
@@ -41,6 +41,10 @@ Jeonse deposit-return fraud has been a real and widely reported problem in Korea
 ## The practical takeaway
 
 If you're here under three months, don't sign a lease. Take a goshiwon or share house, live somewhere real, and learn which neighbourhood you actually want. If you're staying longer, budget for the deposit shock early — and treat the district office registration and registry check as the first two things you do, not the last.
+
+## Official sources
+
+This guide is checked against [Ministry of Land, Infrastructure and Transport](https://www.molit.go.kr/english/USR/WPGE0201/m_36856/LST.jsp). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
 
 ## Frequently Asked Questions
 

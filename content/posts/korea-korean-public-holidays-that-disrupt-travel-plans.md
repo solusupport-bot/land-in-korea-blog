@@ -45,6 +45,10 @@ If dates are flexible, the simplest move is avoiding the Seollal and Chuseok win
 - Korea's other national holidays are single fixed dates and cause much less disruption
 - If dates are flexible, avoiding the Seollal/Chuseok windows sidesteps most of the friction described here
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Are palaces and museums open during Seollal and Chuseok?

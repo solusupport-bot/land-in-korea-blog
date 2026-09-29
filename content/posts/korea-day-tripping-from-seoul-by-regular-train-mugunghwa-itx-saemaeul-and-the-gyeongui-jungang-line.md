@@ -60,6 +60,10 @@ The [Seoul subway guide](https://landinkorea.com/posts/korea-seoul-subway-detail
 
 Use the subway lines when you want flexibility and don't mind a long, cheap ride: Yangpyeong, Dumulmeori, Gapyeong or Chuncheon with no fixed return time. Book an ITX when the ride itself is long enough that a guaranteed seat and a faster run are worth paying for, which is most trips to Chuncheon or along the Jungang Line. Pick Mugunghwa for the small stations nothing else serves. And for Jeongdongjin or anywhere on a high-speed line, compare the KTX honestly before assuming slow is better.
 
+## Official sources
+
+This guide is checked against [Korail](https://www.korail.com/global/eng/main). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I get to Chuncheon from Seoul on the subway?

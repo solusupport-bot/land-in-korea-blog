@@ -127,6 +127,10 @@ That effort is noticed. And it makes a genuine difference in how people respond 
 
 ---
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Will I Actually Get in Trouble for Breaking These Norms?

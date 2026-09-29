@@ -28,6 +28,14 @@ POSTS_SRC = os.path.join(BASE, "content", "posts")
 SITE = os.path.join(BASE, "site")
 POSTS_OUT = os.path.join(SITE, "posts")
 
+# 정책 페이지(privacy/terms/disclosure)의 "Last updated" / "As of" 날짜.
+# datetime.now()로 매 빌드마다 다시 계산하면 실제로는 문구가 안 바뀌었는데도
+# 매일 "방금 수정됨"으로 보여 Google의 "날짜는 실제로 내용이 바뀐 시점이어야
+# 한다"는 가이드와 어긋난다 (2026-09-29, 애드센스 재심사 점검 중 발견).
+# 정책 문구가 실제로 바뀔 때만 이 값을 수동으로 갱신한다. 2026-09-18은
+# "Update privacy/about wording ahead of AdSense application" 커밋 날짜.
+POLICY_PAGE_LAST_UPDATED = "2026-09-18"
+
 
 def load_config():
     with open(os.path.join(AUTO, "config.json"), encoding="utf-8") as f:
@@ -70,16 +78,27 @@ def apply_affiliate_tokens(text, cfg):
 
 
 # ---------- minimal markdown -> HTML ----------
+AFFILIATE_DOMAINS = ("klook.com", "trip.com", "getyourguide.com")
+
+
 def link_attrs(href, base_url):
     """
     2026-09-02: 처음엔 본문에 나오는 링크가 전부 제휴 링크였어서 모든 링크에
     rel="sponsored"를 붙여도 문제가 없었다. 이제 글 사이 내부 링크(SEO에 좋은
     관행)를 추가하면서, 내부 링크에까지 "sponsored"를 붙이면 검색엔진에 잘못된
     신호를 주게 된다 — 링크 목적지에 따라 속성을 구분한다.
+
+    2026-09-29: 공식 출처(Korail, 관광공사 등) 인용 링크를 본문에 추가하면서
+    이 구분을 한 번 더 좁혔다. "sponsored"는 실제로 금전 관계가 있는 제휴
+    링크에만 붙어야 한다(Google 링크 속성 가이드) — 순수 편집상 인용 링크에
+    sponsored를 붙이면 실제로는 아무 대가관계가 없는데 있는 것처럼 잘못
+    표시하는 셈이라, About 페이지의 "출처로 이어진다"는 약속과도 어긋난다.
     """
     if href.startswith(base_url) or href.startswith("/"):
         return ""
-    return ' rel="sponsored noopener" target="_blank"'
+    if any(domain in href for domain in AFFILIATE_DOMAINS):
+        return ' rel="sponsored noopener" target="_blank"'
+    return ' rel="noopener" target="_blank"'
 
 
 def inline(text, base_url=""):
@@ -161,7 +180,10 @@ def md_to_html(md, base_url=""):
     return "\n".join(out)
 
 
-LOGO_ASSET_PATH = os.path.join("assets", "logo.jpg")
+# URL path, not a filesystem path — must stay "/"-joined even on a Windows
+# build machine. os.path.join() previously produced "assets\logo.jpg" when
+# built locally on Windows, which 404'd the logo on every single page.
+LOGO_ASSET_PATH = "assets/logo.jpg"
 
 
 def brand_markup(cfg, base):
@@ -366,6 +388,8 @@ def build():
             f'<p class="meta"><span class="cat" data-cat="{re.sub(r"[^a-z0-9]+", "-", p["category"].lower()).strip("-")}">{html.escape(p["category"])}</span>'
             f' · {p["date"]} · {p["_reading"]} min read</p>'
             f'<h1>{html.escape(p["title"])}</h1>'
+            f'<p class="byline">Written by {html.escape(cfg["author"])} · checked against official sources — '
+            f'see <a href="{base}/about.html">how we work</a></p>'
             f'{hero}'
             f'{p["_body_html"]}'
             f'</article>'
@@ -486,7 +510,7 @@ review or a favorable comparison result. If you spot something outdated or wrong
 <h1>Affiliate Disclosure</h1>
 <p><strong>Current status: affiliate links are disabled.</strong></p>
 <p>{html.escape(cfg['site_name'])} uses a token-based affiliate link system managed in configuration, not in
-content. As of {datetime.now().strftime('%Y-%m-%d')}, <code>affiliate_links_enabled</code> is set to
+content. As of {POLICY_PAGE_LAST_UPDATED}, <code>affiliate_links_enabled</code> is set to
 <code>false</code> in our build configuration, so all affiliate references are displayed as plain text
 without links. When enabled, this will be clearly indicated on each post.</p>
 <h2>What "token-based" means here</h2>
@@ -529,7 +553,7 @@ and opinion; they are not paid placements unless explicitly marked as such.</p>
     )
     privacy = f"""
 <h1>Privacy Policy</h1>
-<p>Last updated: {datetime.now().strftime('%Y-%m-%d')}</p>
+<p>Last updated: {POLICY_PAGE_LAST_UPDATED}</p>
 <p>{html.escape(cfg['site_name'])} does not require account registration and does not directly collect
 personal information such as your name or email address, except when you voluntarily send us a message
 through our <a href="{base}/contact.html">contact page</a> or by email.</p>
@@ -557,7 +581,7 @@ date at the top of this page.</p>
 <p>Privacy questions: <a href="mailto:{html.escape(cfg['email'])}">{html.escape(cfg['email'])}</a></p>
 """ if not affiliate_enabled else f"""
 <h1>Privacy Policy</h1>
-<p>Last updated: {datetime.now().strftime('%Y-%m-%d')}</p>
+<p>Last updated: {POLICY_PAGE_LAST_UPDATED}</p>
 <p>{html.escape(cfg['site_name'])} does not require account registration and does not directly collect
 personal information such as your name or email address, except when you voluntarily send us a message
 through our <a href="{base}/contact.html">contact page</a> or by email.</p>
@@ -584,7 +608,7 @@ date at the top of this page.</p>
 """
     terms = f"""
 <h1>Terms of Service</h1>
-<p>Last updated: {datetime.now().strftime('%Y-%m-%d')}</p>
+<p>Last updated: {POLICY_PAGE_LAST_UPDATED}</p>
 <p>By using {html.escape(cfg['site_name'])} ("the Site"), you agree to the following terms.</p>
 <h2>Content accuracy</h2>
 <p>We do our best to keep prices, procedures, and rules current, but travel information changes quickly.
@@ -642,14 +666,26 @@ the updated terms.</p>
 
 
 def write_sitemap(cfg, base, posts):
-    urls = ["", "about.html", "affiliate-disclosure.html", "privacy.html", "terms-of-service.html", "contact.html"]
-    urls += [f"posts/{p['slug']}.html" for p in posts]
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # lastmod must be the last time that URL's content actually changed
+    # (Google Search Central guidance) — not the build time. Stamping every
+    # URL with today's date on every rebuild, regardless of whether that
+    # page changed, was inaccurate and made the sitemap look like the whole
+    # site rewrites itself daily (2026-09-29, AdSense re-review check).
+    latest_post_date = max((p["date"] for p in posts), default=POLICY_PAGE_LAST_UPDATED)
+    static_urls = [
+        ("", latest_post_date),  # home lists posts, so it follows the latest post
+        ("about.html", POLICY_PAGE_LAST_UPDATED),
+        ("affiliate-disclosure.html", POLICY_PAGE_LAST_UPDATED),
+        ("privacy.html", POLICY_PAGE_LAST_UPDATED),
+        ("terms-of-service.html", POLICY_PAGE_LAST_UPDATED),
+        ("contact.html", POLICY_PAGE_LAST_UPDATED),
+    ]
+    urls = static_urls + [(f"posts/{p['slug']}.html", p["date"]) for p in posts]
     body = '<?xml version="1.0" encoding="UTF-8"?>\n'
     body += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    for u in urls:
+    for u, lastmod in urls:
         loc = f"{base}/{u}" if u else f"{base}/"
-        body += f"  <url><loc>{loc}</loc><lastmod>{today}</lastmod></url>\n"
+        body += f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n"
     body += "</urlset>\n"
     with open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(body)
@@ -730,6 +766,8 @@ main{max-width:760px;margin:0 auto;padding:28px 20px}
 .post h1{font-size:1.7rem;line-height:1.35;color:var(--fg)}
 .post h2{margin-top:1.6em;border-left:4px solid var(--gold);padding-left:10px;color:var(--fg)}
 .post .meta{color:var(--muted);font-size:.88rem}
+.post .byline{color:var(--muted);font-size:.82rem;margin:.3em 0 1.2em}
+.post .byline a{color:var(--muted);text-decoration:underline}
 .post table{width:100%;border-collapse:collapse;margin:1.2em 0}
 .post th,.post td{border:1px solid var(--line);padding:9px 11px;text-align:left}
 .post th{background:var(--soft);color:var(--fg)}

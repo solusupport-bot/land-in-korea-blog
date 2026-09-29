@@ -50,6 +50,10 @@ Autumn foliage season and spring are the busiest stretches for both Nami Island 
 - Most visitors combine both with Garden of Morning Calm and the Gangchon Rail Bike as a single day tour, since transit between them isn't direct
 - Autumn and spring are the busiest seasons — go on a weekday if you can
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Do I need a visa or passport to enter Nami Island?

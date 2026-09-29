@@ -46,6 +46,10 @@ Passes work best on days packed with paid attractions back-to-back — palace, t
 - Always check the pass's own official page for the current price and attraction list before buying
 - Passes pay off on paid-attraction-heavy days and lose value on days full of free sightseeing
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr) and [Seoul Metropolitan Government](https://english.seoul.go.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Is the Discover Seoul Pass still worth buying in 2026?

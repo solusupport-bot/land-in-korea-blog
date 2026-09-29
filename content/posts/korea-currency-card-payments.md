@@ -220,6 +220,10 @@ Tell your bank you're traveling to Korea. Unexpected international charges somet
 
 ---
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Should I exchange currency at home or wait until Korea?

@@ -50,6 +50,10 @@ If you've already done [Gyeongbokgung](https://landinkorea.com/posts/korea-gyeon
 - Reach it via Subway Line 1 to Suwon Station (~50 min) or KTX/ITX (~20-30 min), then a 10-minute walk to Paldalmun
 - Unlike Seoul's palaces, it's a fortification built around a still-living city, not a closed compound
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### How do I get to Suwon Hwaseong Fortress from Seoul?

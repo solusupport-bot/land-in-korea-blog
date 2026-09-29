@@ -47,6 +47,10 @@ Reversing that order is still fine if your train times force it — just build i
 - Toseong Station gets you close to Gamcheon, but you'll still need a short village bus or taxi up the hill
 - KTX from Seoul takes about 2.5-3 hours; book ahead in summer
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I visit Haeundae Beach and Gamcheon Culture Village in one day?

@@ -1,8 +1,8 @@
 ---
-title: Hospital vs. clinic vs. pharmacy in Korea - where to actually go when you get sick - What First-Timers Actually Need to Know
+title: Hospital vs. Clinic vs. Pharmacy in Korea: Where to Go
 date: 2026-09-23
 category: Comparisons
-description: Korea's medical system is tiered, and walking into a big university hospital for a sore throat is usually the slowest and most expensive choice.
+description: Korea's medical system is tiered by design. A university hospital for a sore throat is usually the slowest, priciest option — pick the right tier instead.
 slug: korea-hospital-vs-clinic-vs-pharmacy-in-korea-where-to-actually-go-when-you-get-sick
 image_query: Hospital vs. clinic vs. pharmacy in Korea: where to actually go when you get sick travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-hospital-vs-clinic-vs-pharmacy-in-korea-where-to-actually-go-when-you-get-sick-1790129810248.jpg
@@ -12,6 +12,10 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 Large hospitals often expect a referral for non-emergency visits and charge more without one. For a cold, stomach bug, or skin rash, the clinic on the second floor of a random commercial building is the right call.
 
 Pharmacies (약국, yakguk) are separate from clinics in Korea — doctors write a prescription and you fill it at a nearby pharmacy, almost always within a minute's walk. Pharmacists can also recommend over-the-counter medicine directly for mild symptoms, and many are used to gesturing and simple English. Without Korean national health insurance you'll pay the full uninsured rate, which for a basic clinic visit is still far cheaper than in many Western countries, but travel insurance receipts matter — ask for an itemized receipt and diagnosis certificate before leaving.
+
+## Official sources
+
+This guide is checked against [National Emergency Medical Center](https://www.e-gen.or.kr/english/main.do). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
 
 ## Frequently Asked Questions
 

@@ -52,6 +52,10 @@ A few details decide whether this is a smooth hour or a frustrating one:
 - Haze and air quality affect visibility more than the time of day does
 - The paid deck is an upgrade, not a requirement
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Do I have to pay to see a view from N Seoul Tower?

@@ -57,6 +57,10 @@ The street food stalls are the draw, but they run on a few unwritten rules that 
 - Myeongdong Cathedral and Namdaemun Market are both an easy walk away
 - Weekday evenings avoid the worst of the weekend crowds
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### What time does Myeongdong's street food scene actually start?

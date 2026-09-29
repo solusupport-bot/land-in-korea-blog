@@ -56,6 +56,10 @@ If your visit falls on a weekend or a mid-morning when the lanes are already bus
 - Expect slopes and stairs — not an easy walk for limited mobility
 - It sits conveniently between Gyeongbokgung and Changdeokgung, with Insadong nearby
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Is Bukchon Hanok Village a museum?

@@ -47,6 +47,10 @@ Whichever way you get refunded, don't expect the full VAT rate back. Refund oper
 - Expect less than the full VAT rate back once administrative fees are deducted
 - You must leave Korea within three months of the purchase date for the receipt to count
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I get an instant tax refund instead of waiting until the airport?

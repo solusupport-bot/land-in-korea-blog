@@ -1,35 +1,34 @@
 ---
-title: KTX vs SRT vs Intercity Bus for Long-Distance Travel
-date: 2026-08-29
+title: KTX vs. Intercity Bus for Long-Distance Travel in Korea
+date: 2026-09-29
 category: Comparisons
-description: For a Seoul-to-Busan trip, the real choice isn't train vs. bus — it's KTX vs. SRT vs. regional trains vs. two kinds of bus, and most travelers know only one.
+description: SRT merged into KTX on September 1, 2026, so the real long-distance choice in Korea now is high-speed rail vs. regional trains vs. two kinds of bus.
 slug: korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel
 image_query: KTX vs. SRT vs. intercity bus for long-distance travel travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel-1788111242708.jpg
 ---
-## The choice most first-timers don't know they have
+## SRT doesn't exist as a separate thing anymore
 
-For a Seoul-to-[Busan](https://landinkorea.com/posts/korea-busan-haeundae-beach-gamcheon-culture-village.html)-length trip, the real choice isn't just train vs. bus — it's KTX vs. SRT vs. two different kinds of bus, and most first-timers don't even know SRT exists as a separate thing from KTX. Getting this wrong doesn't ruin a trip, but it usually means paying more or booking through the wrong app at the worst possible moment.
+If you've read older guides (including an earlier version of this one), you've probably seen "KTX vs. SRT" framed as a real choice between two competing high-speed operators. That changed on September 1, 2026: Korea's antitrust regulator approved a merger between Korail (which ran KTX) and SR (which ran SRT), and SRT was folded into the unified KTX network — signage, booking, and fares included. If you're planning a Seoul-to-[Busan](https://landinkorea.com/posts/korea-busan-haeundae-beach-gamcheon-culture-village.html)-length trip today, the real choice is high-speed rail vs. regional trains vs. two different kinds of bus.
 
-## KTX vs. SRT: same kind of train, different company and station
+## What the merger actually changed
 
-KTX (Korea Train eXpress) is run by Korail, Korea's national rail operator, and has been running since 2004. SRT (Super Rapid Train) is a newer, separately operated high-speed service that shares much of the same track infrastructure but runs as its own company. Both are genuinely high-speed rail with comparable travel times on overlapping routes like Seoul-Busan — the differences that actually matter for planning are:
-
-- **Different home stations in Seoul.** KTX departs mainly from Seoul Station; SRT departs from Suseo Station, on the southeastern side of the city near Gangnam. Which one is more convenient depends entirely on where you're starting from in Seoul, not on the train itself.
-- **Separate booking systems.** You book KTX through Korail's own app or site, and SRT through its own separate app or site — one doesn't sell tickets for the other. First-timers who assume there's a single unified Korean rail booking app are the most common source of "why can't I find this ticket" confusion.
-- **SRT is often a bit cheaper.** For a comparable route and distance, SRT fares tend to run somewhat lower than KTX, since SR operates on a lower-cost model — worth comparing both if your route is served by each.
+- **One booking system.** Tickets for the unified KTX network are now sold through KORAIL+ — you no longer need a separate SR account or app for what used to be SRT-only routes.
+- **Fares moved toward the cheaper of the two.** Former KTX routes had their fares cut by about 10% to match what used to be SRT's lower pricing, so you're not choosing between a "premium" and "budget" high-speed option anymore — it's one price.
+- **Suseo Station is still there.** The old SRT home station in southeastern Seoul (near Gangnam) didn't close — high-speed trains now run from both Seoul Station and Suseo Station under the same KTX brand, so which one is more convenient still depends on where you're starting from in the city, even though it's no longer tied to a separate company.
+- **One loyalty program.** Mileage now accrues at the same rate (about 5%) regardless of which station or route you're using.
 
 ## The overlooked middle option: regional trains
 
-KTX and SRT aren't the only trains — Korail also runs slower, cheaper intercity services like ITX-Saemaeul and Mugunghwa-ho, which stop at many smaller stations that high-speed rail skips entirely. If your destination is a smaller town rather than a major city, one of these regional trains, rather than a bus, might actually be the direct option — it's worth checking before assuming a bus is the only way to reach a place KTX doesn't serve.
+High-speed rail isn't the only train option — Korail also runs slower, cheaper intercity services like ITX-Saemaeul and Mugunghwa-ho, which stop at many smaller stations that KTX skips entirely. If your destination is a smaller town rather than a major city, one of these regional trains, rather than a bus, might actually be the direct option — worth checking before assuming a bus is the only way to reach a place KTX doesn't serve.
 
 ## The standing-ticket trick when trains sell out
 
-During peak travel windows — especially the Seollal (Lunar New Year) and Chuseok (Korean Thanksgiving) holidays, when tens of millions of people travel domestically within a few days — reserved KTX and SRT seats can sell out within minutes of going on sale. Both operators also sell standing (no assigned seat) tickets at a reduced price once regular seats are gone, which is worth knowing about if you're traveling during one of these windows and can tolerate standing for the journey.
+During peak travel windows — especially the Seollal (Lunar New Year) and Chuseok (Korean Thanksgiving) holidays, when tens of millions of people travel domestically within a few days — reserved KTX seats can sell out within minutes of going on sale. Korail also sells standing (no assigned seat) tickets at a reduced price once regular seats are gone, worth knowing about if you're traveling during one of these windows and can tolerate standing for the journey.
 
 ## Express bus vs. intercity bus — they're not the same thing
 
-Korea actually has two separate categories of long-distance bus, and the terms aren't interchangeable. Express buses (often labeled 고속버스, "gosok bus") run between major cities on highways with few or no stops, departing from dedicated express bus terminals like Seoul's Express Bus Terminal. Intercity buses (시외버스, "sioe bus") make more stops and reach smaller towns that express routes and trains both skip. Premium buses with wider, more reclined seating are also available on many routes at a higher fare than standard buses. Buses cost less than high-speed rail and reach places trains don't, but take meaningfully longer on the same long-distance routes — worth it when the destination isn't near a KTX/SRT station, or when the schedule fits your plans better than shaving an hour off the trip matters. One underrated practical point in favor of buses: their underneath cargo holds handle large suitcases more easily than a train's overhead or end-of-car luggage racks.
+Korea has two separate categories of long-distance bus, and the terms aren't interchangeable. Express buses (often labeled 고속버스, "gosok bus") run between major cities on highways with few or no stops, departing from dedicated express bus terminals like Seoul's Express Bus Terminal. Intercity buses (시외버스, "sioe bus") make more stops and reach smaller towns that express routes and trains both skip. Premium buses with wider, more reclined seating are also available on many routes at a higher fare than standard buses. Buses cost less than high-speed rail and reach places trains don't, but take meaningfully longer on the same long-distance routes — worth it when the destination isn't near a KTX station, or when the schedule fits your plans better than shaving an hour off the trip matters. One underrated practical point in favor of buses: their underneath cargo holds handle large suitcases more easily than a train's overhead or end-of-car luggage racks.
 
 ## Book ahead around Korean holidays
 
@@ -37,35 +36,39 @@ If any part of your trip overlaps with Seollal or Chuseok, book your train or bu
 
 ## The short version
 
-- KTX and SRT are both genuine high-speed rail, but different companies, different home stations in Seoul (Seoul Station vs. Suseo Station), and separate booking apps
-- SRT is often somewhat cheaper than KTX for a comparable route
+- SRT merged into KTX on September 1, 2026 — one operator, one booking system (KORAIL+), one fare structure for what used to be two competing high-speed services
+- Seoul Station and Suseo Station both still run high-speed trains; which is convenient depends on where you're starting from in Seoul
 - Regional trains (ITX-Saemaeul, Mugunghwa-ho) reach smaller towns that high-speed rail skips
-- Standing tickets exist on KTX/SRT when seats sell out — useful during holiday travel
+- Standing tickets exist on KTX when seats sell out — useful during holiday travel
 - Express buses (major city to major city) and intercity buses (smaller towns) are different categories, not the same thing
 - Book well ahead if your trip overlaps with Seollal or Chuseok
 
+## Official sources
+
+This guide is checked against [Korail](https://www.korail.com/global/eng/main). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
-### What's the difference between KTX and SRT?
+### Is SRT still a separate thing from KTX?
 
-Both are high-speed rail with comparable speeds on similar routes, but KTX departs mainly from Seoul Station and SRT from Suseo Station, they're booked through separate apps, and SRT is often somewhat cheaper for a comparable trip.
+No — as of September 1, 2026, SR (which ran SRT) merged into Korail and SRT was absorbed into the unified KTX network. There's no longer a separate company, app, or fare structure to compare.
 
-### Can I book SRT tickets through the KTX app, or vice versa?
+### Do I still need a separate app to book what used to be SRT routes?
 
-No — they're separately operated with separate booking systems. You'll need each company's own app or website for its tickets.
+No — all high-speed rail bookings, including trains that used to run as SRT, now go through KORAIL+.
 
-### What if KTX and SRT tickets are sold out for my travel date?
+### Does Suseo Station still exist?
 
-Both operators sell standing tickets at a reduced price once seats are gone, which is common during Seollal and Chuseok when demand spikes. It's also worth checking whether a regional train or a bus serves the same route.
+Yes. Suseo Station, in southeastern Seoul, still runs high-speed trains under the unified KTX network — it just isn't tied to a separate company anymore. Seoul Station and Suseo Station remain the two main high-speed departure points in the city.
+
+### What if KTX tickets are sold out for my travel date?
+
+Korail sells standing tickets at a reduced price once seats are gone, which is common during Seollal and Chuseok when demand spikes. It's also worth checking whether a regional train or a bus serves the same route.
 
 ### When should I take an intercity bus instead of the train?
 
-When your destination isn't near a KTX/SRT station, or the schedule matters more than saving an hour — buses cost less and reach smaller towns trains skip entirely. Just be clear on whether you need an express bus (major city to major city) or an intercity bus (smaller towns).
+When your destination isn't near a KTX station, or the schedule matters more than saving an hour — buses cost less and reach smaller towns trains skip entirely. Just be clear on whether you need an express bus (major city to major city) or an intercity bus (smaller towns).
 
-### Do I need to book a specific seat for KTX or SRT?
-
-Yes — unlike a hop-on bus, both require booking a specific seat and departure time in advance, except when buying a standing ticket.
-
-### Are there cheaper train options than KTX or SRT?
+### Are there cheaper train options than KTX?
 
 Yes — Korail's regional services like ITX-Saemaeul and Mugunghwa-ho are slower but considerably cheaper, and they stop at many smaller stations that high-speed rail doesn't serve at all.

@@ -153,6 +153,10 @@ Backpackers with minimal luggage, people staying near Seoul Station, Korail Pass
 
 ---
 
+## Official sources
+
+This guide is checked against [Incheon International Airport](https://www.airport.kr/ap/en/index.do) and [Korail](https://www.korail.com/global/eng/main). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### I'm arriving for the first time. What do you actually recommend?

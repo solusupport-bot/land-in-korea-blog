@@ -52,6 +52,10 @@ Deluxe taxis aren't the only upgraded option at the airport. Incheon Airport als
 - Refusing short fares is against the rules; report a plate number to the 1330 hotline if it happens
 - Incheon Airport has a separate International Taxi counter at both terminals, apart from deluxe
 
+## Official sources
+
+This guide is checked against [Seoul Metropolitan Government](https://english.seoul.go.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I use Kakao T with a foreign phone number?

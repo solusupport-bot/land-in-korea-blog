@@ -45,6 +45,10 @@ Whichever way you travel, [Korean public holidays](https://landinkorea.com/posts
 - For mainland routes like Seoul-Busan or Seoul-Daegu, door-to-door time usually favors KTX/SRT once airport transfer and security are counted
 - Seollal and Chuseok sell out both flights and trains within minutes — book weeks ahead, not days
 
+## Official sources
+
+This guide is checked against [Korail](https://www.korail.com/global/eng/main) and [Incheon International Airport](https://www.airport.kr/ap/en/index.do). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Is Gimpo-Jeju really the busiest flight route in the world?

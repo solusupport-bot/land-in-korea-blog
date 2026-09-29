@@ -47,6 +47,10 @@ App-based lockers issue a retrieval code or QR code rather than a physical key, 
 - Forwarding services (LuggAgent, Safex, Goodlugg, Zimcarry, Easy Drop) move bags hotel-to-airport same day — book a day ahead
 - Ask your hotel first; many hold luggage free after checkout
 
+## Official sources
+
+This guide is checked against [Incheon International Airport](https://www.airport.kr/ap/en/index.do) and [Korail](https://www.korail.com/global/eng/main). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I store luggage at Incheon Airport before my flight?

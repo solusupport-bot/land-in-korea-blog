@@ -46,6 +46,10 @@ Neither the DMZ buffer zone nor the JSA can be reached independently or by publi
 - Inside JSA: no pointing or gesturing, photography only when the escort permits it
 - Neither tour is accessible independently — registered operators only
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I visit the JSA without a tour?

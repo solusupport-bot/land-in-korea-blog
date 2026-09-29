@@ -46,6 +46,10 @@ Lotte World Tower, Korea's tallest building, and its Seoul Sky observation deck 
 - Lotte World Tower and its Seoul Sky observation deck sit next door but require a separate ticket
 - If your schedule is tight, Lotte World's subway access usually beats Everland's bigger rides
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Which is better for young kids, Everland or Lotte World?

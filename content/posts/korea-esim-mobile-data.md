@@ -174,6 +174,10 @@ Korea mobile networks are fast but your plan has a cap. Don't assume unlimited. 
 
 ---
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Will my phone work with a Korean SIM card?

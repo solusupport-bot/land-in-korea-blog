@@ -50,6 +50,10 @@ Look for "1+1" or "2+1" stickers on the shelf edge — they mean buy one, get on
 - Self-service kiosks at many branches print documents and handle bill payments
 - 1+1 and 2+1 shelf stickers are real bundle discounts worth checking before every purchase
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Can I pay bills at a Korean convenience store?

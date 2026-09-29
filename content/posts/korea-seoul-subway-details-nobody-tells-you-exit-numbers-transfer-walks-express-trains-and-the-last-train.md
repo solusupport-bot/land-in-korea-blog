@@ -1,8 +1,8 @@
 ---
-title: Seoul Subway Details Nobody Tells You - Exits, Transfer Walks, Express Trains and the Last Train
+title: Seoul Subway Details Nobody Tells You: Exits and Transfers
 date: 2026-09-19
 category: Airport & transit
-description: Essential tips on Seoul subway exit numbers, long transfer walks, express trains, extra fares and last train times so you arrive where you actually meant to.
+description: Essential tips on Seoul subway exit numbers, long transfer walks, express trains, extra fares and last-train times so you actually arrive where you meant to.
 slug: korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train
 image_query: Seoul subway platform exit signs
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train-1789792525440.jpg
@@ -42,6 +42,10 @@ Miss it anyway? The N-numbered night buses run through the early hours and accep
 ## Before your first ride
 
 Download Naver or Kakao Map. Screenshot your exit number. Check whether your train is express and where it terminates. And if you're heading home late, check the last train for *your* platform — not the general midnight rule.
+
+## Official sources
+
+This guide is checked against [Seoul Metropolitan Government](https://english.seoul.go.kr) and [T-money](https://eng.tmoney.co.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
 
 ## Frequently Asked Questions
 

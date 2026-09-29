@@ -49,6 +49,10 @@ Bukchon Hanok Village sits within walking distance, making it a natural add-on a
 - Bukchon Hanok Village is a short walk away
 - Ask about a multi-palace combined ticket if you're seeing more than one site
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### What day is Gyeongbokgung Palace closed?
