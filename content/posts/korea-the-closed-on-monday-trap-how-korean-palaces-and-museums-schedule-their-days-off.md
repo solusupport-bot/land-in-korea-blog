@@ -5,6 +5,7 @@ category: Practical info
 description: A practical guide to which Seoul palaces close on Monday or Tuesday, which museums stay open on Mondays, and which royal sites offer free Wednesday entry.
 slug: korea-the-closed-on-monday-trap-how-korean-palaces-and-museums-schedule-their-days-off
 image_query: Deoksugung palace gate at dusk
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-the-closed-on-monday-trap-how-korean-palaces-and-museums-schedule-their-days-off-1790768629672.jpg
 ---
 The classic Seoul itinerary mistake isn't forgetting that palaces have a day off. It's assuming they all take the same day off. Seoul's royal sites are split across two different closing days, and museums follow their own rules on top of that. A tidy "palaces on Monday, museums on Tuesday" plan can leave you facing locked gates twice in one trip.
 

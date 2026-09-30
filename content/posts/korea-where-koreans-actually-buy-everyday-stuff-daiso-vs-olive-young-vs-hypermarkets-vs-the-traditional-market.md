@@ -5,6 +5,7 @@ category: Comparisons
 description: A practical guide to where Koreans buy everyday items, comparing Daiso, Olive Young, hypermarkets and traditional markets on price, range and closing days.
 slug: korea-where-koreans-actually-buy-everyday-stuff-daiso-vs-olive-young-vs-hypermarkets-vs-the-traditional-market
 image_query: Korean traditional market vegetable stall
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-where-koreans-actually-buy-everyday-stuff-daiso-vs-olive-young-vs-hypermarkets-vs-the-traditional-market-1790768636078.jpg
 ---
 The most common shopping mistake newcomers make in Korea isn't overpaying. It's going to the wrong kind of store for the job: hunting for a phone cable in a cosmetics chain, buying a week of vegetables in a department store basement, or driving to a hypermarket on the one Sunday it's legally shut. Koreans split their everyday shopping between four kinds of places, and each one wins at something different.
 

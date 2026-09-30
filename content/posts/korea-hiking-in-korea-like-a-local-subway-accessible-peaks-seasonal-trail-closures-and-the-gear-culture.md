@@ -5,6 +5,7 @@ category: Practical info
 description: A practical guide to hiking in Korea from Seoul by subway, with tips on seasonal trail closures, summit drinking rules, crampons and the gear locals wear.
 slug: korea-hiking-in-korea-like-a-local-subway-accessible-peaks-seasonal-trail-closures-and-the-gear-culture
 image_query: Bukhansan granite summit hikers
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-hiking-in-korea-like-a-local-subway-accessible-peaks-seasonal-trail-closures-and-the-gear-culture-1790768623702.jpg
 ---
 Most visitors plan a Korean hiking day around one famous mountain and a sunny forecast. The two things that actually decide the day are ones almost nobody checks: whether the trail they picked is legally open that week, and how they plan to get down a slab of polished granite once their legs are tired.
 

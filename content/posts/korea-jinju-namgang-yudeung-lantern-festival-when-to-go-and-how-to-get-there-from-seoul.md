@@ -5,6 +5,7 @@ category: Practical info
 description: The Jinju Namgang Yudeung Festival fills a river with lanterns each autumn — here's when it runs, why it started, and how to reach it from Seoul.
 slug: korea-jinju-namgang-yudeung-lantern-festival-when-to-go-and-how-to-get-there-from-seoul
 image_query: Jinju Namgang lantern festival Korea river night
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-jinju-namgang-yudeung-lantern-festival-when-to-go-and-how-to-get-there-from-seoul-1790768626412.jpg
 ---
 The Jinju Namgang Yudeung Festival fills the Namgang River in Jinju, South Gyeongsang Province, with thousands of floating and hanging lanterns each autumn. It's one of the more dramatic festival photo opportunities in Korea and, being outside Seoul, one of the less crowded-with-tourists options if you're looking to get away from the capital for a night.
 

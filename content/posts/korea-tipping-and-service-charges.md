@@ -5,6 +5,7 @@ category: Etiquette & mistakes
 description: Korea has no tipping culture, but a few situations quietly break that rule — where it backfires, and what a "service charge" on the bill actually means.
 slug: korea-tipping-and-service-charges
 image_query: Korean restaurant receipt payment counter
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-tipping-and-service-charges-1790768632803.jpg
 ---
 ## The short answer: don't tip, but read the receipt
 

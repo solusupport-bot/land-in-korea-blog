@@ -5,6 +5,7 @@ category: Practical info
 description: A practical guide to laundry in Korea, from decoding a Korean washer and using 24-hour coin laundries to dry cleaners and avoiding hotel laundry fees.
 slug: korea-doing-laundry-in-korea-coin-laundromats-the-dryer-problem-and-neighborhood-dry-cleaners
 image_query: coin laundromat washers Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-doing-laundry-in-korea-coin-laundromats-the-dryer-problem-and-neighborhood-dry-cleaners-1790768620223.jpg
 ---
 The washing machine isn't what catches people out when they move into a Korean apartment. It's the moment the cycle ends and they go looking for the dryer that isn't there. Most furnished studios, officetels and apartments come with a washer and nothing else, and the whole rhythm of doing laundry in Korea is built around that gap.
 
