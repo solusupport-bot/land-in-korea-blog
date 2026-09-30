@@ -5,6 +5,7 @@ category: Practical info
 description: The Korean DMZ (demilitarized zone) is one of the world's most unusual places. Here's what DMZ and JSA tours involve, how to book, and what to expect.
 slug: korea-dmz-jsa-tours
 image_query: DMZ Korea North Korea border Joint Security Area JSA
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-dmz-jsa-tours-1790768700330.jpg
 ---
 The DMZ (Demilitarized Zone) divides North and South Korea along the 38th parallel. It's one of the world's most heavily fortified borders and also one of its most visited tourist destinations.
 
