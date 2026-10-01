@@ -5,6 +5,7 @@ category: Comparisons
 description: Korea has three long-distance transit options. Here's the cost, speed, and comfort comparison for each — and which one to choose for your situation.
 slug: korea-ktx-vs-srt-vs-intercity-bus
 image_query: KTX train Korea high-speed rail Seoul station transport
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-ktx-vs-srt-vs-intercity-bus-1790878500456.jpg
 ---
 Traveling between Korean cities requires choosing between three options: KTX (high-speed rail), SRT (semi-high-speed rail), or intercity bus. Each has different speeds, costs, and comfort levels. This guide breaks down the comparison and recommends which to use based on your priorities.
 

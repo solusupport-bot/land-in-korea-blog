@@ -5,6 +5,7 @@ category: Practical info
 description: Korea has strict recycling laws that tourists often violate. Here are the rules: how to sort trash, where to leave it, and what happens if you break them.
 slug: korea-trash-recycling-rules
 image_query: Korea recycling trash sorting bins Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-trash-recycling-rules-1790878505164.jpg
 ---
 Korea has one of the world's most rigorous trash sorting and recycling systems. The rules are detailed, enforced, and violations result in fines (up to 1 million won/$750 USD).
 
