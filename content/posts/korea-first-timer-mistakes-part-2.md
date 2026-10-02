@@ -5,6 +5,7 @@ category: Etiquette & mistakes
 description: Speaking on the phone on trains, not bowing, eating while walking — here's what actually offends people in Korea, and what really doesn't matter.
 slug: korea-first-timer-mistakes-part-2
 image_query: Seoul subway etiquette Korean culture modern
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-first-timer-mistakes-part-2-1790907019691.jpg
 ---
 ## Phone calls on public transit are the #1 offense
 
