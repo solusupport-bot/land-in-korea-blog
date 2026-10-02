@@ -5,6 +5,7 @@ category: Comparisons
 description: Chuseok is Korea's autumn harvest holiday — here's what closes, which palaces go free, and how to wish someone a happy holiday.
 slug: korea-chuseok-in-korea-free-palace-days-songpyeon-and-how-to-wish-someone-a-happy-holiday
 image_query: Chuseok Korea harvest festival hanbok palace Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-chuseok-in-korea-free-palace-days-songpyeon-and-how-to-wish-someone-a-happy-holiday-1790924874612.jpg
 ---
 Chuseok is Korea's biggest family holiday, held on the 15th day of the 8th lunar month under the year's brightest full moon. In 2026, Chuseok falls on Friday, September 25, with the official public holiday running September 24-26 — the exact dates shift every year since Chuseok follows the lunar calendar, so always check the current year's dates before booking travel.
 
