@@ -35,6 +35,15 @@ def main(target_dir: str):
 
     media_dir = target / "media" / "images"
     media_dir.mkdir(parents=True, exist_ok=True)
+    # fetch_images.py uploads straight through the GitHub Contents API (github_host.py),
+    # never through local git, so the local origin/media-assets tracking ref goes stale
+    # the moment that script runs from any other process/session. Without this fetch,
+    # worktree below silently copies an old snapshot and freshly-uploaded post images
+    # 404 on the live site forever (2026-10-02 실측: 9/27 이후 올라간 이미지 11장 전부 누락).
+    subprocess.run(
+        ["git", "fetch", "-q", "origin", "media-assets"],
+        cwd=repo_root, check=True,
+    )
     with tempfile.TemporaryDirectory() as tmp:
         subprocess.run(
             ["git", "worktree", "add", "-q", "--detach", tmp, "origin/media-assets"],
