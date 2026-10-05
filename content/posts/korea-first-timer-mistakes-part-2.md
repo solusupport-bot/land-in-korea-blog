@@ -54,6 +54,10 @@ Older guides mention avoiding writing names in red, which historically associate
 - Handing things with one hand is casual in modern Korea
 - Red ink rules are fading and unlikely to offend
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Is it really that rude to talk on the phone on the subway?

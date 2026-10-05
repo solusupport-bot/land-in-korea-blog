@@ -492,6 +492,10 @@ because we would rather you know how the site is made than imply a first-hand tr
 promise is that every specific in these guides traces back to a source we can point to, not that a person
 personally re-tested each fare and opening time the week you read it. Where a detail is time-sensitive —
 prices, thresholds, seasonal schedules — the guide says so and sends you to the official source to confirm.</p>
+<p>In the interest of being upfront about how this is made: drafting uses AI assistance over the source
+material above, and publishing is handled by an automated pipeline on a schedule. What doesn't change is
+the standard — a draft only goes live after it's checked against the sources it cites, not on AI output
+alone.</p>
 <h2>How we work</h2>
 <ul>
 <li>We compare real options side by side instead of just describing one.</li>

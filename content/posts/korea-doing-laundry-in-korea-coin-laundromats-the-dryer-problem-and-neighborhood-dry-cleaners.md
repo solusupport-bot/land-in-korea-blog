@@ -63,6 +63,10 @@ Better options are close by. Many hostels and some mid-range hotels have a guest
 - **One to three months:** use the in-room washer, buy a folding rack in week one, and save towels and bedding for a coin laundry run.
 - **Long-term resident:** find your nearest 세탁소 for coats and bedding, learn the washer words above, and consider a dehumidifier before the monsoon starts.
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Do I need to bring detergent to a coin laundry in Korea?

@@ -37,6 +37,10 @@ If Seoul feels like too long a trip for a one-night festival, consider approachi
 
 The festival draws a serious amount of photography traffic, and tripods are generally tolerated along the riverbank walkways as long as you're not blocking the main pedestrian flow — arriving even 30-45 minutes before the 6 p.m. lighting gets you a spot without having to squeeze past a crowd. Alongside the floating lanterns, the festival usually runs paid lantern-making and lantern-writing booths near the main entrance, where visitors can write a wish on a paper lantern and either float it on the river or hang it along the designated wish-lantern sections — a popular activity if you're traveling with kids or just want a more hands-on souvenir than photos alone. Bring a portable charger — cold autumn nights and constant photo-taking drain phone batteries fast, and charging spots along the riverbank are limited during peak festival hours when everyone else has the same idea.
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr) and [Korail](https://www.korail.com/global/eng/main). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### How long does it take to get from Seoul to Jinju?

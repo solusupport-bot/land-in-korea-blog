@@ -54,6 +54,10 @@ Missing cheddar, tortillas or a particular cereal? Imported groceries are reliab
 
 Save each store's nearest branch in Naver Map or Kakao Map during your first week, and the rest of your errands get much faster.
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Is Daiso in Korea the same as Daiso in Japan?

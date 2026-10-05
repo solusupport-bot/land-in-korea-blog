@@ -77,6 +77,10 @@ If you have a full week in Seoul, this layout avoids every closing day:
 
 Before you finalize the plan, check the official site for each palace or museum on your actual dates. Holiday shifts and temporary closures do happen, and a two-minute check is cheaper than a wasted trip across the city.
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Which Seoul palace is open on Monday?

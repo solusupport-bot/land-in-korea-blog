@@ -52,6 +52,10 @@ Weekends are busy all year, and October foliage season is on another level, with
 
 Pick the mountain by subway line, then confirm your exact trail section is open on knps.or.kr. Wear shoes with real grip, carry water and a light layer, and save 119 in your head along with the habit of reading marker numbers. Start early, budget more time for the descent than the climb, and finish at a trailhead restaurant with a plate of pajeon.
 
+## Official sources
+
+This guide is checked against [Korea National Park Service](https://english.knps.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Do you have to pay to enter national parks in Korea?
