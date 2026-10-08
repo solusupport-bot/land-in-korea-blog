@@ -220,6 +220,13 @@ Tell your bank you're traveling to Korea. Unexpected international charges somet
 
 ---
 
+## Related guides
+
+- [Getting your tax refund before you fly out](https://landinkorea.com/posts/korea-tax-refund-tax-free-shopping.html)
+- [T-money card basics](https://landinkorea.com/posts/korea-t-money-transit-card.html)
+- [Convenience stores double as ATMs](https://landinkorea.com/posts/korea-convenience-store-hacks.html)
+- [Your first money decisions at the airport](https://landinkorea.com/posts/korea-airport-transfer-options.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

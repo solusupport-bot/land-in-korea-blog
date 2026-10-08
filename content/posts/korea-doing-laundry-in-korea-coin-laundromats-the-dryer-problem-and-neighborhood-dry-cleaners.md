@@ -63,6 +63,11 @@ Better options are close by. Many hostels and some mid-range hotels have a guest
 - **One to three months:** use the in-room washer, buy a folding rack in week one, and save towels and bedding for a coin laundry run.
 - **Long-term resident:** find your nearest 세탁소 for coats and bedding, learn the washer words above, and consider a dehumidifier before the monsoon starts.
 
+## Related guides
+
+- [Housing options and what's included](https://landinkorea.com/posts/korea-short-term-vs-long-term-housing-in-korea-guesthouse-goshiwon-officetel-and-the-deposit-system.html)
+- [Other foreign-resident logistics](https://landinkorea.com/posts/korea-opening-a-korean-bank-account-as-a-foreigner-and-why-your-arc-and-phone-number-come-first.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

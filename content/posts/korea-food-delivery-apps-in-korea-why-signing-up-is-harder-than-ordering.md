@@ -13,6 +13,12 @@ Menus are also mostly in Korean even when the app interface offers English, so a
 
 Even with an account, the address and phone step trips people up. Riders frequently call or text to confirm a drop-off, so a number you can actually answer matters more than the app's language setting, and the free-text delivery memo is where you write things like the building name, floor, or 'leave at the door. ' Hotels and guesthouses vary — some accept deliveries at the front desk, others don't, so ask before ordering. Disposable cutlery is no longer included by default; you have to tick the option for chopsticks and spoons.
 
+## Related guides
+
+- [Convenience stores as a delivery-app alternative](https://landinkorea.com/posts/korea-convenience-store-hacks.html)
+- [You'll need data to use these apps](https://landinkorea.com/posts/korea-esim-mobile-data.html)
+- [Payment methods that actually work](https://landinkorea.com/posts/korea-currency-card-payments.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

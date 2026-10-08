@@ -43,6 +43,13 @@ Miss it anyway? The N-numbered night buses run through the early hours and accep
 
 Download Naver or Kakao Map. Screenshot your exit number. Check whether your train is express and where it terminates. And if you're heading home late, check the last train for *your* platform — not the general midnight rule.
 
+## Related guides
+
+- [The card you'll tap every ride](https://landinkorea.com/posts/korea-t-money-transit-card.html)
+- [Buses, the subway's counterpart](https://landinkorea.com/posts/korea-bus-travel-inside-korean-cities-color-codes-tag-off-transfers-and-why-you-must-flag-the-bus.html)
+- [Where the subway lines actually end](https://landinkorea.com/posts/korea-day-tripping-from-seoul-by-regular-train-mugunghwa-itx-saemaeul-and-the-gyeongui-jungang-line.html)
+- [Which map app to navigate with](https://landinkorea.com/posts/korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works.html)
+
 ## Official sources
 
 This guide is checked against [Seoul Metropolitan Government](https://english.seoul.go.kr) and [T-money](https://eng.tmoney.co.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

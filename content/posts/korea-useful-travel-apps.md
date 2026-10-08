@@ -177,6 +177,13 @@ Apps like "Visit Seoul" or "Korea Tourism Organization" provide curated attracti
 
 ---
 
+## Related guides
+
+- [You'll need data for these apps](https://landinkorea.com/posts/korea-esim-mobile-data.html)
+- [Why Google Maps specifically fails here](https://landinkorea.com/posts/korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works.html)
+- [The physical card these apps complement](https://landinkorea.com/posts/korea-t-money-transit-card.html)
+- [Reading signs the apps won't translate](https://landinkorea.com/posts/korea-learning-to-read-hangul-in-a-weekend-and-why-romanized-signs-still-confuse-you.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

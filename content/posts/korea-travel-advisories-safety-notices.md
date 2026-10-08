@@ -115,6 +115,12 @@ That's genuinely all it takes.
 
 ---
 
+## Related guides
+
+- [Emergency numbers to save now](https://landinkorea.com/posts/korea-emergency-numbers-24hr-pharmacies.html)
+- [Where to go if you get sick](https://landinkorea.com/posts/korea-hospital-vs-clinic-vs-pharmacy-in-korea-where-to-actually-go-when-you-get-sick.html)
+- [Avoiding payment-related scams](https://landinkorea.com/posts/korea-currency-card-payments.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

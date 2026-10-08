@@ -12,6 +12,13 @@ Independent dessert cafes and small photogenic spots often post signs — someti
 
 If you genuinely need to work, a 스터디카페 (study cafe) is the purpose-built option: you pay by the hour or buy a time block at a kiosk, get an assigned seat or private booth, and there's silence, free drip coffee or water, and reliable Wi-Fi. Many are unstaffed and run entirely on touchscreen check-in, with door codes issued by the machine. Silence is strictly enforced — phone calls happen in the hallway, and typing loudly can earn you a glare.
 
+## Related guides
+
+- [Get data before you need wifi](https://landinkorea.com/posts/korea-esim-mobile-data.html)
+- [Apps for finding your way around](https://landinkorea.com/posts/korea-useful-travel-apps.html)
+- [Hongdae's cafe-dense district](https://landinkorea.com/posts/korea-hongdae-nightlife-and-youth-culture-district.html)
+- [Traditional tea houses as an alternative](https://landinkorea.com/posts/korea-insadong-traditional-culture-street.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

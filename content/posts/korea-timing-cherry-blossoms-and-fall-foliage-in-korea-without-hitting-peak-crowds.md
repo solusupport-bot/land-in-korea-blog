@@ -13,6 +13,13 @@ Cherry blossoms open first in the far south — Jeju, Busan, Changwon — around
 
 Blossoms only look their best for about a week, and one heavy rain or windy night can strip them, so flexibility beats a fixed date. Major festivals — Jinhae's Gunhangje, Yeouido's riverside cherry blossom road, Gyeongju, Jeonju — concentrate enormous crowds onto one or two weekends, with road closures, shuttle-only access, and trains and intercity buses selling out well in advance. Weekday mornings are dramatically quieter at the same spots, and ordinary neighborhood streams, university campuses, and apartment-complex streets bloom just as hard with almost nobody there.
 
+## Related guides
+
+- [Packing for the season](https://landinkorea.com/posts/korea-seasonal-packing-weather-tips.html)
+- [Avoiding holiday crowds on top of peak season](https://landinkorea.com/posts/korea-korean-public-holidays-that-disrupt-travel-plans.html)
+- [A popular foliage day trip](https://landinkorea.com/posts/korea-nami-island-and-petite-france-day-trip.html)
+- [A popular cherry blossom spot](https://landinkorea.com/posts/korea-gyeongbokgung-palace.html)
+
 ## Official sources
 
 This guide is checked against [Korea Meteorological Administration](https://www.kma.go.kr/neng/index.do) and [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

@@ -13,6 +13,12 @@ Being able to decode even slowly means you can order at a Korean-only kiosk, rec
 
 Romanization is the part nobody warns you about, because Korea has used more than one system and old spellings persist. The government's Revised Romanization is standard on road signs and subway maps today, but older McCune-Reischauer spellings survive in business names, academic writing, and personal names, so the same syllable may appear as 'gim' or 'kim', 'Busan' or 'Pusan', 'Insa-dong' or 'Insadong'. Surnames are especially inconsistent, with 이 written as Lee, Yi, or Rhee depending on the person's own preference. Knowing a handful of address and place-name elements also helps enormously: -ro (main road), -gil (smaller street), -dong (neighborhood), -gu (district), -si (city).
 
+## Related guides
+
+- [Reading Korean addresses and road signs](https://landinkorea.com/posts/korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works.html)
+- [Papago and other apps that help](https://landinkorea.com/posts/korea-useful-travel-apps.html)
+- [Other first-timer basics](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

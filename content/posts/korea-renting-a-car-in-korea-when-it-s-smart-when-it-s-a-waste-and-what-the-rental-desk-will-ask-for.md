@@ -13,6 +13,12 @@ Seoul is the opposite case: traffic is heavy, street parking is essentially none
 
 To rent, most short-term visitors need an International Driving Permit issued in their home country before departure, presented together with the original home license and a passport — an IDP alone isn't valid, and not every country's license is covered by the conventions Korea recognizes. Rental companies also set minimum age and minimum license-holding requirements, and a credit card in the driver's name is usually expected. Rental cars normally come with a Hi-pass toll transponder so expressway tolls are billed automatically, and most gas stations offer both full-service and cheaper self-service pumps.
 
+## Related guides
+
+- [Navigation apps for driving](https://landinkorea.com/posts/korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works.html)
+- [Car rental is most useful on Jeju](https://landinkorea.com/posts/korea-jeju-island.html)
+- [Winter driving conditions](https://landinkorea.com/posts/korea-seasonal-packing-weather-tips.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

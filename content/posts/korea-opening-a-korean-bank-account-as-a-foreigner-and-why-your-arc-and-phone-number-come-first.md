@@ -48,6 +48,12 @@ Many domestic ATMs simply won't read a foreign-issued card. Look for machines ma
 
 It's slower than you want. It's much faster than doing it twice.
 
+## Related guides
+
+- [Housing logistics for residents](https://landinkorea.com/posts/korea-short-term-vs-long-term-housing-in-korea-guesthouse-goshiwon-officetel-and-the-deposit-system.html)
+- [Cash and card basics](https://landinkorea.com/posts/korea-currency-card-payments.html)
+- [Getting a Korean phone number](https://landinkorea.com/posts/korea-esim-mobile-data.html)
+
 ## Official sources
 
 This guide is checked against [HiKorea (Korea Immigration Service)](https://www.hikorea.go.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

@@ -37,6 +37,12 @@ Songpyeon is the signature food of the holiday: small half-moon rice cakes, usua
 
 Banks close for the full holiday period, so handle any in-person banking before it starts — ATMs keep working as normal, and card payments are unaffected everywhere that's open. If you need medical care, most neighborhood clinics close along with everything else family-run, but hospitals maintain emergency rooms throughout the holiday, and pharmacies inside larger hospitals or near subway stations are more likely to stay open than small standalone ones. It's worth noting which hospital or 24-hour pharmacy is nearest to where you're staying before the holiday starts, just in case, since finding one on the day itself is harder with fewer staff working and fewer people around on the street to ask for directions. Taxis run as normal throughout the holiday, so getting to a hospital isn't the issue — knowing which one is actually staffed is.
 
+## Related guides
+
+- [How Chuseok affects the rest of your trip](https://landinkorea.com/posts/korea-korean-public-holidays-that-disrupt-travel-plans.html)
+- [Gyeongbokgung Palace guide](https://landinkorea.com/posts/korea-gyeongbokgung-palace.html)
+- [Palace schedules and closing days](https://landinkorea.com/posts/korea-the-closed-on-monday-trap-how-korean-palaces-and-museums-schedule-their-days-off.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

@@ -183,6 +183,13 @@ Korea mobile networks are fast but your plan has a cap. Don't assume unlimited. 
 
 ---
 
+## Related guides
+
+- [What to decide right after landing](https://landinkorea.com/posts/korea-airport-transfer-options.html)
+- [The apps you'll actually need data for](https://landinkorea.com/posts/korea-useful-travel-apps.html)
+- [Why Google Maps isn't the one to use](https://landinkorea.com/posts/korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works.html)
+- [Another thing to set up on arrival](https://landinkorea.com/posts/korea-t-money-transit-card.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

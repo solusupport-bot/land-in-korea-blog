@@ -13,6 +13,12 @@ That's why you'll see the phrase '2인분부터' (from two servings) on menus, a
 
 Once you know where to go, solo eating in Korea is genuinely easy and unremarkable. Gimbap-and-bunsik chains, kalguksu and noodle shops, sundubu jjigae places, donkatsu counters, department store and mall food courts, and highway rest stops are all built around single portions, and many have bar-style counter seating. Ordering is often done at a touchscreen kiosk that has an English or Chinese language button, and water, side dishes, and cutlery are usually self-serve from a station or a fridge near the door. Tables have a call bell you press instead of waving someone down, and at smaller restaurants you pay at the counter on the way out rather than at your table.
 
+## Related guides
+
+- [Convenience store meals as a backup](https://landinkorea.com/posts/korea-convenience-store-hacks.html)
+- [Dining etiquette basics](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html)
+- [Reserving a table ahead of time](https://landinkorea.com/posts/korea-reserving-restaurants-and-joining-waitlists-in-korea-catch-table-naver-booking-and-the-tabling-tablet.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

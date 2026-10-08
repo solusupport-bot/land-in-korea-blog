@@ -51,6 +51,12 @@ Jeonse deposit-return fraud has been a real and widely reported problem in Korea
 
 If you're here under three months, don't sign a lease. Take a goshiwon or share house, live somewhere real, and learn which neighbourhood you actually want. If you're staying longer, budget for the deposit shock early — and treat the district office registration and registry check as the first two things you do, not the last.
 
+## Related guides
+
+- [Banking as a new resident](https://landinkorea.com/posts/korea-opening-a-korean-bank-account-as-a-foreigner-and-why-your-arc-and-phone-number-come-first.html)
+- [Laundry once you've moved in](https://landinkorea.com/posts/korea-doing-laundry-in-korea-coin-laundromats-the-dryer-problem-and-neighborhood-dry-cleaners.html)
+- [Money basics for residents](https://landinkorea.com/posts/korea-currency-card-payments.html)
+
 ## Official sources
 
 This guide is checked against [Ministry of Land, Infrastructure and Transport](https://www.molit.go.kr/english/USR/WPGE0201/m_36856/LST.jsp). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

@@ -37,6 +37,12 @@ Watch how Koreans give directions and you'll notice they almost never lead with 
 
 **Before you land:** download Naver Map or Kakao Map, set the language to English, and get used to pasting Korean text into the search bar. Then, when a friend asks where to meet, answer like a local: station name, exit number, five minutes straight.
 
+## Related guides
+
+- [The apps that work instead](https://landinkorea.com/posts/korea-useful-travel-apps.html)
+- [Navigating by car](https://landinkorea.com/posts/korea-renting-a-car-in-korea-when-it-s-smart-when-it-s-a-waste-and-what-the-rental-desk-will-ask-for.html)
+- [Navigating the subway instead](https://landinkorea.com/posts/korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train.html)
+
 ## Official sources
 
 This guide is checked against [Korea road-name address system](https://www.juso.go.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

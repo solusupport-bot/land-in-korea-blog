@@ -144,6 +144,13 @@ Backpackers with minimal luggage, people staying near Seoul Station, Korail Pass
 
 ---
 
+## Related guides
+
+- [Flying to Jeju instead?](https://landinkorea.com/posts/korea-domestic-flights-vs-ktx-for-jeju-and-long-distance-trips.html)
+- [Get connected before you leave the airport](https://landinkorea.com/posts/korea-esim-mobile-data.html)
+- [Buy a T-money card at any convenience store](https://landinkorea.com/posts/korea-t-money-transit-card.html)
+- [Cash and card basics for Korea](https://landinkorea.com/posts/korea-currency-card-payments.html)
+
 ## Official sources
 
 This guide is checked against [Incheon International Airport](https://www.airport.kr/ap/en/index.do) and [Korail](https://www.korail.com/global/eng/main). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

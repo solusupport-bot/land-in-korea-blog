@@ -127,6 +127,13 @@ That effort is noticed. And it makes a genuine difference in how people respond 
 
 ---
 
+## Related guides
+
+- [Spa-specific etiquette](https://landinkorea.com/posts/korea-jjimjilbang-etiquette.html)
+- [Tipping — or not tipping](https://landinkorea.com/posts/korea-tipping-and-service-charges.html)
+- [Subway etiquette ties to how you pay](https://landinkorea.com/posts/korea-t-money-transit-card.html)
+- [Avoiding common tourist scams](https://landinkorea.com/posts/korea-travel-advisories-safety-notices.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

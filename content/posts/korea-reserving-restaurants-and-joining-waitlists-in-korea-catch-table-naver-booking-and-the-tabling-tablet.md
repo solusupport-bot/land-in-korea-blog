@@ -61,6 +61,12 @@ Also watch for 라스트오더 (last order), which can come well before the post
 
 Install CatchTable Global before your trip and book your one or two must-eat restaurants there as soon as slots open. For everything else, pick restaurants from Naver Map, note their break time, and aim to arrive at opening or just after the lunch rush. If there's a tablet outside, register, ask the staff how long the wait is, and stay close. And when a place only books through Naver, let your hotel make the booking rather than fighting the verification screen.
 
+## Related guides
+
+- [Dining solo in Korea](https://landinkorea.com/posts/korea-eating-alone-in-korea-which-restaurants-refuse-solo-diners-and-where-honbap-works.html)
+- [Dining etiquette](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html)
+- [A dining-heavy district](https://landinkorea.com/posts/korea-myeongdong-shopping-district.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

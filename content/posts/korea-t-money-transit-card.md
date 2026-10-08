@@ -197,6 +197,13 @@ T-money cards don't expire. You can use the same card on multiple trips to Korea
 
 ---
 
+## Related guides
+
+- [Subway details worth knowing](https://landinkorea.com/posts/korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train.html)
+- [Using T-money on city buses](https://landinkorea.com/posts/korea-bus-travel-inside-korean-cities-color-codes-tag-off-transfers-and-why-you-must-flag-the-bus.html)
+- [Getting into the city on arrival](https://landinkorea.com/posts/korea-airport-transfer-options.html)
+- [T-money works in taxis too](https://landinkorea.com/posts/korea-hailing-a-taxi-in-korea-kakao-t-vs-street-taxis-vs-airport-deluxe-cabs.html)
+
 ## Official sources
 
 This guide is checked against [T-money](https://eng.tmoney.co.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

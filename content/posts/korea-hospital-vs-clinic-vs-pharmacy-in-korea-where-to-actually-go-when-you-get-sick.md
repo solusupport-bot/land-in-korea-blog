@@ -13,6 +13,12 @@ Large hospitals often expect a referral for non-emergency visits and charge more
 
 Pharmacies (약국, yakguk) are separate from clinics in Korea — doctors write a prescription and you fill it at a nearby pharmacy, almost always within a minute's walk. Pharmacists can also recommend over-the-counter medicine directly for mild symptoms, and many are used to gesturing and simple English. Without Korean national health insurance you'll pay the full uninsured rate, which for a basic clinic visit is still far cheaper than in many Western countries, but travel insurance receipts matter — ask for an itemized receipt and diagnosis certificate before leaving.
 
+## Related guides
+
+- [Emergency numbers and late-night pharmacies](https://landinkorea.com/posts/korea-emergency-numbers-24hr-pharmacies.html)
+- [General safety notices](https://landinkorea.com/posts/korea-travel-advisories-safety-notices.html)
+- [Paying at a Korean clinic](https://landinkorea.com/posts/korea-currency-card-payments.html)
+
 ## Official sources
 
 This guide is checked against [National Emergency Medical Center](https://www.e-gen.or.kr/english/main.do). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.

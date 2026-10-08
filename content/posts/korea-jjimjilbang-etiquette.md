@@ -144,6 +144,12 @@ Korean people see jjimjilbang bathing as normal, non-sexual, respectful activity
 
 ---
 
+## Related guides
+
+- [More first-timer etiquette](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html)
+- [General safety basics](https://landinkorea.com/posts/korea-travel-advisories-safety-notices.html)
+- [When a jjimjilbang is most worth it](https://landinkorea.com/posts/korea-seasonal-packing-weather-tips.html)
+
 ## Official sources
 
 This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
