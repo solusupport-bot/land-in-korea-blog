@@ -1,0 +1,9 @@
+# 2026-10-08: 내용이 겹치는 중복 블로그 글 4쌍을 정리하면서, 더 짧은/나중에
+# 발행된 쪽을 삭제하고 원본으로 301 리다이렉트한다(검색엔진에 이미 노출됐을 수
+# 있는 트래픽/링크를 보존하기 위함). automation/build.py는 이 파일을 건드리지
+# 않으므로 재빌드해도 유지된다. automation/localize_media.py가 site/ 전체를
+# 그대로 복사하므로 Cloudflare 배포본(landinkorea_site)에도 자동 반영된다.
+/posts/korea-ktx-vs-srt-vs-intercity-bus.html /posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel.html 301
+/posts/korea-trash-recycling-rules.html /posts/korea-trash-and-recycling-rules-for-residents.html 301
+/posts/korea-dmz-jsa-tours.html /posts/korea-dmz-and-jsa-tours.html 301
+/posts/korea-first-timer-mistakes-part-2.html /posts/korea-first-timer-etiquette-common-mistakes.html 301
