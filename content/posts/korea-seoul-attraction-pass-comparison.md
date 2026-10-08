@@ -7,6 +7,15 @@ slug: korea-seoul-attraction-pass-comparison
 image_query: Seoul attraction pass comparison travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-seoul-attraction-pass-comparison-1789438228455.jpg
 ---
+## Quick comparison
+
+| Pass | Structure | Best for |
+|---|---|---|
+| Discover Seoul Pass (fixed-duration) | 72/120-hour countdown from first scan, unlimited entry to included sites | Dense, back-to-back sightseeing |
+| Discover Seoul Pass ("Pick 3") / Klook Seoul Pass | Credit-based — set number of visits, use over weeks, no running clock | Trips mixed with rest days |
+| 4-palace + Jongmyo integrated ticket | One ticket, one visit per site, sold at palace windows | Palace-focused itineraries only |
+| Go City Seoul Pass | Discontinued (closed August 2024) | Don't use — a sign the rest of that source is outdated too |
+
 ## One of the passes you'll read about doesn't exist anymore
 
 If you've been researching this for a while, you've probably seen Go City's Seoul pass mentioned alongside the Discover Seoul Pass. Skip it — Go City shut down its Seoul product in August 2024, though plenty of older blog posts and third-party booking listings still list it as if it's live. If an article you're reading brings up Go City for Seoul, treat that as a sign the rest of its pricing is outdated too. The two passes actually worth comparing today are the official Discover Seoul Pass and Klook's Seoul pass, plus a simpler option if you only care about palaces.

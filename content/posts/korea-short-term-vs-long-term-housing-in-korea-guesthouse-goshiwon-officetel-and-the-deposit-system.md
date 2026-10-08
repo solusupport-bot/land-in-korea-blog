@@ -9,6 +9,15 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 ---
 Most people arriving in Korea for two months book a hotel for the first week and panic-search Airbnb for the rest. That's the expensive mistake. The gap between "tourist stay" and "signed a one-year lease" is exactly where Korea has options almost no first-timer knows about — and they cost a fraction of what you're about to pay.
 
+## Quick comparison
+
+| Option | Deposit | Contract length | Best for |
+|---|---|---|---|
+| Goshiwon | None | Month-to-month, near-immediate move-in | Under 3 months, bridging a gap |
+| Share house / monthly guesthouse | Lighter than a standard lease | More flexible than a lease | A bit more space and a social common area |
+| Wolse (monthly lease) | Large lump sum (bojeunggeum) + monthly rent | Standard lease | Long-term stays, steadier monthly cash flow |
+| Jeonse | Very large lump sum, no monthly rent | Standard lease | Long-term stays with a large lump sum available |
+
 ## The week-to-a-few-months gap: goshiwons and share houses
 
 A **goshiwon** is the option that surprises people most. It's a very small private room rented by the month, with no deposit and utilities included in the price. They were originally built for students cramming for civil service and bar exams, which tells you everything about the design philosophy: a bed, a desk, and not much else. Many rooms are windowless and genuinely tight.

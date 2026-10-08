@@ -7,6 +7,16 @@ slug: korea-hailing-a-taxi-in-korea-kakao-t-vs-street-taxis-vs-airport-deluxe-ca
 image_query: orange taxi Seoul night street
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-hailing-a-taxi-in-korea-kakao-t-vs-street-taxis-vs-airport-deluxe-cabs-1789620619897.jpg
 ---
+## Quick comparison
+
+| Method | When it wins | Key catch |
+|---|---|---|
+| Kakao T (app) | Late night in nightlife areas; avoids address confusion | Foreign cards often fail in-app — pay the driver directly instead |
+| Street hailing | Busy areas during the day | Can lose out to app users late at night |
+| Standard taxi | Default, cheapest tier | Orange, silver, or white |
+| Deluxe taxi (모범택시) | Want more space/comfort | Higher base fare, but usually skips the late-night surcharge |
+| Airport International Taxi counter | Arriving at Incheon, want English-language service | Separate from the deluxe line, at both terminals |
+
 ## The mistake isn't hailing a taxi — it's explaining where you're going
 
 Standing on a curb with your arm out still works in Korea, but it's not the default anymore, and it was never the hard part anyway. The real friction is what happens once you're in the car: Korean addresses are awkward to pronounce under pressure, and "the hotel near the big intersection" gets you nowhere with a driver who doesn't speak English. That's why Kakao T dominates. You set pickup and drop-off on a map before the car arrives, and your destination shows up on the driver's screen already written in Korean — no charades, no reading a screenshot aloud at a red light.

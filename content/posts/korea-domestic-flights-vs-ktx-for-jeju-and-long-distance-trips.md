@@ -7,6 +7,14 @@ slug: korea-domestic-flights-vs-ktx-for-jeju-and-long-distance-trips
 image_query: Domestic flights vs. KTX for Jeju and long-distance trips travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-domestic-flights-vs-ktx-for-jeju-and-long-distance-trips-1789360966302.jpg
 ---
+## Quick comparison
+
+| Route type | Best option | Why |
+|---|---|---|
+| To Jeju Island | Flight (the only practical option) | No rail link to the mainland; the overnight ferry mainly makes sense if you're transporting a vehicle |
+| Mainland, short hop (e.g. Seoul-Daegu) | Usually KTX/SRT | Flight time is short, but airport transfer and security often make door-to-door time longer than a downtown-station train |
+| Either route, around Seollal/Chuseok | Book weeks ahead | Reserved seats on both flights and KTX/SRT can sell out within minutes of going on sale |
+
 ## The route most people don't realize is the world's busiest
 
 Gimpo-Jeju isn't just a busy domestic hop — by OAG's 2025 scheduled-seat data it's the single busiest passenger air route on the planet, ahead of routes out of Dubai, London, and Tokyo, with roughly 14.4 million seats scheduled for the year and around 568 flights a week as of mid-2026. That volume is why first-timers get complacent: departures run almost every few minutes at peak times, so it feels like a route you can wing without checking a schedule. Seats generally aren't the bottleneck day-to-day, but that changes fast around Korean public holidays, when both flights and [KTX/SRT](https://landinkorea.com/posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel.html) seats disappear within minutes of going on sale.

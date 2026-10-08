@@ -11,6 +11,15 @@ Landing in Korea without mobile data is a genuine problem. Google Maps won't wor
 
 The good news: Korea has some of the cheapest and fastest mobile data in the world. Getting connected is straightforward, affordable, and takes less than 10 minutes. This guide covers your options and which one is actually best for your specific situation.
 
+## Quick comparison
+
+| Option | Cost | Setup | Best for |
+|---|---|---|---|
+| eSIM | $8-40 depending on plan | ~5 min, done before arrival | First-timers with newer phones, 5-7 day trips |
+| Local SIM card | 10,000-45,000 won | 5-10 min at an airport kiosk | Stays 2+ weeks, fastest speeds, budget travel |
+| Portable WiFi router | 5,000-15,000 won/day | Reserve online, collect/return at the airport | Groups (3+ people) splitting the cost |
+| Airport/cafe WiFi only | Free | None | Ultra-short 2-3 day visits |
+
 ## Option 1: eSIM (Easiest for International Travelers)
 
 If your phone supports eSIM (most modern phones do: iPhone XS and later, most recent Samsung/Google/OnePlus models), an eSIM is the simplest solution.

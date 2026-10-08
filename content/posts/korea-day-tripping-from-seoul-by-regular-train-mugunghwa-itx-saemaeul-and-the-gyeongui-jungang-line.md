@@ -11,6 +11,15 @@ For most day trips out of Seoul, the KTX is the wrong train. It's built for Busa
 
 The long-distance comparison (KTX versus SRT versus buses) and the Nami Island route are covered in their own posts. This one is about the short trips, and how to pick between a cheap reserved train and a subway ride that needs no ticket at all.
 
+## Quick comparison
+
+| Train class | Tier | Example use |
+|---|---|---|
+| Mugunghwa-ho | Cheapest, slowest, stops almost everywhere | Small stations nothing else serves |
+| ITX-Saemaeul / ITX-Maum | Mid-tier — fewer stops, faster, still well under KTX price | Most regional routes |
+| ITX-Cheongchun | Commuter express | Seoul (Yongsan/Cheongnyangni) to Chuncheon via Gapyeong |
+| Subway (Gyeongchun, Gyeongui-Jungang, Suin-Bundang lines) | Regular transit fare, no reservation | Chuncheon, Yangpyeong, Paju, Incheon — slower but ticket-free |
+
 ## Why the slow train often wins
 
 High-speed rail in Korea runs on a few trunk lines. Plenty of popular day-trip towns simply aren't on them. Chuncheon, the dakgalbi city on the lakes northeast of Seoul, has no KTX at all; the fastest rail option is the ITX-Cheongchun. The small towns along the Jungang Line east of Seoul are the same story: the conventional trains stop there, and the fast ones don't.

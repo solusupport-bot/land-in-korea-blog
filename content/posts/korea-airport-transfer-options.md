@@ -106,20 +106,11 @@ Backpackers with minimal luggage, people staying near Seoul Station, Korail Pass
 
 ## Option Comparison: The Reality
 
-**Cost:**
-1. Airport Railroad: 9,000-12,000 won (cheapest)
-2. Limousine Bus: 10,000-15,000 won (nearly as cheap)
-3. Taxi: 60,000-80,000 won (most expensive)
-
-**Travel time (door-to-door, downtown Seoul):**
-1. Taxi: 45 minutes (direct)
-2. Limousine Bus: 60-90 minutes (depends on destination and traffic)
-3. Airport Railroad: 90-120 minutes (includes transfer time)
-
-**Luggage friendliness:**
-1. Limousine Bus: Excellent (operators load/unload)
-2. Taxi: Excellent (driver assists)
-3. Airport Railroad: Poor (manual handling, stairs, transfers)
+| Option | Cost | Travel time (downtown Seoul) | Luggage friendliness |
+|---|---|---|---|
+| Airport Railroad (AREX) | 9,000-12,000 won (cheapest) | 90-120 min (includes transfer time) | Poor — manual handling, stairs, transfers |
+| Limousine Bus | 10,000-15,000 won | 60-90 min (depends on destination and traffic) | Excellent — operators load/unload |
+| Taxi | 60,000-80,000 won (most expensive) | 45 min (direct) | Excellent — driver assists |
 
 ## Which Should You Actually Choose?
 
