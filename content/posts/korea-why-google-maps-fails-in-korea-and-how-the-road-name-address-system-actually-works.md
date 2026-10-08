@@ -31,6 +31,10 @@ In practice, both systems still float around. The older lot-based *jibun* number
 
 Even with the right address, you can stand directly in front of your destination and not see it. Many Korean buildings don't display their number prominently at street level. And businesses are frequently on the third or fifth floor, advertised only by a small vertical column of signs beside the entrance stairwell. Look up, then look for the sign stack.
 
+## Typing Korean text when you can't read it
+
+Copying and pasting a Korean address only works if you have Korean text to copy in the first place. If a restaurant's address only exists as a photo, a printed card, or a sign on the wall, Papago and Google Translate's camera mode can both extract the Korean text directly from the image, which you can then copy straight into Naver or Kakao Map's search bar — no typing, no guessing at romanization. This same trick works for menus and official notices, not just addresses.
+
 ## Anchor everything to a subway exit
 
 Watch how Koreans give directions and you'll notice they almost never lead with the address. They say the station name and the exit number, then distance from there. Exit numbers are the single most reliable landmark in any Korean city — fixed, numbered, and identical on every app and every sign.

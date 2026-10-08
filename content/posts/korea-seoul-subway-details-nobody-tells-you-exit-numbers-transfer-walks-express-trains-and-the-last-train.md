@@ -39,6 +39,10 @@ Look up the real departure time for your station and direction before the night 
 
 Miss it anyway? The N-numbered night buses run through the early hours and accept T-money, so you're not automatically stuck with a taxi fare.
 
+## The priority seats aren't optional
+
+Every car has a cluster of seats near the doors reserved for the elderly, pregnant passengers, and people with disabilities, usually marked in a different color from the rest of the seating. Korean riders leave them empty even on a packed train with no one obviously needing them, and sitting there as a healthy-looking younger passenger draws visible disapproval fast. Pregnant passengers additionally get a pink seat-marker sticker and keychain (임산부 배려석) they can request from a station office, which signals a claim on the seat even without a visible bump.
+
 ## Before your first ride
 
 Download Naver or Kakao Map. Screenshot your exit number. Check whether your train is express and where it terminates. And if you're heading home late, check the last train for *your* platform — not the general midnight rule.

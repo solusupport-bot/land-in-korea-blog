@@ -39,6 +39,10 @@ Once you pass certain annual thresholds, banks require documentation of your sou
 
 Many domestic ATMs simply won't read a foreign-issued card. Look for machines marked **Global** at banks, convenience stores and airports. Also note that ATM access and withdrawal hours can be limited late at night, with extra after-hours fees on top. Plan cash withdrawals during the day rather than discovering this at 1am.
 
+## Mobile-First Banks as an Alternative
+
+KakaoBank and Toss, Korea's mobile-only banks, have also opened account access to foreign residents holding an ARC, and both generally run a more straightforward English-language sign-up flow than a traditional branch visit. They won't replace every service a legacy bank offers — some remittance or loan products still favor the established banks — but for day-to-day transfers, bill splitting with Korean friends, and simple-payment integration, a mobile-first account is often faster to set up than waiting for a branch appointment.
+
 ## The Practical Order
 
 1. Apply for your ARC as soon as you're eligible.
