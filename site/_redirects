@@ -1,9 +1,14 @@
-# 2026-10-08: 내용이 겹치는 중복 블로그 글 4쌍을 정리하면서, 더 짧은/나중에
+# 2026-10-08: 내용이 겹치는 중복 블로그 글을 정리하면서, 더 짧은/나중에
 # 발행된 쪽을 삭제하고 원본으로 301 리다이렉트한다(검색엔진에 이미 노출됐을 수
 # 있는 트래픽/링크를 보존하기 위함). automation/build.py는 이 파일을 건드리지
 # 않으므로 재빌드해도 유지된다. automation/localize_media.py가 site/ 전체를
 # 그대로 복사하므로 Cloudflare 배포본(landinkorea_site)에도 자동 반영된다.
+#
+# korea-first-timer-mistakes-part-2는 여기 리다이렉트 대상이었으나, 원격에
+# 10/5에 독립적으로 푸시된 다른 세션이 이 글을 "진짜 다른 주제"로 판단해
+# 삭제하지 않고 Official sources까지 추가해뒀다 — 그 판단을 존중해 글을
+# 복원했고, 그래서 이 글의 리다이렉트는 제거한다(살아있는 페이지를 다른
+# 곳으로 돌리면 안 됨).
 /posts/korea-ktx-vs-srt-vs-intercity-bus.html /posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel.html 301
 /posts/korea-trash-recycling-rules.html /posts/korea-trash-and-recycling-rules-for-residents.html 301
 /posts/korea-dmz-jsa-tours.html /posts/korea-dmz-and-jsa-tours.html 301
-/posts/korea-first-timer-mistakes-part-2.html /posts/korea-first-timer-etiquette-common-mistakes.html 301
