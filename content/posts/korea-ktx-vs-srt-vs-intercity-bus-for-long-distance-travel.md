@@ -7,6 +7,15 @@ slug: korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel
 image_query: KTX vs. SRT vs. intercity bus for long-distance travel travel
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel-1788111242708.jpg
 ---
+## Quick comparison
+
+| Option | Best for | Departs from (Seoul) | Relative speed | Worth knowing |
+|---|---|---|---|---|
+| KTX (high-speed rail) | Major city to major city, fastest option | Seoul Station or Suseo Station | Fastest | One unified network and fare since the Sep 1, 2026 KTX–SRT merger |
+| Regional train (ITX-Saemaeul, Mugunghwa-ho) | Smaller towns KTX skips entirely | Varies by route | Slower than KTX, cheaper | Stops at many more stations than high-speed rail |
+| Express bus (고속버스, gosok bus) | Major city to major city | Seoul Express Bus Terminal | Slower than KTX | Few or no stops; departs from dedicated terminals |
+| Intercity bus (시외버스, sioe bus) | Smaller towns trains and express buses both skip | Varies by terminal | Slowest | Underneath cargo holds handle large suitcases more easily than trains |
+
 ## SRT doesn't exist as a separate thing anymore
 
 If you've read older guides (including an earlier version of this one), you've probably seen "KTX vs. SRT" framed as a real choice between two competing high-speed operators. That changed on September 1, 2026: Korea's antitrust regulator approved a merger between Korail (which ran KTX) and SR (which ran SRT), and SRT was folded into the unified KTX network — signage, booking, and fares included. If you're planning a Seoul-to-[Busan](https://landinkorea.com/posts/korea-busan-haeundae-beach-gamcheon-culture-village.html)-length trip today, the real choice is high-speed rail vs. regional trains vs. two different kinds of bus.
