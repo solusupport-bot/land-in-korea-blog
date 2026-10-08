@@ -21,7 +21,11 @@ The JSA was established at Panmunjom after the 1953 Armistice Agreement was sign
 
 ## Booking and passport requirements
 
-Because the JSA sits inside an active security area jointly administered with the UN Command, tour operators submit your passport details ahead of time for an eligibility check, and this needs to happen at least a week before your visit — book earlier if a JSA visit is a must-do. Standard DMZ-only tours don't require this vetting and can be booked much closer to the date. For either tour, bring the physical passport itself to the checkpoint; a photo or photocopy will not get you through.
+Because the JSA sits inside an active security area jointly administered with the UN Command, tour operators submit your passport details ahead of time for an eligibility check — plan for at least a week at the absolute minimum, though operators have been asking for two to three months ahead during busier, higher-demand stretches, so book as early as your itinerary allows if a JSA visit is a must-do. Standard DMZ-only tours don't require this vetting and can be booked much closer to the date. For either tour, bring the physical passport itself to the checkpoint; a photo or photocopy will not get you through.
+
+## JSA access can be suspended with little notice
+
+Unlike a standard DMZ tour, JSA access isn't a fixed, year-round guarantee — it's periodically suspended entirely when diplomatic or security tensions rise, sometimes with no advance warning to travelers who already booked. It has also, at points, reopened with narrower access than before, such as being able to approach the blue conference buildings but not go inside them. None of this is predictable from Seoul, so don't build a tight itinerary that depends on the JSA specifically running on your date — confirm current access status with your operator close to departure, and have the standard DMZ tour as a fallback since it doesn't carry the same risk of last-minute cancellation.
 
 ## JSA-specific rules: dress code, age, and nationality
 
@@ -39,7 +43,8 @@ Neither the DMZ buffer zone nor the JSA can be reached independently or by publi
 
 - DMZ tours and JSA tours are different trips — don't assume they're interchangeable when booking
 - DMZ tours cover the Third Tunnel (discovered 1978, ~1.6 km, ~73 m deep), Dora Observatory, and Dorasan Station
-- JSA tours go inside the shared compound at the Military Demarcation Line and require advance passport vetting, often a week or more ahead
+- JSA tours go inside the shared compound at the Military Demarcation Line and require advance passport vetting — a week at minimum, often two to three months during busier stretches
+- JSA access gets suspended entirely at times over diplomatic tensions, sometimes without warning — don't build a tight itinerary around it, and keep the standard DMZ tour as a fallback
 - A physical passport is mandatory at checkpoints for both — no photos or copies
 - JSA has a strict dress code (no sleeveless, shorts, sandals, camo) that operators enforce
 - JSA has a minimum age (around 12) and guardian requirements for minors, plus nationality restrictions in some cases
@@ -74,4 +79,8 @@ Most operators set a minimum age of around 12, and anyone under 18 needs a guard
 
 ### How far in advance do I need to book a JSA tour?
 
-At least a week ahead, since your passport details need to be submitted for an eligibility check first. Standard DMZ-only tours don't require this and can be booked closer to your visit date.
+At least a week ahead, since your passport details need to be submitted for an eligibility check first — but during busier stretches operators have been asking for two to three months. Standard DMZ-only tours don't require this and can be booked closer to your visit date.
+
+### Is the JSA always open to visitors?
+
+No. Access gets suspended at times over diplomatic or security tensions, sometimes with little warning, and the exact scope of what's included (for example, whether you can enter the blue conference buildings or only approach them) has changed over time. Confirm current status with your tour operator close to your departure date, and have a standard DMZ tour as a backup plan.

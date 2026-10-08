@@ -479,9 +479,9 @@ def write_static_pages(cfg, base):
     about = f"""
 <h1>About Land in Korea</h1>
 <p><strong>{html.escape(cfg['site_name'])}</strong> writes for people landing in Korea for the first time —
-tourists and new foreign residents alike. We don't repeat the same generic "how to use T-money" listicle
-you've already seen a hundred times. Instead, we run the actual comparisons: which airport transfer is
-worth the money, which eSIM option is genuinely cheaper, whether a tour pass pays for itself.</p>
+tourists and new foreign residents alike. We don't pad guides with generic filler just to hit a word
+count. Instead, we run the actual comparisons: which airport transfer is worth the money, which eSIM
+option is genuinely cheaper, whether a tour pass pays for itself.</p>
 <h2>Who writes this</h2>
 <p>{html.escape(cfg['site_name'])} is an independent editorial project run from Seoul. Guides are researched
 and compiled from official Korean sources — the Korea Tourism Organization, operators such as Korail and the
