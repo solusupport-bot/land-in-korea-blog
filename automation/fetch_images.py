@@ -113,27 +113,29 @@ def search_pexels(api_key, query, page):
     return data.get("photos", [])
 
 
-def find_korea_photo(api_key, raw_query, used_urls, strict=False):
+# 2026-10-08: "relevance-only" 완화 재시도(한국 확인 없이 관련성만으로 채택)를 완전히
+# 제거했다 — 두 호출부(커버 이미지, 갤러리 인라인 이미지) 모두 Korea-확인 없이는
+# 이미지를 쓰지 않아야 하는데, 이 완화 경로가 바로 다른 나라 사진이 새어 들어오던
+# 통로였다(사용자 실측 지적). 이제 Korea-확인 사진을 못 찾으면 항상 None — 호출부는
+# 이미지 없이 텍스트만 발행한다(SNS 파이프라인의 findKoreaPhoto와 동일한 원칙).
+def find_korea_photo(api_key, raw_query, used_urls, strict=True):
     query = f"{raw_query} south korea"
 
-    passes = (True,) if strict else (True, False)
-    for require_alt_match in passes:
-        for page in range(1, 6):
-            photos = search_pexels(api_key, query, page)
-            if not photos:
-                break
-            for photo in photos:
-                if photo["width"] < MIN_ORIGINAL_WIDTH:
-                    continue
-                url = photo["src"]["large2x"]
-                if url in used_urls:
-                    continue
-                alt = photo.get("alt") or ""
-                if require_alt_match and not (KOREA_SIGNAL.search(alt) or KOREA_SIGNAL.search(photo.get("url", ""))):
-                    continue
-                print(f"  -> found ({'Korea-confirmed' if require_alt_match else 'relevance-only'}, "
-                      f"{photo['width']}px, alt=\"{alt}\"): {photo['url']}")
-                return url
+    for page in range(1, 6):
+        photos = search_pexels(api_key, query, page)
+        if not photos:
+            break
+        for photo in photos:
+            if photo["width"] < MIN_ORIGINAL_WIDTH:
+                continue
+            url = photo["src"]["large2x"]
+            if url in used_urls:
+                continue
+            alt = photo.get("alt") or ""
+            if not (KOREA_SIGNAL.search(alt) or KOREA_SIGNAL.search(photo.get("url", ""))):
+                continue
+            print(f"  -> found (Korea-confirmed, {photo['width']}px, alt=\"{alt}\"): {photo['url']}")
+            return url
     return None
 
 
@@ -237,7 +239,13 @@ def main():
                 url = None  # 다른 글이 이미 쓴 관광공사 이미지면 중복 방지 원칙대로 건너뜀
             if not url:
                 try:
-                    url = find_korea_photo(api_key, meta["image_query"], used_urls)
+                    # 2026-10-08 수정: strict=True 없이 호출하면 find_korea_photo가
+                    # Korea-확인 사진을 5페이지까지 다 뒤져도 못 찾을 때 "관련성만으로"
+                    # 채택하는 완화 재시도로 넘어간다 — 이게 바로 외국 사진이 블로그
+                    # 커버 이미지로 새어 들어오던 경로였다(사용자 실측 지적). 갤러리
+                    # 인라인 이미지(strict=True)와 동일하게 Korea-확인 없으면 이미지
+                    # 없이 글만 발행하도록 강제한다.
+                    url = find_korea_photo(api_key, meta["image_query"], used_urls, strict=True)
                 except Exception as err:  # one post's failure shouldn't block the rest
                     print(f"  !! search failed for {fn}: {err}")
                     url = None
