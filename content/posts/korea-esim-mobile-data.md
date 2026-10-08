@@ -185,6 +185,7 @@ Korea mobile networks are fast but your plan has a cap. Don't assume unlimited. 
 
 ## Related guides
 
+- [K-ETA and the e-Arrival Card, explained](https://landinkorea.com/posts/korea-k-eta-visa-waiver-requirements.html)
 - [What to decide right after landing](https://landinkorea.com/posts/korea-airport-transfer-options.html)
 - [The apps you'll actually need data for](https://landinkorea.com/posts/korea-useful-travel-apps.html)
 - [Why Google Maps isn't the one to use](https://landinkorea.com/posts/korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works.html)

@@ -146,6 +146,7 @@ Backpackers with minimal luggage, people staying near Seoul Station, Korail Pass
 
 ## Related guides
 
+- [Check your K-ETA or e-Arrival Card before you fly](https://landinkorea.com/posts/korea-k-eta-visa-waiver-requirements.html)
 - [Flying to Jeju instead?](https://landinkorea.com/posts/korea-domestic-flights-vs-ktx-for-jeju-and-long-distance-trips.html)
 - [Get connected before you leave the airport](https://landinkorea.com/posts/korea-esim-mobile-data.html)
 - [Buy a T-money card at any convenience store](https://landinkorea.com/posts/korea-t-money-transit-card.html)
