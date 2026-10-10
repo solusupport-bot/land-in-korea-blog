@@ -1,8 +1,9 @@
 ---
 title: Namdaemun Market vs Myeongdong: What's Really Different
 date: 2026-09-06
-category: Practical info
+category: Comparisons
 description: Namdaemun looks like just another Seoul shopping street from outside, but it runs on different hours, rules, and crowds than the malls next door.
+slug: korea-namdaemun-market
 image_query: korean traditional market street stalls
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-namdaemun-market-1788621653768.jpg
 ---

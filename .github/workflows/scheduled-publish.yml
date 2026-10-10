@@ -1,0 +1,101 @@
+name: Scheduled publish
+
+# Releases queued drafts onto the site on a cadence, instead of letting a
+# generator commit everything it produces at once.
+#
+# Why two cron entries and why these times
+# ----------------------------------------
+# GitHub cron is UTC and has no randomness, so two fixed slots are chosen well
+# away from the top of the hour (runners are heavily contended at :00, and a
+# job queued then can slip by 10+ minutes anyway). Within each slot the job
+# sleeps a random 0-50 minutes before publishing, so the actual publish time
+# moves around the day rather than landing on a visible schedule.
+#
+# 23:37 UTC = 08:37 KST (morning slot)
+# 09:43 UTC = 18:43 KST (evening slot)
+#
+# Each run releases AT MOST 1 draft, and publish_queue.py additionally refuses
+# to exceed 2 posts carrying today's date — so a double-fire or a manual run
+# cannot produce a burst.
+
+on:
+  schedule:
+    - cron: '37 23 * * *'
+    - cron: '43 9 * * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'How many drafts to release (max 1 per run)'
+        required: false
+        default: '1'
+      skip_jitter:
+        description: 'Skip the random delay (for manual runs)'
+        type: boolean
+        required: false
+        default: true
+
+concurrency:
+  group: land-in-korea-scheduled-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check the queue before waiting
+        id: queue
+        run: |
+          shopt -s nullglob
+          drafts=(content/drafts/*.md)
+          echo "count=${#drafts[@]}" >> "$GITHUB_OUTPUT"
+          if [ ${#drafts[@]} -eq 0 ]; then
+            echo "Draft queue is empty — exiting without waiting."
+          else
+            echo "${#drafts[@]} draft(s) queued."
+          fi
+
+      - name: Random delay
+        # Spreads the real publish time across the hour so the cadence doesn't
+        # look machine-timed. Skipped when the queue is empty or run by hand.
+        if: steps.queue.outputs.count != '0' && github.event.inputs.skip_jitter != 'true'
+        run: |
+          DELAY=$(( RANDOM % 3000 ))
+          echo "Sleeping ${DELAY}s (~$(( DELAY / 60 )) min) before publishing."
+          sleep "$DELAY"
+
+      - name: Release from the draft queue
+        if: steps.queue.outputs.count != '0'
+        run: |
+          cd automation
+          python3 publish_queue.py --count "${{ github.event.inputs.count || 1 }}"
+
+      - name: Quality gate
+        # Nothing reaches the site without passing. If a queued draft carries a
+        # stale fare or an unedited artifact, this fails and the draft stays
+        # released-but-unbuilt until it's fixed — loud, not silent.
+        if: steps.queue.outputs.count != '0'
+        run: |
+          cd automation
+          python3 validate.py
+
+      - name: Commit the release
+        if: steps.queue.outputs.count != '0'
+        run: |
+          if git diff --quiet -- content/; then
+            echo "Nothing was released; no commit required."
+            exit 0
+          fi
+          git config user.name "sns-automation-bot"
+          git config user.email "actions@github.com"
+          git add content/
+          git commit -m "chore: release queued post(s) [scheduled]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

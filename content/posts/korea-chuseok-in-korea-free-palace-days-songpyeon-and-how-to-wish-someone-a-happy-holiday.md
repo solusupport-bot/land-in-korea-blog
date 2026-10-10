@@ -1,7 +1,7 @@
 ---
 title: Chuseok in Korea - Free Palace Days and What to Know
 date: 2026-10-02
-category: Comparisons
+category: Practical info
 description: Chuseok is Korea's autumn harvest holiday — here's what closes, which palaces go free, and how to wish someone a happy holiday.
 slug: korea-chuseok-in-korea-free-palace-days-songpyeon-and-how-to-wish-someone-a-happy-holiday
 image_query: Chuseok Korea harvest festival hanbok palace Seoul

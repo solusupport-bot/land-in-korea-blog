@@ -59,6 +59,16 @@ jobs:
           git commit -m "chore: persist fetched/watermarked post images"
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
+      - name: Quality gate
+        # Blocks the deploy on stale figures, unedited generation artifacts,
+        # first-person claims that contradict the About page, missing sources,
+        # and thin posts. Added 2026-10 after AdSense rejected the site for
+        # low-value content; see automation/validate.py for what each check
+        # maps to. Fail here rather than discover it in a review decision.
+        run: |
+          cd automation
+          python3 validate.py
+
       - name: Build site
         run: |
           cd automation
