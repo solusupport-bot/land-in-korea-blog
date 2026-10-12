@@ -129,9 +129,13 @@ def verify_image(image_url, topic):
             return ok
         except urllib.error.HTTPError as err:
             msg = err.read().decode("utf-8", "ignore")
-            wait = re.search(r"try again in ([\d.]+)s", msg)
+            # retry-after 헤더(초)가 우선, 없으면 메시지의 "1m30.5s"/"292ms" 형식을 읽는다.
+            wait = float(err.headers.get("retry-after") or 0)
+            m = re.search(r"try again in (?:(\d+)m)?([\d.]+)(ms|s)", msg)
+            if not wait and m:
+                wait = max(int(m.group(1) or 0) * 60 + float(m.group(2)) / (1000 if m.group(3) == "ms" else 1), 0.5)
             if err.code == 429 and wait and attempt < 4:
-                time.sleep(min(float(wait.group(1)) + 1, 60))
+                time.sleep(min(wait + 1, 65))
                 continue
             print(f"  !! 사진 확인 실패 → 쓰지 않음: {err.code} {msg[:200]}")
             return False
