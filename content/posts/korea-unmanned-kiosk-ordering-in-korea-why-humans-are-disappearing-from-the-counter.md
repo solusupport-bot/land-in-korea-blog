@@ -30,6 +30,10 @@ If a kiosk order fails right as you're trying to pay, don't panic — it almost 
 
 A growing number of newer locations, especially in Seoul's busiest commercial districts, have removed the staffed counter entirely — kiosks and a pickup counter are the whole front of house. In that setup, if your card truly won't work and you only have cash, your real options are a nearby ATM (most convenience stores have one) or moving to a different restaurant that still takes cash. This is becoming less common as mobile and card payment adoption rises, but it's worth knowing before you're standing at an empty counter wondering where to hand over a 10,000 won note.
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Do all Korean restaurant kiosks have an English option?

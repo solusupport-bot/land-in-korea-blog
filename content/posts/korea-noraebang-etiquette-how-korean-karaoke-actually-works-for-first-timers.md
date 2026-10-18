@@ -50,6 +50,10 @@ Most rooms have a wall-mounted phone or an intercom button connecting directly t
 
 Noraebang culture in Korea isn't about vocal talent — it's a low-stakes, private way to unwind with people you already know. Since there's no audience beyond your own group, the usual self-consciousness of singing in public mostly disappears. It's one of the most accessible pieces of everyday Korean social life for a visitor to actually participate in, rather than just observe.
 
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+
 ## Frequently Asked Questions
 
 ### Do I need to speak Korean to use a noraebang?

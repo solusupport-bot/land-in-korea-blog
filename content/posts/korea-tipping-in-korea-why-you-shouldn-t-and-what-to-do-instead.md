@@ -42,7 +42,7 @@ Outside these specific situations, assume tipping is not expected anywhere — c
 
 If you want to express appreciation for good service, Korea has its own conventions that land better than cash.
 
-**Say thank you properly.** A simple "jal meogeosseumnida" (잘 먹었습니다 — roughly "I ate well," said when leaving a restaurant) genuinely registers with staff and costs nothing. A sincere bow of the head when thanking someone also carries real weight.
+**Say thank you properly.** A simple "jal meogeosseumnida" (잘 먹었습니다 — literally "ate well," the standard phrase said when leaving a restaurant) genuinely registers with staff and costs nothing. A sincere bow of the head when thanking someone also carries real weight.
 
 **Become a regular.** Returning to the same small restaurant, cafe, or barber multiple times during a longer stay is the closest Korean equivalent to tipping generously — it signals you valued the experience enough to come back, and small business owners notice repeat foreign customers.
 
@@ -53,6 +53,10 @@ If you want to express appreciation for good service, Korea has its own conventi
 ## A Quick Gut-Check for Any Situation
 
 If you're ever unsure whether to tip in a specific moment, the safest default is simply not to. Korean service workers are not waiting for or expecting extra payment, and the price on the receipt is genuinely the full transaction. Save the instinct to tip for home, and spend your energy instead on a clear thank-you — it travels further here than cash ever will.
+
+## Official sources
+
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
 
 ## Frequently Asked Questions
 

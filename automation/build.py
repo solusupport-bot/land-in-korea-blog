@@ -20,6 +20,7 @@ import json
 import os
 import re
 import html
+import urllib.parse
 from datetime import datetime, timezone
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -130,6 +131,20 @@ def md_to_html(md, base_url=""):
         if img_m:
             alt, src = img_m.groups()
             out.append(f'<img class="post-img" loading="lazy" src="{html.escape(src)}" alt="{html.escape(alt)}">')
+            i += 1
+            continue
+        # {{map: place name}} -> Google Maps "place" embed (no API key, no
+        # arbitrary HTML — the place text is escaped and only ever placed
+        # into the fixed maps.google.com/maps?q=...&output=embed URL, so
+        # this can't be used to inject attacker-controlled iframe src.
+        map_m = re.match(r"^\{\{map:\s*(.+?)\s*\}\}$", s)
+        if map_m:
+            place = urllib.parse.quote(map_m.group(1))
+            out.append(
+                f'<iframe class="post-map" src="https://maps.google.com/maps?q={place}&output=embed" '
+                f'width="100%" height="320" style="border:0" loading="lazy" '
+                f'referrerpolicy="no-referrer-when-downgrade"></iframe>'
+            )
             i += 1
             continue
         m = re.match(r"^(#{1,4})\s+(.*)$", s)
