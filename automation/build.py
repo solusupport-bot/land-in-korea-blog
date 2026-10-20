@@ -22,6 +22,8 @@ import re
 import html
 import urllib.parse
 from datetime import datetime, timezone
+from email.utils import format_datetime
+import xml.etree.ElementTree as ET
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUTO = os.path.join(BASE, "automation")
@@ -247,9 +249,81 @@ def adsense_script(cfg):
     )
 
 
+# ---------- SEO helpers (no extra services or dependencies) ----------
+LAYOUT_CONTENT_UPDATED = "2026-10-20"
+
+
+def canonical_url(base, url):
+    """Match Cloudflare's observed HTML redirects without renaming source files."""
+    parts = urllib.parse.urlsplit(url)
+    if parts.netloc != urllib.parse.urlsplit(base).netloc:
+        return url
+    path = parts.path
+    if path == "/index.html":
+        path = "/"
+    elif path.endswith(".html"):
+        path = path[:-5]
+    return urllib.parse.urlunsplit((parts.scheme, parts.netloc, path, parts.query, parts.fragment))
+
+
+def jsonld_data(graph):
+    # JSON lives in a raw-text script element; HTML escaping would break JSON.
+    return json.dumps({"@context": "https://schema.org", "@graph": graph},
+                      ensure_ascii=False).replace("<", "\\u003c")
+
+
+def site_entities(cfg, base):
+    return [
+        {"@type": "Organization", "@id": base + "/#organization",
+         "name": cfg["site_name"], "url": base + "/"},
+        {"@type": "Organization", "@id": base + "/#editorial-team",
+         "name": cfg["author"], "url": base + "/about",
+         "parentOrganization": {"@id": base + "/#organization"}},
+        {"@type": "WebSite", "@id": base + "/#website",
+         "name": cfg["site_name"], "url": base + "/",
+         "inLanguage": cfg["language"],
+         "publisher": {"@id": base + "/#organization"}},
+    ]
+
+
+def related_guides(post, posts, base):
+    stop = {"korea", "korean", "the", "and", "for", "with", "how", "why", "from",
+            "you", "your", "what", "that", "when", "guide", "travel", "visitors"}
+    def words(p):
+        return set(re.findall(r"[a-z]{3,}", p["title"].lower())) - stop
+    keywords = words(post)
+    candidates = [p for p in posts if p["slug"] != post["slug"]]
+    candidates.sort(key=lambda p: (len(keywords & words(p)),
+                                   p["category"] == post["category"], p["date"], p["slug"]),
+                    reverse=True)
+    links = "".join(
+        f'<li><a href="{base}/posts/{html.escape(p["slug"])}.html">'
+        f'{html.escape(p["title"])}</a></li>' for p in candidates[:3])
+    return ('<section class="related-guides" aria-labelledby="related-heading">'
+            '<h2 id="related-heading">More guides for your trip</h2><ul>' + links + '</ul></section>') if links else ""
+
+
+def start_here(posts, base):
+    choices = [
+        ("Getting from the airport", "korea-airport-transfer-options"),
+        ("Choosing an eSIM or SIM", "korea-esim-mobile-data"),
+        ("Paying by card or cash", "korea-currency-card-payments"),
+        ("Storing your luggage", "korea-luggage-storage-forwarding-services"),
+    ]
+    slugs = {p["slug"] for p in posts}
+    links = "".join(f'<li><a href="{base}/posts/{slug}.html">{label}</a></li>'
+                    for label, slug in choices if slug in slugs)
+    return ('<section class="start-here" aria-labelledby="start-heading">'
+            '<h2 id="start-heading">What do you need help with?</h2><ul>' + links + '</ul></section>') if links else ""
+
+
 # ---------- shared layout ----------
 def page(cfg, base, title, description, body, canonical, is_post=False,
          og_type="website", image=None, published=None, jsonld=None):
+    canonical = canonical_url(base, canonical)
+    if jsonld is None:
+        jsonld = jsonld_data(site_entities(cfg, base))
+    robots_tag = '<meta name="robots" content="noindex, follow">' if canonical == base + "/404" else ""
     brand_html = brand_markup(cfg, base)
     nav = (
         f'<a href="{base}/index.html">Home</a>'
@@ -271,20 +345,22 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
     img_tag = f'<meta property="og:image" content="{html.escape(image)}">\n<meta name="twitter:image" content="{html.escape(image)}">\n' if image else ""
     published_tag = f'<meta property="article:published_time" content="{published}">\n' if published else ""
     jsonld_tag = f'<script type="application/ld+json">{jsonld}</script>\n' if jsonld else ""
-    return f"""<!doctype html>
+    output = f"""<!doctype html>
 <html lang="{cfg['language']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} | {html.escape(cfg['site_name'])}</title>
 <meta name="description" content="{html.escape(description)}">
-<link rel="canonical" href="{canonical}">
+<link rel="canonical" href="{html.escape(canonical)}">
+<link rel="alternate" type="application/rss+xml" title="Land in Korea guides" href="{base}/feed.xml">
+{robots_tag}
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{html.escape(cfg['site_name'])}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(description)}">
 <meta property="og:url" content="{canonical}">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="{'summary_large_image' if image else 'summary'}">
 <meta name="twitter:title" content="{html.escape(title)}">
 <meta name="twitter:description" content="{html.escape(description)}">
 {img_tag}{published_tag}<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -315,6 +391,9 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
 </body>
 </html>
 """
+    # Normalize generated and existing same-site navigation to the served URL.
+    return re.sub(r'href="([^"<>]+)"',
+                  lambda m: 'href="' + canonical_url(base, m.group(1)) + '"', output)
 
 
 FAQ_SECTION = re.compile(r"^##\s+Frequently Asked Questions\s*$", re.MULTILINE)
@@ -324,7 +403,7 @@ FAQ_ITEM = re.compile(r"^###\s+(.+?)\s*\n+((?:(?!^###\s|^##\s).+\n?)+)", re.MULT
 def extract_faq(body):
     """마크다운 본문에서 '## Frequently Asked Questions' 아래 '### 질문 / 답변'
     쌍을 뽑아 FAQPage 구조화 데이터에 쓴다 — 애드센스 심사와는 무관하지만
-    검색결과 FAQ 리치 스니펫 기회를 늘린다(2026-09-04, 콘텐츠 점검 중 추가)."""
+    보이는 문답을 구조화한다. Google FAQ 리치 결과는 2026-05-07 종료됐다."""
     m = FAQ_SECTION.search(body)
     if not m:
         return []
@@ -398,8 +477,11 @@ def build():
         hero = ""
         if p.get("image"):
             hero = f'<img class="hero-img" src="{html.escape(p["image"])}" alt="{html.escape(p["title"])}">'
+        post_url = canonical_url(base, f'{base}/posts/{p["slug"]}.html')
         article = (
-            f'<article>'
+            f'<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{base}/">Home</a>'
+            f' <span aria-hidden="true">/</span> <span aria-current="page">{html.escape(p["title"])}</span></nav>'
+            f'<article>' 
             f'<p class="meta"><span class="cat" data-cat="{re.sub(r"[^a-z0-9]+", "-", p["category"].lower()).strip("-")}">{html.escape(p["category"])}</span>'
             f' · {p["date"]} · {p["_reading"]} min read</p>'
             f'<h1>{html.escape(p["title"])}</h1>'
@@ -408,19 +490,29 @@ def build():
             f'{hero}'
             f'{p["_body_html"]}'
             f'</article>'
+            f'{related_guides(p, posts, base)}'
             f'<p class="back"><a href="{base}/index.html">← Back to all guides</a></p>'
         )
-        graph = [{
+        graph = site_entities(cfg, base) + [{
             "@type": "Article",
+            "@id": post_url + "#article",
+            "url": post_url,
+            "inLanguage": cfg["language"],
+            "isPartOf": {"@id": base + "/#website"},
             "headline": p["title"],
             "description": p["description"],
             "datePublished": p["date"],
             "dateModified": p["date"],
-            "author": {"@type": "Organization", "name": cfg["author"]},
-            "publisher": {"@type": "Organization", "name": cfg["site_name"]},
-            "image": p["image"] if p.get("image") else None,
-            "mainEntityOfPage": {"@type": "WebPage", "@id": f'{base}/posts/{p["slug"]}.html'}
+            "author": {"@id": base + "/#editorial-team", "@type": "Organization", "name": cfg["author"], "url": base + "/about"},
+            "publisher": {"@id": base + "/#organization", "@type": "Organization", "name": cfg["site_name"]},
+            **({"image": p["image"]} if p.get("image") else {}),
+            "mainEntityOfPage": {"@type": "WebPage", "@id": post_url}
         }]
+        graph.append({"@type": "BreadcrumbList", "@id": post_url + "#breadcrumb",
+                      "itemListElement": [
+                          {"@type": "ListItem", "position": 1, "name": "Home", "item": base + "/"},
+                          {"@type": "ListItem", "position": 2, "name": p["title"], "item": post_url},
+                      ]})
         if p.get("_faq"):
             graph.append({
                 "@type": "FAQPage",
@@ -433,7 +525,7 @@ def build():
                     for item in p["_faq"]
                 ]
             })
-        article_jsonld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
+        article_jsonld = jsonld_data(graph)
         out = page(cfg, base, p["title"], p["description"], article,
                    f'{base}/posts/{p["slug"]}.html', is_post=True, og_type="article",
                    image=p.get("image"), published=p["date"], jsonld=article_jsonld)
@@ -466,12 +558,16 @@ def build():
              f'detail is time-sensitive and points you to the official source to confirm before you book. We correct '
              f'errors when readers report them — see the <a href="{base}/about.html">about page</a> for how we work, '
              f'or <a href="{base}/contact.html">tell us</a> if something here is out of date.</p></section>'
+             f'{start_here(posts, base)}'
              f'<section class="grid">{cards or "<p>No guides yet.</p>"}</section>')
     with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as f:
-        f.write(page(cfg, base, "Home", cfg["site_tagline"], intro, f"{base}/index.html"))
+        f.write(page(cfg, base, "Korea Travel Guides: Transport, eSIMs and Money",
+                     "Plan your first trip to Korea with practical comparisons of airport transfers, eSIMs, transit cards, payments and luggage storage. Check official sources.",
+                     intro, f"{base}/"))
 
     write_static_pages(cfg, base)
     write_sitemap(cfg, base, posts)
+    write_feed(cfg, base, posts)
     write_robots(base)
     write_cname(cfg)
     write_ads_txt(cfg)
@@ -487,7 +583,7 @@ def write_static_pages(cfg, base):
         '<li>Some links are affiliate links (Klook, Trip.com, GetYourGuide) — see our '
         f'<a href="{base}/affiliate-disclosure.html">disclosure</a>.</li>'
         if affiliate_enabled else
-        '<li>This site currently carries no affiliate links or ads — every recommendation here is '
+        '<li>This site currently carries no affiliate links — every recommendation here is '
         'purely editorial. See our <a href="{base}/affiliate-disclosure.html">disclosure</a> page for '
         'our policy going forward.</li>'.format(base=base)
     )
@@ -498,7 +594,7 @@ tourists and new foreign residents alike. We don't pad guides with generic fille
 count. Instead, we run the actual comparisons: which airport transfer is worth the money, which eSIM
 option is genuinely cheaper, whether a tour pass pays for itself.</p>
 <h2>Who writes this</h2>
-<p>{html.escape(cfg['site_name'])} is an independent editorial project run from Seoul. Guides are researched
+<p>{html.escape(cfg['site_name'])} is an independent editorial project run from Busan. Guides are researched
 and compiled from official Korean sources — the Korea Tourism Organization, operators such as Korail and the
 airport railroad, the National Tax Service's tax-refund rules, and the transit and map apps themselves —
 combined with local familiarity with how those systems work in practice.</p>
@@ -690,10 +786,10 @@ def write_sitemap(cfg, base, posts):
     # URL with today's date on every rebuild, regardless of whether that
     # page changed, was inaccurate and made the sitemap look like the whole
     # site rewrites itself daily (2026-09-29, AdSense re-review check).
-    latest_post_date = max((p["date"] for p in posts), default=POLICY_PAGE_LAST_UPDATED)
+    latest_post_date = max([LAYOUT_CONTENT_UPDATED] + [p["date"] for p in posts])
     static_urls = [
         ("", latest_post_date),  # home lists posts, so it follows the latest post
-        ("about.html", POLICY_PAGE_LAST_UPDATED),
+        ("about.html", LAYOUT_CONTENT_UPDATED),
         ("affiliate-disclosure.html", POLICY_PAGE_LAST_UPDATED),
         ("privacy.html", POLICY_PAGE_LAST_UPDATED),
         ("terms-of-service.html", POLICY_PAGE_LAST_UPDATED),
@@ -703,11 +799,27 @@ def write_sitemap(cfg, base, posts):
     body = '<?xml version="1.0" encoding="UTF-8"?>\n'
     body += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u, lastmod in urls:
-        loc = f"{base}/{u}" if u else f"{base}/"
+        loc = canonical_url(base, f"{base}/{u}" if u else f"{base}/")
         body += f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n"
     body += "</urlset>\n"
     with open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(body)
+
+
+def write_feed(cfg, base, posts):
+    rss = ET.Element("rss", {"version": "2.0"})
+    channel = ET.SubElement(rss, "channel")
+    for key, value in [("title", cfg["site_name"]), ("link", base + "/"),
+                       ("description", cfg["site_tagline"]), ("language", cfg["language"])]:
+        ET.SubElement(channel, key).text = value
+    for p in posts:
+        item = ET.SubElement(channel, "item")
+        url = canonical_url(base, f'{base}/posts/{p["slug"]}.html')
+        for key, value in [("title", p["title"]), ("link", url),
+                           ("description", p["description"]), ("guid", url),
+                           ("pubDate", format_datetime(datetime.strptime(p["date"], "%Y-%m-%d").replace(tzinfo=timezone.utc)))]:
+            ET.SubElement(item, key).text = value
+    ET.ElementTree(rss).write(os.path.join(SITE, "feed.xml"), encoding="utf-8", xml_declaration=True)
 
 
 def write_robots(base):
@@ -794,6 +906,13 @@ main{max-width:760px;margin:0 auto;padding:28px 20px}
 blockquote{border-left:4px solid var(--gold);margin:1.2em 0;padding:4px 16px;color:var(--muted);background:var(--soft)}
 code{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.9em;word-break:break-word}
 .back{margin-top:32px}
+.breadcrumbs{font-size:.82rem;color:var(--muted);margin-bottom:20px;overflow-wrap:anywhere}
+.breadcrumbs a{margin:0;font-size:inherit}
+.related-guides,.start-here{margin:28px 0;padding:18px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.related-guides h2,.start-here h2{font-size:1.15rem;margin:0 0 12px}
+.related-guides li,.start-here li{margin:8px 0}
+.start-here ul{display:grid;gap:8px 20px;padding-left:20px}
+@media(min-width:640px){.start-here ul{grid-template-columns:1fr 1fr}}
 
 /* 제휴/외부 링크(CTA)는 본문 텍스트 링크와 다르게, 실제 클릭해야 할 버튼처럼 보이게 처리 */
 .post p a[rel~="sponsored"]{
