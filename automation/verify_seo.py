@@ -122,6 +122,29 @@ def main():
     spec = importlib.util.spec_from_file_location('blog_build', ROOT / 'automation/build.py')
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    posts = module.read_posts(cfg)
+    for post in posts:
+        text = (SITE / 'posts' / (post['slug'] + '.html')).read_text(encoding='utf-8')
+        # Layout/navigation must never rewrite the existing editorial body.
+        # page() normalizes existing same-site .html links; use the same normalization.
+        normalized_body = module.re.sub(r'href="([^"<>]+)"', lambda m: 'href="' + module.canonical_url(base, m.group(1)) + '"', post['_body_html'])
+        check(normalized_body in text, post['slug'] + ': editorial body changed')
+        check(post['_topic'] in module.TOPICS, post['slug'] + ': unknown topic')
+        check(base + '/topics/' + post['_topic'] in text, post['slug'] + ': topic link missing')
+    all_guides = docs.get('guides.html')
+    check(all_guides is not None, 'Missing complete guide library')
+    if all_guides:
+        check(set(source_dates).issubset(set(all_guides.links)), 'Guide library misses article links')
+    for path, label, description, group in module.discovery_groups(posts):
+        doc = docs.get(path + '.html')
+        check(doc is not None, path + ': missing collection')
+        if doc:
+            check(all(base + '/posts/' + p['slug'] in doc.links for p in group), path + ': missing guide link')
+            lists = [g for g in doc.graphs if g.get('@type') == 'CollectionPage']
+            check(len(lists) == 1 and len(lists[0]['mainEntity']['itemListElement']) == len(group), path + ': collection schema differs from visible list')
+    home = (SITE / 'index.html').read_text(encoding='utf-8')
+    check('id="topics"' in home and 'id="destinations"' in home, 'Homepage discovery sections missing')
+    check((SITE / 'guide-search.js').exists(), 'Missing progressive search script')
     payload = '</script><script>alert(1)</script>'
     encoded = module.jsonld_data([{'name': payload}])
     check('</script>' not in encoded and json.loads(encoded)['@graph'][0]['name'] == payload,
