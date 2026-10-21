@@ -385,11 +385,10 @@ def discovery_groups(posts):
 
 
 def discovery_nav(base):
-    return (f'<a href="{base}/guides">All guides</a>'
-            f'<a href="{base}/#topics">Topics</a>'
-            f'<a href="{base}/#destinations">Destinations</a>'
-            f'<a href="{base}/topics/living-in-korea">Living in Korea</a>'
-            f'<a href="{base}/about">About</a>')
+    return (f'<a href="{base}/#destinations">Destinations</a>'
+            f'<a href="{base}/guides">Travel essentials</a>'
+            f'<a href="{base}/topics/food-and-culture">Food &amp; culture</a>'
+            f'<a href="{base}/topics/living-in-korea">Living in Korea</a>')
 
 
 def guide_card(p, base):
@@ -431,27 +430,60 @@ def collection_page(cfg, base, posts, title, description, path, all_posts=None):
 
 
 def discovery_home(cfg, base, posts):
-    topics = ''.join(f'<a class="topic-tile" href="{base}/{path}"><span class="eyebrow">{len(group):02d} GUIDES</span><h3>{html.escape(label)}</h3><p>{html.escape(desc)}</p><span class="tile-arrow" aria-hidden="true">↗</span></a>' for path,label,desc,group in discovery_groups(posts) if path.startswith("topics/"))
-    destinations = ''
-    for key,(label,desc) in DESTINATIONS.items():
-        group = [p for p in posts if key in p["_regions"]]
-        if not group: continue
-        image_post = next((p for p in group if p.get("image") and p["_topic"]=="things-to-do"),None)
-        image = image_post["image"].replace("https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/",base+"/media/images/") if image_post else ''
-        pic = f'<img src="{html.escape(image)}" loading="lazy" width="640" height="420" alt="">' if image else '<div class="destination-placeholder" aria-hidden="true"></div>'
-        destinations += f'<a class="destination" href="{base}/destinations/{key}">{pic}<div><span class="eyebrow">{len(group)} GUIDES</span><h3>{label}</h3><span>Explore the guides →</span></div></a>'
-    essential = ["korea-k-eta-visa-waiver-requirements","korea-airport-transfer-options","korea-esim-mobile-data","korea-t-money-transit-card"]
+    topic_summaries = {
+        'before-you-go': 'Entry, packing and planning',
+        'getting-around': 'Airport, trains and transport',
+        'sim-and-apps': 'Mobile data, maps and useful apps',
+        'money-and-shopping': 'Cards, cash and tax refunds',
+        'food-and-culture': 'Ordering, etiquette and local life',
+        'things-to-do': 'Places, experiences and day trips',
+        'living-in-korea': 'Banking, housing and daily life',
+    }
+    available = {p['_topic'] for p in posts}
+    topics = ''.join(f'<a class="topic-link" href="{base}/topics/{key}"><h3>{html.escape(label)}</h3><p>{topic_summaries[key]}</p></a>'
+                     for key,(label,_) in TOPICS.items() if key in available)
     lookup = {p['slug']:p for p in posts}
-    essentials = ''.join(f'<li><span class="step-number">{i+1:02d}</span><a href="{base}/posts/{slug}">{html.escape(lookup[slug]["title"])}</a></li>' for i,slug in enumerate(essential) if slug in lookup)
-    return (f'<section class="home-hero"><div><p class="eyebrow">YOUR PRACTICAL GUIDE TO KOREA</p>'
-        '<h1>Less guesswork.<br>More Korea.</h1><p class="hero-description">From your first airport transfer to finding your way around Busan. Clear guides for the decisions that shape your trip.</p>'
-        f'<a class="primary-link" href="{base}/guides">Find your travel guide <span aria-hidden="true">↗</span></a></div>'
-        '<aside class="arrival-panel"><span class="eyebrow">START WITH THE ESSENTIALS</span><h2>First time in Korea?</h2><p>Work through these guides before you go.</p><ol>'+essentials+'</ol></aside></section>'
-        f'{start_here(posts,base)}'
-        f'<section id="topics" class="discovery-section"><div class="section-heading"><div><p class="eyebrow">FIND WHAT YOU NEED</p><h2>Explore by topic</h2></div><a href="{base}/guides">All {len(posts)} guides →</a></div><div class="topic-grid">{topics}</div></section>'
-        f'<section id="destinations" class="discovery-section"><div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR NEXT STOP</p><h2>Where are you going?</h2></div></div><div class="destination-grid">{destinations}</div></section>'
-        f'<section class="discovery-section"><div class="section-heading"><div><p class="eyebrow">FROM THE JOURNAL</p><h2>Latest guides</h2></div><a href="{base}/guides">View the library →</a></div><div class="grid">'+''.join(guide_card(p,base) for p in posts[:6])+'</div></section>'
-        f'<section class="editorial-note"><p class="eyebrow">PLAN WITH CONTEXT</p><h2>Practical details. Sources you can check.</h2><p>Use our guides to narrow down your options, then confirm current prices and requirements with the official provider before booking.</p><a href="{base}/about">How we work →</a></section>')
+    destinations = ''
+    for key,label,description,slug in [
+        ('seoul','Seoul','Palaces, neighbourhoods and nearby escapes','korea-gyeongbokgung-palace'),
+        ('busan','Busan','Coastal walks and colourful hillside streets','korea-busan-haeundae-beach-gamcheon-culture-village'),
+        ('jeju','Jeju','Island landscapes and getting there','korea-jeju-island'),
+    ]:
+        if not any(key in p['_regions'] for p in posts):
+            continue
+        p = lookup.get(slug)
+        image = p.get('image','') if p else ''
+        image = image.replace('https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/',base+'/media/images/')
+        pic = f'<img src="{html.escape(image)}" alt="" width="357" height="220" loading="lazy">' if image else ''
+        destinations += f'<a class="destination-story" href="{base}/destinations/{key}">{pic}<h3>{label}</h3><p>{description}</p></a>'
+    featured = [
+        ('korea-airport-transfer-options','Compare cost, time and convenience before choosing your airport transfer.'),
+        ('korea-esim-mobile-data','Find the right connection for your phone and trip.'),
+        ('korea-currency-card-payments','Prepare for payments and currency exchange.'),
+        ('korea-eating-alone-in-korea-which-restaurants-refuse-solo-diners-and-where-honbap-works','Understand which meals and restaurants work for a table of one.'),
+    ]
+    guides = ''
+    for slug,description in featured:
+        if slug not in lookup:
+            continue
+        p=lookup[slug]
+        guides += (f'<a class="guide-entry" href="{base}/posts/{slug}"><span>{html.escape(p["_topic_label"])}</span>'
+                   f'<h3>{html.escape(p["title"])}</h3><p>{description}</p></a>')
+    checklist = ''.join(f'<li><a href="{base}/posts/{slug}">{label}</a></li>' for label,slug in [
+        ('Check entry requirements','korea-k-eta-visa-waiver-requirements'),
+        ('Plan your airport transfer','korea-airport-transfer-options'),
+        ('Get connected with a SIM or eSIM','korea-esim-mobile-data'),
+        ('Prepare your transit card','korea-t-money-transit-card'),
+    ] if slug in lookup)
+    return (f'<section class="home-intro"><div><h1>Your Korea travel guide</h1><p>Practical help for the trip you want to take.</p></div>'
+            f'<form id="home-guide-search-form" class="home-search" role="search" action="{base}/guides">'
+            '<label class="sr-only" for="home-guide-search">Search Korea travel guides</label>'
+            '<input id="home-guide-search" type="search" placeholder="Search places, transport or eSIM" aria-describedby="home-search-help">'
+            '<span class="sr-only" id="home-search-help">Press Enter to search the guide library.</span></form></section>'
+            f'<section id="topics" class="home-section"><h2>What do you need?</h2><div class="topic-links">{topics}</div></section>'
+            f'<section id="destinations" class="home-section"><h2>Explore Korea</h2><div class="destination-stories">{destinations}</div></section>'
+            f'<section class="home-section practical-stories"><h2>Make the everyday parts easier</h2><div class="guide-entries">{guides}</div></section>'
+            f'<section class="first-trip"><h2>First time in Korea? Start here.</h2><ul>{checklist}</ul></section>')
 
 
 def write_discovery(cfg,base,posts):
@@ -463,6 +495,12 @@ def write_discovery(cfg,base,posts):
             f.write(collection_page(cfg,base,group,title,desc,path,posts))
     with open(os.path.join(SITE,'guide-search.js'),'w',encoding='utf-8') as f:
         f.write('''(() => {
+  const homeForm = document.getElementById('home-guide-search-form');
+  if (homeForm) homeForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const term = document.getElementById('home-guide-search').value.trim();
+    window.location.assign(homeForm.action + (term ? '#search=' + encodeURIComponent(term) : ''));
+  });
   const input = document.getElementById('guide-search');
   if (!input) return;
   const controls = document.querySelector('[data-search-control]');
@@ -485,101 +523,55 @@ def write_discovery(cfg,base,posts):
   document.getElementById('clear-search').addEventListener('click', () => {
     input.value = ''; filter(); input.focus();
   });
+  if (window.location.hash.startsWith('#search=')) {
+    try { input.value = decodeURIComponent(window.location.hash.slice(8)); } catch (_) { input.value = ''; }
+  }
   controls.hidden = false;
   filter();
 })();''')
 
 
 DISCOVERY_CSS = """
-/* Travel discovery layout. Content and links remain available without scripts. */
-:root{--muted:#625e53;--blue:#254b46;--green:#254b46;--line:#dcd7ca;--bg:#f7f5ed;--card:#fffdf7}
+/* Figma: rCBpKhCuykMAK9TYE2ZIvV · desktop 4:33 / mobile 4:34. */
+:root{--fg:#202321;--muted:#666b66;--bg:#fff;--card:#fff;--soft:#f5f2ea;--blue:#202321;--red:#a84132;--gold:#b8923f;--line:#dedfd9;--font-body:'Noto Sans',Arial,sans-serif;--font-display:var(--font-body)}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:24px}
-body{line-height:1.65}
-.skip-link{position:absolute;top:-100px;left:16px;background:var(--fg);color:white;padding:12px;z-index:20}
-.skip-link:focus{top:8px}
-.site-header{padding:16px max(20px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);text-align:left}
-.brand-logo{height:64px;max-width:200px;object-fit:contain;border-radius:0;box-shadow:none}
-.tagline{display:none}
-.site-header nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 24px}
-.site-header nav a{margin:0;padding:8px 0;font-size:.85rem}
-main.page{max-width:1160px;padding:48px 20px}
-main.post{max-width:800px;padding:32px 24px}
-main.page:not(:has(.home-hero,.collection-intro)){max-width:800px}
-.eyebrow{display:block;color:var(--blue);font-size:.67rem;font-weight:700;letter-spacing:.14em;line-height:1.6;margin:0 0 14px}
-.home-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:70px;align-items:center;padding:28px 0 42px}
-.home-hero h1{font-size:clamp(2.6rem,5vw,4.6rem);line-height:1.14;letter-spacing:-.045em;margin:0 0 22px;font-weight:800}
-.hero-description{max-width:450px;color:var(--muted);font-size:1rem}
-.primary-link{display:inline-flex;align-items:center;gap:44px;border-radius:6px;background:var(--blue);color:white;padding:14px 20px;font-weight:600;font-size:.9rem;margin-top:16px}
-.primary-link:hover{background:#183b36;text-decoration:none}
-.arrival-panel{background:#edeadf;border-radius:14px;padding:32px}
-.arrival-panel h2{font-size:1.7rem;line-height:1.25;margin:0 0 12px}
-.arrival-panel p{color:var(--muted);font-size:.9rem}
-.arrival-panel ol{list-style:none;padding:0;margin:22px 0 0}
-.arrival-panel li{display:flex;align-items:baseline;gap:15px;border-top:1px solid #d4cfc1;padding:13px 0;font-size:.88rem;line-height:1.5}
-.step-number{color:#706c5c;font-size:.73rem;flex-shrink:0}
-.start-here{background:var(--blue);color:white;border:0;padding:22px 28px;margin:12px 0 52px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.start-here h2{font-family:var(--font-body);font-size:.9rem;margin:0;max-width:180px}
-.start-here ul{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0;margin:0}
-.start-here li{margin:0}
-.start-here a{display:block;color:white;font-size:.8rem;text-decoration:underline;text-underline-offset:4px;padding:5px 0}
-.discovery-section{margin:54px 0}
-.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}
-.section-heading .eyebrow{margin-bottom:6px}
-.section-heading h2{font-size:2rem;line-height:1.3;margin:0;letter-spacing:-.03em}
-.section-heading>a{font-size:.8rem;font-weight:600;white-space:nowrap}
-.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.topic-tile{display:block;position:relative;background:var(--card);border:1px solid var(--line);padding:24px;border-radius:9px;color:var(--fg)}
-.topic-tile:hover{border-color:var(--blue);text-decoration:none}
-.topic-tile .eyebrow{font-size:.6rem;margin-bottom:24px}
-.topic-tile h3{font-size:1.18rem;margin:0 0 9px}
-.topic-tile p{font-size:.8rem;color:var(--muted);margin:0;max-width:90%}
-.tile-arrow{position:absolute;top:21px;right:24px;color:var(--blue);font-size:1.2rem}
-.destination-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.destination{border-radius:10px;background:var(--card);overflow:hidden;border:1px solid var(--line);display:block;color:var(--fg)}
-.destination:hover{text-decoration:none;border-color:var(--blue)}
-.destination img,.destination-placeholder{width:100%;aspect-ratio:1.55;object-fit:cover;display:block}
-.destination>div:last-child{padding:20px}
-.destination h3{font-size:1.7rem;margin:0 0 10px}
-.destination .eyebrow{font-size:.6rem;margin-bottom:6px}
-.destination span:last-child{font-size:.78rem;color:var(--blue)}
-.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{display:flex;flex-direction:column;min-width:0;border-radius:9px}
-.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px #221f1a0d}
-.card-thumb,.card-placeholder{aspect-ratio:1.6;object-fit:cover;width:100%;height:auto;flex-shrink:0}
-.card-placeholder{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:24px;background:#e7e4d6;color:var(--blue);border-bottom:1px solid var(--line)}
-.card-placeholder span{font-size:.6rem;letter-spacing:.16em;font-weight:700}
-.card-placeholder b{font-family:var(--font-display);font-size:1.35rem;max-width:80%}
-.card-copy{padding:20px;display:flex;flex-direction:column;flex-grow:1}
-.card-topic{font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);font-weight:700}
-.card .card-copy h2{font-size:1.1rem;line-height:1.5;margin:12px 0 10px;padding:0}
-.card .card-copy p{font-size:.8rem;margin:0 0 18px;padding:0}
-.card .card-copy .date{font-size:.68rem;margin-top:auto;padding:0}
-.collection-intro{max-width:750px;margin:30px 0}
-.collection-intro h1{font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:0 0 20px}
-.collection-intro p{color:var(--muted)}
-.collection-intro .collection-count{font-size:.8rem;font-weight:600;color:var(--blue)}
-.topic-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
-.topic-pills a[aria-current="page"]{background:var(--blue);color:white;border-color:var(--blue)}
-.topic-pills a{border:1px solid var(--line);border-radius:30px;font-size:.75rem;padding:8px 14px;margin:0}
-.guide-search{padding:22px;border:1px solid var(--line);background:var(--card);border-radius:9px;margin:24px 0}
-.guide-search label{display:block;font-weight:600;font-size:.85rem;margin-bottom:10px}
-.search-row{display:flex;gap:10px}
-.search-row input{font:inherit;font-size:.9rem;border:1px solid #8b8b7b;border-radius:5px;padding:12px;width:100%;min-width:0;background:white;color:var(--fg)}
-.search-row button{font:inherit;font-size:.8rem;border:1px solid var(--blue);background:var(--blue);color:white;border-radius:5px;padding:10px 18px;cursor:pointer}
-.guide-search p{font-size:.75rem;margin:8px 0 0;color:var(--muted)}
-input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-.editorial-note{padding:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px;text-align:center}
-.editorial-note h2{font-size:1.6rem}
-.editorial-note p:not(.eyebrow){font-size:.9rem;max-width:650px;margin:16px auto;color:var(--muted)}
-.editorial-note a{font-size:.85rem;font-weight:600}
-.post .meta .cat{background:var(--blue);color:white;text-decoration:none}
-.post table{display:block;overflow-x:auto}
-.post :is(h1,h2,h3,p,a){overflow-wrap:break-word}
-.site-footer{border-top:1px solid var(--line);padding:30px 20px;font-size:.75rem}
-@media(max-width:900px){.home-hero{gap:30px}.topic-grid,.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-header{gap:16px}.site-header nav{gap:8px 15px}}
-@media(max-width:620px){.site-header{display:block;padding:16px 20px}.brand-logo{height:56px}.site-header nav{justify-content:flex-start;gap:4px 18px;margin-top:12px}.site-header nav a{font-size:.75rem}.home-hero{grid-template-columns:1fr;gap:30px;padding-top:0}.home-hero h1{font-size:3rem}.arrival-panel{padding:24px}.start-here{display:block;padding:22px;margin-bottom:38px}.start-here h2{max-width:none;margin-bottom:12px}.start-here ul{display:grid;grid-template-columns:1fr 1fr;gap:10px}.topic-grid{grid-template-columns:1fr 1fr;gap:10px}.topic-tile{padding:18px}.topic-tile h3{font-size:1rem}.topic-tile p{max-width:100%;font-size:.75rem}.topic-tile .eyebrow{margin-bottom:18px;font-size:.52rem}.tile-arrow{right:15px;top:13px}.destination-grid{grid-template-columns:1fr}.destination{display:grid;grid-template-columns:40% 1fr}.destination img,.destination-placeholder{height:100%;aspect-ratio:auto;min-height:160px}.destination>div:last-child{padding:18px}.destination h3{font-size:1.5rem}.section-heading h2{font-size:1.6rem}.section-heading>a{font-size:.7rem}.grid{grid-template-columns:1fr}.discovery-section{margin:38px 0}main.page{padding-top:28px}.editorial-note{padding:25px 0}.collection-intro h1{font-size:2.2rem}.card-copy{padding:20px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}.card:hover{transform:none}}
+html{scroll-padding-top:20px}
+body{font-family:var(--font-body);line-height:1.6;background:#fff;font-size:15px}
+h1,h2,h3{font-family:var(--font-body);letter-spacing:0}
+a{color:var(--fg)}a:hover{color:var(--red)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--fg);color:white;padding:12px;z-index:100}.skip-link:focus{top:8px}
+.site-header{max-width:none;padding:8px max(20px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:24px;text-align:left;background:white;border-bottom:1px solid var(--line);position:relative}
+.brand{display:block;line-height:0}.brand-logo{height:104px;width:104px;object-fit:contain;border-radius:0;box-shadow:none}
+.site-header nav{display:flex;align-items:center;gap:32px;flex-wrap:wrap}.site-header nav a{margin:0;padding:12px 0;font-size:13px;font-weight:500}
+.mobile-nav{display:none}.tagline{display:none}
+main.page{max-width:1160px;padding:40px 20px 48px}main.post{max-width:800px;padding:32px 24px}
+main.page:not(:has(.home-intro,.collection-intro)){max-width:800px}
+.home-intro{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:40px}
+.home-intro h1{font-size:32px;line-height:42px;margin:0 0 8px;font-weight:700}.home-intro p{font-size:15px;line-height:24px;margin:0;color:var(--muted)}
+.home-search{width:350px;flex-shrink:0}.home-search input{width:100%;height:48px;padding:12px 16px;font:inherit;font-size:15px;border:1px solid var(--line);background:white;color:var(--fg);border-radius:0;min-width:0}
+input:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.home-section{margin-bottom:40px}.home-section>h2{font-size:24px;line-height:32px;margin:0 0 24px;font-weight:700}
+.topic-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 24px}.topic-link{display:block;padding:12px 0 16px}.topic-link:hover{text-decoration:none}.topic-link:hover h3{text-decoration:underline;text-underline-offset:4px}
+.topic-link h3{font-size:15px;line-height:24px;margin:0 0 8px;font-weight:700}.topic-link p{font-size:12px;line-height:18px;color:var(--muted);margin:0}
+.destination-stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.destination-story{display:block}.destination-story:hover{text-decoration:none}.destination-story:hover h3{text-decoration:underline;text-underline-offset:4px}
+.destination-story img{display:block;width:100%;height:220px;object-fit:contain;background:white}.destination-story h3{font-size:18px;line-height:26px;margin:12px 0;font-weight:700}.destination-story p{font-size:15px;line-height:24px;margin:0;color:var(--muted)}
+.practical-stories{padding-top:40px;border-top:1px solid var(--line)}.guide-entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.guide-entry{display:block}.guide-entry:hover{text-decoration:none}.guide-entry:hover h3{text-decoration:underline;text-underline-offset:4px}
+.guide-entry>span{display:block;font-size:12px;line-height:18px;text-transform:uppercase;color:var(--red);margin-bottom:8px}.guide-entry h3{font-size:18px;line-height:26px;margin:0 0 8px;font-weight:700}.guide-entry p{font-size:15px;line-height:24px;color:var(--muted);margin:0}
+.first-trip{padding:24px;background:var(--soft)}.first-trip h2{font-size:18px;line-height:26px;margin:0 0 16px}.first-trip ul{list-style:none;padding:0;margin:0;display:grid;gap:16px}.first-trip a{font-size:15px;line-height:24px}
+.site-footer{background:var(--soft);border-top:0;text-align:left;padding:24px max(20px,calc((100vw - 1120px)/2)) 32px;font-size:12px;line-height:18px;margin-top:0}.site-footer p{max-width:1120px;margin:0 0 12px}.site-footer a{color:var(--muted)}
+.collection-intro{max-width:750px;margin:28px 0}.collection-intro h1{font-size:32px;line-height:42px;margin:0 0 16px}.collection-intro p{color:var(--muted)}.collection-count{font-size:13px}.eyebrow{font-size:12px;font-weight:500;color:var(--red);letter-spacing:0}
+.topic-pills{display:flex;flex-wrap:wrap;gap:8px 20px;margin:24px 0}.topic-pills a{margin:0;font-size:13px;padding:6px 0;border-bottom:1px solid transparent}.topic-pills a[aria-current=page]{border-color:var(--red);color:var(--red)}
+.guide-search{margin:24px 0;padding:20px;background:var(--soft)}.guide-search label{display:block;font-size:13px;margin-bottom:8px}.search-row{display:flex;gap:8px}.search-row input{flex:1;min-width:0;border:1px solid var(--line);background:white;color:var(--fg);padding:12px;font:inherit;border-radius:0}.search-row button{border:1px solid var(--fg);background:var(--fg);color:white;padding:10px 16px;font:inherit;cursor:pointer}.guide-search p{font-size:12px;color:var(--muted);margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px;margin-top:24px}.card{display:flex;flex-direction:column;min-width:0;background:white;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;transition:none}.card:hover{transform:none;box-shadow:none;text-decoration:none}.card:hover h2{text-decoration:underline}
+.card-thumb{width:100%;height:220px;object-fit:contain;aspect-ratio:auto}.card-placeholder{display:flex;flex-direction:column;justify-content:space-between;height:220px;padding:24px;background:var(--soft);color:var(--muted)}.card-placeholder span{font-size:12px}.card-placeholder b{font-size:18px;line-height:26px;max-width:90%}
+.card-copy{display:flex;flex-direction:column;flex:1;padding:20px 0}.card-topic{font-size:12px;text-transform:uppercase;color:var(--red)}.card .card-copy h2{font-size:18px;line-height:26px;margin:8px 0;padding:0}.card .card-copy p{font-size:14px;line-height:23px;padding:0;margin:0 0 16px;color:var(--muted)}.card .card-copy .date{font-size:12px;padding:0;margin-top:auto}
+.post h1{font-size:30px;line-height:1.35}.post h2{font-size:23px;border:0;padding-left:0}.post h3{font-size:18px}.post .meta .cat{background:var(--soft);color:var(--fg);border-radius:0}.post table{display:block;overflow-x:auto}.post :is(h1,h2,h3,p,a){overflow-wrap:break-word}
+.breadcrumbs{font-size:12px}.breadcrumbs a{font-size:inherit;margin:0}.related-guides{border:1px solid var(--line);border-radius:0;background:var(--soft);padding:24px}
+@media(max-width:900px){.topic-links{grid-template-columns:repeat(2,minmax(0,1fr))}.home-intro{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-header nav{gap:20px}.home-search{max-width:100%}}
+@media(max-width:620px){.site-header{padding:8px 20px}.brand-logo{height:76px;width:76px}.site-header>.desktop-nav{display:none}.mobile-nav{display:block}.mobile-nav summary{font-size:13px;cursor:pointer;list-style:none;padding:12px 0}.mobile-nav summary::-webkit-details-marker{display:none}.mobile-nav nav{position:absolute;right:20px;top:calc(100% - 8px);width:240px;background:white;border:1px solid var(--line);padding:12px 20px;z-index:10;display:flex;flex-direction:column;align-items:flex-start;gap:0}.mobile-nav nav a{padding:12px 0}main.page{padding-top:24px}.home-intro{gap:0;margin-bottom:40px}.home-intro h1{font-size:26px;line-height:34px}.home-intro p{margin-bottom:0}.home-search{width:100%;margin-top:16px}.home-section>h2{font-size:24px;line-height:32px}.topic-links{gap:16px 24px}.destination-stories{grid-template-columns:1fr}.destination-story img{height:220px}.destination-story h3{margin:12px 0}.guide-entries{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.collection-intro h1{font-size:26px;line-height:34px}.site-footer{padding-left:20px;padding-right:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
 """
 
 
@@ -624,7 +616,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
 <meta name="twitter:description" content="{html.escape(description)}">
 {img_tag}{published_tag}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="{base}/style.css">
 {goatcounter_script(cfg)}{adsense_script(cfg)}{jsonld_tag}</head>
 <body>
@@ -633,8 +625,8 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
   <a class="brand" href="{base}/index.html">
     {brand_html}
   </a>
-  <p class="tagline">{html.escape(cfg['site_tagline'])}</p>
-  <nav>{nav}</nav>
+  <nav class="desktop-nav" aria-label="Primary">{nav}</nav>
+  <details class="mobile-nav"><summary>Browse guides</summary><nav aria-label="Mobile">{nav}</nav></details>
 </header>
 <main id="main-content" class="{'post' if is_post else 'page'}">
 {body}
