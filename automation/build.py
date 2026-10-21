@@ -293,8 +293,11 @@ def related_guides(post, posts, base):
         return set(re.findall(r"[a-z]{3,}", p["title"].lower())) - stop
     keywords = words(post)
     candidates = [p for p in posts if p["slug"] != post["slug"]]
-    candidates.sort(key=lambda p: (len(keywords & words(p)),
-                                   p["category"] == post["category"], p["date"], p["slug"]),
+    curated = CURATED_RELATED.get(post["slug"], [])
+    candidates.sort(key=lambda p: (100 - curated.index(p["slug"]) if p["slug"] in curated else 0,
+                                   p["_topic"] == post["_topic"],
+                                   bool(set(p["_regions"]) & set(post["_regions"])),
+                                   len(keywords & words(p)), p["date"], p["slug"]),
                     reverse=True)
     links = "".join(
         f'<li><a href="{base}/posts/{html.escape(p["slug"])}.html">'
@@ -317,6 +320,269 @@ def start_here(posts, base):
             '<h2 id="start-heading">What do you need help with?</h2><ul>' + links + '</ul></section>') if links else ""
 
 
+# ---------- topic and destination discovery ----------
+# Source categories remain untouched: existing ingestion/validation keeps its contract.
+# Optional topic/regions front matter can refine classification for future posts.
+DISCOVERY_UPDATED = "2026-10-21"
+TOPICS = {
+    "before-you-go": ("Before You Go", "Start with entry preparation, seasonal packing and the practical details to check before departure."),
+    "getting-around": ("Getting Around", "Compare airport transfers, trains, buses and taxis, then find the guides you need for the next leg of your trip."),
+    "sim-and-apps": ("SIM & Apps", "Choose how to stay connected and find your way around Korea with guides to mobile data, maps and useful apps."),
+    "money-and-shopping": ("Money & Shopping", "Prepare for payments, currency exchange, shopping and tax refunds before you reach the checkout."),
+    "food-and-culture": ("Food & Culture", "Find help with restaurant ordering, reservations, everyday etiquette and unfamiliar cultural experiences."),
+    "things-to-do": ("Things to Do", "Explore places, day trips and seasonal experiences, with practical details to help you plan your visit."),
+    "living-in-korea": ("Living in Korea", "Staying longer? Start with banking, housing, laundry and the everyday systems that visitors rarely need to navigate."),
+}
+DESTINATIONS = {
+    "seoul": ("Seoul & Nearby", "Plan your time in Seoul and nearby day-trip destinations. Start with a place guide, then check transport and opening details."),
+    "busan": ("Busan", "Explore Busan through our current destination and festival guides. Check each guide for the details relevant to your visit."),
+    "jeju": ("Jeju", "Start with the island guide and compare how to get there. Check transport and rental requirements before booking."),
+}
+CURATED_RELATED = {
+    "korea-esim-mobile-data": ["korea-useful-travel-apps", "korea-why-google-maps-fails-in-korea-and-how-the-road-name-address-system-actually-works", "korea-airport-transfer-options"],
+    "korea-airport-transfer-options": ["korea-t-money-transit-card", "korea-esim-mobile-data", "korea-luggage-storage-forwarding-services"],
+    "korea-busan-haeundae-beach-gamcheon-culture-village": ["korea-busan-fireworks-festival-gwangalli-guide", "korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel", "korea-t-money-transit-card"],
+}
+
+
+def discovery_meta(p):
+    text = (p["title"] + " " + p["slug"]).lower()
+    if p.get("topic") in TOPICS:
+        topic = p["topic"]
+    else:
+        rules = [
+            ("living-in-korea", r"bank.account|housing|laundry|recycling|trash|hangul|cafes.as.workspaces|working.from.cafes"),
+            ("sim-and-apps", r"esim|mobile.data|useful.travel.apps|travel.apps|google.maps|addresses.work|address.system"),
+            ("before-you-go", r"k-eta|visa.waiver|packing|weather.tips|travel.safety|travel.advisories|emergency|pharmac|hospital|public.holidays"),
+            ("money-and-shopping", r"currency|card.payments|tax.refund|tax.free|shopping|myeongdong|namdaemun|daiso|olive.young|convenience.store"),
+            ("getting-around", r"airport.transfer|t.money|subway|city.buses|bus.travel|taxi|luggage|ktx|srt|intercity|domestic.flights|renting.a.car|day.tripping"),
+            ("food-and-culture", r"tipping|etiquette|mistakes|noraebang|jjimjilbang|restaurant|eating.alone|food.delivery|kiosk|chuseok"),
+        ]
+        # Place guides keep their destination intent even when their title mentions etiquette or subway access.
+        place = re.search(r"bukchon|hiking|palace|gyeongbokgung|museum|jinju|fireworks|haeundae|gamcheon|jeju.island|n.seoul.tower|namsan|insadong|hongdae|suwon|nami.island|everland|lotte.world|cherry.blossom|fall.foliage|attraction.pass|dmz|jsa", text)
+        topic = "things-to-do" if place else next((key for key, pattern in rules if re.search(pattern, text)), "before-you-go")
+    p["_topic"] = topic
+    p["_topic_label"] = TOPICS[topic][0]
+    if "regions" in p:
+        p["_regions"] = [r.strip() for r in p["regions"].split(",") if r.strip() in DESTINATIONS]
+    elif re.search(r"jinju|namgang", text):
+        p["_regions"] = []  # Departure from Seoul does not make Jinju a Seoul destination.
+    else:
+        p["_regions"] = [key for key, pattern in [
+            ("seoul", r"seoul|incheon|gyeongbokgung|bukchon|insadong|hongdae|myeongdong|namdaemun|suwon|nami.island|everland|lotte.world|dmz|jsa"),
+            ("busan", r"busan|haeundae|gamcheon|gwangalli"),
+            ("jeju", r"jeju"),
+        ] if re.search(pattern,text)]
+    return p
+
+
+def discovery_groups(posts):
+    groups = [("topics/"+key, label, desc, [p for p in posts if p["_topic"] == key])
+              for key,(label,desc) in TOPICS.items()]
+    groups += [("destinations/"+key, label, desc, [p for p in posts if key in p["_regions"]])
+               for key,(label,desc) in DESTINATIONS.items()]
+    return [g for g in groups if g[3]]
+
+
+def discovery_nav(base):
+    return (f'<a href="{base}/guides">All guides</a>'
+            f'<a href="{base}/#topics">Topics</a>'
+            f'<a href="{base}/#destinations">Destinations</a>'
+            f'<a href="{base}/topics/living-in-korea">Living in Korea</a>'
+            f'<a href="{base}/about">About</a>')
+
+
+def guide_card(p, base):
+    # Collection pages use the same existing localized media as article pages.
+    image = p.get("image", "").replace("https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/", base+"/media/images/")
+    thumb = (f'<img class="card-thumb" src="{html.escape(image)}" alt="" loading="lazy" width="640" height="400">'
+             if image else f'<div class="card-placeholder" aria-hidden="true"><span>LAND IN KOREA</span><b>{html.escape(p["_topic_label"])}</b></div>')
+    return (f'<a class="card" href="{base}/posts/{html.escape(p["slug"])}" data-guide '
+            f'data-search="{html.escape(p["title"]+" "+p["description"]+" "+p["_topic_label"]+" "+" ".join(p["_regions"]), quote=True)}">'
+            f'{thumb}<div class="card-copy"><span class="card-topic">{html.escape(p["_topic_label"])}</span>'
+            f'<h2>{html.escape(p["title"])}</h2><p>{html.escape(p["description"])}</p>'
+            f'<span class="date">{html.escape(p["date"])} · {p["_reading"]} min read</span></div></a>')
+
+
+def discovery_search(label="Search these guides"):
+    return (f'<div class="guide-search" hidden data-search-control><label for="guide-search">{label}</label>'
+            '<div class="search-row"><input id="guide-search" type="search" placeholder="Try eSIM, Busan or airport" autocomplete="off">'
+            '<button type="button" id="clear-search">Clear</button></div>'
+            '<p id="search-status" role="status" aria-live="polite"></p></div>')
+
+
+def collection_page(cfg, base, posts, title, description, path, all_posts=None):
+    all_posts = all_posts if all_posts is not None else posts
+    links = ''.join(f'<a href="{base}/topics/{key}"' + (' aria-current="page"' if path == "topics/"+key else "") + f'>{html.escape(value[0])}</a>' for key,value in TOPICS.items() if any(p["_topic"]==key for p in all_posts))
+    body = (f'<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{base}/">Home</a> / '
+            f'<span aria-current="page">{html.escape(title)}</span></nav>'
+            f'<section class="collection-intro"><p class="eyebrow">THE GUIDE LIBRARY</p><h1>{html.escape(title)}</h1>'
+            f'<p>{html.escape(description)}</p><p class="collection-count">{len(posts)} guides</p></section>'
+            f'<nav class="topic-pills" aria-label="Browse by topic">{links}</nav>'
+            f'{discovery_search()}<section class="grid" aria-label="Guides">'+''.join(guide_card(p,base) for p in posts)+'</section>'
+            '<p id="search-empty" hidden>No guides match that search. Try a place or a shorter phrase.</p>'
+            f'<p class="back"><a href="{base}/guides">Browse all guides →</a></p>')
+    url = base+"/"+path
+    graph = site_entities(cfg,base) + [{"@type":"CollectionPage", "@id":url+"#collection", "url":url,
+        "name":title,"description":description,"isPartOf":{"@id":base+"/#website"},
+        "mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"url":base+"/posts/"+p["slug"],"name":p["title"]} for i,p in enumerate(posts)]}},
+        {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":base+"/"},{"@type":"ListItem","position":2,"name":title,"item":url}]}]
+    return page(cfg,base,title,description,body,url,jsonld=jsonld_data(graph))
+
+
+def discovery_home(cfg, base, posts):
+    topics = ''.join(f'<a class="topic-tile" href="{base}/{path}"><span class="eyebrow">{len(group):02d} GUIDES</span><h3>{html.escape(label)}</h3><p>{html.escape(desc)}</p><span class="tile-arrow" aria-hidden="true">↗</span></a>' for path,label,desc,group in discovery_groups(posts) if path.startswith("topics/"))
+    destinations = ''
+    for key,(label,desc) in DESTINATIONS.items():
+        group = [p for p in posts if key in p["_regions"]]
+        if not group: continue
+        image_post = next((p for p in group if p.get("image") and p["_topic"]=="things-to-do"),None)
+        image = image_post["image"].replace("https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/",base+"/media/images/") if image_post else ''
+        pic = f'<img src="{html.escape(image)}" loading="lazy" width="640" height="420" alt="">' if image else '<div class="destination-placeholder" aria-hidden="true"></div>'
+        destinations += f'<a class="destination" href="{base}/destinations/{key}">{pic}<div><span class="eyebrow">{len(group)} GUIDES</span><h3>{label}</h3><span>Explore the guides →</span></div></a>'
+    essential = ["korea-k-eta-visa-waiver-requirements","korea-airport-transfer-options","korea-esim-mobile-data","korea-t-money-transit-card"]
+    lookup = {p['slug']:p for p in posts}
+    essentials = ''.join(f'<li><span class="step-number">{i+1:02d}</span><a href="{base}/posts/{slug}">{html.escape(lookup[slug]["title"])}</a></li>' for i,slug in enumerate(essential) if slug in lookup)
+    return (f'<section class="home-hero"><div><p class="eyebrow">YOUR PRACTICAL GUIDE TO KOREA</p>'
+        '<h1>Less guesswork.<br>More Korea.</h1><p class="hero-description">From your first airport transfer to finding your way around Busan. Clear guides for the decisions that shape your trip.</p>'
+        f'<a class="primary-link" href="{base}/guides">Find your travel guide <span aria-hidden="true">↗</span></a></div>'
+        '<aside class="arrival-panel"><span class="eyebrow">START WITH THE ESSENTIALS</span><h2>First time in Korea?</h2><p>Work through these guides before you go.</p><ol>'+essentials+'</ol></aside></section>'
+        f'{start_here(posts,base)}'
+        f'<section id="topics" class="discovery-section"><div class="section-heading"><div><p class="eyebrow">FIND WHAT YOU NEED</p><h2>Explore by topic</h2></div><a href="{base}/guides">All {len(posts)} guides →</a></div><div class="topic-grid">{topics}</div></section>'
+        f'<section id="destinations" class="discovery-section"><div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR NEXT STOP</p><h2>Where are you going?</h2></div></div><div class="destination-grid">{destinations}</div></section>'
+        f'<section class="discovery-section"><div class="section-heading"><div><p class="eyebrow">FROM THE JOURNAL</p><h2>Latest guides</h2></div><a href="{base}/guides">View the library →</a></div><div class="grid">'+''.join(guide_card(p,base) for p in posts[:6])+'</div></section>'
+        f'<section class="editorial-note"><p class="eyebrow">PLAN WITH CONTEXT</p><h2>Practical details. Sources you can check.</h2><p>Use our guides to narrow down your options, then confirm current prices and requirements with the official provider before booking.</p><a href="{base}/about">How we work →</a></section>')
+
+
+def write_discovery(cfg,base,posts):
+    groups = [("guides", "Korea Travel Guide Library", "Browse all our Korea guides, or search by place, topic and the problem you need to solve.",posts)] + discovery_groups(posts)
+    for path,title,desc,group in groups:
+        dest = os.path.join(SITE,*path.split('/'))+".html"
+        os.makedirs(os.path.dirname(dest),exist_ok=True)
+        with open(dest,'w',encoding='utf-8') as f:
+            f.write(collection_page(cfg,base,group,title,desc,path,posts))
+    with open(os.path.join(SITE,'guide-search.js'),'w',encoding='utf-8') as f:
+        f.write('''(() => {
+  const input = document.getElementById('guide-search');
+  if (!input) return;
+  const controls = document.querySelector('[data-search-control]');
+  const cards = [...document.querySelectorAll('[data-guide]')];
+  const status = document.getElementById('search-status');
+  const empty = document.getElementById('search-empty');
+  const filter = () => {
+    const words = input.value.toLocaleLowerCase().trim().split(/\\s+/).filter(Boolean);
+    let count = 0;
+    cards.forEach(card => {
+      const text = card.dataset.search.toLocaleLowerCase();
+      const match = words.every(word => text.includes(word));
+      card.hidden = !match;
+      if (match) count++;
+    });
+    status.textContent = `${count} of ${cards.length} guides`;
+    empty.hidden = count !== 0;
+  };
+  input.addEventListener('input', filter);
+  document.getElementById('clear-search').addEventListener('click', () => {
+    input.value = ''; filter(); input.focus();
+  });
+  controls.hidden = false;
+  filter();
+})();''')
+
+
+DISCOVERY_CSS = """
+/* Travel discovery layout. Content and links remain available without scripts. */
+:root{--muted:#625e53;--blue:#254b46;--green:#254b46;--line:#dcd7ca;--bg:#f7f5ed;--card:#fffdf7}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{line-height:1.65}
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--fg);color:white;padding:12px;z-index:20}
+.skip-link:focus{top:8px}
+.site-header{padding:16px max(20px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);text-align:left}
+.brand-logo{height:64px;max-width:200px;object-fit:contain;border-radius:0;box-shadow:none}
+.tagline{display:none}
+.site-header nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 24px}
+.site-header nav a{margin:0;padding:8px 0;font-size:.85rem}
+main.page{max-width:1160px;padding:48px 20px}
+main.post{max-width:800px;padding:32px 24px}
+main.page:not(:has(.home-hero,.collection-intro)){max-width:800px}
+.eyebrow{display:block;color:var(--blue);font-size:.67rem;font-weight:700;letter-spacing:.14em;line-height:1.6;margin:0 0 14px}
+.home-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:70px;align-items:center;padding:28px 0 42px}
+.home-hero h1{font-size:clamp(2.6rem,5vw,4.6rem);line-height:1.14;letter-spacing:-.045em;margin:0 0 22px;font-weight:800}
+.hero-description{max-width:450px;color:var(--muted);font-size:1rem}
+.primary-link{display:inline-flex;align-items:center;gap:44px;border-radius:6px;background:var(--blue);color:white;padding:14px 20px;font-weight:600;font-size:.9rem;margin-top:16px}
+.primary-link:hover{background:#183b36;text-decoration:none}
+.arrival-panel{background:#edeadf;border-radius:14px;padding:32px}
+.arrival-panel h2{font-size:1.7rem;line-height:1.25;margin:0 0 12px}
+.arrival-panel p{color:var(--muted);font-size:.9rem}
+.arrival-panel ol{list-style:none;padding:0;margin:22px 0 0}
+.arrival-panel li{display:flex;align-items:baseline;gap:15px;border-top:1px solid #d4cfc1;padding:13px 0;font-size:.88rem;line-height:1.5}
+.step-number{color:#706c5c;font-size:.73rem;flex-shrink:0}
+.start-here{background:var(--blue);color:white;border:0;padding:22px 28px;margin:12px 0 52px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.start-here h2{font-family:var(--font-body);font-size:.9rem;margin:0;max-width:180px}
+.start-here ul{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;padding:0;margin:0}
+.start-here li{margin:0}
+.start-here a{display:block;color:white;font-size:.8rem;text-decoration:underline;text-underline-offset:4px;padding:5px 0}
+.discovery-section{margin:54px 0}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}
+.section-heading .eyebrow{margin-bottom:6px}
+.section-heading h2{font-size:2rem;line-height:1.3;margin:0;letter-spacing:-.03em}
+.section-heading>a{font-size:.8rem;font-weight:600;white-space:nowrap}
+.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.topic-tile{display:block;position:relative;background:var(--card);border:1px solid var(--line);padding:24px;border-radius:9px;color:var(--fg)}
+.topic-tile:hover{border-color:var(--blue);text-decoration:none}
+.topic-tile .eyebrow{font-size:.6rem;margin-bottom:24px}
+.topic-tile h3{font-size:1.18rem;margin:0 0 9px}
+.topic-tile p{font-size:.8rem;color:var(--muted);margin:0;max-width:90%}
+.tile-arrow{position:absolute;top:21px;right:24px;color:var(--blue);font-size:1.2rem}
+.destination-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.destination{border-radius:10px;background:var(--card);overflow:hidden;border:1px solid var(--line);display:block;color:var(--fg)}
+.destination:hover{text-decoration:none;border-color:var(--blue)}
+.destination img,.destination-placeholder{width:100%;aspect-ratio:1.55;object-fit:cover;display:block}
+.destination>div:last-child{padding:20px}
+.destination h3{font-size:1.7rem;margin:0 0 10px}
+.destination .eyebrow{font-size:.6rem;margin-bottom:6px}
+.destination span:last-child{font-size:.78rem;color:var(--blue)}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{display:flex;flex-direction:column;min-width:0;border-radius:9px}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px #221f1a0d}
+.card-thumb,.card-placeholder{aspect-ratio:1.6;object-fit:cover;width:100%;height:auto;flex-shrink:0}
+.card-placeholder{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:24px;background:#e7e4d6;color:var(--blue);border-bottom:1px solid var(--line)}
+.card-placeholder span{font-size:.6rem;letter-spacing:.16em;font-weight:700}
+.card-placeholder b{font-family:var(--font-display);font-size:1.35rem;max-width:80%}
+.card-copy{padding:20px;display:flex;flex-direction:column;flex-grow:1}
+.card-topic{font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.card .card-copy h2{font-size:1.1rem;line-height:1.5;margin:12px 0 10px;padding:0}
+.card .card-copy p{font-size:.8rem;margin:0 0 18px;padding:0}
+.card .card-copy .date{font-size:.68rem;margin-top:auto;padding:0}
+.collection-intro{max-width:750px;margin:30px 0}
+.collection-intro h1{font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:0 0 20px}
+.collection-intro p{color:var(--muted)}
+.collection-intro .collection-count{font-size:.8rem;font-weight:600;color:var(--blue)}
+.topic-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.topic-pills a[aria-current="page"]{background:var(--blue);color:white;border-color:var(--blue)}
+.topic-pills a{border:1px solid var(--line);border-radius:30px;font-size:.75rem;padding:8px 14px;margin:0}
+.guide-search{padding:22px;border:1px solid var(--line);background:var(--card);border-radius:9px;margin:24px 0}
+.guide-search label{display:block;font-weight:600;font-size:.85rem;margin-bottom:10px}
+.search-row{display:flex;gap:10px}
+.search-row input{font:inherit;font-size:.9rem;border:1px solid #8b8b7b;border-radius:5px;padding:12px;width:100%;min-width:0;background:white;color:var(--fg)}
+.search-row button{font:inherit;font-size:.8rem;border:1px solid var(--blue);background:var(--blue);color:white;border-radius:5px;padding:10px 18px;cursor:pointer}
+.guide-search p{font-size:.75rem;margin:8px 0 0;color:var(--muted)}
+input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.editorial-note{padding:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px;text-align:center}
+.editorial-note h2{font-size:1.6rem}
+.editorial-note p:not(.eyebrow){font-size:.9rem;max-width:650px;margin:16px auto;color:var(--muted)}
+.editorial-note a{font-size:.85rem;font-weight:600}
+.post .meta .cat{background:var(--blue);color:white;text-decoration:none}
+.post table{display:block;overflow-x:auto}
+.post :is(h1,h2,h3,p,a){overflow-wrap:break-word}
+.site-footer{border-top:1px solid var(--line);padding:30px 20px;font-size:.75rem}
+@media(max-width:900px){.home-hero{gap:30px}.topic-grid,.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-header{gap:16px}.site-header nav{gap:8px 15px}}
+@media(max-width:620px){.site-header{display:block;padding:16px 20px}.brand-logo{height:56px}.site-header nav{justify-content:flex-start;gap:4px 18px;margin-top:12px}.site-header nav a{font-size:.75rem}.home-hero{grid-template-columns:1fr;gap:30px;padding-top:0}.home-hero h1{font-size:3rem}.arrival-panel{padding:24px}.start-here{display:block;padding:22px;margin-bottom:38px}.start-here h2{max-width:none;margin-bottom:12px}.start-here ul{display:grid;grid-template-columns:1fr 1fr;gap:10px}.topic-grid{grid-template-columns:1fr 1fr;gap:10px}.topic-tile{padding:18px}.topic-tile h3{font-size:1rem}.topic-tile p{max-width:100%;font-size:.75rem}.topic-tile .eyebrow{margin-bottom:18px;font-size:.52rem}.tile-arrow{right:15px;top:13px}.destination-grid{grid-template-columns:1fr}.destination{display:grid;grid-template-columns:40% 1fr}.destination img,.destination-placeholder{height:100%;aspect-ratio:auto;min-height:160px}.destination>div:last-child{padding:18px}.destination h3{font-size:1.5rem}.section-heading h2{font-size:1.6rem}.section-heading>a{font-size:.7rem}.grid{grid-template-columns:1fr}.discovery-section{margin:38px 0}main.page{padding-top:28px}.editorial-note{padding:25px 0}.collection-intro h1{font-size:2.2rem}.card-copy{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}.card:hover{transform:none}}
+"""
+
+
 # ---------- shared layout ----------
 def page(cfg, base, title, description, body, canonical, is_post=False,
          og_type="website", image=None, published=None, jsonld=None):
@@ -325,14 +591,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
         jsonld = jsonld_data(site_entities(cfg, base))
     robots_tag = '<meta name="robots" content="noindex, follow">' if canonical == base + "/404" else ""
     brand_html = brand_markup(cfg, base)
-    nav = (
-        f'<a href="{base}/index.html">Home</a>'
-        f'<a href="{base}/about.html">About</a>'
-        f'<a href="{base}/affiliate-disclosure.html">Disclosure</a>'
-        f'<a href="{base}/privacy.html">Privacy</a>'
-        f'<a href="{base}/contact.html">Contact</a>'
-        f'<a href="{base}/terms-of-service.html">Terms</a>'
-    )
+    nav = discovery_nav(base)
     year = datetime.now().year
     affiliate_enabled = cfg.get("affiliate_links_enabled", False)
     footer_note = (
@@ -369,6 +628,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
 <link rel="stylesheet" href="{base}/style.css">
 {goatcounter_script(cfg)}{adsense_script(cfg)}{jsonld_tag}</head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="{base}/index.html">
     {brand_html}
@@ -376,7 +636,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
   <p class="tagline">{html.escape(cfg['site_tagline'])}</p>
   <nav>{nav}</nav>
 </header>
-<main class="{'post' if is_post else 'page'}">
+<main id="main-content" class="{'post' if is_post else 'page'}">
 {body}
 </main>
 <footer class="site-footer">
@@ -388,6 +648,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
   <a href="{base}/terms-of-service.html">Terms</a> ·
   <a href="{base}/contact.html">Contact</a></p>
 </footer>
+<script src="{base}/guide-search.js" defer></script>
 </body>
 </html>
 """
@@ -436,8 +697,9 @@ def read_posts(cfg):
         meta["_body_html"] = md_to_html(body, cfg["base_url"].rstrip("/"))
         meta["_reading"] = max(1, len(body) // 1000)
         meta["_faq"] = extract_faq(body)
+        discovery_meta(meta)
         posts.append(meta)
-    posts.sort(key=lambda p: p["date"], reverse=True)
+    posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
     return posts
 
 
@@ -480,9 +742,10 @@ def build():
         post_url = canonical_url(base, f'{base}/posts/{p["slug"]}.html')
         article = (
             f'<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{base}/">Home</a>'
+            f' <span aria-hidden="true">/</span> <a href="{base}/topics/{p["_topic"]}">{html.escape(p["_topic_label"])}</a>'
             f' <span aria-hidden="true">/</span> <span aria-current="page">{html.escape(p["title"])}</span></nav>'
             f'<article>' 
-            f'<p class="meta"><span class="cat" data-cat="{re.sub(r"[^a-z0-9]+", "-", p["category"].lower()).strip("-")}">{html.escape(p["category"])}</span>'
+            f'<p class="meta"><a class="cat" href="{base}/topics/{p["_topic"]}">{html.escape(p["_topic_label"])}</a>'
             f' · {p["date"]} · {p["_reading"]} min read</p>'
             f'<h1>{html.escape(p["title"])}</h1>'
             f'<p class="byline">Written by {html.escape(cfg["author"])} · checked against official sources — '
@@ -501,6 +764,7 @@ def build():
             "isPartOf": {"@id": base + "/#website"},
             "headline": p["title"],
             "description": p["description"],
+            "articleSection": p["_topic_label"],
             "datePublished": p["date"],
             "dateModified": p["date"],
             "author": {"@id": base + "/#editorial-team", "@type": "Organization", "name": cfg["author"], "url": base + "/about"},
@@ -511,7 +775,8 @@ def build():
         graph.append({"@type": "BreadcrumbList", "@id": post_url + "#breadcrumb",
                       "itemListElement": [
                           {"@type": "ListItem", "position": 1, "name": "Home", "item": base + "/"},
-                          {"@type": "ListItem", "position": 2, "name": p["title"], "item": post_url},
+                          {"@type": "ListItem", "position": 2, "name": p["_topic_label"], "item": base + "/topics/" + p["_topic"]},
+                          {"@type": "ListItem", "position": 3, "name": p["title"], "item": post_url},
                       ]})
         if p.get("_faq"):
             graph.append({
@@ -532,40 +797,14 @@ def build():
         with open(os.path.join(POSTS_OUT, f'{p["slug"]}.html'), "w", encoding="utf-8") as f:
             f.write(out)
 
-    cat_slug = lambda c: re.sub(r"[^a-z0-9]+", "-", c.lower()).strip("-")
-
-    cards = ""
-    for p in posts:
-        thumb = f'<img class="card-thumb" src="{html.escape(p["image"])}" alt="{html.escape(p["title"])}">' if p.get("image") else ""
-        cards += (
-            f'<a class="card" href="{base}/posts/{p["slug"]}.html">'
-            f'{thumb}'
-            f'<span class="cat" data-cat="{cat_slug(p["category"])}">{html.escape(p["category"])}</span>'
-            f'<h2>{html.escape(p["title"])}</h2>'
-            f'<p>{html.escape(p["description"])}</p>'
-            f'<span class="date">{p["date"]}</span>'
-            f'</a>'
-        )
-    intro = (f'<section class="hero"><h1>{html.escape(cfg["site_name"])}</h1>'
-             f'<p>Pick the situation you\'re actually facing — every guide below runs the real comparison, not another list of tips.</p>'
-             f'<p class="hero-sub">Most Korea travel advice tells you what exists. It rarely tells you which option is '
-             f'right for <em>your</em> trip length, group size, or budget — so you end up guessing at the airport counter '
-             f'anyway. These guides are written the other way round: each one takes a single decision a first-time visitor '
-             f'or new foreign resident actually has to make — airport transfer, data plan, transit card, tax refund, '
-             f'attraction pass — lays the options side by side, and says plainly which one wins in which situation, '
-             f'including when the answer is "none of them, skip it."</p>'
-             f'<p class="hero-sub">Prices, opening hours, and procedures in Korea change often. Every guide notes where a '
-             f'detail is time-sensitive and points you to the official source to confirm before you book. We correct '
-             f'errors when readers report them — see the <a href="{base}/about.html">about page</a> for how we work, '
-             f'or <a href="{base}/contact.html">tell us</a> if something here is out of date.</p></section>'
-             f'{start_here(posts, base)}'
-             f'<section class="grid">{cards or "<p>No guides yet.</p>"}</section>')
+    intro = discovery_home(cfg, base, posts)
     with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as f:
         f.write(page(cfg, base, "Korea Travel Guides: Transport, eSIMs and Money",
                      "Plan your first trip to Korea with practical comparisons of airport transfers, eSIMs, transit cards, payments and luggage storage. Check official sources.",
                      intro, f"{base}/"))
 
     write_static_pages(cfg, base)
+    write_discovery(cfg, base, posts)
     write_sitemap(cfg, base, posts)
     write_feed(cfg, base, posts)
     write_robots(base)
@@ -786,7 +1025,7 @@ def write_sitemap(cfg, base, posts):
     # URL with today's date on every rebuild, regardless of whether that
     # page changed, was inaccurate and made the sitemap look like the whole
     # site rewrites itself daily (2026-09-29, AdSense re-review check).
-    latest_post_date = max([LAYOUT_CONTENT_UPDATED] + [p["date"] for p in posts])
+    latest_post_date = max([LAYOUT_CONTENT_UPDATED, DISCOVERY_UPDATED] + [p["date"] for p in posts])
     static_urls = [
         ("", latest_post_date),  # home lists posts, so it follows the latest post
         ("about.html", LAYOUT_CONTENT_UPDATED),
@@ -795,7 +1034,8 @@ def write_sitemap(cfg, base, posts):
         ("terms-of-service.html", POLICY_PAGE_LAST_UPDATED),
         ("contact.html", POLICY_PAGE_LAST_UPDATED),
     ]
-    urls = static_urls + [(f"posts/{p['slug']}.html", p["date"]) for p in posts]
+    collection_urls = [("guides", latest_post_date)] + [(path, max([DISCOVERY_UPDATED] + [p["date"] for p in group])) for path, _, _, group in discovery_groups(posts)]
+    urls = static_urls + collection_urls + [(f"posts/{p['slug']}.html", p["date"]) for p in posts]
     body = '<?xml version="1.0" encoding="UTF-8"?>\n'
     body += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u, lastmod in urls:
@@ -925,7 +1165,7 @@ code{background:var(--soft);border:1px solid var(--line);border-radius:4px;paddi
 .site-footer a{color:var(--muted)}
 """
     with open(os.path.join(SITE, "style.css"), "w", encoding="utf-8") as f:
-        f.write(css)
+        f.write(css + DISCOVERY_CSS)
 
 
 if __name__ == "__main__":
