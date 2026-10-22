@@ -222,6 +222,13 @@ main.page:has(.travel-home){max-width:1240px;padding:28px 28px 48px}
 .atlas-footer{border-top:1px solid #d9e0d5;padding-top:12px;display:flex;align-items:center;justify-content:space-between;color:#637565}
 .map-note{font-size:13px;line-height:1.6;color:#526651;margin:0}
 .map-credit{display:block;font-size:11px;color:#526651;margin-top:10px}.map-credit a{text-decoration:underline;text-underline-offset:2px}
+.busan-map{background:#f1f3ee;border:1px solid #e0e5dc;border-radius:8px;padding:22px 24px 16px;margin-top:20px}
+.busan-map svg{width:100%;height:auto;max-height:420px;display:block;margin:12px auto}
+.busan-district{fill:#dce5d4;stroke:#fff;stroke-width:1.2;transition:fill .2s ease}
+.busan-district.is-active{fill:#306e80;cursor:pointer}
+a.busan-district{display:inline}
+a.busan-district:hover .busan-district,a.busan-district:hover path,a.busan-district:focus-visible path{fill:#24536a}
+a.busan-district:focus-visible{outline:none}a.busan-district:focus-visible path{stroke:#263c32;stroke-width:2}
 @media(prefers-reduced-motion:no-preference){
  .destination-explorer.is-enhanced .place-card:not([hidden]){animation:destination-reveal .32s ease-out both}
  .destination-pin.is-activating .pin-wave{animation:atlas-pin-wave .6s ease-out both}
