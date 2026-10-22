@@ -17,15 +17,21 @@ Haeundae is Busan's most famous beach, a wide stretch of sand backed by a dense 
 
 There's more to the area than the sand itself. Dongbaekseom, a small pine-covered headland park at one end of the beach, gives a quieter walking path and a good photo angle back toward the coastline. The Busan Aquarium sits right at the beachfront if the weather turns. And Haeundae Blueline Park — a coastal line running along a converted former railway toward Songjeong, ridden either as an open-air sky capsule or a beachside rail-bike — is one of the more distinctive things to do in the area if you want a slower, scenic add-on beyond just lying on the sand.
 
+{{map: Haeundae Beach, Busan}}
+
 ## Gamcheon: stairs, not sand
 
 Gamcheon Culture Village began as a hillside settlement in the 1920s-30s, later grew when refugees resettled there during the Korean War, and was transformed starting in 2007 when the city invited artists to turn the neighborhood into an open-air art village of murals, sculptures, and colorful houses. The result has earned it the nickname "the Machu Picchu of Korea" — but the neighborhood itself is almost entirely stairs and slopes, so comfortable shoes matter more here than the photos suggest.
 
 The village's information center near the entrance sells a small stamp map that guides you to the notable murals and installations as you walk — a genuinely useful way to see the highlights without wandering the same alley twice. The most photographed single spot is a small statue of the Little Prince sitting on a wall overlooking the rooftops; expect a short line for a photo there during busier hours. It's also worth remembering, the same way it's worth remembering at Seoul's Bukchon, that people actually live in this neighborhood — keep noise down and be considerate about photographing directly into homes.
 
+{{map: Gamcheon Culture Village, Busan}}
+
 ## Getting between the subway and these two spots
 
-Haeundae is straightforward — Haeundae Station on Busan Metro Line 2 puts you within easy walking distance of the beach. Gamcheon is less direct: the nearest subway stop is Toseong Station on Line 1, but the village itself is up a real hill from there, so most visitors take a short village bus from near the station exit rather than walking the whole way up. A taxi from Toseong Station is also common and inexpensive for the short, steep hop.
+Haeundae is straightforward — Haeundae Station on Busan Metro Line 2 puts you within easy walking distance of the beach. The Busan Metro base fare is currently around 1,600 won on a transit card for a single ride (section 1, up to 10 km) — Busan sets its own fare table separately from Seoul's, so don't assume the two cities charge the same.
+
+Gamcheon is less direct: the nearest subway stop is Toseong Station on Line 1, but the village itself is up a real hill from there. From Toseong Station's Exit 6, take village bus 1-1 or 2 up to the village — a roughly 15-20 minute ride for the same flat bus fare you'd pay anywhere else in the city (around 1,400 won on a transit card). A taxi from Toseong Station covers the same short, steep hop faster; expect it to land in the same ballpark as the roughly 8,000-12,000 won fares quoted from nearby Busan Station or Jagalchi, since Toseong sits about as close to the village as those two points. Fares move with periodic city-wide revisions, so treat these as a reference to budget against, not a guarantee.
 
 ## Getting there from Seoul
 
@@ -49,7 +55,7 @@ Reversing that order is still fine if your train times force it — just build i
 
 ## Official sources
 
-This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr) and [Busan Metropolitan City's public transportation page](https://www.busan.go.kr/eng/public-transportation) for fares. Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
 
 ## Frequently Asked Questions
 
@@ -64,6 +70,10 @@ Comfortable shoes — the neighborhood is almost entirely stairs and slopes, and
 ### How do I get to Gamcheon Culture Village from the subway?
 
 Take Line 1 to Toseong Station, then either a short village bus or a taxi up the hill — the village itself isn't within easy walking distance of the station.
+
+### How much does it cost to get to Gamcheon from Toseong Station?
+
+Village bus 1-1 or 2 from Exit 6 costs the standard city bus fare, currently around 1,400 won on a transit card. A taxi for the same short hop runs roughly 8,000-12,000 won, similar to fares quoted from nearby Busan Station or Jagalchi.
 
 ### Is there anything to do near Haeundae besides the beach?
 
