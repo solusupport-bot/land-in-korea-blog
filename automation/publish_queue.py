@@ -2,11 +2,11 @@
 """
 Release queued drafts into the live post set, on a cadence.
 
-The problem this solves
------------------------
-Posts used to arrive in bulk — 12 of them stamped 2026-09-08 — because
-whatever generated them committed everything the moment it finished. Google's
-scaled-content-abuse policy keys on exactly that shape.
+Editorial publishing policy
+---------------------------
+Keep generation and release separate so each article can be checked before
+publication. Two posts per Korean calendar day is this site's editorial limit;
+it is not an AdSense approval requirement or a way to guarantee approval.
 
 So generation and publication are now separate. A writer (human or agent)
 drops finished posts into content/drafts/ whenever they are ready. This script
@@ -29,7 +29,7 @@ import os
 import re
 import shutil
 import sys
-from datetime import date
+from datetime import datetime, timedelta, timezone
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DRAFTS = os.path.join(BASE, "content", "drafts")
@@ -38,6 +38,8 @@ POSTS = os.path.join(BASE, "content", "posts")
 # Hard ceiling per run. The scheduled workflow fires twice a day, so this
 # being 1 is what makes "2 posts a day" the maximum rather than a burst.
 MAX_PER_RUN = 1
+MAX_PER_DAY = 2
+KST = timezone(timedelta(hours=9))
 
 
 def read_front_matter(path):
@@ -75,14 +77,15 @@ def main():
     args = ap.parse_args()
 
     count = min(args.count, MAX_PER_RUN)
-    today = date.today().isoformat()
+    today = datetime.now(KST).date().isoformat()
 
     if not os.path.isdir(DRAFTS):
         os.makedirs(DRAFTS, exist_ok=True)
         print(f"Created empty draft queue at content/drafts/. Nothing to release.")
         return 0
 
-    candidates = sorted(f for f in os.listdir(DRAFTS) if f.endswith(".md"))
+    candidates = sorted(f for f in os.listdir(DRAFTS)
+                        if f.endswith(".md") and f.lower() != "readme.md")
     if not candidates:
         print("Draft queue is empty — nothing to publish. "
               "This is a normal no-op, not a failure.")
@@ -98,7 +101,7 @@ def main():
             if meta.get("date") == today:
                 already_today += 1
 
-    remaining = max(0, 2 - already_today)
+    remaining = max(0, MAX_PER_DAY - already_today)
     if remaining == 0:
         print(f"{already_today} posts already published today — daily ceiling reached. "
               f"Leaving the queue alone.")
@@ -111,6 +114,10 @@ def main():
             break
         src = os.path.join(DRAFTS, fn)
         meta, text = read_front_matter(src)
+        required = ('title', 'category', 'description', 'slug')
+        if any(not meta.get(key) for key in required) or meta['slug'] != fn[:-3]:
+            print(f"SKIP     {fn} — incomplete article metadata or filename/slug mismatch")
+            continue
 
         hold = meta.get("publish_after")
         if hold and hold > today:

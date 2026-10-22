@@ -132,7 +132,12 @@ def md_to_html(md, base_url=""):
         img_m = re.match(r"^!\[(.*?)\]\((.*?)\)$", s)
         if img_m:
             alt, src = img_m.groups()
-            out.append(f'<img class="post-img" loading="lazy" src="{html.escape(src)}" alt="{html.escape(alt)}">')
+            review = photo_review()
+            replacement = review.get('inline_replacements', {}).get(src)
+            item = review['approved'].get(replacement)
+            if item:
+                out.append(reviewed_photo_markup({'_photo': item, 'image': base_url + item['image']}, base_url,
+                                                 'hero-img', caption=True))
             i += 1
             continue
         # {{map: place name}} -> Google Maps "place" embed (no API key, no
@@ -323,7 +328,7 @@ def start_here(posts, base):
 # ---------- topic and destination discovery ----------
 # Source categories remain untouched: existing ingestion/validation keeps its contract.
 # Optional topic/regions front matter can refine classification for future posts.
-DISCOVERY_UPDATED = "2026-10-21"
+DISCOVERY_UPDATED = "2026-10-22"
 TOPICS = {
     "before-you-go": ("Before You Go", "Start with entry preparation, seasonal packing and the practical details to check before departure."),
     "getting-around": ("Getting Around", "Compare airport transfers, trains, buses and taxis, then find the guides you need for the next leg of your trip."),
@@ -386,16 +391,15 @@ def discovery_groups(posts):
 
 def discovery_nav(base):
     return (f'<a href="{base}/#destinations">Destinations</a>'
-            f'<a href="{base}/guides">Travel essentials</a>'
-            f'<a href="{base}/topics/food-and-culture">Food &amp; culture</a>'
-            f'<a href="{base}/topics/living-in-korea">Living in Korea</a>')
+            f'<a href="{base}/#plan-your-trip">Plan a trip</a>'
+            f'<a href="{base}/#interests">Interests</a>'
+            f'<a href="{base}/guides">All guides</a>')
 
 
 def guide_card(p, base):
     # Collection pages use the same existing localized media as article pages.
     image = p.get("image", "").replace("https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/", base+"/media/images/")
-    thumb = (f'<img class="card-thumb" src="{html.escape(image)}" alt="" loading="lazy" width="640" height="400">'
-             if image else f'<div class="card-placeholder" aria-hidden="true"><span>LAND IN KOREA</span><b>{html.escape(p["_topic_label"])}</b></div>')
+    thumb = reviewed_photo_markup(p, base, "card-thumb") if image else ""
     return (f'<a class="card" href="{base}/posts/{html.escape(p["slug"])}" data-guide '
             f'data-search="{html.escape(p["title"]+" "+p["description"]+" "+p["_topic_label"]+" "+" ".join(p["_regions"]), quote=True)}">'
             f'{thumb}<div class="card-copy"><span class="card-topic">{html.escape(p["_topic_label"])}</span>'
@@ -412,12 +416,24 @@ def discovery_search(label="Search these guides"):
 
 def collection_page(cfg, base, posts, title, description, path, all_posts=None):
     all_posts = all_posts if all_posts is not None else posts
+    arrival = ''
+    if path.startswith('destinations/'):
+        available = {p['slug'] for p in all_posts}
+        choices = [
+            ('Compare trains & intercity buses', 'korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel'),
+            ('Use local buses', 'korea-bus-travel-inside-korean-cities-color-codes-tag-off-transfers-and-why-you-must-flag-the-bus'),
+            ('Set up SIM & eSIM', 'korea-esim-mobile-data'),
+        ]
+        if path == 'destinations/jeju':
+            choices[0] = ('Compare domestic flights & trains', 'korea-domestic-flights-vs-ktx-for-jeju-and-long-distance-trips')
+        arrival_links = ''.join(f'<a href="{base}/posts/{slug}">{label} <span aria-hidden="true">→</span></a>' for label, slug in choices if slug in available)
+        arrival = f'<aside class="arrival-guides" aria-label="Practical travel guides"><h2>Before you arrive</h2><p>Plan your transport and stay connected.</p><div>{arrival_links}</div></aside>'
     links = ''.join(f'<a href="{base}/topics/{key}"' + (' aria-current="page"' if path == "topics/"+key else "") + f'>{html.escape(value[0])}</a>' for key,value in TOPICS.items() if any(p["_topic"]==key for p in all_posts))
     body = (f'<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{base}/">Home</a> / '
             f'<span aria-current="page">{html.escape(title)}</span></nav>'
             f'<section class="collection-intro"><p class="eyebrow">THE GUIDE LIBRARY</p><h1>{html.escape(title)}</h1>'
             f'<p>{html.escape(description)}</p><p class="collection-count">{len(posts)} guides</p></section>'
-            f'<nav class="topic-pills" aria-label="Browse by topic">{links}</nav>'
+            f'{arrival}<nav class="topic-pills" aria-label="Browse by topic">{links}</nav>'
             f'{discovery_search()}<section class="grid" aria-label="Guides">'+''.join(guide_card(p,base) for p in posts)+'</section>'
             '<p id="search-empty" hidden>No guides match that search. Try a place or a shorter phrase.</p>'
             f'<p class="back"><a href="{base}/guides">Browse all guides →</a></p>')
@@ -429,61 +445,169 @@ def collection_page(cfg, base, posts, title, description, path, all_posts=None):
     return page(cfg,base,title,description,body,url,jsonld=jsonld_data(graph))
 
 
-def discovery_home(cfg, base, posts):
-    topic_summaries = {
-        'before-you-go': 'Entry, packing and planning',
-        'getting-around': 'Airport, trains and transport',
-        'sim-and-apps': 'Mobile data, maps and useful apps',
-        'money-and-shopping': 'Cards, cash and tax refunds',
-        'food-and-culture': 'Ordering, etiquette and local life',
-        'things-to-do': 'Places, experiences and day trips',
-        'living-in-korea': 'Banking, housing and daily life',
+# Simplified from Natural Earth 1:50m country geometry (public domain).
+# https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson
+KOREA_MAP_PATH = 'M100.4,111.1L102.5,109.5L102.7,99.9L108.8,94.7L126.7,73.0L132.3,69.4L137.9,67.7L146.6,67.0L163.3,67.7L178.2,66.5L189.4,68.1L198.7,67.4L207.8,63.2L211.6,58.4L219.8,42.5L222.2,41.3L239.3,78.4L255.7,102.4L269.6,119.8L289.5,153.2L295.3,171.1L295.8,182.2L299.1,197.4L296.3,206.2L297.2,219.9L295.9,227.0L293.5,232.2L294.2,254.7L295.8,257.4L298.1,258.5L301.7,255.9L306.1,254.8L305.3,263.3L295.3,300.7L289.0,314.4L281.0,326.9L271.4,331.8L264.6,333.6L251.7,334.2L241.0,332.1L231.8,333.6L228.1,336.2L225.3,340.7L227.3,347.6L227.1,352.8L223.1,352.4L215.3,349.4L206.7,349.0L202.6,347.5L198.5,340.2L194.4,340.4L187.1,344.8L176.0,345.8L172.1,348.1L170.8,351.2L172.4,355.0L178.0,360.0L176.1,365.2L170.3,367.7L165.6,361.4L162.7,355.3L159.4,354.9L154.3,356.7L153.3,363.3L159.5,373.1L154.1,379.1L152.6,383.4L148.7,386.5L138.1,379.7L139.6,374.8L144.2,370.1L144.8,365.2L143.3,362.3L128.2,374.6L118.8,388.6L113.8,387.6L111.8,384.0L108.8,382.5L98.8,391.5L96.9,398.6L93.2,398.9L91.6,395.9L91.5,389.4L89.7,384.0L79.3,376.1L74.5,369.1L77.1,365.2L85.8,367.3L92.7,367.1L91.3,363.8L89.1,362.2L93.7,360.4L97.5,356.6L94.4,355.5L89.5,357.7L85.4,356.7L83.8,347.6L78.9,338.3L76.4,329.2L81.2,324.0L88.2,304.2L90.5,300.4L96.8,297.6L99.0,294.6L90.1,291.7L90.2,288.3L106.2,278.2L108.7,269.6L106.4,267.5L101.3,265.4L104.5,257.8L103.8,255.9L93.8,245.2L95.0,239.4L94.4,219.4L91.5,210.4L90.1,201.4L83.2,205.0L68.7,201.6L67.2,194.9L71.2,186.7L80.6,179.5L86.0,178.6L90.1,175.4L96.4,174.4L104.1,179.3L110.9,180.3L114.7,188.8L117.0,190.6L117.5,187.4L123.1,183.8L124.4,181.0L123.2,179.5L116.8,178.0L108.2,159.9L111.3,151.5L104.7,141.9L101.5,138.9L102.0,130.3L96.6,121.7L95.4,116.5L96.4,114.2L99.4,113.3L100.4,111.1ZM247.9,358.7L241.3,363.8L232.4,357.0L230.2,353.2L242.8,341.3L246.5,340.9L247.9,358.7ZM200.6,358.1L199.8,366.2L194.9,366.6L191.9,361.4L188.8,364.0L187.1,364.0L184.7,357.5L184.3,352.4L190.1,348.6L193.6,350.9L198.7,352.1L200.6,358.1ZM72.4,394.2L67.9,395.5L63.6,391.9L64.6,388.2L73.3,378.2L80.1,379.8L82.6,383.7L79.5,389.6L72.4,394.2ZM92.4,114.8L92.1,125.8L85.6,124.2L81.9,111.9L84.8,107.7L90.5,111.0L92.4,114.8ZM108.7,396.4L109.9,400.4L104.2,399.7L101.2,395.9L101.6,392.6L105.0,392.1L108.7,396.4ZM181.9,374.0L181.1,376.5L177.6,372.6L181.1,368.4L181.9,374.0ZM85.2,218.1L84.3,223.5L79.6,219.9L78.3,208.2L83.1,211.6L85.2,218.1ZM68.0,364.3L67.1,366.3L64.1,365.7L59.6,355.5L56.5,353.0L61.5,349.1L67.8,356.1L68.0,364.3ZM400.1,136.3L396.9,138.8L393.2,136.3L392.7,133.7L394.7,131.4L399.3,130.0L401.4,132.0L400.1,136.3ZM78.9,489.4L75.7,491.3L72.8,490.2L67.6,482.1L70.0,477.5L79.6,469.8L104.7,462.4L109.2,462.1L119.1,465.2L121.2,471.2L117.1,479.7L105.6,485.5L96.7,488.2L78.9,489.4Z'
+
+
+def destination_map(base):
+    pins = []
+    for key, label, subtitle, x, y in [('seoul','Seoul','CITY & CULTURE',124.5,129.0), ('busan','Busan','COAST & MARKETS',271.3,327.0), ('jeju','Jeju','ISLAND ESCAPES',93.2,466.4)]:
+        pins.append(f'<a class="destination-pin" data-map-region="{key}" href="{base}/destinations/{key}" aria-label="Explore {label}" tabindex="0">'
+                    f'<rect class="pin-hit" x="{x-22}" y="{y-25}" width="165" height="52" rx="4"/>'
+                    f'<path class="pin-leader" d="M{x+14},{y}H{x+24}"/>'
+                    f'<rect class="pin-label" x="{x+22}" y="{y-24}" width="124" height="49" rx="4"/>'
+                    f'<circle class="pin-wave" cx="{x}" cy="{y}" r="18" aria-hidden="true"/>'
+                    f'<circle class="pin-halo" cx="{x}" cy="{y}" r="13"/>'
+                    f'<circle class="pin-dot" cx="{x}" cy="{y}" r="5"/>'
+                    f'<text class="pin-name" x="{x+33}" y="{y+7}">{label}</text>'
+                    '</a>')
+    dokdo = ('<g class="map-island" role="img" aria-label="Ulleungdo, east of the Korean peninsula">'
+             '<circle cx="397" cy="134" r="5"/><text x="391" y="113" text-anchor="middle">Ulleungdo</text></g>'
+             '<a class="map-island dokdo-marker" href="#dokdo-note" data-island-note aria-label="Dokdo: view island information">'
+             '<circle class="island-touch" cx="467" cy="156" r="38"/>'
+             '<circle class="island-wave" cx="467" cy="156" r="13"/>'
+             '<circle cx="464" cy="155" r="3.5"/><circle cx="470" cy="158" r="3"/>'
+             '<text x="467" y="185" text-anchor="middle">Dokdo</text>'
+             '<text class="island-korean" x="467" y="204" text-anchor="middle">독도</text></a>')
+    return ('<div class="korea-map"><div class="atlas-heading"><p class="map-title">Choose a destination</p></div>'
+            '<svg viewBox="0 0 540 510" role="group" aria-labelledby="korea-map-title korea-map-desc">'
+            '<title id="korea-map-title">Explore South Korea</title>'
+            '<desc id="korea-map-desc">Select Seoul, Busan or Jeju to preview a destination. Follow the View guide link to read its travel information. Ulleungdo and Dokdo are marked in the East Sea; small island markers are enlarged for visibility.</desc>'
+            '<path class="korea-coast-shadow" d="'+KOREA_MAP_PATH+'" transform="translate(0 4)" aria-hidden="true"/>'
+            '<path class="korea-land" d="'+KOREA_MAP_PATH+'" aria-hidden="true"/>'
+            +''.join(pins)+dokdo+'</svg><div class="atlas-footer"><p class="map-note">Select a place, then open its guide.</p></div>'
+            '<details id="dokdo-note" class="island-note"><summary>Dokdo · 독도</summary><p>Islands east of Ulleungdo, in the East Sea.</p><a href="https://www.dokdo.re.kr/home/cms/cmsCont.do?cntnts_sn=63" rel="noopener" target="_blank">Official island information ↗</a></details>'
+            '<small class="map-credit">Map: <a href="https://www.naturalearthdata.com/" rel="noopener">Natural Earth</a></small></div>')
+
+
+def preparation_icon(index):
+    paths = {
+        1: '<rect x="11" y="5" width="26" height="38" rx="3"/><circle cx="24" cy="21" r="7"/><path d="M17 21h14M24 14c-4 5-4 9 0 14M24 14c4 5 4 9 0 14M17 35h14"/>',
+        2: '<path d="m8 27 13-3 8-15c1-2 5-2 5 1l-4 14 10 7-1 4-12-4-7 8-4-1 4-10-11 3z"/>',
+        3: '<path d="M14 5h14l8 8v30H12V7z"/><rect x="19" y="20" width="11" height="14" rx="2"/><path d="M22 20v14M19 25h11M19 30h11"/>',
+        4: '<rect x="5" y="11" width="38" height="27" rx="4"/><path d="M5 20h38M12 30h8m9-3 3 3-3 3m6-9 3 6-3 6"/>',
+        5: '<rect x="5" y="12" width="38" height="27" rx="4"/><path d="M5 20h38M12 30h7m10 0h6M11 7h25"/>',
+        6: '<rect x="11" y="13" width="26" height="29" rx="4"/><path d="M19 13V7h10v6M18 21v13m12-13v13M17 42v3m14-3v3"/>',
     }
-    available = {p['_topic'] for p in posts}
-    topics = ''.join(f'<a class="topic-link" href="{base}/topics/{key}"><h3>{html.escape(label)}</h3><p>{topic_summaries[key]}</p></a>'
-                     for key,(label,_) in TOPICS.items() if key in available)
-    lookup = {p['slug']:p for p in posts}
-    destinations = ''
-    for key,label,description,slug in [
-        ('seoul','Seoul','Palaces, neighbourhoods and nearby escapes','korea-gyeongbokgung-palace'),
-        ('busan','Busan','Coastal walks and colourful hillside streets','korea-busan-haeundae-beach-gamcheon-culture-village'),
-        ('jeju','Jeju','Island landscapes and getting there','korea-jeju-island'),
-    ]:
-        if not any(key in p['_regions'] for p in posts):
-            continue
+    return '<span class="prep-visual" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+paths[index]+'</svg></span>'
+
+
+def discovery_home(cfg, base, posts):
+    """Editorial travel homepage. All cards resolve to existing published guides."""
+    lookup = {p['slug']: p for p in posts}
+
+    def url(slug):
+        return base + '/posts/' + html.escape(slug, quote=True)
+
+    def photo(slug, alt='', eager=False, sizes=None):
         p = lookup.get(slug)
-        image = p.get('image','') if p else ''
-        image = image.replace('https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/',base+'/media/images/')
-        pic = f'<img src="{html.escape(image)}" alt="" width="357" height="220" loading="lazy">' if image else ''
-        destinations += f'<a class="destination-story" href="{base}/destinations/{key}">{pic}<h3>{label}</h3><p>{description}</p></a>'
-    featured = [
-        ('korea-airport-transfer-options','Compare cost, time and convenience before choosing your airport transfer.'),
-        ('korea-esim-mobile-data','Find the right connection for your phone and trip.'),
-        ('korea-currency-card-payments','Prepare for payments and currency exchange.'),
-        ('korea-eating-alone-in-korea-which-restaurants-refuse-solo-diners-and-where-honbap-works','Understand which meals and restaurants work for a table of one.'),
-    ]
-    guides = ''
-    for slug,description in featured:
-        if slug not in lookup:
-            continue
-        p=lookup[slug]
-        guides += (f'<a class="guide-entry" href="{base}/posts/{slug}"><span>{html.escape(p["_topic_label"])}</span>'
-                   f'<h3>{html.escape(p["title"])}</h3><p>{description}</p></a>')
-    checklist = ''.join(f'<li><a href="{base}/posts/{slug}">{label}</a></li>' for label,slug in [
-        ('Check entry requirements','korea-k-eta-visa-waiver-requirements'),
-        ('Plan your airport transfer','korea-airport-transfer-options'),
-        ('Get connected with a SIM or eSIM','korea-esim-mobile-data'),
-        ('Prepare your transit card','korea-t-money-transit-card'),
-    ] if slug in lookup)
-    return (f'<section class="home-intro"><div><h1>Your Korea travel guide</h1><p>Practical help for the trip you want to take.</p></div>'
-            f'<form id="home-guide-search-form" class="home-search" role="search" action="{base}/guides">'
-            '<label class="sr-only" for="home-guide-search">Search Korea travel guides</label>'
-            '<input id="home-guide-search" type="search" placeholder="Search places, transport or eSIM" aria-describedby="home-search-help">'
-            '<span class="sr-only" id="home-search-help">Press Enter to search the guide library.</span></form></section>'
-            f'<section id="topics" class="home-section"><h2>What do you need?</h2><div class="topic-links">{topics}</div></section>'
-            f'<section id="destinations" class="home-section"><h2>Explore Korea</h2><div class="destination-stories">{destinations}</div></section>'
-            f'<section class="home-section practical-stories"><h2>Make the everyday parts easier</h2><div class="guide-entries">{guides}</div></section>'
-            f'<section class="first-trip"><h2>First time in Korea? Start here.</h2><ul>{checklist}</ul></section>')
+        return reviewed_photo_markup(p, base, eager=eager, sizes=sizes) if p else ""
+
+    busan = 'korea-busan-haeundae-beach-gamcheon-culture-village'
+    feature = 'korea-nami-island-and-petite-france-day-trip'
+    hero = ''
+    if feature in lookup:
+        hero = (f'<a class="lead-story" href="{url(feature)}">'
+                f'{photo(feature, eager=True, sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1240px) 64vw, 780px")}'
+                '<div class="lead-caption"><span class="story-kicker">Nami Island, Gangwon-do</span>'
+                '<h2>A day trip to Nami Island</h2>'
+                '<span class="story-action">Ferry, transport and what to expect <span aria-hidden="true">→</span></span></div></a>')
+
+    season = ''
+    for slug, label, detail in [
+        ('korea-timing-cherry-blossoms-and-fall-foliage-in-korea-without-hitting-peak-crowds', 'Blossoms & autumn colours', 'When to go, and how to avoid the busiest days.'),
+        ('korea-seasonal-packing-weather-tips', 'Pack for the season', 'Weather, layers and what to bring.'),
+        ('korea-korean-public-holidays-that-disrupt-travel-plans', 'Plan around public holidays', 'Check the dates that can change your trip.'),
+    ]:
+        if slug in lookup:
+            season += f'<a class="season-pick" href="{url(slug)}"><h3>{label}</h3><p>{detail}</p><span aria-hidden="true">→</span></a>'
+
+    destinations = ''
+    for key, label, detail, slug in [
+        ('seoul', 'Seoul', 'Palaces, neighbourhoods & city life', 'korea-gyeongbokgung-palace'),
+        ('busan', 'Busan', 'Beaches, markets & coastal walks', busan),
+        ('jeju', 'Jeju', 'Island landscapes & getting around', 'korea-jeju-island'),
+    ]:
+        count = sum(key in p['_regions'] for p in posts)
+        if count:
+            photo_slug = 'korea-busan-fireworks-festival-gwangalli-guide' if key == 'busan' else slug
+            destinations += (f'<article class="place-card" id="destination-card-{key}" data-destination-card="{key}">{photo(photo_slug, sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1240px) 46vw, 540px")}'
+                             f'<div><h3>{label}</h3><span>{count} guides</span></div><p>{detail}</p><a class="destination-cta" href="{base}/destinations/{key}">View {label} guide <span aria-hidden="true">→</span></a></article>')
+
+    preparation = ''
+    for i, (label, detail, slug) in enumerate([
+        ('Entry requirements', 'Start before you book', 'korea-k-eta-visa-waiver-requirements'),
+        ('Airport transfers', 'Choose your way into the city', 'korea-airport-transfer-options'),
+        ('SIM & eSIM', 'Stay connected on arrival', 'korea-esim-mobile-data'),
+        ('Transit cards', 'Get ready to move around', 'korea-t-money-transit-card'),
+        ('Money & payments', 'Know when you need cash', 'korea-currency-card-payments'),
+        ('Luggage storage', 'Make the most of arrival day', 'korea-luggage-storage-forwarding-services'),
+    ], 1):
+        if slug in lookup:
+            preparation += (f'<a class="prep-link" href="{url(slug)}">{preparation_icon(i)}'
+                            f'<div><h3>{label}</h3><p>{detail}</p></div><span class="prep-arrow" aria-hidden="true">↗</span></a>')
+
+    interests = ''
+    for label, detail, slug in [
+        ('Food & local life', 'Ramyeon, shops and easy everyday meals', 'korea-convenience-store-hacks'),
+        ('Culture & heritage', 'Insadong’s shops, galleries and traditional streets', 'korea-insadong-traditional-culture-street'),
+        ('Day trips', 'Walk the walls of Suwon Hwaseong', 'korea-suwon-hwaseong-fortress'),
+        ('Shopping', 'Myeongdong’s shops and evening market', 'korea-myeongdong-shopping-district'),
+    ]:
+        if slug in lookup:
+            interests += (f'<a class="interest-story" href="{url(slug)}">{photo(slug, sizes="(max-width: 1000px) 46vw, (max-width: 1240px) 23vw, 278px")}'
+                          f'<h3>{label}</h3><p>{detail}</p></a>')
+
+    routes = ''
+    for i, (label, detail, slug) in enumerate([
+        ('Nami Island & Petite France', 'A day trip from Seoul', 'korea-nami-island-and-petite-france-day-trip'),
+        ('Suwon Hwaseong Fortress', 'History beyond the capital', 'korea-suwon-hwaseong-fortress'),
+        ('Haeundae & Gamcheon', 'Plan your journey across Busan', busan),
+    ], 1):
+        if slug in lookup:
+            routes += f'<a class="route-link" href="{url(slug)}"><span>{i:02}</span><div><h3>{label}</h3><p>{detail}</p></div><b aria-hidden="true">→</b></a>'
+
+    services = ''
+    for label, detail, cta, slug in [
+        ('SIM & eSIM', 'Check phone compatibility, data and setup before choosing.', 'Compare connections', 'korea-esim-mobile-data'),
+        ('Airport transfers', 'Compare the train, airport bus and taxi for your arrival.', 'Compare transfers', 'korea-airport-transfer-options'),
+        ('Attraction passes', 'Work out whether a pass fits the places you want to visit.', 'Compare Seoul passes', 'korea-seoul-attraction-pass-comparison'),
+    ]:
+        if slug in lookup:
+            services += (f'<a class="service-link" href="{url(slug)}"><h3>{label}</h3><p>{detail}</p>'
+                         f'<span>{cta} <span aria-hidden="true">→</span></span></a>')
+
+    topic_links = ''.join(f'<a href="{base}/topics/{key}">{html.escape(label)}</a>'
+                          for key, (label, _) in TOPICS.items() if any(p['_topic'] == key for p in posts))
+    newest = ''.join(f'<a class="recent-story" href="{url(p["slug"])}"><span>{html.escape(p["_topic_label"])}</span>'
+                     f'<h3>{html.escape(p["title"])}</h3><time datetime="{html.escape(p["date"], quote=True)}">{html.escape(p["date"])}</time></a>'
+                     for p in posts[:3])
+    search = (f'<form id="home-guide-search-form" class="home-search" role="search" action="{base}/guides">'
+              '<label class="sr-only" for="home-guide-search">Search Korea travel guides</label>'
+              '<input id="home-guide-search" type="search" placeholder="Search Korea: Busan, eSIM, trains…" aria-describedby="home-search-help">'
+              '<button type="submit" aria-label="Search guides"><span aria-hidden="true">→</span></button>'
+              '<span class="sr-only" id="home-search-help">Search our guide library by destination or travel question.</span></form>')
+    quick_answers = ''.join(
+        f'<a href="{url(slug)}">{question}<span aria-hidden="true">→</span></a>'
+        for question, slug in [
+            ('How do I leave the airport?', 'korea-airport-transfer-options'),
+            ('Which SIM or eSIM do I need?', 'korea-esim-mobile-data'),
+            ('Will my card work in Korea?', 'korea-currency-card-payments'),
+            ('Where can I leave my luggage?', 'korea-luggage-storage-forwarding-services'),
+        ] if slug in lookup)
+    return (
+        '<div class="travel-home">'
+        f'<section class="guide-heading"><div><h1>Plan a trip to Korea</h1><p>Transport, places to visit and the practical details.</p><p class="editorial-location">Based in Busan · Guides to Seoul, Busan and Jeju</p></div>{search}</section>'
+        f'<nav class="quick-answers" aria-label="Common Korea travel questions"><p>Need a quick answer?</p><div>{quick_answers}</div></nav>'
+        f'<div class="travel-lead">{hero}<aside class="season-panel" aria-labelledby="season-title"><h2 id="season-title">Seasonal travel</h2>{season}<a class="season-start" href="#plan-your-trip">First visit? Start with the essentials <span aria-hidden="true">→</span></a></aside></div>'
+        f'<section id="plan-your-trip" class="travel-section preparation"><div class="section-heading"><div><h2>Plan your first trip</h2><p>Six useful starting points, before you land.</p></div></div><div class="prep-grid">{preparation}</div></section>'
+        f'<section id="destinations" class="travel-section"><div class="section-heading"><div><h2>Explore Korea</h2><p>Three places to start. A guide for each.</p></div><a href="{base}/guides">Browse all guides <span aria-hidden="true">→</span></a></div><div class="destination-explorer"><div class="destination-preview"><div class="destination-choices" role="group" aria-label="Preview a destination" hidden><button type="button" data-preview-region="seoul" aria-pressed="false">Seoul</button><button type="button" data-preview-region="busan" aria-pressed="false">Busan</button><button type="button" data-preview-region="jeju" aria-pressed="false">Jeju</button></div><div class="place-grid">{destinations}</div></div>{destination_map(base)}</div></section>'
+        f'<section id="interests" class="travel-section"><div class="section-heading"><div><h2>Food, culture and days out</h2></div></div><div class="interest-grid">{interests}</div></section>'
+        f'<section class="travel-section"><div class="section-heading"><div><h2>Recent guides</h2></div><a href="{base}/guides">All {len(posts)} guides <span aria-hidden="true">→</span></a></div><div class="recent-grid">{newest}</div></section>'
+        f'<nav id="topics" class="topic-directory" aria-label="All guide topics"><h2>Browse by topic</h2><div>{topic_links}</div></nav>'
+        '</div>')
+
 
 
 def write_discovery(cfg,base,posts):
@@ -495,6 +619,75 @@ def write_discovery(cfg,base,posts):
             f.write(collection_page(cfg,base,group,title,desc,path,posts))
     with open(os.path.join(SITE,'guide-search.js'),'w',encoding='utf-8') as f:
         f.write('''(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const revealItems = [...document.querySelectorAll('.travel-home .interest-story, .travel-home .prep-link, .travel-home .section-heading')];
+  if (!reduceMotion.matches && 'IntersectionObserver' in window) {
+    try {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          entry.target.classList.remove('motion-pending');
+          observer.unobserve(entry.target);
+        }
+      }), {threshold: 0.12});
+      revealItems.forEach((item, index) => {
+        item.style.setProperty('--reveal-delay', ((index % 3) * 70) + 'ms');
+        if (item.getBoundingClientRect().top > window.innerHeight) item.classList.add('motion-pending');
+        observer.observe(item);
+      });
+      const showAll = () => revealItems.forEach(item => item.classList.remove('motion-pending'));
+      reduceMotion.addEventListener('change', showAll);
+      window.addEventListener('beforeprint', showAll);
+    } catch (_) { revealItems.forEach(item => item.classList.remove('motion-pending')); }
+  }
+  document.querySelectorAll('[data-island-note]').forEach(marker => marker.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const note = document.getElementById('dokdo-note');
+    if (note) {
+      event.preventDefault(); note.open = !note.open;
+      marker.classList.remove('is-activating');
+      window.requestAnimationFrame(() => marker.classList.add('is-activating'));
+    }
+  }));
+  const mobileNav = document.querySelector('details.mobile-nav');
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileNav.open = false; }));
+    mobileNav.addEventListener('keydown', event => {
+      if (event.key === 'Escape') { mobileNav.open = false; mobileNav.querySelector('summary').focus(); }
+    });
+  }
+  const explorer = document.querySelector('.destination-explorer');
+  if (explorer) {
+    const cards = [...explorer.querySelectorAll('[data-destination-card]')];
+    const pins = [...explorer.querySelectorAll('[data-map-region]')];
+    const buttons = [...explorer.querySelectorAll('[data-preview-region]')];
+    const select = region => {
+      if (!cards.some(card => card.dataset.destinationCard === region)) return;
+      cards.forEach(card => { card.hidden = card.dataset.destinationCard !== region; });
+      pins.forEach(pin => { pin.classList.toggle('is-selected', pin.dataset.mapRegion === region); });
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.previewRegion === region)));
+    };
+    const activate = region => {
+      select(region);
+      pins.forEach(pin => pin.classList.remove('is-activating'));
+      const pin = pins.find(pin => pin.dataset.mapRegion === region);
+      if (pin) window.requestAnimationFrame(() => pin.classList.add('is-activating'));
+    };
+    buttons.forEach(button => button.addEventListener('click', () => {
+      activate(button.dataset.previewRegion);
+    }));
+    pins.forEach(pin => {
+      pin.setAttribute('aria-label', 'Preview ' + pin.dataset.mapRegion[0].toUpperCase() + pin.dataset.mapRegion.slice(1));
+      pin.addEventListener('click', event => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        activate(pin.dataset.mapRegion);
+      });
+    });
+    explorer.querySelector('.destination-choices').hidden = false;
+    explorer.classList.add('is-enhanced');
+    select('busan');
+  }
   const homeForm = document.getElementById('home-guide-search-form');
   if (homeForm) homeForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -532,8 +725,8 @@ def write_discovery(cfg,base,posts):
 
 
 DISCOVERY_CSS = """
-/* Figma: rCBpKhCuykMAK9TYE2ZIvV · desktop 4:33 / mobile 4:34. */
-:root{--fg:#202321;--muted:#666b66;--bg:#fff;--card:#fff;--soft:#f5f2ea;--blue:#202321;--red:#a84132;--gold:#b8923f;--line:#dedfd9;--font-body:'Noto Sans',Arial,sans-serif;--font-display:var(--font-body)}
+/* Shared editorial typography and collection layouts. */
+:root{--fg:#202321;--muted:#666b66;--bg:#fff;--card:#fff;--soft:#f5f2ea;--blue:#202321;--red:#a84132;--gold:#b8923f;--line:#dedfd9;--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--font-display:Georgia,'Times New Roman',serif}
 [hidden]{display:none!important}
 html{scroll-padding-top:20px}
 body{font-family:var(--font-body);line-height:1.6;background:#fff;font-size:15px}
@@ -571,6 +764,237 @@ input:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-o
 @media(max-width:900px){.topic-links{grid-template-columns:repeat(2,minmax(0,1fr))}.home-intro{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-header nav{gap:20px}.home-search{max-width:100%}}
 @media(max-width:620px){.site-header{padding:8px 20px}.brand-logo{height:76px;width:76px}.site-header>.desktop-nav{display:none}.mobile-nav{display:block}.mobile-nav summary{font-size:13px;cursor:pointer;list-style:none;padding:12px 0}.mobile-nav summary::-webkit-details-marker{display:none}.mobile-nav nav{position:absolute;right:20px;top:calc(100% - 8px);width:240px;background:white;border:1px solid var(--line);padding:12px 20px;z-index:10;display:flex;flex-direction:column;align-items:flex-start;gap:0}.mobile-nav nav a{padding:12px 0}main.page{padding-top:24px}.home-intro{gap:0;margin-bottom:40px}.home-intro h1{font-size:26px;line-height:34px}.home-intro p{margin-bottom:0}.home-search{width:100%;margin-top:16px}.home-section>h2{font-size:24px;line-height:32px}.topic-links{gap:16px 24px}.destination-stories{grid-template-columns:1fr}.destination-story img{height:220px}.destination-story h3{margin:12px 0}.guide-entries{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.collection-intro h1{font-size:26px;line-height:34px}.site-footer{padding-left:20px;padding-right:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Reviewed editorial photographs */
+.reviewed-photo{margin:24px 0}.reviewed-photo .hero-img{width:100%;height:auto;max-height:720px;object-fit:contain;margin:0}.reviewed-photo figcaption{font-size:12px;line-height:1.7;color:#59635c;margin-top:8px}.photo-credit{border-top:1px solid #dedbd3;padding:20px 0}.photo-credit h2{font-size:20px}
+/* Travel guide layout: destination-led editorial hierarchy. */
+.site-header{padding-top:6px;padding-bottom:6px}.brand-logo{width:78px;height:78px}
+main.page:has(.travel-home){max-width:1240px;padding:28px 28px 48px}
+.guide-heading{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-bottom:28px}
+.guide-heading h1{font-size:28px;line-height:1.3;margin:0 0 6px;font-weight:700;letter-spacing:-.6px}
+.guide-heading p{margin:0;color:var(--muted);font-size:14px}
+.guide-heading .home-search{width:390px;display:flex;position:relative;margin:0}
+.guide-heading .home-search input{padding-right:60px;border-radius:4px;font-size:14px;height:46px}
+.home-search button{position:absolute;right:1px;top:1px;bottom:1px;width:46px;border:0;border-radius:0 3px 3px 0;background:var(--fg);color:#fff;font-size:22px;cursor:pointer}
+.travel-lead{display:grid;grid-template-columns:minmax(0,2.05fr) minmax(0,1fr);gap:28px;align-items:stretch}
+.lead-story{position:relative;display:block;overflow:hidden;border-radius:6px;background:#f3f3ef;align-self:start;color:#fff}
+.lead-story>img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.lead-caption{position:absolute;left:24px;bottom:24px;max-width:76%;padding:16px 20px;background:rgba(24,32,31,.91)}
+.story-kicker,.section-kicker{font-size:11px;font-weight:700;letter-spacing:1.5px;line-height:18px}
+.story-kicker{color:#f2dfb8}.lead-caption h2{font-size:30px;line-height:1.22;margin:8px 0 14px;letter-spacing:-.6px;color:#fff}
+.story-action{font-size:13px;color:#fff}.story-action>span{padding-left:12px}
+.lead-story:hover{color:white;text-decoration:none}.lead-story:hover .story-action{text-decoration:underline;text-underline-offset:4px}
+.section-kicker{color:var(--red);margin:0 0 8px}
+.season-panel{background:#f5f4ef;padding:28px 28px 20px;border-top:3px solid var(--red);display:flex;flex-direction:column}.season-start{display:block;margin-top:auto;padding-top:20px;font-size:12px;line-height:20px;color:var(--red)}.season-start span{padding-left:8px}
+.season-panel h2{font-size:25px;line-height:32px;margin:0 0 12px;letter-spacing:-.5px}
+.season-pick{display:block;position:relative;padding:20px 24px 20px 0;border-bottom:1px solid #dedfd9}
+.season-pick:last-child{border-bottom:0}.season-pick h3{font-size:15px;line-height:22px;margin:0 0 6px}
+.season-pick p{font-size:13px;line-height:21px;color:var(--muted);margin:0}.season-pick>span{position:absolute;right:0;top:20px}
+.season-pick:hover{text-decoration:none}.season-pick:hover h3{text-decoration:underline;text-underline-offset:3px}
+.travel-section{margin-top:52px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}
+.section-heading h2,.route-section h2{font-size:27px;line-height:35px;letter-spacing:-.6px;margin:0;font-weight:700}
+.section-heading>div>p:not(.section-kicker){font-size:14px;color:var(--muted);margin:8px 0 0}.section-heading>a{font-size:13px;white-space:nowrap;padding-bottom:4px}.section-heading>a>span{padding-left:8px}
+.place-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.place-card{display:block;min-width:0}
+.place-card>img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;display:block;border-radius:4px;background:#f5f5f0}
+.place-card>div{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}.place-card h3{font-size:21px;line-height:28px;margin:0;letter-spacing:-.4px}
+.place-card>div>span{font-size:11px;color:var(--muted)}.place-card>div>span>span{padding-left:8px}
+.place-card p{font-size:13px;color:var(--muted);line-height:22px;margin:6px 0 0}.place-card:hover{text-decoration:none}.place-card:hover h3{text-decoration:underline;text-underline-offset:4px}
+.preparation{padding:32px;background:#f5f4ef;border-radius:4px}.prep-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+.prep-link{display:flex;align-items:baseline;gap:12px;padding:20px 0;border-top:1px solid #dedfd9;min-width:0}.prep-number{font-size:11px;font-weight:700;color:var(--red)}
+.prep-link>div{flex:1;min-width:0}.prep-link h3{font-size:15px;line-height:22px;margin:0 0 5px}.prep-link p{font-size:12px;line-height:20px;margin:0;color:var(--muted)}.prep-arrow{font-size:17px;font-weight:400}
+.prep-link:hover{text-decoration:none}.prep-link:hover h3{text-decoration:underline;text-underline-offset:3px}
+.interest-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.interest-story{display:block;min-width:0}.interest-story img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;background:#f5f5f0;border-radius:4px}
+.interest-story h3{font-size:17px;line-height:25px;margin:12px 0 5px}.interest-story p{font-size:12px;color:var(--muted);line-height:20px;margin:0}.interest-story:hover{text-decoration:none}.interest-story:hover h3{text-decoration:underline}
+.route-section{display:grid;grid-template-columns:1fr 2fr;gap:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0}.route-section>div>p:not(.section-kicker){font-size:14px;line-height:23px;color:var(--muted);margin:12px 0 0;max-width:240px}
+.route-list{display:grid;gap:0}.route-link{display:flex;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}.route-link:first-child{padding-top:0}.route-link:last-child{border-bottom:0;padding-bottom:0}.route-link>span{font-size:12px;color:var(--red)}.route-link>div{flex:1}.route-link h3{font-size:16px;line-height:24px;margin:0 0 4px}.route-link p{font-size:12px;color:var(--muted);margin:0}.route-link>b{font-weight:400}.route-link:hover{text-decoration:none}.route-link:hover h3{text-decoration:underline}
+.recent-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.recent-story{padding-top:16px;border-top:2px solid var(--line);display:flex;flex-direction:column;align-items:start}.recent-story>span{font-size:11px;color:var(--red)}.recent-story h3{font-size:17px;line-height:26px;margin:10px 0 16px}.recent-story time{font-size:11px;color:var(--muted);margin-top:auto}.recent-story:hover{text-decoration:none}.recent-story:hover h3{text-decoration:underline}
+.travel-services{padding:32px;background:#eef2ee;border-top:3px solid #314a40;border-radius:4px}.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.service-link{display:flex;flex-direction:column;align-items:start;min-width:0;border-top:1px solid #cbd4cb;padding-top:18px}.service-link h3{font-size:19px;line-height:26px;margin:0 0 10px}.service-link p{font-size:13px;line-height:22px;color:var(--muted);margin:0 0 20px}.service-link>span{margin-top:auto;font-size:12px;font-weight:700;border-bottom:1px solid #a0b1a4;padding-bottom:4px}.service-link>span>span{padding-left:12px}.service-link:hover{text-decoration:none}.service-link:hover>span{text-decoration:underline;text-underline-offset:4px}
+.topic-directory{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;gap:32px;align-items:baseline}.topic-directory h2{font-size:14px;margin:0;white-space:nowrap}.topic-directory>div{display:flex;gap:8px 22px;flex-wrap:wrap}.topic-directory a{font-size:12px}
+@media(max-width:1000px){.travel-lead{gap:20px;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr)}.season-panel{padding:20px 20px 8px}.season-pick{padding-top:14px;padding-bottom:14px}.lead-caption{left:16px;bottom:16px;padding:14px 16px}.lead-caption h2{font-size:25px}.interest-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.guide-heading .home-search{width:340px}}
+@media(max-width:760px){.guide-heading{align-items:start;flex-direction:column;gap:18px}.guide-heading .home-search{width:100%}.travel-lead{grid-template-columns:1fr}.season-panel{padding:24px}.season-pick{padding-top:16px;padding-bottom:16px}.prep-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.route-section{grid-template-columns:1fr;gap:24px}.route-section>div>p:not(.section-kicker){max-width:none}.topic-directory{flex-direction:column;gap:16px}}
+@media(max-width:620px){.brand-logo{width:64px;height:64px}.site-header{padding:6px 20px}main.page:has(.travel-home){padding:24px 20px 36px}.guide-heading h1{font-size:25px;letter-spacing:-.4px}.guide-heading p{font-size:13px}.guide-heading{margin-bottom:24px}.travel-lead{gap:24px}.lead-caption{position:static;max-width:none;background:#253b37;padding:20px}.lead-caption h2{font-size:25px;margin:6px 0 12px}.lead-caption h2 br{display:none}.lead-caption h2 br:after{content:' '}.lead-caption .story-action{font-size:12px}.season-panel h2{font-size:23px}.season-panel{padding:22px 22px 10px}.travel-section{margin-top:36px}.section-heading{align-items:start;margin-bottom:20px;gap:12px}.section-heading h2,.route-section h2{font-size:24px;line-height:32px}.section-heading>a{font-size:11px;white-space:normal;text-align:right;max-width:92px;padding-top:24px}.place-grid{grid-template-columns:1fr;gap:28px}.place-card>div{margin-top:12px}.place-card h3{font-size:20px}.preparation{padding:24px 20px}.prep-grid{grid-template-columns:1fr}.prep-link{padding:16px 0}.interest-grid{gap:24px 16px}.interest-story h3{font-size:15px;line-height:22px}.interest-story p{font-size:11px;line-height:18px}.route-section{padding:24px 0}.route-link{gap:14px}.route-link h3{font-size:15px}.recent-grid{grid-template-columns:1fr;gap:24px}.recent-story h3{font-size:16px;line-height:24px;margin-bottom:12px}.topic-directory{margin-top:36px}.topic-directory>div{gap:12px 20px}}
+@media(max-width:760px){.service-grid{grid-template-columns:1fr}.travel-services{padding:24px}.service-link p{margin-bottom:12px}}
+
+/* Consistent reading edges and natural wrapping; no text is clipped. */
+.guide-heading h1,.home-intro h1,.collection-intro h1,.section-heading h2,.route-section h2,.post h1{font-family:var(--font-display);font-weight:400;letter-spacing:-.7px}
+.guide-heading h1,.collection-intro h1{font-size:38px;line-height:1.15}
+.section-heading h2,.route-section h2{font-size:32px;line-height:1.2}
+.lead-caption h2{font-family:var(--font-display);font-weight:400;font-size:34px;line-height:1.12;letter-spacing:-.5px}
+.guide-heading p{font-size:14px}.card .card-copy h2,.interest-story h3,.recent-story h3,.service-link h3{font-weight:600}
+.site-header nav a{font-size:13px;letter-spacing:.1px}
+.home-search button{background:#253b37;transition:background .18s ease}
+.home-search button:hover{background:#3c584d}.home-search button:active{background:#1b2d27}
+.search-row button{background:#253b37;border-color:#253b37;border-radius:3px;font-size:13px;font-weight:600;transition:background .18s ease}
+.search-row button:hover{background:#3c584d}
+.section-heading>a{border-bottom:1px solid #c8d2c9;padding-bottom:6px;font-weight:500}
+.section-heading>a:hover{border-color:#253b37;color:#253b37;text-decoration:none}
+.section-heading>a>span{display:inline-block;transition:transform .2s ease}
+.section-heading>a:hover>span{transform:translateX(3px)}
+.service-link>span{display:inline-flex;align-items:center;gap:22px;border-bottom:1px solid #a0b1a4;padding:4px 0 7px;color:#253b37;font-weight:600}
+.service-link>span>span{padding-left:0;transition:transform .2s ease}.service-link:hover>span>span{transform:translateX(3px)}
+.destination-explorer{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:48px;align-items:center}
+.destination-preview{min-width:0}.destination-preview .place-grid{grid-template-columns:1fr;margin-top:0}
+.arrival-guides{background:#f1f3ee;border:1px solid #e0e5dc;padding:24px;margin:24px 0 32px}
+.arrival-guides h2{font:400 25px/1.3 var(--font-display);margin:0 0 8px}.arrival-guides p{margin:0 0 16px;color:#526651}
+.arrival-guides>div{display:flex;flex-wrap:wrap;gap:8px 24px}.arrival-guides a{display:inline-flex;align-items:center;gap:16px;min-height:44px;font-size:15px;text-decoration:underline;text-underline-offset:4px}
+.destination-choices{display:flex;gap:28px;margin-bottom:20px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.destination-choices button{font:600 14px/1.5 var(--font-body);cursor:pointer;min-height:44px;padding:10px 2px 12px;background:transparent;border:0;border-bottom:2px solid transparent;border-radius:0;color:#727a72;margin-bottom:-1px;transition:color .18s ease,border-color .18s ease}
+.destination-choices button:hover{color:#253b37}
+.destination-choices button[aria-pressed=true]{background:transparent;border-bottom-color:#253b37;color:#253b37}
+.destination-choices button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.destination-cta{display:inline-flex;align-items:center;gap:32px;min-height:44px;background:#253b37;border:1px solid #253b37;border-radius:3px;font-size:13px;font-weight:600;margin-top:20px;padding:10px 17px;color:#fff;transition:background .18s ease}
+.destination-cta>span{transition:transform .2s ease}.place-card:hover .destination-cta{background:#3c584d;border-color:#3c584d}.place-card:hover .destination-cta>span{transform:translateX(3px)}
+.place-card:active .destination-cta{background:#1b2d27}
+.korea-map{background:#f1f3ee;border:1px solid #e0e5dc;border-radius:8px;padding:26px 28px 16px;text-align:start;box-shadow:0 8px 24px #26392d05}
+.atlas-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #d9e0d5;padding-bottom:18px}
+.map-eyebrow{font-size:9px;letter-spacing:2.1px;font-weight:700;color:#637565;margin:0 0 8px}
+.map-title{font-family:Georgia,'Times New Roman',serif;font-size:30px;letter-spacing:-.8px;line-height:1.15;margin:0;color:#263c32}
+.atlas-count{font-family:Georgia,'Times New Roman',serif;font-size:25px;color:#607263;line-height:1;text-align:center}
+.atlas-count>span{font:700 8px/1.5 var(--font-body);display:block;letter-spacing:1.6px;margin-top:5px}
+.korea-map svg{width:100%;height:390px;display:block;margin:10px auto 6px;max-width:440px;overflow:visible}
+.korea-coast-shadow{fill:#b5c6b7;opacity:.65}
+.korea-land{fill:#dce5d4;stroke:#8caa90;stroke-width:1;stroke-linejoin:round}
+.atlas-country-name{font:italic 25px Georgia,'Times New Roman',serif;fill:#657f69;text-anchor:middle;opacity:.6;pointer-events:none}
+.atlas-compass text{font:700 9px var(--font-body);fill:#748573;text-anchor:middle}.atlas-compass path{fill:none;stroke:#748573;stroke-width:1}
+.destination-pin{cursor:pointer;text-decoration:none}
+.destination-pin[data-map-region=seoul]{--pin-color:#a64d3c}
+.destination-pin[data-map-region=busan]{--pin-color:#306e80}
+.destination-pin[data-map-region=jeju]{--pin-color:#71813b}
+.pin-hit{fill:transparent}.pin-halo{fill:#fff;stroke:var(--pin-color);stroke-width:1.5}
+.pin-wave{fill:none;stroke:var(--pin-color);stroke-width:1.5;opacity:0;pointer-events:none;transform-box:fill-box;transform-origin:center}
+.pin-dot{fill:var(--pin-color);transition:fill .2s ease}
+.pin-leader{fill:none;stroke:var(--pin-color);stroke-width:1;opacity:.65}
+.pin-label{fill:#ffffffed;stroke:#dce2d7;stroke-width:.75}
+.destination-pin .pin-name{fill:#263c32;font:700 21px var(--font-body)}
+.destination-pin .pin-subtitle{fill:#526651;font:600 9px var(--font-body);letter-spacing:.15px}
+.destination-pin.is-selected .pin-halo{fill:var(--pin-color);stroke:var(--pin-color)}
+.destination-pin.is-selected .pin-dot{fill:#fff}
+.destination-pin.is-selected .pin-label{fill:var(--pin-color);stroke:var(--pin-color)}
+.destination-pin.is-selected .pin-name{fill:#fff}
+.destination-pin.is-selected .pin-subtitle{fill:#fff;opacity:.88}
+.destination-pin:focus-visible{outline:none}.destination-pin:focus-visible .pin-hit{stroke:var(--pin-color);stroke-width:2}
+.atlas-footer{border-top:1px solid #d9e0d5;padding-top:12px;display:flex;align-items:center;justify-content:space-between;color:#637565}
+.map-note{font-size:13px;line-height:1.6;color:#526651;margin:0}
+.map-credit{display:block;font-size:11px;color:#526651;margin-top:10px}.map-credit a{text-decoration:underline;text-underline-offset:2px}
+@media(prefers-reduced-motion:no-preference){
+ .destination-explorer.is-enhanced .place-card:not([hidden]){animation:destination-reveal .32s ease-out both}
+ .destination-pin.is-activating .pin-wave{animation:atlas-pin-wave .6s ease-out both}
+ .destination-pin.is-activating .pin-label{animation:atlas-label-press .3s ease-out both;transform-box:fill-box;transform-origin:left center}
+}
+@keyframes atlas-pin-wave{from{opacity:.65;transform:scale(.7)}to{opacity:0;transform:scale(1.9)}}
+@keyframes atlas-label-press{0%{transform:scale(.96)}60%{transform:scale(1.025)}100%{transform:scale(1)}}
+@keyframes destination-reveal{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+ .destination-explorer{grid-template-columns:1fr;gap:24px}
+ .korea-map{grid-row:1;padding:22px 18px 14px}
+ .map-title{font-size:28px}.korea-map svg{height:350px}
+ .destination-choices{margin-bottom:16px}
+ .destination-choices button{flex:1;padding:10px 12px}
+}
+.place-card>img,.interest-story img,.destination-story img,.card-thumb{
+ width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center;display:block;
+}
+.interest-story img.photo-daiso,.card-thumb.photo-daiso{object-position:50% 65%}
+.card-placeholder{height:auto;aspect-ratio:3/2}
+.place-card,.interest-story,.service-link,.recent-story{transition:transform .24s ease}
+@media(hover:hover) and (pointer:fine){
+ .place-card:hover,.interest-story:hover,.service-link:hover,.recent-story:hover{transform:translateY(-4px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .place-card,.interest-story,.service-link,.recent-story{transition:none}
+ .place-card:hover,.interest-story:hover,.service-link:hover,.recent-story:hover{transform:none}
+}
+main.page,main.post,.site-footer{text-align:start}
+main :is(h1,h2,h3){text-wrap:balance;word-break:normal;overflow-wrap:break-word;hyphens:none}
+main :is(p,li){text-wrap:pretty;word-break:normal;overflow-wrap:break-word}
+.guide-heading>div,.section-heading>div,.route-link>div{min-width:0}
+.guide-heading p,.collection-intro>p{max-width:65ch;line-height:1.7}
+.quick-answers{margin:0 0 28px;padding:16px 0 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quick-answers>p{margin:0 0 10px;font-size:12px;color:var(--muted)}
+.quick-answers>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 24px}
+.quick-answers a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;font-weight:500;line-height:1.6}
+.quick-answers a>span{color:var(--red);flex-shrink:0}
+@media(max-width:900px){.quick-answers>div{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}}
+@media(max-width:620px){.quick-answers a{font-size:12px}.quick-answers>div{gap:14px 18px}}
+.place-card>div{align-items:baseline}.place-card>div>span{white-space:nowrap;flex-shrink:0}
+.prep-number{flex:0 0 2ch;font-variant-numeric:tabular-nums}.prep-arrow{flex-shrink:0}
+.route-link>span{flex:0 0 2ch;font-variant-numeric:tabular-nums}.route-link>b{flex-shrink:0}
+.interest-story,.place-card,.card-copy,.service-link{ text-align:start }
+.post{font-size:16px;line-height:1.8}
+.post h1{max-width:25ch;margin:0 0 20px;line-height:1.3}
+.post h2{line-height:1.4;margin-bottom:.65em}.post h3{line-height:1.5}
+.post :is(p,ul,ol){margin-top:0;margin-bottom:1.25em}
+.post :is(ul,ol){padding-inline-start:1.5em}.post li+li{margin-top:.45em}
+.reviewed-photo figcaption{max-width:72ch;text-align:start;overflow-wrap:anywhere}
+/* Plain editorial hierarchy: real photographs and useful labels carry the page. */
+:root{--font-display:Arial,'Helvetica Neue',sans-serif;--fg:#202824;--muted:#58625b;--line:#dfe3df;--red:#32624e;--soft:#f6f7f4}
+.guide-heading{align-items:flex-end;margin:10px 0 26px}.guide-heading h1{font:600 44px/1.08 var(--font-display);letter-spacing:-1.6px;max-width:16ch;margin-bottom:12px}
+.guide-heading p{font-size:16px;line-height:1.6}.guide-heading .editorial-location{font-size:12px;color:#677269;margin-top:8px}
+.lead-story,.lead-story:hover{border-radius:0;background:white;color:var(--fg)}
+.lead-caption{position:static;max-width:none;padding:18px 0 0;background:white;animation:none}
+.lead-caption .story-kicker{font-size:12px;line-height:1.5;font-weight:500;letter-spacing:0;color:#58625b}
+.lead-caption h2{font:600 29px/1.2 var(--font-display);color:var(--fg);letter-spacing:-.7px;margin:7px 0 12px}
+.story-action{color:#32624e;font-size:14px}.lead-story>img{animation:none;border-radius:0}
+.season-panel{background:white;border-top:1px solid var(--line);padding:22px 0 0 24px}.season-panel h2{font-size:22px;letter-spacing:-.4px}
+.section-heading h2{font:600 28px/1.2 var(--font-display);letter-spacing:-.7px}
+.section-kicker{letter-spacing:0;text-transform:none}.section-heading.motion-in .section-kicker:before{display:none}
+.preparation{background:white;padding:34px 0 0;border-top:1px solid var(--line);border-radius:0}.prep-number{display:none}
+.prep-link h3{font-size:17px}.prep-link p{font-size:14px}.prep-arrow{font-size:18px}
+.interest-story h3{font-size:18px}.interest-story p{font-size:14px;line-height:1.6}
+.travel-section{margin-top:58px}.place-card h3{font-size:25px}.place-card p{font-size:15px;line-height:1.6}
+.korea-map{border:0;border-radius:0;box-shadow:none;background:#f6f7f4;padding:24px}
+.map-title{font:600 20px/1.3 var(--font-display);letter-spacing:-.4px}.atlas-heading{border:0;padding-bottom:4px}
+.korea-land{fill:#e2e8df;stroke:#9bad9d}.korea-coast-shadow{display:none}
+.destination-pin .pin-name{font:600 24px var(--font-body)}.pin-label{stroke:none}.atlas-footer{border-top:1px solid var(--line)}
+.destination-cta{border-radius:0;font-size:14px;min-height:46px;padding:11px 18px;margin-top:18px}
+.place-card>img,.interest-story img{border-radius:0}.place-card:hover,.interest-story:hover,.recent-story:hover{transform:none}
+.place-card:hover h3{text-decoration:none}.destination-cta:hover{background:#3c584d}
+@media(max-width:760px){.guide-heading h1{font-size:36px;max-width:none}.guide-heading p{font-size:15px}.season-panel{padding:20px 0 0}.travel-section{margin-top:38px}.section-heading h2{font-size:26px}.interest-story p{font-size:13px}.lead-caption{padding:16px 0 0;background:white}.lead-caption h2{font-size:26px;color:var(--fg)}.korea-map{padding:20px 16px}.prep-grid{gap:0 24px}}
+@media(max-width:620px){.interest-grid{grid-template-columns:1fr 1fr;gap:26px 18px}.interest-story h3{font-size:16px}.guide-heading h1{font-size:33px;letter-spacing:-1px}.lead-caption .story-action{font-size:14px}.guide-heading .editorial-location{font-size:12px}}
+
+@media(min-width:621px){
+ .interest-story h3{min-height:1.5em}
+ .card .card-copy h2{min-height:78px}
+}
+@media(min-width:761px){.service-link h3{min-height:52px}}
+@media(max-width:620px){
+ .guide-heading h1,.collection-intro h1{font-size:32px}
+ .section-heading h2,.route-section h2{font-size:29px}
+ .lead-caption h2{font-size:30px}
+ .section-heading{align-items:flex-end}
+ .section-heading>a{padding-top:0;padding-bottom:3px;line-height:1.5;flex-shrink:0}
+ main.post{padding:24px 20px}
+ .post h1{font-size:30px;line-height:1.25;max-width:none}
+ .post h2{font-size:22px}
+ .interest-story h3{min-height:44px}
+ .service-link h3,.card .card-copy h2{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+ .home-search button,.search-row button,.section-heading>a>span,.service-link>span>span,.destination-choices button,.destination-cta,.destination-cta>span{transition:none}
+ .section-heading>a:hover>span,.service-link:hover>span>span,.place-card:hover .destination-cta>span{transform:none}
+}
+
+/* Purposeful imagery and one-time motion, October 22 visual refinement. */
+.prep-link{align-items:center;gap:16px}.prep-visual{flex:0 0 58px;width:58px;height:58px;display:grid;place-items:center;background:#f0f3eb;color:#365c49;border-radius:12px}.prep-visual svg{width:36px;height:36px}
+.prep-link:nth-child(2n) .prep-visual{background:#eef2f5;color:#385466}.prep-link:nth-child(3n) .prep-visual{background:#f7f0e6;color:#7b5a39}
+.korea-map svg{width:100%;height:auto;max-height:540px;overflow:visible}.map-island{fill:#45654f}.map-island text{font:600 17px var(--font-body);fill:#324f3c}.map-island .island-korean{font:500 14px var(--font-body)}.map-island .island-touch{fill:transparent;stroke:none}.map-island .island-wave{fill:none;stroke:#52775c;stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center}
+.dokdo-marker{cursor:pointer}.dokdo-marker:focus-visible{outline:none}.dokdo-marker:focus-visible .island-touch{stroke:#254c37;stroke-width:2;fill:#e3eadb}.island-note{margin:16px 0 8px;padding:12px 0;border-top:1px solid #d6dfd0;font-size:13px}.island-note summary{cursor:pointer;color:#304e3b;font-weight:600;min-height:32px;align-content:center}.island-note p{font-size:13px;margin:8px 0}.island-note>a{display:inline-flex;padding:8px 0;text-decoration:underline;text-underline-offset:3px}
+@media(prefers-reduced-motion:no-preference){
+ .prep-link,.interest-story,.section-heading{transition:transform .35s ease,opacity .55s ease;transition-delay:var(--reveal-delay,0ms)}
+ .motion-pending{opacity:0;transform:translateY(18px)}
+ .interest-story.is-visible{animation:photo-card-in .65s cubic-bezier(.2,.7,.3,1) both;animation-delay:var(--reveal-delay,0ms)}
+ .prep-link.is-visible .prep-visual{animation:icon-arrive .5s ease-out both;animation-delay:var(--reveal-delay,0ms)}
+ .destination-explorer.is-enhanced .place-card:not([hidden]){animation:photo-card-in .6s cubic-bezier(.2,.7,.3,1) both}
+ .destination-pin.is-activating .pin-wave,.dokdo-marker.is-activating .island-wave{animation:atlas-pin-wave .8s ease-out both}
+ .destination-cta>span,.prep-arrow{display:inline-block;transition:transform .25s ease}
+ .destination-cta:hover>span,.prep-link:hover .prep-arrow{transform:translateX(5px)}
+}
+@keyframes photo-card-in{from{opacity:.25;transform:translateY(16px);clip-path:inset(0 0 5% 0)}to{opacity:1;transform:translateY(0);clip-path:inset(0)}}
+@keyframes icon-arrive{from{opacity:.25;transform:translateY(7px) scale(.9)}to{opacity:1;transform:none}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.interest-story:hover{transform:translateY(-5px)}.prep-link:hover .prep-visual{transform:translateY(-3px);transition:transform .25s ease}}
+@media(max-width:620px){.prep-visual{width:50px;height:50px;flex-basis:50px}.prep-visual svg{width:31px;height:31px}.korea-map svg{height:auto;min-height:300px}.map-island text{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.motion-pending{opacity:1;transform:none}.interest-story,.prep-visual,.place-card,.island-wave,.prep-arrow{animation:none!important;transition:none!important;transform:none!important}}
+@media print{.motion-pending{opacity:1;transform:none}}
 
 """
 
@@ -614,9 +1038,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
 <meta name="twitter:card" content="{'summary_large_image' if image else 'summary'}">
 <meta name="twitter:title" content="{html.escape(title)}">
 <meta name="twitter:description" content="{html.escape(description)}">
-{img_tag}{published_tag}<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap">
+{img_tag}{published_tag}
 <link rel="stylesheet" href="{base}/style.css">
 {goatcounter_script(cfg)}{adsense_script(cfg)}{jsonld_tag}</head>
 <body>
@@ -638,6 +1060,7 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
   <a href="{base}/affiliate-disclosure.html">Disclosure</a> ·
   <a href="{base}/privacy.html">Privacy</a> ·
   <a href="{base}/terms-of-service.html">Terms</a> ·
+  <a href="{base}/photo-credits.html">Photo credits</a> ·
   <a href="{base}/contact.html">Contact</a></p>
 </footer>
 <script src="{base}/guide-search.js" defer></script>
@@ -670,6 +1093,82 @@ def extract_faq(body):
     return items
 
 
+
+def photo_review():
+    path = os.path.join(AUTO, "photo_review.json")
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def apply_photo_review(meta, cfg):
+    review = photo_review()
+    slug = meta["slug"]
+    approved = review["approved"].get(slug)
+    if approved:
+        meta["image"] = cfg["base_url"].rstrip("/") + approved["image"]
+        meta["_photo"] = approved
+    elif slug in review["withheld"] or meta.get("image", "").replace("https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/", cfg["base_url"].rstrip("/") + "/media/images/") != review["legacy_visual_review"].get(slug):
+        meta["image"] = ""
+
+
+def reviewed_photo_markup(p, base, css_class="", eager=False, caption=False, sizes=None):
+    item = p.get("_photo")
+    image = p.get("image", "").replace("https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/", base + "/media/images/")
+    if not image:
+        return ""
+    alt = item["alt"] if item else p["title"]
+    attrs = ' fetchpriority="high" loading="eager"' if eager else ' loading="lazy"'
+    responsive = ""
+    if item:
+        css_class = (css_class + ' photo-' + item['key']).strip()
+        candidates = ", ".join(base + v["path"] + " " + str(v["width"]) + "w" for v in item["variants"])
+        sizes = sizes or '(max-width: 800px) calc(100vw - 40px), 752px'
+        responsive = f' srcset="{html.escape(candidates)}" sizes="{html.escape(sizes, quote=True)}"'
+    intrinsic_width, intrinsic_height = (item['variants'][-1]['width'], item['variants'][-1]['height']) if item else (1200, 800)
+    image_tag = f'<img class="{html.escape(css_class)}" src="{html.escape(image)}" alt="{html.escape(alt)}"{responsive}{attrs} width="{intrinsic_width}" height="{intrinsic_height}">'
+    if not caption or not item:
+        return image_tag
+    credit = (f'<figcaption>Photo: {html.escape(item["author"])} · '
+              f'<a href="{html.escape(item["source"])}">Source</a> · '
+              f'<a href="{html.escape(item["license_url"])}">{html.escape(item["license"])}</a>'
+              '</figcaption>')
+    return '<figure class="reviewed-photo">' + image_tag + credit + '</figure>'
+
+
+def write_photo_credits(cfg, base):
+    rows = []
+    for slug, item in photo_review()["approved"].items():
+        rows.append(f'<section class="photo-credit"><h2>{html.escape(item["alt"])}</h2>'
+                    f'<p>Photo: {html.escape(item["author"])} · '
+                    f'<a href="{html.escape(item["source"])}">Source</a> · '
+                    f'<a href="{html.escape(item["license_url"])}">{html.escape(item["license"])}</a></p>'
+                    f'<p><a href="{base}/posts/{html.escape(slug)}">Read the guide</a></p></section>')
+    content = ('<h1>Photo credits</h1>'
+               '<p>Photographers and sources for the photographs used on Land in Korea. '
+               'Display copies are resized, and card thumbnails may be cropped. '
+               'Share-alike photographs remain under the linked licence.</p>' + ''.join(rows))
+    with open(os.path.join(SITE, "photo-credits.html"), "w", encoding="utf-8") as f:
+        f.write(page(cfg, base, "Photo credits", "Photographers, sources and licences for Land in Korea photographs.", content, base + "/photo-credits.html"))
+
+
+def copy_reviewed_photo_assets():
+    import hashlib
+    import shutil
+    for item in photo_review()["approved"].values():
+        for variant in item["variants"]:
+            filename = os.path.basename(variant["path"])
+            candidates = [os.path.join(AUTO, "assets", "reviewed", filename), os.path.join(AUTO, "assets", filename)]
+            source = next((path for path in candidates if os.path.isfile(path)), None)
+            if source is None:
+                raise RuntimeError("Reviewed photograph asset missing: " + filename)
+            with open(source, "rb") as f:
+                if hashlib.sha256(f.read()).hexdigest() != variant["sha256"]:
+                    raise RuntimeError("Reviewed photograph asset differs: " + filename)
+            destination = os.path.join(SITE, *variant["path"].lstrip("/").split("/"))
+            os.makedirs(os.path.dirname(destination), exist_ok=True)
+            shutil.copy2(source, destination)
+
+
 def read_posts(cfg):
     posts = []
     if not os.path.isdir(POSTS_SRC):
@@ -689,6 +1188,7 @@ def read_posts(cfg):
         meta["_body_html"] = md_to_html(body, cfg["base_url"].rstrip("/"))
         meta["_reading"] = max(1, len(body) // 1000)
         meta["_faq"] = extract_faq(body)
+        apply_photo_review(meta, cfg)
         discovery_meta(meta)
         posts.append(meta)
     posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
@@ -723,14 +1223,15 @@ def build():
     cfg = load_config()
     os.makedirs(POSTS_OUT, exist_ok=True)
     copy_logo_asset()
+    copy_reviewed_photo_assets()
     posts = read_posts(cfg)
     remove_stale_posts(posts)
     base = cfg["base_url"].rstrip("/")
 
     for p in posts:
         hero = ""
-        if p.get("image"):
-            hero = f'<img class="hero-img" src="{html.escape(p["image"])}" alt="{html.escape(p["title"])}">'
+        if p.get("image") and p['image'] not in p['_body_html']:
+            hero = reviewed_photo_markup(p, base, "hero-img", eager=True, caption=True)
         post_url = canonical_url(base, f'{base}/posts/{p["slug"]}.html')
         article = (
             f'<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{base}/">Home</a>'
@@ -738,10 +1239,12 @@ def build():
             f' <span aria-hidden="true">/</span> <span aria-current="page">{html.escape(p["title"])}</span></nav>'
             f'<article>' 
             f'<p class="meta"><a class="cat" href="{base}/topics/{p["_topic"]}">{html.escape(p["_topic_label"])}</a>'
-            f' · {p["date"]} · {p["_reading"]} min read</p>'
-            f'<h1>{html.escape(p["title"])}</h1>'
-            f'<p class="byline">Written by {html.escape(cfg["author"])} · checked against official sources — '
-            f'see <a href="{base}/about.html">how we work</a></p>'
+            f' · {p["date"]}'
+            + (f' · Updated {p["modified"]}' if p.get("modified") else "")
+            + f' · {p["_reading"]} min read</p>'
+            + f'<h1>{html.escape(p["title"])}</h1>'
+            f'<p class="byline">By {html.escape(cfg["author"])} · '
+            f'<a href="{base}/about.html">Editorial policy</a></p>'
             f'{hero}'
             f'{p["_body_html"]}'
             f'</article>'
@@ -758,7 +1261,7 @@ def build():
             "description": p["description"],
             "articleSection": p["_topic_label"],
             "datePublished": p["date"],
-            "dateModified": p["date"],
+            "dateModified": p.get("modified", p["date"]),
             "author": {"@id": base + "/#editorial-team", "@type": "Organization", "name": cfg["author"], "url": base + "/about"},
             "publisher": {"@id": base + "/#organization", "@type": "Organization", "name": cfg["site_name"]},
             **({"image": p["image"]} if p.get("image") else {}),
@@ -790,12 +1293,15 @@ def build():
             f.write(out)
 
     intro = discovery_home(cfg, base, posts)
+    home_image = next((p.get('image', '') for p in posts if p['slug'] == 'korea-nami-island-and-petite-france-day-trip'), '')
+    home_image = home_image.replace('https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/', base + '/media/images/')
     with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as f:
-        f.write(page(cfg, base, "Korea Travel Guides: Transport, eSIMs and Money",
-                     "Plan your first trip to Korea with practical comparisons of airport transfers, eSIMs, transit cards, payments and luggage storage. Check official sources.",
-                     intro, f"{base}/"))
+        f.write(page(cfg, base, "Korea Travel Guide: Destinations, Planning & Tips",
+                     "Explore Seoul, Busan and Jeju. Plan your first trip to Korea with guides to transport, eSIMs, payments, food, culture and day trips.",
+                     intro, f"{base}/", image=home_image or None))
 
     write_static_pages(cfg, base)
+    write_photo_credits(cfg, base)
     write_discovery(cfg, base, posts)
     write_sitemap(cfg, base, posts)
     write_feed(cfg, base, posts)
@@ -820,75 +1326,25 @@ def write_static_pages(cfg, base):
     )
     about = f"""
 <h1>About Land in Korea</h1>
-<p><strong>{html.escape(cfg['site_name'])}</strong> writes for people landing in Korea for the first time —
-tourists and new foreign residents alike. We don't pad guides with generic filler just to hit a word
-count. Instead, we run the actual comparisons: which airport transfer is worth the money, which eSIM
-option is genuinely cheaper, whether a tour pass pays for itself.</p>
-<h2>Who writes this</h2>
-<p>{html.escape(cfg['site_name'])} is an independent editorial project run from Busan. Guides are researched
-and compiled from official Korean sources — the Korea Tourism Organization, operators such as Korail and the
-airport railroad, the National Tax Service's tax-refund rules, and the transit and map apps themselves —
-combined with local familiarity with how those systems work in practice.</p>
-<p>Each guide is compiled from those sources and checked against them before it goes live. We say this plainly
-because we would rather you know how the site is made than imply a first-hand travel diary it isn't: what we
-promise is that every specific in these guides traces back to a source we can point to, not that a person
-personally re-tested each fare and opening time the week you read it. Where a detail is time-sensitive —
-prices, thresholds, seasonal schedules — the guide says so and sends you to the official source to confirm.</p>
-<p>In the interest of being upfront about how this is made: drafting uses AI assistance over the source
-material above, and publishing is handled by an automated pipeline on a schedule. What doesn't change is
-the standard — a draft only goes live after it's checked against the sources it cites, not on AI output
-alone.</p>
-<h2>How we work</h2>
-<ul>
-<li>We compare real options side by side instead of just describing one.</li>
-<li>Every claim is grounded in verifiable public information from an official or operator source — we don't
-invent details to fill space.</li>
-{about_affiliate_bullet}
-<li>Prices, thresholds, and rules change — always confirm on the official site before you book or travel.</li>
-</ul>
-<h2>Editorial standards</h2>
-<p>We correct errors when readers point them out, and we don't accept payment in exchange for a positive
-review or a favorable comparison result. If you spot something outdated or wrong, tell us — see our
-<a href="{base}/contact.html">contact page</a>.</p>
-<p>Contact: <a href="{base}/contact.html">contact page</a></p>
+<p>{html.escape(cfg['site_name'])} is an independent travel guide based in Busan, South Korea. We publish practical information for visitors and foreign residents: transport, places to visit, payments and everyday life.</p>
+<h2>Our guides</h2>
+<p>Guides explain the choices travellers need to make and link to official sources for schedules, prices and procedures. Check the operator or government website before booking: details can change after publication.</p>
+<p>AI tools assist with research and drafting. Land in Korea is responsible for the published material. These guides are reference articles; a photograph or description does not mean we personally tested every service.</p>
+<h2>Photographs</h2>
+<p>Photograph sources and licences are listed in the <a href="{base}/photo-credits.html">photo credits</a>.</p>
+<h2>Commercial links</h2>
+<ul>{about_affiliate_bullet}</ul>
+<h2>Corrections</h2>
+<p>Found a wrong detail or an outdated link? Please <a href="{base}/contact.html">contact us</a> with the guide URL and the correction.</p>
 """
+    disclosure_status = ('Some links on this site may earn us a commission when you make a booking or purchase. Affiliate links are identified in the relevant guide.'
+                         if affiliate_enabled else 'Affiliate links are currently disabled on this site.')
     disclosure = f"""
 <h1>Affiliate Disclosure</h1>
-<p><strong>Current status: affiliate links are disabled.</strong></p>
-<p>{html.escape(cfg['site_name'])} uses a token-based affiliate link system managed in configuration, not in
-content. As of {POLICY_PAGE_LAST_UPDATED}, <code>affiliate_links_enabled</code> is set to
-<code>false</code> in our build configuration, so all affiliate references are displayed as plain text
-without links. When enabled, this will be clearly indicated on each post.</p>
-<h2>What "token-based" means here</h2>
-<p>Some of our guides mention booking platforms such as Klook, Trip.com, and GetYourGuide as places to
-compare current prices. In the source of those articles, each mention is written as a placeholder token
-(for example <code>{{{{klook}}}}</code>) rather than a hard-coded URL. At build time, our generator reads
-<code>automation/config.json</code>:</p>
-<ul>
-<li>While <code>affiliate_links_enabled</code> is <code>false</code>, every token is stripped and the brand
-name is rendered as ordinary text — no outbound affiliate link, no tracking parameter, and no ad code is
-served anywhere on this site.</li>
-<li>If it is ever switched to <code>true</code>, the same tokens resolve to the real partner URLs in one
-place, so the disclosure status of the whole site can never drift out of sync with the articles.</li>
-</ul>
-<h2>Our plan if we activate affiliate links</h2>
-<p>We may enable this system in the future. If and when we do: this page will be updated first with the
-programs we have joined and the date the change took effect; every post containing such a link will carry a
-visible disclosure in the article itself; and the links will be marked <code>rel="sponsored"</code> so
-search engines and readers can identify them. Commissions, if any, would come at no extra cost to you, and
-our comparisons would still reflect our own research — we do not accept payment for a positive review or a
-favorable comparison result.</p>
-<p>Questions about a specific recommendation? Reach out via our
-<a href="{base}/contact.html">contact page</a>.</p>
-""" if not affiliate_enabled else f"""
-<h1>Affiliate Disclosure</h1>
-<p>{html.escape(cfg['site_name'])} participates in affiliate programs including Klook, Trip.com, and
-GetYourGuide. When you click certain links on this site and make a booking or purchase, we may earn a
-commission — at no extra cost to you.</p>
-<p>We only link to services relevant to the guide you're reading. Our comparisons reflect our own research
-and opinion; they are not paid placements unless explicitly marked as such.</p>
-<p>Questions about a specific link or recommendation? Reach out via our
-<a href="{base}/contact.html">contact page</a>.</p>
+<p>{disclosure_status}</p>
+<p>Guides may mention booking platforms and service providers to help you compare options. A mention is not a guarantee of price, availability or suitability for your trip.</p>
+<p>If we introduce affiliate links or paid placements, they will be clearly labelled. Check the provider’s current price, cancellation terms and service details before purchasing.</p>
+<p>Questions about a link or recommendation? Please <a href="{base}/contact.html">contact us</a>.</p>
 """
     goatcounter_bullet = (
         f'<p>We use <a href="https://www.goatcounter.com/" rel="noopener" target="_blank">GoatCounter</a>, '
@@ -1021,13 +1477,14 @@ def write_sitemap(cfg, base, posts):
     static_urls = [
         ("", latest_post_date),  # home lists posts, so it follows the latest post
         ("about.html", LAYOUT_CONTENT_UPDATED),
-        ("affiliate-disclosure.html", POLICY_PAGE_LAST_UPDATED),
+        ("photo-credits.html", "2026-10-21"),
+        ("affiliate-disclosure.html", "2026-10-21"),
         ("privacy.html", POLICY_PAGE_LAST_UPDATED),
         ("terms-of-service.html", POLICY_PAGE_LAST_UPDATED),
         ("contact.html", POLICY_PAGE_LAST_UPDATED),
     ]
     collection_urls = [("guides", latest_post_date)] + [(path, max([DISCOVERY_UPDATED] + [p["date"] for p in group])) for path, _, _, group in discovery_groups(posts)]
-    urls = static_urls + collection_urls + [(f"posts/{p['slug']}.html", p["date"]) for p in posts]
+    urls = static_urls + collection_urls + [(f"posts/{p['slug']}.html", p.get("modified", p["date"])) for p in posts]
     body = '<?xml version="1.0" encoding="UTF-8"?>\n'
     body += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for u, lastmod in urls:

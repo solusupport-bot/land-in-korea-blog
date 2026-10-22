@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Check generated HTML, sitemap and RSS without network access (stdlib only)."""
+import hashlib
+from datetime import date
 import importlib.util
 import json
 from pathlib import Path
@@ -14,7 +16,7 @@ SITE = ROOT / 'site'
 class Document(HTMLParser):
     def __init__(self, text):
         super().__init__(convert_charrefs=True)
-        self.links, self.canonical, self.graphs, self.robots = [], [], [], []
+        self.links, self.canonical, self.graphs, self.robots, self.images = [], [], [], [], []
         self.h1 = self.related_links = 0
         self.in_json = self.in_related = False
         self.buffer = ''
@@ -22,6 +24,8 @@ class Document(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag == 'img':
+            self.images.append(a.get('src', ''))
         if tag == 'h1':
             self.h1 += 1
         if tag == 'link' and a.get('rel') == 'canonical':
@@ -90,7 +94,7 @@ def main():
             check(len(article) == 1, f'{relative}: expected one Article')
             if article:
                 check(article[0]['mainEntityOfPage']['@id'] == expected, f'{relative}: Article URL mismatch')
-                check(article[0]['dateModified'] == article[0]['datePublished'], f'{relative}: publication date changed')
+                check(article[0]['datePublished'] <= article[0]['dateModified'] <= date.today().isoformat(), f'{relative}: invalid content modification date')
             crumbs = [g for g in doc.graphs if g.get('@type') == 'BreadcrumbList']
             check(len(crumbs) == 1 and crumbs[0]['itemListElement'][-1]['item'] == expected,
                   f'{relative}: breadcrumb mismatch')
@@ -102,7 +106,12 @@ def main():
         meta = dict(line.split(':', 1) for line in front.splitlines() if ':' in line)
         slug = meta.get('slug', path.stem).strip()
         source_slugs.add(slug)
-        source_dates[base + '/posts/' + slug] = meta['date'].strip()
+        source_dates[base + '/posts/' + slug] = meta.get('modified', meta['date']).strip()
+        source_doc=docs.get('posts/' + slug + '.html')
+        if source_doc:
+            graph=next((g for g in source_doc.graphs if g.get('@type')=='Article'), {})
+            check(graph.get('datePublished') == meta['date'].strip(), slug + ': first publication date differs from source')
+            check(graph.get('dateModified') == meta.get('modified', meta['date']).strip(), slug + ': modified date differs from source')
     built_slugs = {Path(p).stem for p in docs if p.startswith('posts/')}
     check(source_slugs == built_slugs, 'Source/output post inventory differs')
     ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
@@ -124,6 +133,11 @@ def main():
     spec.loader.exec_module(module)
     posts = module.read_posts(cfg)
     for post in posts:
+        check(module.re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', post['slug']) is not None,
+              post['slug'] + ': invalid published slug; check export sanitization')
+        image = post.get('image', '')
+        check(not image or (urlsplit(image).scheme in ('http', 'https') and not any(c in image for c in '[]<>')),
+              post['slug'] + ': invalid image URL; check export sanitization')
         text = (SITE / 'posts' / (post['slug'] + '.html')).read_text(encoding='utf-8')
         # Layout/navigation must never rewrite the existing editorial body.
         # page() normalizes existing same-site .html links; use the same normalization.
@@ -131,6 +145,41 @@ def main():
         check(normalized_body in text, post['slug'] + ': editorial body changed')
         check(post['_topic'] in module.TOPICS, post['slug'] + ': unknown topic')
         check(base + '/topics/' + post['_topic'] in text, post['slug'] + ': topic link missing')
+    review = module.photo_review()
+    if review.get('legacy_images_allowed') is False:
+        check(not review['legacy_visual_review'], 'Unverified legacy photo allowlist must be empty')
+        approved_image_urls = {base + item['image'] for item in review['approved'].values()}
+        for path, doc in docs.items():
+            for src in doc.images:
+                check(src in approved_image_urls or src == base + '/assets/logo.jpg',
+                      path + ': unreviewed photograph remains visible: ' + src)
+    checked = date.fromisoformat(review['reviewed_on'])
+    cutoff = checked.replace(year=checked.year - 3)
+    for slug, photo in review['approved'].items():
+        check(cutoff <= date.fromisoformat(photo['date_taken']) <= checked, slug + ': capture date outside review window')
+        check(photo['location_verified'] and photo['visual_review'], slug + ': photograph review incomplete')
+        check(photo['source'].startswith('https://commons.wikimedia.org/wiki/File:'), slug + ': missing photo source')
+        check(photo['license'] in ('CC0 1.0', 'CC BY 2.0', 'CC BY 4.0', 'CC BY-SA 2.0', 'CC BY-SA 4.0'), slug + ': photo license not reviewed')
+        page_path = SITE / 'posts' / (slug + '.html')
+        check(page_path.exists(), slug + ': reviewed photograph has no article')
+        if page_path.exists():
+            content = page_path.read_text(encoding='utf-8')
+            check(base + photo['image'] in content and photo['source'] in content and photo['license_url'] in content,
+                  slug + ': photo or visible attribution missing')
+        for variant in photo['variants']:
+            check(variant['width'] <= photo['original_dimensions'][0] and variant['height'] <= photo['original_dimensions'][1],
+                  slug + ': photo upscaling detected')
+            if 'downloaded_source_dimensions' in photo:
+                check(variant['width'] <= photo['downloaded_source_dimensions'][0] and variant['height'] <= photo['downloaded_source_dimensions'][1],
+                      slug + ': display derivative upscaling detected')
+            asset = SITE / variant['path'].lstrip('/')
+            # Assets may already live in the preserved deployment media directory.
+            if asset.exists():
+                check(hashlib.sha256(asset.read_bytes()).hexdigest() == variant['sha256'], slug + ': photo asset hash mismatch')
+    for slug in review['withheld']:
+        content = (SITE / 'posts' / (slug + '.html')).read_text(encoding='utf-8')
+        check('class="hero-img"' not in content, slug + ': withheld image remains visible')
+    check('Photo credits' in (SITE / 'index.html').read_text(encoding='utf-8'), 'Missing card photograph credits link')
     all_guides = docs.get('guides.html')
     check(all_guides is not None, 'Missing complete guide library')
     if all_guides:

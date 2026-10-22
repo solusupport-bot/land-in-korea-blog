@@ -6,6 +6,7 @@ description: The T-money card is Korea's universal transit payment system. Here'
 slug: korea-t-money-transit-card
 image_query: T-money card Korea transit payment Seoul subway
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-t-money-transit-card-1788891488635.jpg
+modified: 2026-10-22
 ---
 When you arrive in Korea, one of the first things you should buy isn't food or souvenirs. It's a T-money card.
 
@@ -52,7 +53,7 @@ Once you have the card, you need to add money to it. This is called "charging" o
 Most subway stations have T-money charging machines (충전기). Look for a kiosk with "T-money" signage.
 1. Insert your card
 2. Select the amount (usually 10,000₩, 20,000₩, 50,000₩ options)
-3. Insert cash or tap your credit card
+3. Follow the payment options displayed by that machine. Carry Korean won cash as a backup; do not assume a foreign credit card will be accepted.
 4. Machine confirms the transaction
 5. Remove your card and go
 
@@ -154,14 +155,7 @@ Use the balance-checking machines (잔액조회기) located throughout stations.
 
 ## What Happens If Your Card Is Lost
 
-If you lose your T-money card:
-1. Report it to the T-money customer center: 1600-0111
-2. Provide details: when and where you lost it, your card number (if you remember it)
-3. The balance is frozen to prevent theft
-4. You can request a refund of any remaining balance
-5. Buy a new card and load money onto it
-
-This is one advantage of T-money over cash. Your money is protected if the card is lost.
+Do not assume that reporting a lost card will freeze its balance or produce a refund. The procedure depends on the exact card or mobile product and any registration requirements. Keep only a manageable travel balance on the card, and check the [Tmoney customer guidance](https://eng.tmoney.co.kr/) for your product. This guide does not promise recovery of a lost card's balance.
 
 ## Refunds and Unused Balance
 
@@ -213,3 +207,7 @@ Contactless bank-card acceptance at Korean gates has been expanding but is still
 ### How long does the card last before it needs replacing?
 
 T-money cards are designed to last for years. Unless the card is damaged or malfunctions, you won't need to replace it. The balance is what matters, not the physical card.
+
+## Sources
+
+The [Korea Tourism Organization transportation-card guide](https://english.visitkorea.or.kr/svc/contents/infoBscView.do?menuSn=479&vcontsId=140663) lists participating sales and reload locations. Check [Tmoney](https://eng.tmoney.co.kr/) for terms for your exact product.
