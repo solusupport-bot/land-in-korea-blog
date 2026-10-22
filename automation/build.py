@@ -474,27 +474,43 @@ BUSAN_DISTRICT_PATHS = {
     'Gijang-gun': 'M573.166,93.016c-0.629-0.388-0.542-0.071-0.328-2.738l0.295-3.694 l0.631-3.471l-6.206-3.887c-1.374-0.86-3.735-1.976-5.344-2.636c-1.608-0.66-2.465-0.865-3.729-1.913 c-2.531-2.096-4.294-4.597-5.694-6.31c-2.801-3.426-2.535-4.202-1.442-7.849c1.231-4.111,2.975-4.186,1.247-7.527 c-0.687-1.328-2.983-5.827-3.149-7.141s-0.1-1.675,0.146-3.209c0.339-2.12,1.729-3.46,1.364-4.857s-2.486-3.298-5.152-5.87 c-1.598-1.542-4.558-3.347-5.885-5.179c-1.326-1.833-2.527-3.693-3.176-5.123c-0.56-1.233-1.676-3.306-1.73-4.953 c-0.047-1.413-0.94-2.037-2.415-3.175c-2.148-1.658-5.609-1.162-8.153-1.383c-1.131-0.098-10.57,2.075-14.796,3.517 c-3.879,1.324-2.326,0.437-4.763,0.851c-4.873,0.828,0.933-0.336-7.479,1.509c-5.637,1.236-10.831,2.831-14.824,3.448 c-3.993,0.618-6.73,0.873-7.343,0.659c-0.612-0.214-2.531-0.762-4.043-2.097c-1.511-1.335-2.671-3.347-3.887-4.481 c-1.443-1.348-1.113-1.203-2.889-2.356c-1.774-1.153-5.209-2.042-6.817-2.557c-3.218-1.029-5.268-0.447-6.391,1.069 c-0.593,0.801-0.813,1.976-1.106,2.847s-0.661,1.885-0.434,2.588c0.454,1.406,2.172,2.239,4.252,3.777 c2.114,1.563,3.563,2.56,3.858,4.278c0.294,1.718,0.047,1.48-1.343,4.146c-0.26,0.498-0.843,0.774-1.193,1.386 c-0.352,0.612-0.472,1.56-0.699,2.283c-0.455,1.447-0.837,4.173-0.839,4.93c-0.007,2.69-2.487,6.718-4.472,6.718 c-0.55,0-3.144,1.704-5.765,3.788c-4.128,3.28-6.925,3.661-13.608,3.65c-4.54-0.007-9.229-1.605-14.125-3.838 c-2.448-1.117-3.755-1.527-5.567-2.989c-2.426-1.956-3.738-4.265-5.17-5.788c-3.147-3.35-3.368-1.947-8.473-1.947 c-8.265,0-18.7,2.153-18.7,4.045c0,0.43-0.958,0.723-0.573,1.597s0.986,1.705,1.854,2.459c2.005,1.743,4.948,3.804,5.011,5.166 c0.063,1.362-0.255,1.899-2.523,5.095c-1.108,1.562-2.084,1.673-3.527,4.468c-1.449,2.807-3.051,9.487-3.247,12.313 c-0.449,6.451-4.093,9.479-7.688,15.648c-1.274,2.188-3.144,2.85-4.363,5.1c-1.221,2.25-2.917,8.275-3.349,9.817 c-0.801,2.859-0.848,3.497-2.557,4.568c1.73,1.436,6.762,5.539,10.633,7.984c4.75,3,9.25,5,9.5,9.25s-0.5,12.5-2.75,16s-5,8.5-5,12 s-2.25,10,2.5,11.25s12,0.25,13,2.75s1.25,6,3.75,7.75c2.105,1.474,3.439,4.187,6.815,6.855c0.632,0.5,1.396,1.171,2.185,1.645 c5,3,10.25,3.75,11.25,5.75s7,8.5,7.5,12.25s3,4,3,8.5s-2.25,14.75-3.5,16.75s-5.25,3.5-4.25,5.25s4.5,4.75,7.75,5 s13.25-3.25,14.75-2s3.5,4.5,4.25,6.75s2.5,8,3.25,10s1,4.25,2.75,3.25s4.5-5.5,5.5-6.75s5.25-3.75,7-3.25s8.25,4.25,9.5,7 s1.25,9.75,3.5,10.5c1.872,0.624,3.382,1.756,3.842,2.122c1.379-0.338,2.669-0.6,3.623-1.312c2.655-1.982,3.983-5.096,5.663-7.809 c2.51-4.055,1.933-4.449,3.21-5.41c1.276-0.959,2.355-0.905,4.072-0.905c3.948,0,5.771-1.591,4.763-6.972 c-0.577-3.076-0.746-7.089-2.909-7.911c-0.964-0.366-3.024,0.204-3.52-0.138c-0.494-0.342-0.93-0.369-0.986-1.04 c-0.114-1.344,1.283-3.757,3.168-6.541c1.639-2.418,3.214-3.331,3.706-4.894c0.255-0.812,0.328-3.744,0.502-4.206 c0.175-0.462,0.45-0.741,1.112-0.82c1.325-0.158,3.303,0.929,5.087,2.278c1.976,1.495,4.939,2.957,5.569,2.131 c0.314-0.413-0.401-0.798-0.247-2.205c0.155-1.406-0.383-4.225-0.383-6.268c0-3.643,0.02-5.663,0.688-7.415s0.003-1.442,2.688-3.693 c2.445-2.051,4.741-4.427,6.668-7.599l0.971-10.165c0.273-2.859,0.247-7.402-0.133-9.658c-0.379-2.255-1.112-2.225-1.361-2.854 c-0.427-1.083-1.056-2.947-0.946-3.361c0.01-0.038,0.024-0.07,0.04-0.1c-0.177,0.127-0.556,0.343-1.297,0.651 c-2.069,0.861-3.913,4.666-5.43,4.93c-0.79,0.138-1.374,0.135-2.4-0.103c-1.025-0.238-1.997-0.645-2.576-1.224 c-2.139-2.139-1.772-5.155,0.27-7.714c2.063-2.587,4.655-4.865,8.928-5.652c1.663-0.306,2.978,0.011,3.642-0.334 c0.96-0.498,2.629-1.006,3.427-1.519c1.597-1.026,2.685-3.596,4.024-5.643c2.449-3.74,3.709-4.496,4.092-6.424 c0.191-0.964,0.149-3.7-0.128-4.905c-0.278-1.205-0.29-1.382-1.042-2.026c-0.854-0.73-2.67-0.693-3.091-0.893 c-0.422-0.2-0.618-0.357-0.574-0.921c0.087-1.127,1.137-2.371,3.055-3.627c0.764-0.5,2.57-1.913,3.121-2.402 c0.551-0.489,0.281-1.933,0.33-3c0.09-1.989-0.389-3.948-0.278-10.841c0.153-9.58,0.456-15.905,1.396-18.507 s2.433-1.763,6.214-2.265c2.449-0.325,5.229-0.278,6.826-1.159s1.957-3.301,2.804-4.655c1.179-1.886,1.021-1.311,1.217-1.585 c0.195-0.275,1.007-1.212,3.58,2.168c2.399,3.152,4.642,5.184,6.942,6.156c1.149,0.487,2.342,0.681,3.716,0.701 c1.373,0.02,6.655,0.973,8.538,0.888c5.509-0.249,2.562-0.486,3.748-0.961c0.618-0.247,1.938-1.856,1.854-2.516 S573.917,93.48,573.166,93.016z',
 }
 
-# Districts with a published guide: id -> (short label for the tooltip/aria-label, post slug).
-# Add an entry here (and ship the post) to light up more of the map — see
-# project_landinkorea_operating_baseline_2026_10_22 memory for the content-first rollout order.
+# Districts with a published guide: id -> (short label, post slug, how to get there by
+# transit). The "how to get there" text must match what the linked post itself says —
+# see korea-busan-haeundae-beach-gamcheon-culture-village.md and
+# korea-busan-fireworks-festival-gwangalli-guide.md. Add an entry here (and ship the
+# post) to light up more of the map — see project_landinkorea_operating_baseline_2026_10_22
+# memory for the content-first rollout order.
 BUSAN_DISTRICT_INFO = {
-    'Haeundae-gu': ('Haeundae Beach', 'korea-busan-haeundae-beach-gamcheon-culture-village'),
-    'Saha-gu': ('Gamcheon Culture Village', 'korea-busan-haeundae-beach-gamcheon-culture-village'),
-    'Suyeong-gu': ('Gwangalli Beach', 'korea-busan-fireworks-festival-gwangalli-guide'),
+    'Haeundae-gu': ('Haeundae Beach', 'korea-busan-haeundae-beach-gamcheon-culture-village',
+                     'Haeundae Station, Busan Metro Line 2 — easy walk to the beach.'),
+    'Saha-gu': ('Gamcheon Culture Village', 'korea-busan-haeundae-beach-gamcheon-culture-village',
+                'Toseong Station (Line 1), then village bus 1-1 or 2 (~1,400 won) or a short taxi up the hill.'),
+    'Suyeong-gu': ('Gwangalli Beach', 'korea-busan-fireworks-festival-gwangalli-guide',
+                   'Gwangan Station, Busan Metro Line 2 — a short walk from the sand.'),
 }
 
 
 def busan_district_map(base, available_slugs):
-    parts = []
+    parts, choices, cards = [], [], []
     for district_id, d in BUSAN_DISTRICT_PATHS.items():
         info = BUSAN_DISTRICT_INFO.get(district_id)
         name = district_id.replace('-gu', '').replace('-gun', '')
         if info and info[1] in available_slugs:
-            label, slug = info
+            label, slug, transit = info
             parts.append(
-                f'<a class="busan-district is-active" href="{base}/posts/{html.escape(slug, quote=True)}" '
-                f'aria-label="{html.escape(label)} ({html.escape(name)})">'
-                f'<path d="{d}"/><title>{html.escape(label)} — {html.escape(name)}</title></a>'
+                f'<path class="busan-district is-active" data-map-region="{district_id}" tabindex="0" '
+                f'role="button" aria-label="Preview {html.escape(label)}" d="{d}">'
+                f'<title>{html.escape(label)} — {html.escape(name)}</title></path>'
+            )
+            choices.append(
+                f'<button type="button" class="busan-preview-btn" data-preview-region="{district_id}" '
+                f'aria-pressed="false">{html.escape(label)}</button>'
+            )
+            cards.append(
+                f'<article class="busan-preview-card" data-preview-card="{district_id}">'
+                f'<h3>{html.escape(label)}</h3><p class="busan-transit">🚇 {html.escape(transit)}</p>'
+                f'<a class="busan-cta" href="{base}/posts/{html.escape(slug, quote=True)}">View guide <span aria-hidden="true">→</span></a>'
+                '</article>'
             )
         else:
             parts.append(
@@ -502,11 +518,16 @@ def busan_district_map(base, available_slugs):
                 f'<title>{html.escape(name)} — guide coming soon</title></path>'
             )
     return (
-        '<div class="busan-map"><p class="map-title">Explore Busan by district</p>'
-        '<svg viewBox="-5.5 4.5 600 450" role="img" aria-label="Map of Busan\'s districts, '
-        'with districts that have a published guide highlighted">'
+        '<div class="busan-map busan-explorer"><p class="map-title">Explore Busan by district</p>'
+        '<p class="map-intro">Busan Metro takes the same T-money card as Seoul, on its own fare table — '
+        'base fare around 1,600 won on a transit card '
+        '(<a href="https://work.humetro.busan.kr" rel="noopener">Busan Transportation Corporation</a>).</p>'
+        '<svg viewBox="-5.5 4.5 600 450" role="group" aria-label="Map of Busan\'s districts — select a '
+        'highlighted district to preview it">'
         + ''.join(parts) +
-        '</svg><p class="map-note">Highlighted districts have a guide — the rest are shown for '
+        '</svg><div class="busan-preview-choices" hidden>'+''.join(choices)+'</div>'
+        '<div class="busan-preview-cards">'+''.join(cards)+'</div>'
+        '<p class="map-note">Highlighted districts have a guide — the rest are shown for '
         'orientation while more are written.</p>'
         '<small class="map-credit">Map: <a href="https://commons.wikimedia.org/wiki/File:Busan_districts.svg" '
         'rel="noopener">Wikimedia Commons</a> (CC BY-SA 3.0, Kurykh)</small></div>'
@@ -751,6 +772,25 @@ def write_discovery(cfg,base,posts):
     explorer.classList.add('is-enhanced');
     select('busan');
   }
+  const busanExplorer = document.querySelector('.busan-explorer');
+  if (busanExplorer) {
+    const cards = [...busanExplorer.querySelectorAll('[data-preview-card]')];
+    const districts = [...busanExplorer.querySelectorAll('[data-map-region]')];
+    const buttons = [...busanExplorer.querySelectorAll('[data-preview-region]')];
+    const select = region => {
+      if (!cards.some(card => card.dataset.previewCard === region)) return;
+      cards.forEach(card => { card.hidden = card.dataset.previewCard !== region; });
+      districts.forEach(d => { d.classList.toggle('is-selected', d.dataset.mapRegion === region); });
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.previewRegion === region)));
+    };
+    buttons.forEach(button => button.addEventListener('click', () => select(button.dataset.previewRegion)));
+    districts.forEach(d => d.addEventListener('click', () => select(d.dataset.mapRegion)));
+    districts.forEach(d => d.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(d.dataset.mapRegion); }
+    }));
+    busanExplorer.querySelector('.busan-preview-choices').hidden = false;
+    if (districts.length) select(districts[0].dataset.mapRegion);
+  }
   const homeForm = document.getElementById('home-guide-search-form');
   if (homeForm) homeForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -941,11 +981,22 @@ main.page:has(.travel-home){max-width:1240px;padding:28px 28px 48px}
 .map-credit{display:block;font-size:11px;color:#526651;margin-top:10px}.map-credit a{text-decoration:underline;text-underline-offset:2px}
 .busan-map{background:#f1f3ee;border:1px solid #e0e5dc;border-radius:8px;padding:22px 24px 16px;margin-top:20px}
 .busan-map svg{width:100%;height:auto;max-height:420px;display:block;margin:12px auto}
+.map-intro{font-size:13px;line-height:1.6;color:#526651;margin:4px 0 0}
 .busan-district{fill:#dce5d4;stroke:#fff;stroke-width:1.2;transition:fill .2s ease}
 .busan-district.is-active{fill:#306e80;cursor:pointer}
-a.busan-district{display:inline}
-a.busan-district:hover .busan-district,a.busan-district:hover path,a.busan-district:focus-visible path{fill:#24536a}
-a.busan-district:focus-visible{outline:none}a.busan-district:focus-visible path{stroke:#263c32;stroke-width:2}
+.busan-district.is-active:hover,.busan-district.is-active:focus-visible{fill:#24536a}
+.busan-district.is-active.is-selected{fill:#1b4256}
+.busan-district.is-active:focus-visible{outline:none;stroke:#263c32;stroke-width:2}
+.busan-preview-choices{display:flex;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:14px 0 0}
+.busan-preview-choices button{font:600 13px/1.5 var(--font-body);cursor:pointer;min-height:40px;padding:8px 2px 10px;background:transparent;border:0;border-bottom:2px solid transparent;color:#727a72;margin-bottom:-1px;transition:color .18s ease,border-color .18s ease}
+.busan-preview-choices button:hover{color:#253b37}
+.busan-preview-choices button[aria-pressed=true]{border-bottom-color:#253b37;color:#253b37}
+.busan-preview-card{margin-top:16px}
+.busan-preview-card+.busan-preview-card{border-top:1px solid var(--line);padding-top:16px}
+.busan-preview-card h3{font-size:18px;margin:0 0 6px}
+.busan-transit{font-size:13px;color:#526651;margin:0}
+.busan-cta{display:inline-flex;align-items:center;gap:8px;min-height:40px;background:#253b37;border-radius:3px;font-size:13px;font-weight:600;margin-top:10px;padding:9px 15px;color:#fff;transition:background .18s ease}
+.busan-cta:hover{background:#3c584d;text-decoration:none}
 @media(prefers-reduced-motion:no-preference){
  .destination-explorer.is-enhanced .place-card:not([hidden]){animation:destination-reveal .32s ease-out both}
  .destination-pin.is-activating .pin-wave{animation:atlas-pin-wave .6s ease-out both}
