@@ -68,11 +68,11 @@
     explorer.classList.add('is-enhanced');
     select('busan');
   }
-  const busanExplorer = document.querySelector('.busan-explorer');
-  if (busanExplorer) {
-    const cards = [...busanExplorer.querySelectorAll('[data-preview-card]')];
-    const districts = [...busanExplorer.querySelectorAll('[data-map-region]')];
-    const buttons = [...busanExplorer.querySelectorAll('[data-preview-region]')];
+  const regionExplorer = document.querySelector('.region-explorer');
+  if (regionExplorer) {
+    const cards = [...regionExplorer.querySelectorAll('[data-preview-card]')];
+    const districts = [...regionExplorer.querySelectorAll('[data-map-region]')];
+    const buttons = [...regionExplorer.querySelectorAll('[data-preview-region]')];
     const select = region => {
       if (!cards.some(card => card.dataset.previewCard === region)) return;
       cards.forEach(card => { card.hidden = card.dataset.previewCard !== region; });
@@ -84,7 +84,7 @@
     districts.forEach(d => d.addEventListener('keydown', event => {
       if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(d.dataset.mapRegion); }
     }));
-    busanExplorer.querySelector('.busan-preview-choices').hidden = false;
+    regionExplorer.querySelector('.region-preview-choices').hidden = false;
     if (districts.length) select(districts[0].dataset.mapRegion);
   }
   const homeForm = document.getElementById('home-guide-search-form');

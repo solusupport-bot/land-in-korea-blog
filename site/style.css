@@ -222,24 +222,26 @@ main.page:has(.travel-home){max-width:1240px;padding:28px 28px 48px}
 .atlas-footer{border-top:1px solid #d9e0d5;padding-top:12px;display:flex;align-items:center;justify-content:space-between;color:#637565}
 .map-note{font-size:13px;line-height:1.6;color:#526651;margin:0}
 .map-credit{display:block;font-size:11px;color:#526651;margin-top:10px}.map-credit a{text-decoration:underline;text-underline-offset:2px}
-.busan-map{background:#f1f3ee;border:1px solid #e0e5dc;border-radius:8px;padding:22px 24px 16px;margin-top:20px}
-.busan-map svg{width:100%;height:auto;max-height:420px;display:block;margin:12px auto}
+.region-map{background:#f1f3ee;border:1px solid #e0e5dc;border-radius:8px;padding:22px 24px 16px;margin-top:20px}
+.region-map svg{width:100%;height:auto;max-height:420px;display:block;margin:12px auto}
 .map-intro{font-size:13px;line-height:1.6;color:#526651;margin:4px 0 0}
-.busan-district{fill:#dce5d4;stroke:#fff;stroke-width:1.2;transition:fill .2s ease}
-.busan-district.is-active{fill:#306e80;cursor:pointer}
-.busan-district.is-active:hover,.busan-district.is-active:focus-visible{fill:#24536a}
-.busan-district.is-active.is-selected{fill:#1b4256}
-.busan-district.is-active:focus-visible{outline:none;stroke:#263c32;stroke-width:2}
-.busan-preview-choices{display:flex;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:14px 0 0}
-.busan-preview-choices button{font:600 13px/1.5 var(--font-body);cursor:pointer;min-height:40px;padding:8px 2px 10px;background:transparent;border:0;border-bottom:2px solid transparent;color:#727a72;margin-bottom:-1px;transition:color .18s ease,border-color .18s ease}
-.busan-preview-choices button:hover{color:#253b37}
-.busan-preview-choices button[aria-pressed=true]{border-bottom-color:#253b37;color:#253b37}
-.busan-preview-card{margin-top:16px}
-.busan-preview-card+.busan-preview-card{border-top:1px solid var(--line);padding-top:16px}
-.busan-preview-card h3{font-size:18px;margin:0 0 6px}
-.busan-transit{font-size:13px;color:#526651;margin:0}
-.busan-cta{display:inline-flex;align-items:center;gap:8px;min-height:40px;background:#253b37;border-radius:3px;font-size:13px;font-weight:600;margin-top:10px;padding:9px 15px;color:#fff;transition:background .18s ease}
-.busan-cta:hover{background:#3c584d;text-decoration:none}
+.region-district{fill:#dce5d4;stroke:#fff;stroke-width:1.2;transition:fill .2s ease}
+.region-district.is-active{fill:#306e80;cursor:pointer}
+.region-district.is-active:hover,.region-district.is-active:focus-visible{fill:#24536a}
+.region-district.is-active.is-selected{fill:#1b4256}
+.region-district.is-active:focus-visible{outline:none;stroke:#263c32;stroke-width:2}
+.region-preview-choices{display:flex;gap:20px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:14px 0 0}
+.region-preview-choices button{font:600 13px/1.5 var(--font-body);cursor:pointer;min-height:40px;padding:8px 2px 10px;background:transparent;border:0;border-bottom:2px solid transparent;color:#727a72;margin-bottom:-1px;transition:color .18s ease,border-color .18s ease}
+.region-preview-choices button:hover{color:#253b37}
+.region-preview-choices button[aria-pressed=true]{border-bottom-color:#253b37;color:#253b37}
+.region-preview-card{margin-top:16px}
+.region-preview-card+.region-preview-card{border-top:1px solid var(--line);padding-top:16px}
+.region-preview-card h3{font-size:18px;margin:0 0 6px;color:#526651;font-weight:600}
+.region-place+.region-place{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.region-place h4{font-size:17px;margin:0 0 4px}
+.region-transit{font-size:13px;color:#526651;margin:0}
+.region-cta{display:inline-flex;align-items:center;gap:8px;min-height:40px;background:#253b37;border-radius:3px;font-size:13px;font-weight:600;margin-top:10px;padding:9px 15px;color:#fff;transition:background .18s ease}
+.region-cta:hover{background:#3c584d;text-decoration:none}
 @media(prefers-reduced-motion:no-preference){
  .destination-explorer.is-enhanced .place-card:not([hidden]){animation:destination-reveal .32s ease-out both}
  .destination-pin.is-activating .pin-wave{animation:atlas-pin-wave .6s ease-out both}
