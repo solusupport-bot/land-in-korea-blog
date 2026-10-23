@@ -5,6 +5,7 @@ category: Etiquette & mistakes
 description: Korean karaoke isn't a bar stage — it's a private room you rent by the hour. Here's exactly how noraebang pricing, booking, and etiquette actually work.
 slug: korea-noraebang-etiquette-how-korean-karaoke-actually-works-for-first-timers
 image_query: Korea noraebang karaoke room microphone neon lights
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-noraebang-etiquette-how-korean-karaoke-actually-works-for-first-timers-1792729805060.jpg
 ---
 Ask a Korean friend where to go after dinner and "noraebang" comes up constantly — but the word alone doesn't explain what you're walking into. Unlike Western karaoke bars where you sign up and sing in front of a room full of strangers, a noraebang (노래방, literally "song room") is a private rental room just for your group. Understanding that one distinction clears up almost every point of confusion first-timers have.
 

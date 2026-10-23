@@ -4,7 +4,8 @@ date: 2026-09-23
 category: Practical info
 description: Korea's cafe culture is huge, but the unspoken rules for working for hours vary sharply between franchise chains, independent cafes and dedicated study cafes.
 slug: korea-cafes-as-workspaces-in-korea-unspoken-rules-of-study-cafes-franchise-chains-and-no-laptop-signs
-image_query: Cafes as workspaces in Korea: unspoken rules of study cafes, franchise chains, and 'no-laptop' signs travel
+image_query: Korean cafe interior people working on laptops Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-cafes-as-workspaces-in-korea-unspoken-rules-of-study-cafes-franchise-chains-and-no-laptop-signs-1792730004498.jpg
 ---
 ## What matters here
 

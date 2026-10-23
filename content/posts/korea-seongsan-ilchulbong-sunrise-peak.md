@@ -6,6 +6,7 @@ topic: things-to-do
 description: Seongsan Ilchulbong formed underwater and was once its own island before sediment connected it to Jeju. Here's the UNESCO status, the climb, and admission.
 slug: korea-seongsan-ilchulbong-sunrise-peak
 image_query: Seongsan Ilchulbong sunrise peak Jeju volcanic crater
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-seongsan-ilchulbong-sunrise-peak-1792729826508.jpg
 ---
 ## It used to be a separate island
 

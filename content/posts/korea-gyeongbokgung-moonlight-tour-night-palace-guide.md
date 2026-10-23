@@ -5,6 +5,7 @@ category: Practical info
 description: Gyeongbokgung's ticketed night tour runs through October 24, with a foreigner-only booking window the final weekend. Schedule, price, subway routes, and nearby stays.
 slug: korea-gyeongbokgung-moonlight-tour-night-palace-guide
 image_query: Gyeongbokgung Palace night illuminated autumn Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-gyeongbokgung-moonlight-tour-night-palace-guide-1792729782813.jpg
 ---
 
 Most visitors see Gyeongbokgung Palace in the middle of a bright, crowded afternoon. For a few weeks each autumn, the palace also opens after dark for a ticketed night program, and the experience is a completely different one — empty courtyards, lit-up rooflines, and none of the daytime tour-group noise.

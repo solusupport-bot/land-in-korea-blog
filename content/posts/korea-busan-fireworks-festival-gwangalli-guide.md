@@ -5,6 +5,7 @@ category: Practical info
 description: The 21st Busan Fireworks Festival lights up Gwangalli Beach on November 7, 2026. Here's how to get there from four major hubs, where to eat, and where to stay.
 slug: korea-busan-fireworks-festival-gwangalli-guide
 image_query: Busan fireworks festival Gwangalli beach night Gwangan bridge
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-busan-fireworks-festival-gwangalli-guide-1792729774948.jpg
 ---
 
 Once a year, Gwangalli Beach becomes the single most crowded stretch of sand in Korea. The Busan Fireworks Festival is one of the country's largest fireworks displays, set against the lit-up Gwangan Bridge, and it draws well over a million people to a beach that's normally a quiet place for coffee and a sunset walk.

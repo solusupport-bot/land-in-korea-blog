@@ -622,22 +622,25 @@ def destination_map(base):
                     f'<circle class="pin-dot" cx="{x}" cy="{y}" r="5"/>'
                     f'<text class="pin-name" x="{x+33}" y="{y+7}">{label}</text>'
                     '</a>')
-    dokdo = ('<g class="map-island" role="img" aria-label="Ulleungdo, east of the Korean peninsula">'
-             '<circle cx="397" cy="134" r="5"/><text x="391" y="113" text-anchor="middle">Ulleungdo</text></g>'
+    dokdo = ('<a class="map-island dokdo-marker" href="{base}/posts/korea-ulleungdo-island-guide" aria-label="Ulleungdo: view guide">'
+             '<circle class="island-touch" cx="397" cy="134" r="30"/>'
+             '<circle cx="397" cy="134" r="5"/><text x="391" y="113" text-anchor="middle">Ulleungdo</text></a>'
              '<a class="map-island dokdo-marker" href="#dokdo-note" data-island-note aria-label="Dokdo: view island information">'
              '<circle class="island-touch" cx="467" cy="156" r="38"/>'
              '<circle class="island-wave" cx="467" cy="156" r="13"/>'
              '<circle cx="464" cy="155" r="3.5"/><circle cx="470" cy="158" r="3"/>'
              '<text x="467" y="185" text-anchor="middle">Dokdo</text>'
-             '<text class="island-korean" x="467" y="204" text-anchor="middle">독도</text></a>')
+             '<text x="467" y="204" text-anchor="middle" class="island-korean">독도</text></a>').format(base=base)
     return ('<div class="korea-map"><div class="atlas-heading"><p class="map-title">Choose a destination</p></div>'
             '<svg viewBox="0 0 540 510" role="group" aria-labelledby="korea-map-title korea-map-desc">'
             '<title id="korea-map-title">Explore South Korea</title>'
-            '<desc id="korea-map-desc">Select Seoul, Busan or Jeju to preview a destination. Follow the View guide link to read its travel information. Ulleungdo and Dokdo are marked in the East Sea; small island markers are enlarged for visibility.</desc>'
+            '<desc id="korea-map-desc">Select Seoul, Busan or Jeju to preview a destination. Follow the View guide link to read its travel information. Ulleungdo and Dokdo are marked in the East Sea and link to their own guides; small island markers are enlarged for visibility.</desc>'
             '<path class="korea-coast-shadow" d="'+KOREA_MAP_PATH+'" transform="translate(0 4)" aria-hidden="true"/>'
             '<path class="korea-land" d="'+KOREA_MAP_PATH+'" aria-hidden="true"/>'
             +''.join(pins)+dokdo+'</svg><div class="atlas-footer"><p class="map-note">Select a place, then open its guide.</p></div>'
-            '<details id="dokdo-note" class="island-note"><summary>Dokdo · 독도</summary><p>Islands east of Ulleungdo, in the East Sea.</p><a href="https://www.dokdo.re.kr/home/cms/cmsCont.do?cntnts_sn=63" rel="noopener" target="_blank">Official island information ↗</a></details>'
+            f'<details id="dokdo-note" class="island-note"><summary>Dokdo · 독도</summary><p>Islands east of Ulleungdo, in the East Sea.</p>'
+            f'<a href="{base}/posts/korea-dokdo-islets-visitor-guide">Read our Dokdo visitor guide <span aria-hidden="true">→</span></a> '
+            '<a href="https://www.dokdo.re.kr/home/cms/cmsCont.do?cntnts_sn=63" rel="noopener" target="_blank">Official island information ↗</a></details>'
             '<small class="map-credit">Map: <a href="https://www.naturalearthdata.com/" rel="noopener">Natural Earth</a></small></div>')
 
 

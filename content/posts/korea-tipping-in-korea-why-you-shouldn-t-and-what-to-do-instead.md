@@ -5,6 +5,7 @@ category: Practical info
 description: Tipping isn't expected in Korea and can even confuse restaurant staff. Here's why the custom never took hold, the rare exceptions, and what to do instead.
 slug: korea-tipping-in-korea-why-you-shouldn-t-and-what-to-do-instead
 image_query: Korea restaurant payment counter service culture Seoul
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-tipping-in-korea-why-you-shouldn-t-and-what-to-do-instead-1792729847819.jpg
 ---
 Travelers from tipping-heavy countries land in Korea and immediately face an instinct problem: the urge to leave extra cash after a meal, a haircut, or a taxi ride. In Korea, that instinct is not just unnecessary — it can genuinely confuse or mildly embarrass the person you're trying to thank.
 
