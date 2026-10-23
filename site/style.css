@@ -1,8 +1,8 @@
 :root{
-  --fg:#221f1a;--muted:#7a7264;--bg:#f4efe3;--soft:#ece4d3;--card:#faf7ef;
-  --gold:#b8923f;--red:#a63a35;--blue:#274b6d;--green:#3f6b45;--line:#ddd2ba;
-  --font-display:'Nanum Myeongjo',Georgia,'Times New Roman',serif;
-  --font-body:'Inter',-apple-system,'Segoe UI',sans-serif
+  --fg:#211f1a;--muted:#6d6a60;--bg:#faf6ec;--soft:#f1e9d8;--card:#ffffff;
+  --gold:#1f7a5c;--red:#d9603a;--blue:#1f7a5c;--green:#1f7a5c;--line:#e3dac2;
+  --font-display:'Manrope',Arial,'Helvetica Neue',sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--font-body);color:var(--fg);background:var(--bg);line-height:1.75}
@@ -72,7 +72,7 @@ code{background:var(--soft);border:1px solid var(--line);border-radius:4px;paddi
 .site-footer a{color:var(--muted)}
 
 /* Shared editorial typography and collection layouts. */
-:root{--fg:#202321;--muted:#666b66;--bg:#fff;--card:#fff;--soft:#f5f2ea;--blue:#202321;--red:#a84132;--gold:#b8923f;--line:#dedfd9;--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--font-display:Georgia,'Times New Roman',serif}
+:root{--fg:#211f1a;--muted:#6d6a60;--bg:#faf6ec;--card:#fff;--soft:#f1e9d8;--blue:#1f7a5c;--red:#d9603a;--gold:#1f7a5c;--line:#e3dac2;--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--font-display:'Manrope',Arial,'Helvetica Neue',sans-serif}
 [hidden]{display:none!important}
 html{scroll-padding-top:20px}
 body{font-family:var(--font-body);line-height:1.6;background:#fff;font-size:15px}
@@ -101,7 +101,7 @@ input:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-o
 .site-footer{background:var(--soft);border-top:0;text-align:left;padding:24px max(20px,calc((100vw - 1120px)/2)) 32px;font-size:12px;line-height:18px;margin-top:0}.site-footer p{max-width:1120px;margin:0 0 12px}.site-footer a{color:var(--muted)}
 .collection-intro{max-width:750px;margin:28px 0}.collection-intro h1{font-size:32px;line-height:42px;margin:0 0 16px}.collection-intro p{color:var(--muted)}.collection-count{font-size:13px}.eyebrow{font-size:12px;font-weight:500;color:var(--red);letter-spacing:0}
 .topic-pills{display:flex;flex-wrap:wrap;gap:8px 20px;margin:24px 0}.topic-pills a{margin:0;font-size:13px;padding:6px 0;border-bottom:1px solid transparent}.topic-pills a[aria-current=page]{border-color:var(--red);color:var(--red)}
-.guide-search{margin:24px 0;padding:20px;background:var(--soft)}.guide-search label{display:block;font-size:13px;margin-bottom:8px}.search-row{display:flex;gap:8px}.search-row input{flex:1;min-width:0;border:1px solid var(--line);background:white;color:var(--fg);padding:12px;font:inherit;border-radius:0}.search-row button{border:1px solid var(--fg);background:var(--fg);color:white;padding:10px 16px;font:inherit;cursor:pointer}.guide-search p{font-size:12px;color:var(--muted);margin:8px 0 0}
+.guide-search{margin:24px 0;padding:20px;background:var(--soft)}.guide-search label{display:block;font-size:13px;margin-bottom:8px}.search-row{display:flex;gap:8px}.search-row input{flex:1;min-width:0;border:1px solid var(--line);background:white;color:var(--fg);padding:12px 18px;font:inherit;border-radius:999px}.search-row button{border:1px solid var(--fg);background:var(--fg);color:white;padding:10px 16px;font:inherit;cursor:pointer;border-radius:999px}.guide-search p{font-size:12px;color:var(--muted);margin:8px 0 0}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px;margin-top:24px}.card{display:flex;flex-direction:column;min-width:0;background:white;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;transition:none}.card:hover{transform:none;box-shadow:none;text-decoration:none}.card:hover h2{text-decoration:underline}
 .card-thumb{width:100%;height:220px;object-fit:contain;aspect-ratio:auto}.card-placeholder{display:flex;flex-direction:column;justify-content:space-between;height:220px;padding:24px;background:var(--soft);color:var(--muted)}.card-placeholder span{font-size:12px}.card-placeholder b{font-size:18px;line-height:26px;max-width:90%}
 .card-copy{display:flex;flex-direction:column;flex:1;padding:20px 0}.card-topic{font-size:12px;text-transform:uppercase;color:var(--red)}.card .card-copy h2{font-size:18px;line-height:26px;margin:8px 0;padding:0}.card .card-copy p{font-size:14px;line-height:23px;padding:0;margin:0 0 16px;color:var(--muted)}.card .card-copy .date{font-size:12px;padding:0;margin-top:auto}
@@ -170,8 +170,8 @@ main.page:has(.travel-home){max-width:1240px;padding:28px 28px 48px}
 .site-header nav a{font-size:13px;letter-spacing:.1px}
 .home-search button{background:#253b37;transition:background .18s ease}
 .home-search button:hover{background:#3c584d}.home-search button:active{background:#1b2d27}
-.search-row button{background:#253b37;border-color:#253b37;border-radius:3px;font-size:13px;font-weight:600;transition:background .18s ease}
-.search-row button:hover{background:#3c584d}
+.search-row button{background:var(--blue);border-color:var(--blue);border-radius:999px;font-size:13px;font-weight:600;transition:background .18s ease}
+.search-row button:hover{background:#2e9476}
 .section-heading>a{border-bottom:1px solid #c8d2c9;padding-bottom:6px;font-weight:500}
 .section-heading>a:hover{border-color:#253b37;color:#253b37;text-decoration:none}
 .section-heading>a>span{display:inline-block;transition:transform .2s ease}
@@ -188,9 +188,9 @@ main.page:has(.travel-home){max-width:1240px;padding:28px 28px 48px}
 .destination-choices button:hover{color:#253b37}
 .destination-choices button[aria-pressed=true]{background:transparent;border-bottom-color:#253b37;color:#253b37}
 .destination-choices button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
-.destination-cta{display:inline-flex;align-items:center;gap:32px;min-height:44px;background:#253b37;border:1px solid #253b37;border-radius:3px;font-size:13px;font-weight:600;margin-top:20px;padding:10px 17px;color:#fff;transition:background .18s ease}
-.destination-cta>span{transition:transform .2s ease}.place-card:hover .destination-cta{background:#3c584d;border-color:#3c584d}.place-card:hover .destination-cta>span{transform:translateX(3px)}
-.place-card:active .destination-cta{background:#1b2d27}
+.destination-cta{display:inline-flex;align-items:center;gap:32px;min-height:44px;background:var(--blue);border:1px solid var(--blue);border-radius:999px;font-size:13px;font-weight:600;margin-top:20px;padding:10px 20px;color:#fff;transition:background .18s ease}
+.destination-cta>span{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.22);transition:transform .2s ease}.place-card:hover .destination-cta{background:#2e9476;border-color:#2e9476}.place-card:hover .destination-cta>span{transform:translateX(3px)}
+.place-card:active .destination-cta{background:#155c44}
 .korea-map{background:#f1f3ee;border:1px solid #e0e5dc;border-radius:8px;padding:26px 28px 16px;text-align:start;box-shadow:0 8px 24px #26392d05}
 .atlas-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #d9e0d5;padding-bottom:18px}
 .map-eyebrow{font-size:9px;letter-spacing:2.1px;font-weight:700;color:#637565;margin:0 0 8px}
@@ -293,7 +293,7 @@ main :is(p,li){text-wrap:pretty;word-break:normal;overflow-wrap:break-word}
 .post :is(ul,ol){padding-inline-start:1.5em}.post li+li{margin-top:.45em}
 .reviewed-photo figcaption{max-width:72ch;text-align:start;overflow-wrap:anywhere}
 /* Plain editorial hierarchy: real photographs and useful labels carry the page. */
-:root{--font-display:Arial,'Helvetica Neue',sans-serif;--fg:#202824;--muted:#58625b;--line:#dfe3df;--red:#32624e;--soft:#f6f7f4}
+:root{--font-display:'Manrope',Arial,'Helvetica Neue',sans-serif;--fg:#211f1a;--muted:#6d6a60;--line:#e3dac2;--red:#d9603a;--soft:#f1e9d8}
 .guide-heading{align-items:flex-end;margin:10px 0 26px}.guide-heading h1{font:600 44px/1.08 var(--font-display);letter-spacing:-1.6px;max-width:16ch;margin-bottom:12px}
 .guide-heading p{font-size:16px;line-height:1.6}.guide-heading .editorial-location{font-size:12px;color:#677269;margin-top:8px}
 .lead-story,.lead-story:hover{border-radius:0;background:white;color:var(--fg)}
@@ -312,7 +312,7 @@ main :is(p,li){text-wrap:pretty;word-break:normal;overflow-wrap:break-word}
 .map-title{font:600 20px/1.3 var(--font-display);letter-spacing:-.4px}.atlas-heading{border:0;padding-bottom:4px}
 .korea-land{fill:#e2e8df;stroke:#9bad9d}.korea-coast-shadow{display:none}
 .destination-pin .pin-name{font:600 24px var(--font-body)}.pin-label{stroke:none}.atlas-footer{border-top:1px solid var(--line)}
-.destination-cta{border-radius:0;font-size:14px;min-height:46px;padding:11px 18px;margin-top:18px}
+.destination-cta{font-size:14px;min-height:46px;padding:11px 20px;margin-top:18px}
 .place-card>img,.interest-story img{border-radius:0}.place-card:hover,.interest-story:hover,.recent-story:hover{transform:none}
 .place-card:hover h3{text-decoration:none}.destination-cta:hover{background:#3c584d}
 @media(max-width:760px){.guide-heading h1{font-size:36px;max-width:none}.guide-heading p{font-size:15px}.season-panel{padding:20px 0 0}.travel-section{margin-top:38px}.section-heading h2{font-size:26px}.interest-story p{font-size:13px}.lead-caption{padding:16px 0 0;background:white}.lead-caption h2{font-size:26px;color:var(--fg)}.korea-map{padding:20px 16px}.prep-grid{gap:0 24px}}
