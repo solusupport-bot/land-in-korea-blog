@@ -1496,9 +1496,17 @@ def build():
                 ]
             })
         article_jsonld = jsonld_data(graph)
+        # raw.githubusercontent.com has been unreliable for this repo (confirmed
+        # 2026-10-23: the GitHub Contents API reports a file that raw.githubusercontent.com
+        # 404s even on a fresh, cache-busted request) — og:image needs to resolve for link
+        # previews, so point it at the same mirrored /media/images/ path the on-page
+        # thumbnail already uses instead of hotlinking GitHub directly.
+        og_image = p.get("image", "").replace(
+            "https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/",
+            base + "/media/images/")
         out = page(cfg, base, p["title"], p["description"], article,
                    f'{base}/posts/{p["slug"]}.html', is_post=True, og_type="article",
-                   image=p.get("image"), published=p["date"], jsonld=article_jsonld)
+                   image=og_image, published=p["date"], jsonld=article_jsonld)
         with open(os.path.join(POSTS_OUT, f'{p["slug"]}.html'), "w", encoding="utf-8") as f:
             f.write(out)
 
