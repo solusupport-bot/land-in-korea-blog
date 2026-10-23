@@ -1303,13 +1303,21 @@ def photo_review():
 
 
 def apply_photo_review(meta, cfg):
+    # Two tiers: "approved" is the hand-curated tier (real capture date, full
+    # provenance, credited on photo-credits.html) and wins outright. Anything else
+    # just keeps whatever image: fetch_images.py already wrote — that pipeline already
+    # enforces a Korea+subject match via vision check before it writes the field, so an
+    # unreviewed-but-confirmed Pexels photo is the second, lower tier, not nothing.
+    # Only "withheld" (a specific editorial call, not merely "not yet hand-reviewed")
+    # blanks it. 2026-10-23 user decision after hand-curation alone couldn't cover
+    # everyday-life topics (no recent/Korea-specific/CC source exists for most of them).
     review = photo_review()
     slug = meta["slug"]
     approved = review["approved"].get(slug)
     if approved:
         meta["image"] = cfg["base_url"].rstrip("/") + approved["image"]
         meta["_photo"] = approved
-    elif slug in review["withheld"] or meta.get("image", "").replace("https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/", cfg["base_url"].rstrip("/") + "/media/images/") != review["legacy_visual_review"].get(slug):
+    elif slug in review["withheld"]:
         meta["image"] = ""
 
 
