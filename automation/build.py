@@ -743,8 +743,8 @@ def discovery_home(cfg, base, posts):
 
     topic_links = ''.join(f'<a href="{base}/topics/{key}">{html.escape(label)}</a>'
                           for key, (label, _) in TOPICS.items() if any(p['_topic'] == key for p in posts))
-    newest = ''.join(f'<a class="recent-story" href="{url(p["slug"])}"><span>{html.escape(p["_topic_label"])}</span>'
-                     f'<h3>{html.escape(p["title"])}</h3><time datetime="{html.escape(p["date"], quote=True)}">{html.escape(p["date"])}</time></a>'
+    newest = ''.join(f'<a class="recent-story" href="{url(p["slug"])}">{photo(p["slug"], sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1240px) 30vw, 360px")}<div class="recent-story-copy"><span>{html.escape(p["_topic_label"])}</span>'
+                     f'<h3>{html.escape(p["title"])}</h3><time datetime="{html.escape(p["date"], quote=True)}">{html.escape(p["date"])}</time></div></a>'
                      for p in posts[:3])
     search = (f'<form id="home-guide-search-form" class="home-search" role="search" action="{base}/guides">'
               '<label class="sr-only" for="home-guide-search">Search Korea travel guides</label>'
@@ -759,12 +759,22 @@ def discovery_home(cfg, base, posts):
             ('Will my card work in Korea?', 'korea-currency-card-payments'),
             ('Where can I leave my luggage?', 'korea-luggage-storage-forwarding-services'),
         ] if slug in lookup)
+    hero_photo = photo('korea-gyeongbokgung-palace', eager=True, sizes="100vw")
+    home_hero = (f'<section class="home-hero">{hero_photo}<div class="home-hero-scrim"></div>'
+                 '<div class="home-hero-copy"><h1>Plan a trip to Korea</h1>'
+                 '<p>Transport, places to visit and the practical details.</p>'
+                 '<p class="editorial-location">Based in Busan · Guides to Seoul, Busan and Jeju</p>'
+                 f'{search}</div></section>')
+    essentials_intro = (f'<div class="essentials-intro">{photo("korea-gyeongbokgung-palace", sizes="(max-width: 760px) calc(100vw - 40px), 280px")}'
+                         '<div class="essentials-intro-copy"><p class="eyebrow">Before you land</p>'
+                         '<h3>Travel essentials</h3><p>The six things worth sorting out before your trip, not after.</p>'
+                         f'<a href="#plan-your-trip">See the essentials <span aria-hidden="true">→</span></a></div></div>')
     return (
         '<div class="travel-home">'
-        f'<section class="guide-heading"><div><h1>Plan a trip to Korea</h1><p>Transport, places to visit and the practical details.</p><p class="editorial-location">Based in Busan · Guides to Seoul, Busan and Jeju</p></div>{search}</section>'
+        f'{home_hero}'
         f'<nav class="quick-answers" aria-label="Common Korea travel questions"><p>Need a quick answer?</p><div>{quick_answers}</div></nav>'
         f'<div class="travel-lead">{hero}<aside class="season-panel" aria-labelledby="season-title"><h2 id="season-title">Seasonal travel</h2>{season}<a class="season-start" href="#plan-your-trip">First visit? Start with the essentials <span aria-hidden="true">→</span></a></aside></div>'
-        f'<section id="plan-your-trip" class="travel-section preparation"><div class="section-heading"><div><h2>Plan your first trip</h2><p>Six useful starting points, before you land.</p></div></div><div class="prep-grid">{preparation}</div></section>'
+        f'<section id="plan-your-trip" class="travel-section preparation"><div class="section-heading"><div><h2>Plan your first trip</h2><p>Six useful starting points, before you land.</p></div></div><div class="preparation-layout">{essentials_intro}<div class="prep-grid">{preparation}</div></div></section>'
         f'<section id="destinations" class="travel-section"><div class="section-heading"><div><h2>Explore Korea</h2><p>Three places to start. A guide for each.</p></div><a href="{base}/guides">Browse all guides <span aria-hidden="true">→</span></a></div><div class="destination-explorer"><div class="destination-preview"><div class="destination-choices" role="group" aria-label="Preview a destination" hidden><button type="button" data-preview-region="seoul" aria-pressed="false">Seoul</button><button type="button" data-preview-region="busan" aria-pressed="false">Busan</button><button type="button" data-preview-region="jeju" aria-pressed="false">Jeju</button></div><div class="place-grid">{destinations}</div></div>{destination_map(base)}</div></section>'
         f'<section id="interests" class="travel-section"><div class="section-heading"><div><h2>Food, culture and days out</h2></div></div><div class="interest-grid">{interests}</div></section>'
         f'<section class="travel-section"><div class="section-heading"><div><h2>Recent guides</h2></div><a href="{base}/guides">All {len(posts)} guides <span aria-hidden="true">→</span></a></div><div class="recent-grid">{newest}</div></section>'
@@ -911,7 +921,7 @@ DISCOVERY_CSS = """
 :root{--fg:#211f1a;--muted:#6d6a60;--bg:#faf6ec;--card:#fff;--soft:#f1e9d8;--blue:#1f7a5c;--red:#d9603a;--gold:#1f7a5c;--line:#e3dac2;--font-body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--font-display:'Manrope',Arial,'Helvetica Neue',sans-serif}
 [hidden]{display:none!important}
 html{scroll-padding-top:20px}
-body{font-family:var(--font-body);line-height:1.6;background:#fff;font-size:15px}
+body{font-family:var(--font-body);line-height:1.6;background:var(--bg);font-size:15px}
 h1,h2,h3{font-family:var(--font-body);letter-spacing:0}
 a{color:var(--fg)}a:hover{color:var(--red)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -924,7 +934,7 @@ main.page{max-width:1160px;padding:40px 20px 48px}main.post{max-width:800px;padd
 main.page:not(:has(.home-intro,.collection-intro)){max-width:800px}
 .home-intro{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:40px}
 .home-intro h1{font-size:32px;line-height:42px;margin:0 0 8px;font-weight:700}.home-intro p{font-size:15px;line-height:24px;margin:0;color:var(--muted)}
-.home-search{width:350px;flex-shrink:0}.home-search input{width:100%;height:48px;padding:12px 16px;font:inherit;font-size:15px;border:1px solid var(--line);background:white;color:var(--fg);border-radius:0;min-width:0}
+.home-search{width:350px;flex-shrink:0;position:relative}.home-search input{width:100%;height:48px;padding:12px 60px 12px 16px;font:inherit;font-size:15px;border:1px solid var(--line);background:white;color:var(--fg);border-radius:0;min-width:0}
 input:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .home-section{margin-bottom:40px}.home-section>h2{font-size:24px;line-height:32px;margin:0 0 24px;font-weight:700}
 .topic-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 24px}.topic-link{display:block;padding:12px 0 16px}.topic-link:hover{text-decoration:none}.topic-link:hover h3{text-decoration:underline;text-underline-offset:4px}
@@ -989,7 +999,10 @@ main.page:has(.travel-home){max-width:1240px;padding:28px 28px 48px}
 .interest-story h3{font-size:17px;line-height:25px;margin:12px 0 5px}.interest-story p{font-size:12px;color:var(--muted);line-height:20px;margin:0}.interest-story:hover{text-decoration:none}.interest-story:hover h3{text-decoration:underline}
 .route-section{display:grid;grid-template-columns:1fr 2fr;gap:48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0}.route-section>div>p:not(.section-kicker){font-size:14px;line-height:23px;color:var(--muted);margin:12px 0 0;max-width:240px}
 .route-list{display:grid;gap:0}.route-link{display:flex;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}.route-link:first-child{padding-top:0}.route-link:last-child{border-bottom:0;padding-bottom:0}.route-link>span{font-size:12px;color:var(--red)}.route-link>div{flex:1}.route-link h3{font-size:16px;line-height:24px;margin:0 0 4px}.route-link p{font-size:12px;color:var(--muted);margin:0}.route-link>b{font-weight:400}.route-link:hover{text-decoration:none}.route-link:hover h3{text-decoration:underline}
-.recent-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.recent-story{padding-top:16px;border-top:2px solid var(--line);display:flex;flex-direction:column;align-items:start}.recent-story>span{font-size:11px;color:var(--red)}.recent-story h3{font-size:17px;line-height:26px;margin:10px 0 16px}.recent-story time{font-size:11px;color:var(--muted);margin-top:auto}.recent-story:hover{text-decoration:none}.recent-story:hover h3{text-decoration:underline}
+.recent-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.recent-story{border-top:none;display:flex;flex-direction:column;align-items:stretch}.recent-story img{border-radius:10px;object-fit:cover;width:100%;height:230px;display:block}.recent-story-copy{padding-top:16px;border-top:2px solid var(--line);display:flex;flex-direction:column;align-items:start;flex:1}.recent-story>span,.recent-story-copy>span{font-size:11px;color:var(--red)}.recent-story h3{font-size:17px;line-height:26px;margin:10px 0 16px}.recent-story time{font-size:11px;color:var(--muted);margin-top:auto}.recent-story:hover{text-decoration:none}.recent-story:hover h3{text-decoration:underline}
+.home-hero{position:relative;margin:0 0 32px;border-radius:14px;overflow:hidden;min-height:420px;display:flex;align-items:flex-end}.home-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.home-hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,22,.1) 0%,rgba(18,26,20,.74) 100%)}.home-hero-copy{position:relative;color:#fff;padding:48px 40px;max-width:640px}.home-hero-copy h1{font-size:46px;line-height:1.08;margin:0 0 14px;color:#fff;font-family:var(--font-display)}.home-hero-copy p{font-size:16px;color:#f1ede2;margin:0 0 6px}.home-hero-copy .editorial-location{font-size:13px;color:#d8d2c0;margin-bottom:22px}.home-hero-copy .home-search{margin-top:10px;width:100%;max-width:420px}
+.preparation-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:40px;align-items:stretch}.essentials-intro{position:relative;border-radius:12px;overflow:hidden;min-height:320px;display:flex;align-items:center;justify-content:center}.essentials-intro img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.essentials-intro-copy{position:relative;color:#fff;text-align:center;padding:28px;display:flex;flex-direction:column;align-items:center}.essentials-intro-copy::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,22,.35) 0%,rgba(18,26,20,.72) 100%);z-index:-1;margin:-28px}.essentials-intro-copy .eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#d8d2c0;margin:0 0 8px}.essentials-intro-copy h3{font-family:var(--font-display);font-size:26px;margin:0 0 10px;color:#fff}.essentials-intro-copy p{font-size:13px;color:#f1ede2;margin:0 0 18px;max-width:28ch}.essentials-intro-copy a{color:#fff;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:9px 18px}
+@media(max-width:760px){.preparation-layout{grid-template-columns:1fr}.home-hero-copy{padding:28px 22px;max-width:none}.home-hero-copy h1{font-size:32px}.home-hero-copy .home-search{width:100%}.home-hero-copy .search-row{flex-wrap:wrap}.home-hero{min-height:360px}}
 .travel-services{padding:32px;background:#eef2ee;border-top:3px solid #314a40;border-radius:4px}.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.service-link{display:flex;flex-direction:column;align-items:start;min-width:0;border-top:1px solid #cbd4cb;padding-top:18px}.service-link h3{font-size:19px;line-height:26px;margin:0 0 10px}.service-link p{font-size:13px;line-height:22px;color:var(--muted);margin:0 0 20px}.service-link>span{margin-top:auto;font-size:12px;font-weight:700;border-bottom:1px solid #a0b1a4;padding-bottom:4px}.service-link>span>span{padding-left:12px}.service-link:hover{text-decoration:none}.service-link:hover>span{text-decoration:underline;text-underline-offset:4px}
 .topic-directory{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;gap:32px;align-items:baseline}.topic-directory h2{font-size:14px;margin:0;white-space:nowrap}.topic-directory>div{display:flex;gap:8px 22px;flex-wrap:wrap}.topic-directory a{font-size:12px}
 @media(max-width:1000px){.travel-lead{gap:20px;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr)}.season-panel{padding:20px 20px 8px}.season-pick{padding-top:14px;padding-bottom:14px}.lead-caption{left:16px;bottom:16px;padding:14px 16px}.lead-caption h2{font-size:25px}.interest-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.guide-heading .home-search{width:340px}}
