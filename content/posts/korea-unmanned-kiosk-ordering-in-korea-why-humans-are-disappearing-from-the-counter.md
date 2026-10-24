@@ -5,6 +5,7 @@ category: Comparisons
 description: Korean fast food chains now run on self-order kiosks, not cashiers. How to switch them to English, pay with a foreign card, and order without stalling the line.
 slug: korea-unmanned-kiosk-ordering-in-korea-why-humans-are-disappearing-from-the-counter
 image_query: self order kiosk restaurant korea
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-unmanned-kiosk-ordering-in-korea-why-humans-are-disappearing-from-the-counter-1792829116082.jpg
 ---
 Walk into almost any fast food counter, cafe chain, or even some bakeries in Korea today and there's a good chance no one is standing behind the register. A touchscreen kiosk has taken over ordering and payment, and if you've never used one, the first attempt can feel like it's timing itself against the line of people building up behind you. It isn't actually complicated once you know where the three sticking points are: language, menu navigation, and payment.
 

@@ -5,6 +5,7 @@ category: Comparisons
 description: Apple Pay barely works in Korea and Kakao Pay needs a local account. What visitors can actually pay with, and when a plain foreign card beats a phone wallet.
 slug: korea-mobile-payments-in-korea-kakao-pay-naver-pay-and-why-apple-pay-doesn-t-work
 image_query: mobile payment app korea phone
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-mobile-payments-in-korea-kakao-pay-naver-pay-and-why-apple-pay-doesn-t-work-1792827648375.jpg
 ---
 Tourists arriving in Korea with a phone full of working tap-to-pay habits are often surprised that it doesn't carry over. Apple Pay only works with a Korean-issued card at all, Google Pay depends on whether the terminal in front of you actually has an NFC reader, and the two payment apps every local actually uses — Kakao Pay and Naver Pay — are built around a QR/barcode system that assumes a Korean bank account. None of this makes paying in Korea harder, exactly, but it does mean the payment method you default to at home may not be the one that works best here.
 
@@ -29,6 +30,10 @@ Travelers on a longer stay — student exchange, work contract, or extended digi
 Before relying on contactless tap as a backup plan, check two things with your home bank ahead of the trip: whether your card actually has a contactless (tap) chip at all — some older or budget cards still only support insert-and-PIN — and whether your bank flags or blocks a cluster of purchases in a new country as suspected fraud. A quick travel notification through your banking app, or a short call before departure, prevents the single most common "my card stopped working in Korea" complaint, which is usually the bank's own fraud system rather than anything on the Korean side. Carrying two cards from different banks as a backup is a cheap safeguard, since a block on one rarely hits both at the same time.
 
 Chinese visitors specifically should know that WeChat Pay and Alipay are accepted at a meaningful and growing number of stores in tourist-heavy areas like Myeongdong and Hongdae, often advertised with a sticker on the door, which can be more convenient than setting up a Korean-specific wallet for a short trip. For everyone else, the honest summary is: bring a contactless card you've confirmed works internationally, treat Kakao Pay and Naver Pay as something to set up only if you're staying long enough to open a Korean bank account, and don't expect your phone's built-in wallet to be the easy default it is at home.
+
+## Official sources
+
+This guide is checked against [Apple Pay](https://www.apple.com/apple-pay/) (supported Korean issuers) and [Kakao Pay](https://pay.kakao.com). Supported banks and foreign-card top-up features change — confirm current details there before you rely on them.
 
 ## Frequently Asked Questions
 
