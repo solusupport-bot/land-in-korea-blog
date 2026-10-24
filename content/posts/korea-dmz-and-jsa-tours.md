@@ -37,7 +37,7 @@ Before you're taken into the compound, there's a briefing and a liability waiver
 
 ## There's no way in without a registered operator
 
-Neither the DMZ buffer zone nor the JSA can be reached independently or by public transit — both require a registered tour operator. If you're piecing together a Korea itinerary and want to sanity-check what's realistic to book last-minute versus what needs lead time, it's worth reading through general [first-timer etiquette and common mistakes](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html) and checking current [travel advisories](https://landinkorea.com/posts/korea-travel-advisories-safety-notices.html) before locking in a JSA date, since that's the tour with the least flexibility once booked.
+Neither the DMZ buffer zone nor the JSA can be reached independently or by public transit — both require a registered tour operator. [Klook]({{klook}}) lists several vetted DMZ and JSA operators side by side, which makes comparing departure times and what's included easier than hunting through individual operator sites. If you're piecing together a Korea itinerary and want to sanity-check what's realistic to book last-minute versus what needs lead time, it's worth reading through general [first-timer etiquette and common mistakes](https://landinkorea.com/posts/korea-first-timer-etiquette-common-mistakes.html) and checking current [travel advisories](https://landinkorea.com/posts/korea-travel-advisories-safety-notices.html) before locking in a JSA date, since that's the tour with the least flexibility once booked.
 
 ## The short version
 

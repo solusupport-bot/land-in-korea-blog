@@ -26,6 +26,7 @@ If your phone supports eSIM (most modern phones do: iPhone XS and later, most re
 
 **Before you arrive:** Purchase an eSIM plan online from a Korea-specific provider. Popular options:
 - Airalo (Global eSIM provider, has Korea plans)
+- [Klook]({{klook}}) (marketplace for Korea-specific eSIMs, often bundled with attraction discounts)
 - KKday (Hong Kong-based, offers Korea data eSIMs)
 - Local Korean providers (SK Telecom, KT, LG U+) sometimes have international eSIM options
 

@@ -61,6 +61,8 @@ The most straightforward option. You get in a vehicle and go to your destination
 **How to use it:**
 At baggage claim Level 1, follow signs to "Reserved Taxi." Purchase a voucher at the ticket counter, confirm your destination, and wait in the designated holding area. The operator calls your taxi. Wait time is typically 10-20 minutes. The driver meets you, loads luggage, and you're en route.
 
+If the language barrier is the part that worries you, you can also pre-book a private transfer with an English-speaking driver through [Klook]({{klook}}) before you land — the price is fixed upfront, and the driver is waiting with a name sign instead of you queueing for a voucher.
+
 **Best for:**
 Groups of 3-4 people (cost per person becomes reasonable), travelers with excessive luggage, people arriving at 3 AM, anyone uncomfortable with train transfers, elderly travelers or people with mobility concerns.
 

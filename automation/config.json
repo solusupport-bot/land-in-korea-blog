@@ -12,9 +12,9 @@
     "Airport & transit",
     "Practical info"
   ],
-  "affiliate_links_enabled": false,
+  "affiliate_links_enabled": true,
   "affiliate_links": {
-    "klook": "https://www.klook.com/",
+    "klook": "https://www.klook.com/?aid=132967",
     "tripcom": "https://www.trip.com/",
     "getyourguide": "https://www.getyourguide.com/"
   },
