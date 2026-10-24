@@ -24,6 +24,7 @@ import urllib.parse
 from datetime import datetime, timezone
 from email.utils import format_datetime
 import xml.etree.ElementTree as ET
+from homepage import write_homepage
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUTO = os.path.join(BASE, "automation")
@@ -1526,13 +1527,12 @@ def build():
         with open(os.path.join(POSTS_OUT, f'{p["slug"]}.html'), "w", encoding="utf-8") as f:
             f.write(out)
 
-    intro = discovery_home(cfg, base, posts)
-    home_image = next((p.get('image', '') for p in posts if p['slug'] == 'korea-nami-island-and-petite-france-day-trip'), '')
-    home_image = home_image.replace('https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/', base + '/media/images/')
-    with open(os.path.join(SITE, "index.html"), "w", encoding="utf-8") as f:
-        f.write(page(cfg, base, "Korea Travel Guide: Destinations, Planning & Tips",
-                     "Explore Seoul, Busan and Jeju. Plan your first trip to Korea with guides to transport, eSIMs, payments, food, culture and day trips.",
-                     intro, f"{base}/", image=home_image or None))
+    # The approved homepage has isolated assets; articles keep their existing templates.
+    home_image = base + "/home-ui/assets/busan.jpg"
+    home_metadata = page(cfg, base, "Korea Travel Guide: Destinations, Planning & Tips",
+                         "Explore Korea by region, find neighbourhood guides and prepare your trip with practical local advice.",
+                         "", f"{base}/", image=home_image)
+    write_homepage(cfg, base, posts, home_metadata, SITE)
 
     write_static_pages(cfg, base)
     write_photo_credits(cfg, base)

@@ -1,0 +1,38 @@
+{
+  "korea-ulleungdo-island-guide": {
+    "width": 1920,
+    "height": 1440,
+    "file": "ulleungdo.webp",
+    "small": "ulleungdo-1024.webp",
+    "alt": "Jeodong harbour and volcanic mountains on Ulleungdo Island",
+    "replaces": [
+      "https://landinkorea.com/media/images/korea-ulleungdo-island-guide-1792730029070.jpg"
+    ]
+  },
+  "korea-dokdo-islets-visitor-guide": {
+    "width": 1600,
+    "height": 1200,
+    "file": "dokdo.webp",
+    "small": "dokdo-1024.webp",
+    "alt": "The rocky islets of Dokdo rising from the sea",
+    "replaces": [
+      "https://landinkorea.com/media/images/korea-dokdo-islets-visitor-guide-1792730010796.jpg"
+    ]
+  },
+  "korea-gyeongbokgung-moonlight-tour-night-palace-guide": {
+    "width": 1920,
+    "height": 1080,
+    "file": "palace-night.webp",
+    "small": "palace-night-1024.webp",
+    "alt": "Gyeongbokgung Palace illuminated at blue hour in Seoul",
+    "replaces": [
+      "https://landinkorea.com/media/images/korea-gyeongbokgung-moonlight-tour-night-palace-guide-1792729782813.jpg"
+    ]
+  },
+  "korea-noraebang-etiquette-how-korean-karaoke-actually-works-for-first-timers": {
+    "replaces": [
+      "https://landinkorea.com/media/images/korea-noraebang-etiquette-how-korean-karaoke-actually-works-for-first-timers-1792729805060.jpg"
+    ],
+    "reason": "Confirmed 404 on 2026-10-23. No verified matching replacement: omit broken thumbnail until reviewed."
+  }
+}

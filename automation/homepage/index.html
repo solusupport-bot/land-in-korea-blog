@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#153e55">
+  <meta name="description" content="A new way to explore Korea. A private design preview for Land in Korea, with independent guides to Seoul, Busan and Jeju.">
+  <title>Land in Korea — Find your next stop</title>
+  <link rel="icon" href="assets/logo-original.jpg">
+  <link rel="preload" as="image" href="assets/busan.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="blog-index.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="district-data.js" defer></script>
+  <script src="explore.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#" aria-label="Land in Korea home">
+      <span class="brand-symbol"><img src="assets/logo-original.jpg" alt="" width="1024" height="1024"></span>
+      <span class="brand-type"><strong>Land in Korea<span class="brand-dot">.</span></strong><span data-i18n="brandCaption">Independent guides. Local perspective.</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#explore-map" data-i18n="navDest">Destinations</a>
+      <a href="#trip-planner" data-i18n="navPlan">Trip planner</a>
+      <a href="#essentials" data-i18n="navEssentials">Travel essentials</a>
+      <a href="#interests" data-editorial="interests">Interests</a><a href="https://landinkorea.com/guides" data-i18n="navGuides">Our guides</a>
+    </nav>
+    <div class="header-actions">
+      <label class="language-label"><span aria-hidden="true">◎</span><span class="sr-only" data-i18n="language">Language</span><select id="language" aria-label="Language"><option value="en">EN</option><option value="ja">日本語</option><option value="zh">中文</option></select></label>
+      <button id="menu-button" class="menu-button" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span class="sr-only" data-i18n="menu">Menu</span></button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#explore-map" data-i18n="navDest">Destinations</a><a href="#trip-planner" data-i18n="navPlan">Trip planner</a><a href="#essentials" data-i18n="navEssentials">Travel essentials</a><a href="#interests" data-editorial="interests">Interests</a><a href="https://landinkorea.com/guides" data-i18n="navGuides">Our guides</a></nav>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-image" src="assets/busan.jpg" alt="Gwangan Bridge and the sea in Busan at sunset" width="3840" height="2888" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <span class="hero-kicker"><span></span><span data-i18n="heroKicker">A little local knowledge goes a long way.</span></span>
+      <h1 id="hero-title" data-i18n-html="heroTitle">Where are you<br>going in Korea?</h1>
+      <p class="hero-description" data-i18n="heroDescription">Find your way, discover a detour, and make the most of the places in between.</p>
+      <a class="hero-link" href="https://landinkorea.com/destinations/busan"><span data-i18n="exploreBusan">Get to know Busan</span><span aria-hidden="true">↗</span></a>
+    </div>
+    <button class="photo-note" id="photo-credit"><span class="location-pin" aria-hidden="true"></span><span>Gwangalli, Busan</span><span class="credit-icon" aria-hidden="true">ⓘ</span></button>
+  </section>
+
+  <section id="trip-planner" class="planner-wrap content-width" aria-label="Trip planner">
+    <div class="planner">
+      <div class="planner-heading"><div class="planner-tabs" role="tablist" aria-label="Search type"><button id="route-tab" role="tab" aria-selected="true" aria-controls="route-panel" data-i18n="routeTab">Plan a route</button><button id="guide-tab" role="tab" aria-selected="false" aria-controls="guide-panel" data-i18n="guideTab">Find a guide</button></div><span class="preview-label" data-i18n="previewLabel">Sample route planner</span></div>
+      <div id="route-panel" role="tabpanel" aria-labelledby="route-tab">
+        <form id="route-form" novalidate>
+          <div class="route-fields">
+            <label class="input-place"><span class="field-caption"><span class="origin-dot" aria-hidden="true"></span><span data-i18n="from">FROM</span></span><input id="origin" name="origin" list="places" autocomplete="off" placeholder="Where are you starting?" data-i18n-placeholder="originPlaceholder" aria-describedby="route-error" required></label>
+            <button type="button" id="swap" class="swap" aria-label="Swap origin and destination">⇄</button>
+            <label class="input-place destination-field"><span class="field-caption"><span class="destination-dot" aria-hidden="true"></span><span data-i18n="to">TO</span></span><input id="destination" name="destination" list="places" autocomplete="off" placeholder="Where would you like to go?" data-i18n-placeholder="destPlaceholder" aria-describedby="route-error" required></label>
+            <button class="button-primary plan-button" type="submit"><span data-i18n="compare">Compare routes</span><span aria-hidden="true">→</span></button>
+          </div>
+          <datalist id="places"></datalist>
+          <div class="route-extras"><span data-i18n="tryTrip">Try a trip:</span><button type="button" data-sample="busan" data-i18n="sampleBusan">Busan Station → Haeundae</button><button type="button" data-sample="seoul" data-i18n="sampleSeoul">Seoul Station → Gyeongbokgung</button><span class="sample-caption" data-i18n="sampleCaption">Sample routes · no live times or fares</span></div>
+          <p id="route-error" class="form-error" role="alert" hidden></p>
+        </form>
+      </div>
+      <div id="guide-panel" role="tabpanel" aria-labelledby="guide-tab" hidden>
+        <form id="guide-form" class="guide-search"><label><span class="field-caption" data-i18n="guideLabel">WHAT WOULD YOU LIKE TO KNOW?</span><input id="guide-query" placeholder="Try Busan, airport, eSIM…" data-i18n-placeholder="guidePlaceholder" aria-label="Search travel guides"></label><button class="button-primary" type="submit"><span data-i18n="searchGuides">Search guides</span><span aria-hidden="true">→</span></button></form>
+        <div id="guide-results" class="guide-results" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="first-visit"><span data-i18n="firstVisit">First time in Korea?</span><a href="https://landinkorea.com/posts/korea-airport-transfer-options" data-i18n="airport">Airport transfers</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-esim-mobile-data" data-i18n="sim">SIM & eSIM</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-currency-card-payments" data-editorial="payments">Card payments</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-luggage-storage-forwarding-services" data-editorial="bags">Luggage storage</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-t-money-transit-card" data-i18n="transitCards">Transit cards</a></div>
+  </section>
+
+  <section id="explore-map" class="explore-section content-width" aria-labelledby="explore-title">
+    <div class="section-heading"><div><span class="section-eyebrow" data-map-copy="eyebrow">YOUR KOREA, ONE PLACE AT A TIME</span><h2 id="explore-title" data-map-copy="title">Let the map lead you.</h2></div><p class="map-intro" data-map-copy="intro">Choose a city. Find a neighbourhood. Make it your next stop.</p></div>
+    <div class="travel-atlas">
+      <div class="atlas-toolbar"><nav id="map-breadcrumb" class="map-breadcrumb" aria-label="Map location"></nav><button id="map-back" class="map-back" hidden></button></div>
+      <div id="map-regions" class="map-regions" role="group" aria-label="Select a region"></div>
+      <div class="atlas-body"><div class="map-canvas"><div class="map-compass" aria-hidden="true">N<span>↑</span></div><div id="map-scene"></div><div class="map-stage-caption"><span class="map-caption-dot"></span><span id="map-caption"></span></div></div><aside id="map-detail" class="map-detail" aria-labelledby="map-detail-title"></aside></div>
+      <div class="atlas-topics"><span id="map-topic-label"></span><div id="map-topics"></div></div>
+      <div class="atlas-bottom"><span data-map-copy="steps">01 Choose a city · 02 Explore a place · 03 Read the guide</span><span id="map-source"></span></div>
+    </div>
+    <p id="map-status" class="sr-only" role="status" aria-live="polite"></p>
+  </section>
+
+  <section id="destinations" class="destinations content-width" aria-labelledby="destinations-title">
+    <div class="section-heading"><div><span class="section-eyebrow" data-i18n="destEyebrow">FIND YOUR NEXT STOP</span><h2 id="destinations-title" data-i18n="destTitle">A different side of Korea.</h2></div><a class="text-link" href="https://landinkorea.com/guides"><span data-i18n="allDest">Explore our guides</span><span aria-hidden="true">↗</span></a></div>
+    <div class="destination-grid">
+      <a class="destination-card" href="https://landinkorea.com/destinations/seoul"><div class="destination-photo"><img src="assets/seoul.jpg" alt="A traditional palace hall at Gyeongbokgung in Seoul" width="3840" height="2880" loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></div><div class="destination-description"><h3 data-i18n="seoul">Seoul</h3><span data-i18n="seoulText">Palace mornings. Neighbourhood discoveries.</span></div></a>
+      <a class="destination-card" href="https://landinkorea.com/destinations/busan"><div class="destination-photo"><img src="assets/busan.jpg" alt="The sea and Gwangan Bridge at sunset in Busan" width="3840" height="2888" loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></div><div class="destination-description"><h3 data-i18n="busan">Busan</h3><span data-i18n="busanText">Coastal walks. Markets. A slower kind of city.</span></div></a>
+      <a class="destination-card" href="https://landinkorea.com/destinations/jeju"><div class="destination-photo"><img src="assets/jeju.jpg" alt="Volcanic rocks and turquoise water on Jeju Island" width="3840" height="2560" loading="lazy"><span class="image-corner" aria-hidden="true">↗</span></div><div class="destination-description"><h3 data-i18n="jeju">Jeju</h3><span data-i18n="jejuText">Volcanic landscapes. Room to wander.</span></div></a>
+    </div>
+  </section>
+
+  <section id="essentials" class="essentials-section" aria-labelledby="essentials-title"><div class="essentials content-width"><div class="essentials-intro"><img class="essentials-background" src="assets/seoul.jpg" alt="" width="3840" height="2880" loading="lazy"><div class="essentials-copy"><span class="section-eyebrow" data-i18n="essentialsEyebrow">BEFORE YOU LAND</span><h2 id="essentials-title" data-i18n="essentialsTitle">The little things that make a big difference.</h2><p data-i18n="essentialsText">Practical answers to the questions that come up on a first trip.</p><a class="text-link" href="https://landinkorea.com/topics/before-you-go"><span data-i18n="startHere">Start with the essentials</span><span aria-hidden="true">↗</span></a></div></div><div class="essential-grid">
+    <a href="https://landinkorea.com/posts/korea-k-eta-visa-waiver-requirements" class="essential-item"><span class="essential-icon" data-icon="passport" aria-hidden="true"></span><div><span class="essential-number">01</span><h3 data-i18n="entry">Entry requirements</h3><p data-i18n="entryText">Visas, K-ETA and arrival documents.</p></div><span class="essential-arrow" aria-hidden="true">↗</span></a>
+    <a href="https://landinkorea.com/posts/korea-airport-transfer-options" class="essential-item"><span class="essential-icon" data-icon="plane" aria-hidden="true"></span><div><span class="essential-number">02</span><h3 data-i18n="airport">Airport transfers</h3><p data-i18n="airportText">Your first journey, made easier.</p></div><span class="essential-arrow" aria-hidden="true">↗</span></a>
+    <a href="https://landinkorea.com/posts/korea-esim-mobile-data" class="essential-item"><span class="essential-icon" data-icon="sim" aria-hidden="true"></span><div><span class="essential-number">03</span><h3 data-i18n="sim">SIM &amp; eSIM</h3><p data-i18n="simText">Stay connected from day one.</p></div><span class="essential-arrow" aria-hidden="true">↗</span></a>
+    <a href="https://landinkorea.com/posts/korea-t-money-transit-card" class="essential-item"><span class="essential-icon" data-icon="transit" aria-hidden="true"></span><div><span class="essential-number">04</span><h3 data-i18n="transitCards">Transit cards</h3><p data-i18n="transitText">One card for everyday journeys.</p></div><span class="essential-arrow" aria-hidden="true">↗</span></a>
+    <a href="https://landinkorea.com/posts/korea-currency-card-payments" class="essential-item"><span class="essential-icon" data-icon="wallet" aria-hidden="true"></span><div><span class="essential-number">05</span><h3 data-i18n="money">Money &amp; payments</h3><p data-i18n="moneyText">Know when to tap, and when to carry cash.</p></div><span class="essential-arrow" aria-hidden="true">↗</span></a>
+    <a href="https://landinkorea.com/posts/korea-luggage-storage-forwarding-services" class="essential-item"><span class="essential-icon" data-icon="luggage" aria-hidden="true"></span><div><span class="essential-number">06</span><h3 data-i18n="luggage">Luggage storage</h3><p data-i18n="luggageText">Leave your bags. Keep the day.</p></div><span class="essential-arrow" aria-hidden="true">↗</span></a>
+  </div></div></section>
+
+  <section id="guides" class="journal content-width" aria-labelledby="journal-title"><div class="section-heading"><div><span class="section-eyebrow" data-i18n="journalEyebrow">FROM OUR GUIDEBOOK</span><h2 id="journal-title" data-i18n="journalTitle">A bit of reading. A better trip.</h2></div><a class="text-link" href="https://landinkorea.com/guides"><span data-i18n="allGuides">Browse all guides</span><span aria-hidden="true">↗</span></a></div><div class="journal-grid">
+    <a class="journal-item" href="https://landinkorea.com/posts/korea-busan-haeundae-beach-gamcheon-culture-village"><span class="journal-photo"><img src="https://landinkorea.com/media/images/reviewed/busan-new-2400.jpg" alt="" width="1200" height="900" loading="lazy"></span><span class="journal-category" data-i18n="journalBusanCat">BUSAN · PLACES TO GO</span><h3 data-i18n="journalBusan">From Haeundae Beach to Gamcheon Culture Village</h3><p data-i18n="journalBusanText">A starting point for exploring Busan’s coast and colourful streets.</p><span class="read-guide"><span data-i18n="readGuide">Read the guide</span><span aria-hidden="true">↗</span></span></a>
+    <a class="journal-item" href="https://landinkorea.com/posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel"><span class="journal-photo"><img src="https://landinkorea.com/media/images/reviewed/ktx-2400.jpg" alt="" width="1200" height="900" loading="lazy"></span><span class="journal-category" data-i18n="journalTransitCat">GETTING AROUND</span><h3 data-i18n="journalTransit">Train or intercity bus?</h3><p data-i18n="journalTransitText">Understand your options before you head to the next city.</p><span class="read-guide"><span data-i18n="readGuide">Read the guide</span><span aria-hidden="true">↗</span></span></a>
+    <a class="journal-item" href="https://landinkorea.com/posts/korea-jeju-island"><span class="journal-photo"><img src="https://landinkorea.com/media/images/reviewed/jeju-new-2400.jpg" alt="" width="1200" height="900" loading="lazy"></span><span class="journal-category" data-i18n="journalJejuCat">JEJU · ISLAND TRAVEL</span><h3 data-i18n="journalJeju">Make a little room for Jeju.</h3><p data-i18n="journalJejuText">Start planning your time on Korea’s volcanic island.</p><span class="read-guide"><span data-i18n="readGuide">Read the guide</span><span aria-hidden="true">↗</span></span></a>
+  </div></section>
+
+  <div id="editorial-sections"></div>
+
+  <section class="brand-story content-width"><div class="story-logo"><img src="assets/logo-original.jpg" alt="Land in Korea: a traditional Korean roof with a location pin" width="1024" height="1024" loading="lazy"></div><div><span class="section-eyebrow" data-i18n="storyEyebrow">BASED IN BUSAN. CURIOUS ABOUT KOREA.</span><h2 data-i18n="storyTitle">A local starting point.</h2><p data-i18n="storyText">Land in Korea is an independent collection of travel guides for visitors. We bring destinations and the practical details together, so you can spend less time figuring things out and more time exploring.</p><a class="text-link" href="https://landinkorea.com/about"><span data-i18n="about">About Land in Korea</span><span aria-hidden="true">↗</span></a></div></section>
+</main>
+<footer><div class="footer-inner content-width"><div><a class="footer-wordmark" href="#">Land in Korea<span>.</span></a><p data-i18n="footerText">A little local knowledge goes a long way.</p></div><div class="footer-links"><a href="https://landinkorea.com/about" data-i18n="aboutShort">About</a><a href="https://landinkorea.com/contact" data-editorial="contact">Contact</a><a href="https://landinkorea.com/affiliate-disclosure" data-editorial="disclosure">Disclosure</a><a href="https://landinkorea.com/photo-credits" data-editorial="blogCredits">Blog photo credits</a><a href="https://landinkorea.com/privacy" data-i18n="privacy">Privacy</a><a href="https://landinkorea.com/terms-of-service" data-i18n="terms">Terms</a><button id="footer-credits" data-i18n="photoCredits">Photo credits</button></div></div><p class="footer-disclaimer content-width" data-editorial="disclaimer"></p><div class="footer-bottom content-width"><span>© 2026 Land in Korea</span><span data-i18n="privatePreview">Independent Korea travel guides</span></div></footer>
+
+<dialog id="route-dialog" aria-labelledby="route-title"><button class="dialog-close" data-close="route-dialog" aria-label="Close">×</button><div class="dialog-eyebrow" data-i18n="routePreview">ROUTE PREVIEW</div><h2 id="route-title" data-i18n="routeTitle">Make the journey part of your day.</h2><p id="route-summary" class="route-summary"></p><p class="route-notice" data-i18n="routeNotice">These are sample planning options for this design preview. They are not live directions; times and fares are not supplied.</p><div class="route-options" role="group" aria-label="Compare route options"><button id="direct-option" type="button" aria-pressed="true"><span class="option-number">A</span><span><strong data-i18n="directTitle">Go straight there</strong><small data-i18n="directText">Keep the journey simple.</small></span><span class="option-check" aria-hidden="true">✓</span></button><button id="stop-option" type="button" aria-pressed="false"><span class="option-number">B</span><span><strong data-i18n="stopTitle">Make a stop along the way</strong><small id="stop-option-label"></small></span><span class="option-check" aria-hidden="true">✓</span></button></div><div class="route-timeline" id="route-timeline" aria-live="polite"></div><div class="route-guides"><h3 data-i18n="helpfulGuides">Useful for this trip</h3><div id="route-guide-links"></div></div></dialog>
+<dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close" data-close="credits-dialog" aria-label="Close">×</button><div class="dialog-eyebrow">LAND IN KOREA</div><h2 id="credits-title" data-i18n="photoCredits">Photo credits</h2><p><strong>Busan · Gwangalli bridge at sunset</strong><br>Photo: Horizonjumpers · 22 March 2025<br><a href="https://commons.wikimedia.org/wiki/File:Gwangalli_bridge_at_sunset.jpg">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p><p><strong>Seoul · Gyeongbokgung Mar 2025 112</strong><br>Photo: Epicgenius<br><a href="https://commons.wikimedia.org/wiki/File:Gyeongbokgung_Mar_2025_112.jpg">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p><p><strong>Jeju · Beaches of Jeju — JejuBeaches2458</strong><br>Photo: lumoplank<br><a href="https://commons.wikimedia.org/wiki/File:Beaches_of_Jeju_-_JejuBeaches2458.jpg">Wikimedia Commons</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></p><p data-i18n="photoChanges">Display copies are resized by Wikimedia Commons and cropped with CSS for this layout. Original photographs and their licences are retained.</p><p><strong>Gyeonggi-do · Hwahongmun, Suwon Hwaseong Fortress</strong><br>Mobius6 · 29 September 2024 · original 5,953 × 3,969px<br><a href="https://commons.wikimedia.org/wiki/File:Hwahongmun_20240929_001.jpg">Source</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p><p><strong>Gangwon-do · Nami Island riverside</strong><br>Katsujiro Maekawa · 12 November 2024 · original 4,096 × 2,304px<br><a href="https://commons.wikimedia.org/wiki/File:0012-10-12_(2024-11-12)_*Gapyeong_-_Chuncheon_*Gyeonggi_-_Gangwon.jpg">Source</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></p><p><strong>Jinju &amp; the Nam River</strong><br>Bernard Gagnon · original 3,768 × 2,200px · <a href="https://commons.wikimedia.org/wiki/File:View_of_Jinju_01.jpg">Source</a> · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></p>
+<p><strong>Jeodong harbour, Ulleungdo</strong><br>Raki_Man · original 1,920 × 1,440px · <a href="https://commons.wikimedia.org/wiki/File:Jeodong,_Ulleungdo_Island_-_panoramio.jpg">Source</a> · <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p>
+<p><strong>Dokdo Islands</strong><br>Korea.net / Korean Culture and Information Service · original 1,600 × 1,200px · <a href="https://commons.wikimedia.org/wiki/File:KOCIS_Dokdo_Islands_(4925397371).jpg">Source</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>. Resized WebP copies and CSS crops retain this licence.</p>
+<p><strong>Gyeongbokgung Palace at Night</strong><br>Lunisaa · original 3,840 × 2,160px · <a href="https://commons.wikimedia.org/wiki/File:Gyeongbokgung_Palace_at_Night.jpg">Source</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+<p>Bundled regional and replacement photographs are resized and encoded as WebP for mobile delivery; CSS crops are used. Authors, source links and original licences are retained.</p>
+<p>Article thumbnails reuse the corresponding original blog article images. <a href="https://landinkorea.com/photo-credits">Original article photo sources and licences</a>. Thumbnail crops use CSS; original media files are unchanged.</p><p>Additional regional and neighbourhood geometry: <a href="https://github.com/southkorea/southkorea-maps">southkorea-maps · KOSTAT 2013</a>, free to share/remix per source. Boundaries simplified for travel navigation and represent the 2013 source, not current cadastral boundaries. Article associations are editorial metadata. Nami Island is in Chuncheon; its ferry/Petite France itinerary is also linked under Gapyeong. Dokdo is included under Ulleung-eup with an enlarged labelled inset.</p><p>District geometry: Kurykh · <a href="https://commons.wikimedia.org/wiki/File:Seoul_districts.svg">Seoul</a> / <a href="https://commons.wikimedia.org/wiki/File:Busan_districts.svg">Busan</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Recoloured and labelled for this map; district geometry is retained under the same licence.</p><p>Map outline: <a href="https://www.naturalearthdata.com/about/terms-of-use/">Natural Earth · public domain</a>. Simplified for display. Dokdo marker: <a href="https://www.dokdo.re.kr/eng/cms/cmsCont.do?cntnts_sn=202">Dokdo Information System</a>.</p><p data-i18n="logoCredit">The original Land in Korea logo was supplied by the site owner. Its roof and location-pin artwork are displayed without redrawing or recolouring.</p></dialog>
+<script src="editorial.js" defer></script>
+</body>
+</html>
