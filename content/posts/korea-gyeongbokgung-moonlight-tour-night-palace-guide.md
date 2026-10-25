@@ -2,7 +2,7 @@
 title: Gyeongbokgung Moonlight Tour - How to See Seoul's Main Palace Lit Up at Night
 date: 2026-10-18
 category: Practical info
-description: Gyeongbokgung's ticketed night tour runs through October 24, with a foreigner-only booking window the final weekend. Schedule, price, subway routes, and nearby stays.
+description: Gyeongbokgung's 2026 ticketed night tour ran through October 24 and has now ended. Full schedule and booking details for reference, plus what to do instead right now.
 slug: korea-gyeongbokgung-moonlight-tour-night-palace-guide
 image_query: Gyeongbokgung Palace night illuminated autumn Seoul
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-gyeongbokgung-moonlight-tour-night-palace-guide-1792729782813.jpg
@@ -11,6 +11,8 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 Most visitors see Gyeongbokgung Palace in the middle of a bright, crowded afternoon. For a few weeks each autumn, the palace also opens after dark for a ticketed night program, and the experience is a completely different one — empty courtyards, lit-up rooflines, and none of the daytime tour-group noise.
 
 This guide covers the exact dates and times, what it actually costs, how to book it if you're not a Korean resident, subway directions from five tourist hubs, and where to stay nearby.
+
+> **The 2026 season has ended.** This program ran through October 24, 2026, and ticket sales are closed. Gyeongbokgung is still open for regular daytime and general night viewing — see the schedule below for reference, or jump straight to [Bukchon Hanok Village](/posts/korea-bukchon-hanok-village) and [Insadong](/posts/korea-insadong-traditional-culture-street), both walkable from the palace, for what to do right now.
 
 ## The Schedule, Confirmed
 
@@ -30,7 +32,7 @@ General admission runs through **TicketLink** (ticketlink.co.kr) as a lottery, n
 
 **The one booking path still genuinely open to tourists is the foreigner-only window on the final weekend, October 21–24.** That four-day block is set aside specifically for international visitors and is booked directly through **Creatrip**, a travel platform built for non-Korean travelers — no lottery, no Korean phone number needed. If your trip lands outside that window, the realistic fallback is watching TicketLink for cancellations, or simply doing the cheaper general night viewing instead (see below).
 
-Because October 21–24 is only days away as of this writing, book on Creatrip as soon as you know your dates — capacity is 38 people per session and foreign-visitor slots for a near-term date can fill fast.
+That foreigner-only window closed on October 24, 2026, along with the rest of the season. The details above are kept for reference and as a guide to how next year's program will likely run — check back closer to next autumn for the 2027 dates.
 
 ## How to Get There by Subway
 
