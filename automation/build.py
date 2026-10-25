@@ -887,27 +887,71 @@ def write_discovery(cfg,base,posts):
     const term = document.getElementById('home-guide-search').value.trim();
     window.location.assign(homeForm.action + (term ? '#search=' + encodeURIComponent(term) : ''));
   });
+  const readingSections = [...document.querySelectorAll('.reader-section')];
+  if (readingSections.length) {
+    const smallScreen = window.matchMedia('(max-width: 620px)');
+    const controls = document.querySelector('.reader-controls');
+    const toggle = document.getElementById('reader-toggle-all');
+    const updateToggle = () => {
+      const expanded = readingSections.every(section => section.open);
+      toggle.textContent = expanded ? 'Show section headings' : 'Read the full guide';
+      toggle.setAttribute('aria-expanded', String(expanded));
+    };
+    if (smallScreen.matches) readingSections.forEach(section => { section.open = false; });
+    controls.hidden = false;
+    readingSections.forEach(section => section.addEventListener('toggle', updateToggle));
+    toggle.addEventListener('click', () => {
+      const expand = !readingSections.every(section => section.open);
+      readingSections.forEach(section => { section.open = expand; });
+      updateToggle();
+    });
+    const revealSection = hash => {
+      if (!hash.startsWith('#guide-section-')) return;
+      const section = document.getElementById(hash.slice(1));
+      if (section?.classList.contains('reader-section')) section.open = true;
+    };
+    document.querySelectorAll('.reader-toc a').forEach(link => link.addEventListener('click', () => revealSection(link.hash)));
+    revealSection(window.location.hash);
+    window.addEventListener('hashchange', () => revealSection(window.location.hash));
+    let printState = [];
+    window.addEventListener('beforeprint', () => {
+      printState = readingSections.map(section => section.open);
+      readingSections.forEach(section => { section.open = true; });
+    });
+    window.addEventListener('afterprint', () => {
+      readingSections.forEach((section, i) => { section.open = printState[i] ?? true; });
+    });
+    updateToggle();
+  }
   const input = document.getElementById('guide-search');
   if (!input) return;
   const controls = document.querySelector('[data-search-control]');
   const cards = [...document.querySelectorAll('[data-guide]')];
   const status = document.getElementById('search-status');
   const empty = document.getElementById('search-empty');
+  const pageSize = window.matchMedia('(max-width: 620px)').matches ? 6 : 12;
+  let visibleLimit = pageSize;
+  const more = document.createElement('button');
+  more.type = 'button'; more.className = 'collection-more';
+  more.textContent = 'Show more guides';
+  if (cards.length) cards[0].parentElement.after(more);
   const filter = () => {
     const words = input.value.toLocaleLowerCase().trim().split(/\\s+/).filter(Boolean);
     let count = 0;
     cards.forEach(card => {
       const text = card.dataset.search.toLocaleLowerCase();
       const match = words.every(word => text.includes(word));
-      card.hidden = !match;
+      card.hidden = !match || count >= visibleLimit;
       if (match) count++;
     });
-    status.textContent = `${count} of ${cards.length} guides`;
+    status.textContent = `Showing ${Math.min(count, visibleLimit)} of ${count} matching guides`;
     empty.hidden = count !== 0;
+    more.hidden = count <= visibleLimit;
   };
-  input.addEventListener('input', filter);
+  more.addEventListener('click', () => { visibleLimit += pageSize; filter(); });
+  input.addEventListener('input', () => { visibleLimit = pageSize; filter(); });
   document.getElementById('clear-search').addEventListener('click', () => {
-    input.value = ''; filter(); input.focus();
+    input.value = ''; visibleLimit = pageSize; filter(); input.focus();
   });
   if (window.location.hash.startsWith('#search=')) {
     try { input.value = decodeURIComponent(window.location.hash.slice(8)); } catch (_) { input.value = ''; }
@@ -1446,6 +1490,59 @@ def remove_stale_posts(posts):
             print(f"Removed stale post output: {fn}")
 
 
+def reading_layout(post):
+    """Preserve the full article; add a compact, progressively enhanced reading view."""
+    body = post['_body_html']
+    parts = re.split(r'(<h2\b[^>]*>.*?</h2>)', body, flags=re.S)
+    sections = []
+    if parts[0].strip():
+        sections.append(('Overview', parts[0]))
+    for i in range(1, len(parts), 2):
+        title = parts[i][parts[i].find('>') + 1:parts[i].rfind('</h2>')]
+        sections.append((title, parts[i + 1] if i + 1 < len(parts) else ''))
+    if not sections:
+        return '', body
+    links, content = [], []
+    for i, (title, section_body) in enumerate(sections, 1):
+        section_id = f'guide-section-{i}'
+        links.append(f'<li><a href="#{section_id}">{title}</a></li>')
+        content.append(f'<details class="reader-section" id="{section_id}" open>'
+                       f'<summary><h2>{title}</h2></summary>'
+                       f'<div class="reader-section-body">{section_body}</div></details>')
+    summary = ('<aside class="reader-brief" aria-labelledby="reader-brief-title">'
+               '<p class="reader-eyebrow" id="reader-brief-title">AT A GLANCE</p>'
+               f'<p>{html.escape(post["description"])}</p>'
+               '<a href="#reader-contents">Choose a section ↓</a></aside>')
+    toc = ('<nav class="reader-toc" id="reader-contents" aria-label="In this guide">'
+           '<details><summary>In this guide · jump to a section</summary><ol>'
+           + ''.join(links) + '</ol></details></nav>'
+           '<div class="reader-controls" hidden><p>Tap a heading to read that section.</p>'
+           '<button type="button" id="reader-toggle-all">Read the full guide</button></div>')
+    return summary, toc + '<div class="reader-sections">' + ''.join(content) + '</div>'
+
+
+READING_CSS = """
+/* A readable mobile overview, with complete content available in native details. */
+.reader-brief{background:#edf4f1;border:1px solid #d4e2dc;border-radius:12px;padding:18px 20px;margin:20px 0}
+.reader-brief .reader-eyebrow{font-size:11px;font-weight:700;letter-spacing:1px;color:#375d51;margin:0 0 8px}
+.reader-brief p{margin:0 0 10px}.reader-brief a{font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.reader-toc{margin:20px 0}.reader-toc>details{border:1px solid var(--line);border-radius:10px;padding:0 16px;background:#fff}
+.reader-toc summary{cursor:pointer;padding:14px 0;font-size:14px;font-weight:600;min-height:48px}
+.reader-toc ol{padding-left:20px;margin:0 0 16px}.reader-toc li{margin:6px 0}.reader-toc a{display:inline-block;padding:4px 0;margin:0;font-size:14px}
+.reader-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0}
+.reader-controls p{font-size:13px;color:var(--muted);margin:0}.reader-controls button,.collection-more{min-height:44px;padding:10px 16px;border:1px solid #c9dad2;border-radius:24px;background:white;color:#174f60;font:inherit;font-size:13px;cursor:pointer}
+.reader-section{margin:0 0 12px;scroll-margin-top:20px}.reader-section>summary{cursor:pointer;list-style:none;border-bottom:1px solid var(--line);padding:15px 28px 15px 0;position:relative}
+.reader-section>summary::-webkit-details-marker{display:none}.reader-section>summary:after{content:'+';position:absolute;right:4px;top:16px;font-size:22px;line-height:1}.reader-section[open]>summary:after{content:'−'}
+.post .reader-section>summary h2{font-size:21px;line-height:1.4;margin:0;padding:0;border:0}.reader-section-body{padding:2px 0 14px}.reader-section-body>:first-child{margin-top:14px}
+.reader-section-body iframe{max-width:100%;border:0}.reader-section summary:focus-visible,.reader-toc summary:focus-visible,.reader-controls button:focus-visible{outline:3px solid #e9ad4c;outline-offset:3px}
+.collection-more{display:block;margin:24px auto 8px;font-size:14px}.reader-section-body a{overflow-wrap:anywhere}
+@media(max-width:620px){main.post{padding:20px 18px 32px;font-size:16px;line-height:1.65}.post h1{font-size:25px;line-height:1.35;margin:12px 0}.post .byline{font-size:12px;margin-bottom:12px}.post .meta{font-size:12px;line-height:1.5}.post .breadcrumbs [aria-current=page]{display:none}
+.post .reader-brief{padding:15px 16px;margin:16px 0;font-size:15px;line-height:1.6}.post .reviewed-photo{margin:16px 0}.post .reviewed-photo .hero-img{height:190px;max-height:190px;width:100%;aspect-ratio:auto;object-fit:contain;background:#f1f3ee;border-radius:10px}.post .reviewed-photo figcaption{font-size:10px;line-height:1.5}
+.post .reader-section>summary h2{font-size:17px;line-height:1.45}.reader-section>summary{padding-top:14px;padding-bottom:14px;min-height:52px}.reader-section-body p{margin:12px 0}.reader-controls{align-items:flex-start;flex-wrap:wrap}.reader-controls button{width:100%}.post table{font-size:14px}.post .related-guides{padding:18px;border-radius:10px}.post .related-guides a{display:block;padding:7px 0}.post .back a{display:inline-block;min-height:44px;padding:10px 0}}
+@media print{.reader-brief,.reader-toc,.reader-controls{display:none!important}.reader-section-body{display:block!important}.reader-section>summary:after{display:none}}
+"""
+
+
 def build():
     cfg = load_config()
     os.makedirs(POSTS_OUT, exist_ok=True)
@@ -1456,6 +1553,7 @@ def build():
     base = cfg["base_url"].rstrip("/")
 
     for p in posts:
+        reading_brief, reading_body = reading_layout(p)
         hero = ""
         if p.get("image") and p['image'] not in p['_body_html']:
             hero = reviewed_photo_markup(p, base, "hero-img", eager=True, caption=True)
@@ -1472,8 +1570,8 @@ def build():
             + f'<h1>{html.escape(p["title"])}</h1>'
             f'<p class="byline">By {html.escape(cfg["author"])} · '
             f'<a href="{base}/about.html">Editorial policy</a></p>'
-            f'{hero}'
-            f'{p["_body_html"]}'
+            f'{reading_brief}{hero}'
+            f'{reading_body}'
             f'</article>'
             f'{related_guides(p, posts, base)}'
             f'<p class="back"><a href="{base}/guides">← Back to all guides</a></p>'
@@ -1848,7 +1946,7 @@ code{background:var(--soft);border:1px solid var(--line);border-radius:4px;paddi
 .site-footer a{color:var(--muted)}
 """
     with open(os.path.join(SITE, "style.css"), "w", encoding="utf-8") as f:
-        f.write(css + DISCOVERY_CSS)
+        f.write(css + DISCOVERY_CSS + READING_CSS)
 
 
 if __name__ == "__main__":
