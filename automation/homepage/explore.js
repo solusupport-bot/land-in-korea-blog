@@ -92,11 +92,15 @@ function openReader(p){if(p)window.location.assign(p.url)}
 function resetMap(){topic='all';query='';go('all');$('map-back').focus({preventScroll:true});}
 function renderMapHomeControl(){
  const b=$('map-back');
- const labels={en:'Back to Korea map',ja:'韓国全図に戻る',zh:'返回韩国全图'};
- b.hidden=false;b.textContent='← '+labels[language()];b.onclick=resetMap;
- b.setAttribute('aria-controls','map-scene');
- b.style.setProperty('display','inline-flex','important');
- Object.assign(b.style,{alignItems:'center',justifyContent:'center',minHeight:'44px',padding:'10px 16px',border:'1px solid #1b6073',borderRadius:'24px',background:'#1b6073',color:'#fff',fontWeight:'700',fontSize:'14px',lineHeight:'1.4',whiteSpace:'normal',maxWidth:'100%',cursor:'pointer',flexShrink:'0'});
+ const copy={en:{title:'View all regions & guides →',hint:'Choose a region on the map to find your next stop.'},ja:{title:'すべての地域・ガイドを見る →',hint:'地図から地域を選んで、次の旅先を見つけましょう。'},zh:{title:'查看全部地区与旅行指南 →',hint:'在地图上选择地区，发现下一站。'}}[language()];
+ $('map-breadcrumb').hidden=true;
+ $('map-breadcrumb').style.setProperty('display','none','important');
+ b.hidden=false;b.replaceChildren(node('span','',copy.title),node('span','',copy.hint));b.onclick=resetMap;
+ b.setAttribute('aria-label',copy.title);b.setAttribute('aria-controls','map-scene');
+ b.style.setProperty('display','flex','important');
+ Object.assign(b.style,{flexDirection:'column',alignItems:'flex-start',justifyContent:'center',gap:'5px',minHeight:'76px',width:'100%',padding:'16px 20px',border:'1px solid #a9c8c9',borderRadius:'14px',background:'#eaf3f1',color:'#174f60',fontWeight:'700',fontSize:'18px',lineHeight:'1.45',whiteSpace:'normal',maxWidth:'520px',textAlign:'left',cursor:'pointer',flexShrink:'1',boxSizing:'border-box'});
+ Object.assign(b.lastChild.style,{fontSize:'13px',fontWeight:'400',color:'#46656a',lineHeight:'1.5'});
+ b.parentElement.style.justifyContent='flex-start';
 }
 function render(){
  document.querySelectorAll('[data-map-copy]').forEach(n=>n.textContent=text(n.dataset.mapCopy));
