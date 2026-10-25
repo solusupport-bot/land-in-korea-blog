@@ -91,16 +91,37 @@ function renderList(){
 function openReader(p){if(p)window.location.assign(p.url)}
 function resetMap(){topic='all';query='';go('all');$('map-back').focus({preventScroll:true});}
 function renderMapHomeControl(){
- const b=$('map-back');
- const copy={en:{title:'View all regions & guides →',hint:'Choose a region on the map to find your next stop.'},ja:{title:'すべての地域・ガイドを見る →',hint:'地図から地域を選んで、次の旅先を見つけましょう。'},zh:{title:'查看全部地区与旅行指南 →',hint:'在地图上选择地区，发现下一站。'}}[language()];
- $('map-breadcrumb').hidden=true;
- $('map-breadcrumb').style.setProperty('display','none','important');
- b.hidden=false;b.replaceChildren(node('span','',copy.title),node('span','',copy.hint));b.onclick=resetMap;
+ const copy={en:{title:'View full Korea map →',hint:'Browse every region and travel guide',viewing:'Viewing',all:'All regions',more:'More regions',intro:'Choose a region below or tap the map to find its travel guides.'},ja:{title:'韓国全図を見る →',hint:'すべての地域と旅行ガイドを探す',viewing:'表示中',all:'すべての地域',more:'ほかの地域',intro:'下の地域ボタンや地図から、旅行ガイドを探しましょう。'},zh:{title:'查看韩国全图 →',hint:'浏览全部地区与旅行指南',viewing:'当前显示',all:'全部地区',more:'更多地区',intro:'选择下方地区或点击地图，查找相关旅行指南。'}}[language()];
+ const b=$('map-back'),crumb=$('map-breadcrumb');
+ crumb.hidden=false;crumb.removeAttribute('style');
+ crumb.replaceChildren(node('span','map-viewing-label',copy.viewing),node('strong','map-current-region',region==='all'?copy.all:text(region)));
+ b.hidden=false;b.removeAttribute('style');b.classList.add('map-overview-action');
+ b.replaceChildren(node('span','map-overview-title',copy.title),node('span','map-overview-hint',copy.hint));b.onclick=resetMap;
  b.setAttribute('aria-label',copy.title);b.setAttribute('aria-controls','map-scene');
- b.style.setProperty('display','flex','important');
- Object.assign(b.style,{flexDirection:'column',alignItems:'flex-start',justifyContent:'center',gap:'5px',minHeight:'76px',width:'100%',padding:'16px 20px',border:'1px solid #a9c8c9',borderRadius:'14px',background:'#eaf3f1',color:'#174f60',fontWeight:'700',fontSize:'18px',lineHeight:'1.45',whiteSpace:'normal',maxWidth:'520px',textAlign:'left',cursor:'pointer',flexShrink:'1',boxSizing:'border-box'});
- Object.assign(b.lastChild.style,{fontSize:'13px',fontWeight:'400',color:'#46656a',lineHeight:'1.5'});
- b.parentElement.style.justifyContent='flex-start';
+ b.parentElement.removeAttribute('style');b.parentElement.prepend(b);
+ const rail=$('map-regions').querySelector('.region-shortcuts');
+ const all=button(copy.all,resetMap,'region-chip');all.dataset.region='all';all.setAttribute('aria-pressed',String(region==='all'));rail.prepend(all);
+ const picker=$('map-regions').querySelector('select');picker.options[0].textContent=copy.more;picker.setAttribute('aria-label',copy.more);picker.value=region==='all'?'':region;
+ const intro=document.querySelector('#explore-map .map-intro');if(intro)intro.textContent=copy.intro;
+ if(!$('map-navigation-styles')){
+  const style=node('style');style.id='map-navigation-styles';style.textContent=`
+.travel-atlas .atlas-toolbar{display:flex!important;align-items:center;justify-content:space-between;gap:16px;margin:0 0 16px!important;padding:0!important;min-height:0!important}
+.travel-atlas #map-back.map-overview-action{display:flex!important;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-height:64px;max-width:100%;padding:12px 20px;border:1px solid #a9c8c9;border-radius:12px;background:#eaf3f1;color:#174f60;text-align:left;white-space:normal;cursor:pointer;box-sizing:border-box}
+.map-overview-title{font-size:17px;font-weight:700;line-height:1.4}.map-overview-hint{font-size:12px;font-weight:400;line-height:1.5;color:#46656a}
+.travel-atlas #map-breadcrumb{display:flex!important;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;line-height:1.5;padding:0!important;margin:0!important}
+.map-viewing-label{color:#647579}.map-current-region{color:#174f60;background:#f1f5f4;padding:7px 12px;border-radius:20px;font-size:14px}
+.travel-atlas #map-regions{display:grid!important;grid-template-columns:minmax(0,1fr) 190px;gap:16px;align-items:center;margin:0 0 20px!important;padding:0 0 16px!important;min-height:0!important;border-bottom:1px solid #dde5e1}
+.travel-atlas #map-regions .region-shortcuts{display:flex;gap:8px;align-items:center;overflow-x:auto;padding:3px 1px 8px;margin:0;scrollbar-width:thin;max-width:100%}
+.travel-atlas #map-regions .region-chip{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-height:44px;padding:10px 15px;border:1px solid #d9e3df;border-radius:24px;background:#fff;color:#385456;font-size:14px;font-weight:500;line-height:1.4;white-space:nowrap;cursor:pointer}
+.travel-atlas #map-regions .region-chip[aria-pressed="true"]{background:#1b6073;color:#fff;border-color:#1b6073;font-weight:700}
+.travel-atlas #map-regions .region-chip:hover,.travel-atlas #map-back:hover{border-color:#1b6073;box-shadow:0 2px 8px #163f4a12}
+.travel-atlas #map-regions .region-picker{display:block;padding:0!important;border:0!important;margin:0!important}
+.travel-atlas #map-regions .all-region-select{display:block;width:100%;min-height:44px;margin:0;padding:10px 34px 10px 14px;border:1px solid #d9e3df;border-radius:12px;background-color:#f6f8f6;color:#27494f;font:inherit;font-size:14px;box-sizing:border-box}
+.travel-atlas #map-regions button:focus-visible,.travel-atlas #map-back:focus-visible,.travel-atlas #map-regions select:focus-visible{outline:3px solid #e9ad4c;outline-offset:3px}
+#explore-map .section-heading{margin-bottom:24px!important}#explore-map .map-intro{font-size:14px;line-height:1.7;max-width:360px}
+@media(max-width:760px){.travel-atlas .atlas-toolbar{align-items:flex-start;flex-direction:column;gap:10px}.travel-atlas #map-back.map-overview-action{width:100%;padding:13px 16px}.travel-atlas #map-regions{grid-template-columns:minmax(0,1fr);gap:8px;margin-bottom:16px!important;padding-bottom:14px!important}.travel-atlas #map-regions .region-chip{font-size:14px;padding:10px 14px}.travel-atlas #map-regions .region-shortcuts{width:100%}.travel-atlas #map-regions .region-picker{width:100%}.travel-atlas #map-regions .all-region-select{width:100%}#explore-map .section-heading{margin-bottom:20px!important}.map-overview-title{font-size:16px}}
+`;document.head.append(style);
+ }
 }
 function render(){
  document.querySelectorAll('[data-map-copy]').forEach(n=>n.textContent=text(n.dataset.mapCopy));
