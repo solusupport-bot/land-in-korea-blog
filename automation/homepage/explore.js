@@ -81,11 +81,17 @@ function renderCity(){
  const fit=()=>{if(!svg.isConnected)return;const shapes=Array.from(svg.querySelectorAll('path')).map(p=>p.getBBox());const left=Math.min(...shapes.map(b=>b.x)),top=Math.min(...shapes.map(b=>b.y)),right=Math.max(...shapes.map(b=>b.x+b.width)),bottom=Math.max(...shapes.map(b=>b.y+b.height));const pad=Math.max(right-left,bottom-top)*.075;svg.setAttribute('viewBox',[left-pad,top-pad,right-left+2*pad,bottom-top+2*pad].join(' '));active.forEach(p=>{const path=svg.querySelector('[data-district="'+p.name+'"]'),b=path.getBBox(),label=document.createElementNS(svg.namespaceURI,'text');label.setAttribute('x',b.x+b.width/2);label.setAttribute('y',b.y+b.height/2);label.setAttribute('class','district-label');label.setAttribute('font-size',(right-left)/48);label.textContent=areaName(p).split(' · ')[0];svg.append(label)});};fit();
 }
 function matches(){return posts.filter(p=>(region==='all'||p.regions.includes(region))&&(!place||!cityScene||(window.LIK_DISTRICTS[mapKey||region]?.paths.find(a=>a.name===place)?.slugs||window.LIK_DISTRICTS[mapKey||region]?.insets?.find(a=>a.id===place)?.slugs||[]).some(slug=>p.url.endsWith('/'+slug)))&&(topic==='all'||p.category===topic)&&(!query||(p.title+' '+text(p.category)).toLowerCase().includes(query.toLowerCase().trim())))}
+let mapListLimit=6,mapListKey='';
 function renderList(){
+ const listKey=[region,place,topic,query,language()].join('|');
+ const pageSize=matchMedia('(max-width:760px)').matches?4:6;
+ if(listKey!==mapListKey){mapListLimit=pageSize;mapListKey=listKey}
  const found=matches();$('map-result-count').textContent=found.length+' '+(language()==='en'&&found.length===1?'guide':text('articles'));
- const list=$('map-article-list');list.replaceChildren();
+ const list=$('map-article-list');list.replaceChildren();list.style.maxHeight='none';list.style.overflow='visible';
  if(!found.length)list.append(node('p','atlas-description',place||region!=='all'?mapCopy[language()].empty:text('empty')));
- found.forEach(p=>{const b=node('a','atlas-article');b.href=p.url;if(p.image){const img=node('img','atlas-article-thumb');img.alt=p.imageAlt||p.title;img.loading='lazy';img.decoding='async';img.width=88;img.height=88;img.addEventListener('error',()=>{img.remove();b.classList.remove('has-photo')},{once:true});b.append(img);b.classList.add('has-photo');img.src=p.image}b.append(node('span','atlas-article-category',text(p.category)),node('strong','',p.title),node('span','atlas-article-arrow','↗'));b.dataset.blogUrl=p.url;list.append(b)});
+ found.slice(0,mapListLimit).forEach(p=>{const b=node('a','atlas-article');b.href=p.url;if(p.image){const img=node('img','atlas-article-thumb');img.alt=p.imageAlt||p.title;img.loading='lazy';img.decoding='async';img.width=88;img.height=88;img.addEventListener('error',()=>{img.remove();b.classList.remove('has-photo')},{once:true});b.append(img);b.classList.add('has-photo');img.src=p.image}b.append(node('span','atlas-article-category',text(p.category)),node('strong','',p.title),node('span','atlas-article-arrow','↗'));b.dataset.blogUrl=p.url;list.append(b)});
+ if(found.length>mapListLimit){const labels={en:'Show more guides',ja:'ガイドをもっと見る',zh:'显示更多指南'};const more=button(labels[language()]+' ('+Math.min(mapListLimit,found.length)+' / '+found.length+')',()=>{mapListLimit+=pageSize;renderList()},'atlas-show-more');Object.assign(more.style,{minHeight:'44px',padding:'10px 16px',border:'1px solid #c9dad2',borderRadius:'24px',background:'#fff',color:'#174f60',font:'inherit',fontSize:'14px',cursor:'pointer',width:'100%'});list.append(more)}
+ if(!found.length){const useful=node('a','text-link',language()==='ja'?'旅の準備ガイドを見る →':language()==='zh'?'查看出行准备指南 →':'Browse practical travel guides →');useful.href=blog+'/topics/before-you-go';list.append(useful)}
  $('map-status').textContent=text(region)+' · '+found.length+' '+text('articles');
 }
 function openReader(p){if(p)window.location.assign(p.url)}
