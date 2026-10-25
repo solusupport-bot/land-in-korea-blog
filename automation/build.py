@@ -391,8 +391,8 @@ def discovery_groups(posts):
 
 
 def discovery_nav(base):
-    return (f'<a href="{base}/#destinations">Destinations</a>'
-            f'<a href="{base}/#plan-your-trip">Plan a trip</a>'
+    return (f'<a href="{base}/#explore-map">Destinations</a>'
+            f'<a href="{base}/#trip-planner">Plan a trip</a>'
             f'<a href="{base}/#interests">Interests</a>'
             f'<a href="{base}/guides">All guides</a>')
 
@@ -1476,7 +1476,7 @@ def build():
             f'{p["_body_html"]}'
             f'</article>'
             f'{related_guides(p, posts, base)}'
-            f'<p class="back"><a href="{base}/index.html">← Back to all guides</a></p>'
+            f'<p class="back"><a href="{base}/guides">← Back to all guides</a></p>'
         )
         graph = site_entities(cfg, base) + [{
             "@type": "Article",
