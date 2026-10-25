@@ -887,6 +887,38 @@ def write_discovery(cfg,base,posts):
     const term = document.getElementById('home-guide-search').value.trim();
     window.location.assign(homeForm.action + (term ? '#search=' + encodeURIComponent(term) : ''));
   });
+  // Keep the generated editorial HTML verbatim; enhance its existing nodes here.
+  const readingBody = document.querySelector('.reader-sections');
+  if (readingBody) {
+    const nodes = [...readingBody.childNodes];
+    let section, sectionBody;
+    let sectionIndex = 0;
+    const startSection = heading => {
+      section = document.createElement('details');
+      section.className = 'reader-section';
+      section.id = 'guide-section-' + (++sectionIndex);
+      section.open = true;
+      const summary = document.createElement('summary');
+      summary.append(heading);
+      sectionBody = document.createElement('div');
+      sectionBody.className = 'reader-section-body';
+      section.append(summary, sectionBody);
+      readingBody.append(section);
+    };
+    nodes.forEach(node => {
+      if (node.nodeType === 1 && node.tagName === 'H2') {
+        startSection(node);
+      } else {
+        if (!section && !node.textContent.trim() && node.nodeType !== 1) return;
+        if (!section) {
+          const heading = document.createElement('h2');
+          heading.textContent = 'Overview';
+          startSection(heading);
+        }
+        sectionBody.append(node);
+      }
+    });
+  }
   const readingSections = [...document.querySelectorAll('.reader-section')];
   if (readingSections.length) {
     const smallScreen = window.matchMedia('(max-width: 620px)');
@@ -1502,13 +1534,10 @@ def reading_layout(post):
         sections.append((title, parts[i + 1] if i + 1 < len(parts) else ''))
     if not sections:
         return '', body
-    links, content = [], []
+    links = []
     for i, (title, section_body) in enumerate(sections, 1):
         section_id = f'guide-section-{i}'
         links.append(f'<li><a href="#{section_id}">{title}</a></li>')
-        content.append(f'<details class="reader-section" id="{section_id}" open>'
-                       f'<summary><h2>{title}</h2></summary>'
-                       f'<div class="reader-section-body">{section_body}</div></details>')
     summary = ('<aside class="reader-brief" aria-labelledby="reader-brief-title">'
                '<p class="reader-eyebrow" id="reader-brief-title">AT A GLANCE</p>'
                f'<p>{html.escape(post["description"])}</p>'
@@ -1518,7 +1547,9 @@ def reading_layout(post):
            + ''.join(links) + '</ol></details></nav>'
            '<div class="reader-controls" hidden><p>Tap a heading to read that section.</p>'
            '<button type="button" id="reader-toggle-all">Read the full guide</button></div>')
-    return summary, toc + '<div class="reader-sections">' + ''.join(content) + '</div>'
+    # Preserve this exact contiguous body for verify_seo.py and no-JS readers.
+    # The browser moves existing nodes into details without rewriting the content.
+    return summary, toc + '<div class="reader-sections">' + body + '</div>'
 
 
 READING_CSS = """
