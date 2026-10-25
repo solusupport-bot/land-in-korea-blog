@@ -51,7 +51,7 @@ for(const [id,names]of Object.entries(regionNames)){data[id]={icon:'mountain',im
 const mapCopy={en:{more:'All regions',empty:'No place-specific guide has been published for this district yet. Browse the region or use the practical guides below.',areas:'All districts & neighbourhoods',refine:'Explore neighbourhood map',read:'Read related guides',source:'KOSTAT 2013 · simplified boundaries',islet:'Dokdo inset · enlarged for visibility'},ja:{more:'すべての地域',empty:'この地区の個別ガイドはまだありません。地域全体や実用ガイドをご覧ください。',areas:'行政区・地区一覧',refine:'町・洞の地図を見る',read:'関連ガイドを読む',source:'KOSTAT 2013・簡略化した境界',islet:'独島の拡大図'},zh:{more:'全部地区',empty:'此地区暂无专属指南，请浏览整个地区或下方实用指南。',areas:'行政区与街区目录',refine:'查看街区地图',read:'阅读相关指南',source:'KOSTAT 2013 · 简化边界',islet:'独岛插图 · 放大显示'}};
 const posts=window.LIK_BLOG_INDEX||[];
 let topic='all',query='',readerPost=null; let cityScene=false,mapKey=null;
-region='busan';
+region='all';
 const districtGuides={
  'Jongno-gu':['korea-gyeongbokgung-palace','korea-bukchon-hanok-village','korea-insadong-traditional-culture-street','korea-gyeongbokgung-moonlight-tour-night-palace-guide'],
  'Jung-gu':['korea-myeongdong-shopping-district','korea-namdaemun-market'],
@@ -74,7 +74,7 @@ function renderCity(){
  const choices=node('div','district-choices');choices.append(node('p','',active.length?c.hint:mc.empty));active.forEach(p=>{const b=button(areaName(p),()=>selectArea(p),'district-choice');b.setAttribute('aria-pressed',String(place===p.name));b.dataset.districtChoice=p.name;choices.append(b)});if(map.insets)map.insets.forEach(p=>{const b=button(p.labels[['en','ja','zh'].indexOf(language())]+' ↗',()=>{place=p.id;render();openReader(posts.find(x=>x.url.endsWith('/'+p.slugs[0])))},'district-choice island-inset');b.dataset.islet=p.id;b.title=mc.islet;choices.append(b)});scene.append(choices);
  $('map-caption').textContent=text(region)+' · '+map.paths.length+' '+(language()==='en'?'districts / neighbourhoods':'行政区');$('map-source').textContent=map.source==='commons'?c.source:mc.source;
  $('map-back').hidden=false;$('map-back').textContent='← '+(mapKey!==region?text(region):c.back);$('map-back').onclick=()=>{if(mapKey!==region){mapKey=region;place=null;render()}else{region='all';place=null;cityScene=false;mapKey=null;topic='all';query='';render()}};
- const crumb=$('map-breadcrumb');crumb.replaceChildren(button(text('korea'),()=>go('all'),'crumb'),node('span','crumb-slash','/'),button(text(region),()=>go(region),'crumb'));if(mapKey!==region){const n=window.LIK_DISTRICTS[region].paths.find(p=>p.name===mapKey);crumb.append(node('span','crumb-slash','/'),node('span','crumb current',n?areaName(n):mapKey))}if(current)crumb.append(node('span','crumb-slash','/'),node('span','crumb current',areaName(current)));
+ const crumb=$('map-breadcrumb');crumb.replaceChildren(button(text('korea'),resetMap,'crumb'),node('span','crumb-slash','/'),button(text(region),()=>go(region),'crumb'));if(mapKey!==region){const n=window.LIK_DISTRICTS[region].paths.find(p=>p.name===mapKey);crumb.append(node('span','crumb-slash','/'),node('span','crumb current',n?areaName(n):mapKey))}if(current)crumb.append(node('span','crumb-slash','/'),node('span','crumb current',areaName(current)));
  if(current){$('map-detail-title').textContent=areaName(current);$('map-detail').querySelector('.atlas-description').textContent=current.ko?current.ko+' · '+text(region):text(region);if(current.child&&window.LIK_DISTRICTS[current.child]){$('map-detail').append(button(mc.refine+' →',()=>{mapKey=current.child;place=null;query='';render()},'text-link city-original'))}}
  const directory=node('details','district-directory');directory.append(node('summary','',mc.areas+' ('+map.paths.filter(p=>p.name).length+')'));const items=node('div');map.paths.filter(p=>p.name).forEach(p=>{const b=button(areaName(p)+(p.slugs?.length?' · '+p.slugs.length:''),()=>selectArea(p),'district-directory-item');b.classList.toggle('linked',Boolean(p.slugs?.length));items.append(b)});directory.append(items);$('map-detail').append(directory);
  if(data[region].guide){const original=node('a','text-link city-original',c.open+' ↗');original.href=blog+data[region].guide;$('map-detail').append(original)}
@@ -89,9 +89,18 @@ function renderList(){
  $('map-status').textContent=text(region)+' · '+found.length+' '+text('articles');
 }
 function openReader(p){if(p)window.location.assign(p.url)}
+function resetMap(){topic='all';query='';go('all');$('map-back').focus({preventScroll:true});}
+function renderMapHomeControl(){
+ const b=$('map-back');
+ const labels={en:'Back to Korea map',ja:'韓国全図に戻る',zh:'返回韩国全图'};
+ b.hidden=false;b.textContent='← '+labels[language()];b.onclick=resetMap;
+ b.setAttribute('aria-controls','map-scene');
+ b.style.setProperty('display','inline-flex','important');
+ Object.assign(b.style,{alignItems:'center',justifyContent:'center',minHeight:'44px',padding:'10px 16px',border:'1px solid #1b6073',borderRadius:'24px',background:'#1b6073',color:'#fff',fontWeight:'700',fontSize:'14px',lineHeight:'1.4',whiteSpace:'normal',maxWidth:'100%',cursor:'pointer',flexShrink:'0'});
+}
 function render(){
  document.querySelectorAll('[data-map-copy]').forEach(n=>n.textContent=text(n.dataset.mapCopy));
- const crumb=$('map-breadcrumb');crumb.replaceChildren(button(text('korea'),()=>go('all',null,true),'crumb'),node('span','crumb-slash','/'),node('span','crumb current',text(region)));
+ const crumb=$('map-breadcrumb');crumb.replaceChildren(button(text('korea'),resetMap,'crumb'),node('span','crumb-slash','/'),node('span','crumb current',text(region)));
  $('map-back').hidden=region==='all';$('map-back').textContent='← '+text('all');$('map-back').onclick=()=>{topic='all';query='';go('all',null,true)};
  const scene=$('map-scene');scene.replaceChildren();scene.classList.remove('city-scene');
  const land=node('img','korea-land');land.src='assets/korea-land.svg';land.alt='';scene.append(land);
@@ -127,7 +136,7 @@ function render(){
  if(region==='islands'){const a=node('a','text-link city-original',text('official')+' ↗');a.href='https://www.dokdo.re.kr/eng/cms/cmsCont.do?cntnts_sn=202';a.target='_blank';a.rel='noopener';detail.append(a)}
  const topics=$('map-topics');topics.replaceChildren();['all','before','transport','apps','money','food','things','living'].forEach(id=>{const b=button(text(id),()=>{topic=id;region='all';place=null;cityScene=false;mapKey=null;query='';render()},'topic-chip');b.dataset.topic=id;b.setAttribute('aria-pressed',String(topic===id));topics.append(b)});
  const activeShortcut=rail.querySelector('[aria-pressed="true"]');if(activeShortcut)rail.scrollLeft=activeShortcut.offsetLeft-rail.offsetLeft-(rail.clientWidth-activeShortcut.offsetWidth)/2;
- if(cityScene) renderCity(); $('map-topic-label').textContent=text('topics');$('map-regions').ariaLabel=text('select');renderList();
+ if(cityScene) renderCity(); renderMapHomeControl(); $('map-topic-label').textContent=text('topics');$('map-regions').ariaLabel=text('select');renderList();
 }
 render();
 new MutationObserver(()=>render()).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
