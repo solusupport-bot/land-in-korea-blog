@@ -25,6 +25,7 @@ from datetime import datetime, timezone
 from email.utils import format_datetime
 import xml.etree.ElementTree as ET
 from homepage import write_homepage
+from homepage import affiliate_notice
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUTO = os.path.join(BASE, "automation")
@@ -39,6 +40,7 @@ POSTS_OUT = os.path.join(SITE, "posts")
 # 정책 문구가 실제로 바뀔 때만 이 값을 수동으로 갱신한다. 2026-09-18은
 # "Update privacy/about wording ahead of AdSense application" 커밋 날짜.
 POLICY_PAGE_LAST_UPDATED = "2026-09-18"
+AFFILIATE_DISCLOSURE_UPDATED = "2026-10-25"
 
 
 def load_config():
@@ -98,9 +100,17 @@ def link_attrs(href, base_url):
     sponsored를 붙이면 실제로는 아무 대가관계가 없는데 있는 것처럼 잘못
     표시하는 셈이라, About 페이지의 "출처로 이어진다"는 약속과도 어긋난다.
     """
-    if href.startswith(base_url) or href.startswith("/"):
+    parsed = urllib.parse.urlsplit(html.unescape(href))
+    site = urllib.parse.urlsplit(base_url)
+    if not parsed.netloc or (site.netloc and parsed.netloc == site.netloc):
         return ""
-    if any(domain in href for domain in AFFILIATE_DOMAINS):
+    host = (parsed.hostname or "").lower()
+    query = urllib.parse.parse_qs(parsed.query)
+    tracking_keys = {"klook.com": ("aid",), "trip.com": ("allianceid",),
+                     "getyourguide.com": ("partner_id",)}
+    if any((host == domain or host.endswith("." + domain))
+           and any(query.get(key) for key in tracking_keys[domain])
+           for domain in AFFILIATE_DOMAINS):
         return ' rel="sponsored noopener" target="_blank"'
     return ' rel="noopener" target="_blank"'
 
@@ -256,7 +266,7 @@ def adsense_script(cfg):
 
 
 # ---------- SEO helpers (no extra services or dependencies) ----------
-LAYOUT_CONTENT_UPDATED = "2026-10-20"
+LAYOUT_CONTENT_UPDATED = "2026-10-25"
 
 
 def canonical_url(base, url):
@@ -1301,14 +1311,8 @@ def page(cfg, base, title, description, body, canonical, is_post=False,
     brand_html = brand_markup(cfg, base)
     nav = discovery_nav(base)
     year = datetime.now().year
-    affiliate_enabled = cfg.get("affiliate_links_enabled", False)
-    footer_note = (
-        'Some links on this site are affiliate links (Klook, Trip.com, GetYourGuide) — '
-        'we may earn a commission at no extra cost to you. See our '
-        f'<a href="{base}/affiliate-disclosure.html">disclosure</a>. '
-        if affiliate_enabled else
-        'This site is currently pure editorial content with no affiliate links. '
-    )
+    footer_note = (html.escape(affiliate_notice(cfg)) + ' See our '
+                   f'<a href="{base}/affiliate-disclosure.html">disclosure</a>. ')
     img_tag = f'<meta property="og:image" content="{html.escape(image)}">\n<meta name="twitter:image" content="{html.escape(image)}">\n' if image else ""
     published_tag = f'<meta property="article:published_time" content="{published}">\n' if published else ""
     jsonld_tag = f'<script type="application/ld+json">{jsonld}</script>\n' if jsonld else ""
@@ -1555,6 +1559,7 @@ def reading_layout(post):
 READING_CSS = """
 /* A readable mobile overview, with complete content available in native details. */
 .reader-brief{background:#edf4f1;border:1px solid #d4e2dc;border-radius:12px;padding:18px 20px;margin:20px 0}
+.post .affiliate-notice{font-size:13px;line-height:1.55;color:var(--muted);margin:12px 0 16px}.affiliate-notice a{text-decoration:underline;text-underline-offset:2px}
 .reader-brief .reader-eyebrow{font-size:11px;font-weight:700;letter-spacing:1px;color:#375d51;margin:0 0 8px}
 .reader-brief p{margin:0 0 10px}.reader-brief a{font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .reader-toc{margin:20px 0}.reader-toc>details{border:1px solid var(--line);border-radius:10px;padding:0 16px;background:#fff}
@@ -1585,6 +1590,11 @@ def build():
 
     for p in posts:
         reading_brief, reading_body = reading_layout(p)
+        commercial_note = (
+            '<p class="affiliate-notice">' + html.escape(affiliate_notice(cfg))
+            + f' <a href="{base}/affiliate-disclosure">How affiliate links work</a>.</p>'
+            if re.search(r'\brel="[^"]*\bsponsored\b', p['_body_html']) else ''
+        )
         hero = ""
         if p.get("image") and p['image'] not in p['_body_html']:
             hero = reviewed_photo_markup(p, base, "hero-img", eager=True, caption=True)
@@ -1601,7 +1611,7 @@ def build():
             + f'<h1>{html.escape(p["title"])}</h1>'
             f'<p class="byline">By {html.escape(cfg["author"])} · '
             f'<a href="{base}/about.html">Editorial policy</a></p>'
-            f'{reading_brief}{hero}'
+            f'{commercial_note}{reading_brief}{hero}'
             f'{reading_body}'
             f'</article>'
             f'{related_guides(p, posts, base)}'
@@ -1679,14 +1689,8 @@ def build():
 
 def write_static_pages(cfg, base):
     affiliate_enabled = cfg.get("affiliate_links_enabled", False)
-    about_affiliate_bullet = (
-        '<li>Some links are affiliate links (Klook, Trip.com, GetYourGuide) — see our '
-        f'<a href="{base}/affiliate-disclosure.html">disclosure</a>.</li>'
-        if affiliate_enabled else
-        '<li>This site currently carries no affiliate links — every recommendation here is '
-        'purely editorial. See our <a href="{base}/affiliate-disclosure.html">disclosure</a> page for '
-        'our policy going forward.</li>'.format(base=base)
-    )
+    about_affiliate_bullet = ('<li>' + html.escape(affiliate_notice(cfg))
+                             + f' See our <a href="{base}/affiliate-disclosure.html">disclosure</a>.</li>')
     about = f"""
 <h1>About Land in Korea</h1>
 <p>{html.escape(cfg['site_name'])} is an independent travel guide based in Busan, South Korea. We publish practical information for visitors and foreign residents: transport, places to visit, payments and everyday life.</p>
@@ -1700,13 +1704,13 @@ def write_static_pages(cfg, base):
 <h2>Corrections</h2>
 <p>Found a wrong detail or an outdated link? Please <a href="{base}/contact.html">contact us</a> with the guide URL and the correction.</p>
 """
-    disclosure_status = ('Some links on this site may earn us a commission when you make a booking or purchase. Affiliate links are identified in the relevant guide.'
-                         if affiliate_enabled else 'Affiliate links are currently disabled on this site.')
+    disclosure_status = html.escape(affiliate_notice(cfg))
     disclosure = f"""
 <h1>Affiliate Disclosure</h1>
+<p>Last updated: {AFFILIATE_DISCLOSURE_UPDATED}</p>
 <p>{disclosure_status}</p>
 <p>Guides may mention booking platforms and service providers to help you compare options. A mention is not a guarantee of price, availability or suitability for your trip.</p>
-<p>If we introduce affiliate links or paid placements, they will be clearly labelled. Check the provider’s current price, cancellation terms and service details before purchasing.</p>
+<p>Affiliate links are labelled in the relevant guide. Our guides explain options and link to official sources; a commission does not change the price you pay. Check the provider’s current price, cancellation terms, eligibility and service details before purchasing.</p>
 <p>Questions about a link or recommendation? Please <a href="{base}/contact.html">contact us</a>.</p>
 """
     goatcounter_bullet = (
@@ -1841,7 +1845,7 @@ def write_sitemap(cfg, base, posts):
         ("", latest_post_date),  # home lists posts, so it follows the latest post
         ("about.html", LAYOUT_CONTENT_UPDATED),
         ("photo-credits.html", "2026-10-21"),
-        ("affiliate-disclosure.html", "2026-10-21"),
+        ("affiliate-disclosure.html", AFFILIATE_DISCLOSURE_UPDATED),
         ("privacy.html", POLICY_PAGE_LAST_UPDATED),
         ("terms-of-service.html", POLICY_PAGE_LAST_UPDATED),
         ("contact.html", POLICY_PAGE_LAST_UPDATED),
