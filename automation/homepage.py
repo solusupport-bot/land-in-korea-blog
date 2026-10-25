@@ -145,6 +145,20 @@ def build_index(posts, base):
     return index, maps
 
 
+def affiliate_notice(cfg, language="en"):
+    """One commercial disclosure for the homepage, guides and policy pages."""
+    enabled = cfg.get("affiliate_links_enabled", False)
+    notices = {
+        "en": ("Some links are affiliate links. We may earn a commission at no extra cost to you."
+               if enabled else "Affiliate links are currently disabled on this site."),
+        "ja": ("一部のリンクはアフィリエイトリンクです。予約・購入により当サイトが紹介料を受け取る場合がありますが、お客様の追加負担はありません。"
+               if enabled else "現在、このサイトではアフィリエイトリンクを無効にしています。"),
+        "zh": ("部分链接为联盟推广链接。通过链接预订或购买，我们可能获得佣金，您无需支付额外费用。"
+               if enabled else "本站目前已停用联盟推广链接。"),
+    }
+    return notices.get(language, notices["en"])
+
+
 def write_homepage(cfg, base, posts, metadata_html, site):
     """Reuse the production head; replace only the homepage presentation."""
     site = Path(site)
@@ -168,6 +182,13 @@ def write_homepage(cfg, base, posts, metadata_html, site):
     version = digest.hexdigest()[:12]
     template = (SOURCE / "index.html").read_text(encoding="utf-8")
     body = re.search(r"<body>(.*)</body>", template, re.S).group(1)
+    # Render a truthful disclosure without JavaScript, then retain it on language changes.
+    attributes = ' '.join('data-affiliate-' + lang + '="' + html.escape(affiliate_notice(cfg, lang), quote=True) + '"'
+                          for lang in ("en", "ja", "zh"))
+    body = body.replace('data-editorial="disclaimer"></p>',
+                        'data-editorial="disclaimer" ' + attributes + '>'
+                        + html.escape(affiliate_notice(cfg))
+                        + ' Prices, entry requirements and timetables can change; check official information before travelling.</p>')
     body = body.replace("https://landinkorea.com", base)
     body = re.sub(r'(src|href)="(assets/[^\"]+)"', lambda m: m[1] + '="' + prefix + m[2] + '"', body)
     body = body.replace('src="editorial.js"', 'src="' + prefix + 'editorial.js?v=' + version + '"')
