@@ -51,6 +51,43 @@ blog-build.yml`)는 GitHub Pages로만 배포되고 운영 도메인과 무관�
 3. `localize_media.py` 복사 후: 배포 폴더에 home-ui의 JS/CSS/사진/폰트가 전부 있는지 검사.
 4. 하나라도 실패하면 빌드/배포 전체를 중단.
 
+---
+
+## 🗺️ 승인된 지도 선택 UI (2026-10-25 사용자 최종 확정 · 커밋 `f782d40`)
+
+**소스: `automation/homepage/explore.js`. 사용자 추가 요청 없이 재디자인하거나 이전
+버전으로 되돌리지 마세요.** 선행 커밋 `1d5be14`, `b32837c`는 `f782d40`에 이미 포함돼
+있으므로 중복 적용하지 말 것.
+
+확정된 UI:
+- 최초 진입은 **All regions**, 전체 가이드 표시
+- 지도 위 **View full Korea map →** 복귀 버튼 + 짧은 설명(hint/intro)
+- **Viewing + 현재 지역** 배지
+- 전체 지역/지역별 버튼 **최소 44px 높이** (모바일 탭 영역)
+- 추가 지역 선택은 **More regions**
+- EN/JA/ZH 카피, 모바일 줄바꿈·가로 스크롤 처리
+- 기존 지도 데이터(`district-data-seed.json`), 게시글 연결, 승인 홈페이지 디자인은 그대로 유지
+
+배포 검증 완료(사용자 확인): landinkorea.com에서 새 UI 서빙 확인, 부산 선택 시 2 guides →
+전체 지도 복귀 시 64 guides, 검색어 입력값이 복귀 시 빈 값으로 초기화. `node --check` 통과.
+
+지켜야 할 것:
+1. 이 UI를 임의로 재디자인·롤백하지 않는다.
+2. 새 글 발행과 자동 빌드·배포 중에도 `explore.js` 소스를 유지한다. 생성된
+   `site/index.html`을 고정/동결하는 방식은 쓰지 않는다(위 홈페이지 규칙과 동일).
+3. 소스 반영 전 `git status`와 최신 `main`을 확인하고 다른 작업으로 덮어쓰지 않는다.
+4. 디자인 변경이 필요하면 **먼저 사용자에게 구체적인 변경안을 제시**하고 승인을 받는다.
+
+**배포 환경 메모:** 2026-10-24~25 배포 실패 원인은 `validate.py` 출력의 Windows cp949
+`UnicodeEncodeError`였다. PowerShell에 `PYTHONUTF8=1`, `PYTHONIOENCODING=utf-8`을 적용한 뒤
+배포 성공. 이는 현재 PowerShell 세션 설정이므로 **작업 스케줄러에도 영구 UTF-8 설정이
+들어갔는지는 별도 확인 필요**. 이 인코딩 문제를 이유로 품질 검증(`validate.py`, 위 배포
+안전장치 4단계)을 건너뛰거나 완화하지 말 것.
+
+자세한 승인 상태 기록은 `docs/APPROVED_UI_STATE.md` 참고.
+
+---
+
 홈페이지 관련 작업으로 이 저장소의 브랜치를 전환/reset/병합할 때는 **먼저
 `DesktopTutorial-BlogDeploy`, `DesktopTutorial-SchedulerDispatch`, `DesktopTutorial-DailyTopic`
 작업 스케줄러 작업이 중간에 끼어들지 않는지 확인**하고(`Get-ScheduledTask`), 필요하면
