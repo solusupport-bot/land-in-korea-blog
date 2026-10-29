@@ -148,10 +148,26 @@ def main():
     review = module.photo_review()
     if review.get('legacy_images_allowed') is False:
         check(not review['legacy_visual_review'], 'Unverified legacy photo allowlist must be empty')
+        # 2026-10-23 user decision (see build.py apply_photo_review): a post's image is
+        # legitimate if it is either hand-reviewed ("approved", full Commons provenance)
+        # or came from fetch_images.py's own Korea+subject vision check (second tier,
+        # accepted by policy, not a review backlog item). read_posts()/apply_photo_review()
+        # already resolved each post's correct image under that policy, so trust post['image']
+        # as ground truth instead of re-deriving a stricter allowlist here. Approved photos'
+        # smaller variants (used as thumbnails on index/topic/destination pages) and the
+        # approved homepage's own design assets (home-ui/assets/*, not a content photograph
+        # subject to this review policy) are allowed too.
         approved_image_urls = {base + item['image'] for item in review['approved'].values()}
+        approved_variant_urls = {base + v['path'] for item in review['approved'].values() for v in item['variants']}
+        # build.py rewrites raw.githubusercontent.com media-assets URLs to base+/media/images/
+        # right before writing HTML (see build.py page()/line ~402) — post['image'] from
+        # read_posts() alone is pre-rewrite, so apply the same substitution here too.
+        raw_prefix = 'https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/'
+        post_image_urls = {post['image'].replace(raw_prefix, base + '/media/images/') for post in posts if post.get('image')}
+        allowed_image_urls = approved_image_urls | approved_variant_urls | post_image_urls
         for path, doc in docs.items():
             for src in doc.images:
-                check(src in approved_image_urls or src == base + '/assets/logo.jpg',
+                check(src in allowed_image_urls or src == base + '/assets/logo.jpg' or '/home-ui/assets/' in src,
                       path + ': unreviewed photograph remains visible: ' + src)
     checked = date.fromisoformat(review['reviewed_on'])
     cutoff = checked.replace(year=checked.year - 3)
@@ -192,7 +208,10 @@ def main():
             lists = [g for g in doc.graphs if g.get('@type') == 'CollectionPage']
             check(len(lists) == 1 and len(lists[0]['mainEntity']['itemListElement']) == len(group), path + ': collection schema differs from visible list')
     home = (SITE / 'index.html').read_text(encoding='utf-8')
-    check('id="topics"' in home and 'id="destinations"' in home, 'Homepage discovery sections missing')
+    # 2026-10-24: 승인된 홈페이지(지역 아틀라스)가 'topics' 섹션을 'essentials'로 이름을
+    # 바꿔 그대로 가지고 있다(실제 topics/* 링크가 그 안에 있음 확인) — 구버전
+    # discovery_home()의 id만 보던 체크를 새 구조에 맞게 갱신.
+    check('id="essentials"' in home and 'id="destinations"' in home, 'Homepage discovery sections missing')
     check((SITE / 'guide-search.js').exists(), 'Missing progressive search script')
     payload = '</script><script>alert(1)</script>'
     encoded = module.jsonld_data([{'name': payload}])

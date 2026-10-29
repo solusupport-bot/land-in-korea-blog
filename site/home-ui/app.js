@@ -98,7 +98,7 @@ function renderGuides(query){
   if(!list.length){const a=document.createElement('a');a.className='guide-result';a.href='https://landinkorea.com/guides';a.textContent=t('guideEmpty');list.push(a)}
   $('guide-results').replaceChildren(...list);
 }
-$('guide-form').addEventListener('submit',event=>{event.preventDefault();renderGuides($('guide-query').value)});
+$('guide-form').addEventListener('submit',event=>{event.preventDefault();const query=$('guide-query').value.trim();window.location.assign('https://landinkorea.com/guides'+(query?'#search='+encodeURIComponent(query):''))});
 function openCredits(){$('credits-dialog').showModal()}
 $('photo-credit').addEventListener('click',openCredits);$('footer-credits').addEventListener('click',openCredits);
 document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>$(button.dataset.close).close()));

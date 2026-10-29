@@ -93,27 +93,103 @@
     const term = document.getElementById('home-guide-search').value.trim();
     window.location.assign(homeForm.action + (term ? '#search=' + encodeURIComponent(term) : ''));
   });
+  // Keep the generated editorial HTML verbatim; enhance its existing nodes here.
+  const readingBody = document.querySelector('.reader-sections');
+  if (readingBody) {
+    const nodes = [...readingBody.childNodes];
+    let section, sectionBody;
+    let sectionIndex = 0;
+    const startSection = heading => {
+      section = document.createElement('details');
+      section.className = 'reader-section';
+      section.id = 'guide-section-' + (++sectionIndex);
+      section.open = true;
+      const summary = document.createElement('summary');
+      summary.append(heading);
+      sectionBody = document.createElement('div');
+      sectionBody.className = 'reader-section-body';
+      section.append(summary, sectionBody);
+      readingBody.append(section);
+    };
+    nodes.forEach(node => {
+      if (node.nodeType === 1 && node.tagName === 'H2') {
+        startSection(node);
+      } else {
+        if (!section && !node.textContent.trim() && node.nodeType !== 1) return;
+        if (!section) {
+          const heading = document.createElement('h2');
+          heading.textContent = 'Overview';
+          startSection(heading);
+        }
+        sectionBody.append(node);
+      }
+    });
+  }
+  const readingSections = [...document.querySelectorAll('.reader-section')];
+  if (readingSections.length) {
+    const smallScreen = window.matchMedia('(max-width: 620px)');
+    const controls = document.querySelector('.reader-controls');
+    const toggle = document.getElementById('reader-toggle-all');
+    const updateToggle = () => {
+      const expanded = readingSections.every(section => section.open);
+      toggle.textContent = expanded ? 'Show section headings' : 'Read the full guide';
+      toggle.setAttribute('aria-expanded', String(expanded));
+    };
+    if (smallScreen.matches) readingSections.forEach(section => { section.open = false; });
+    controls.hidden = false;
+    readingSections.forEach(section => section.addEventListener('toggle', updateToggle));
+    toggle.addEventListener('click', () => {
+      const expand = !readingSections.every(section => section.open);
+      readingSections.forEach(section => { section.open = expand; });
+      updateToggle();
+    });
+    const revealSection = hash => {
+      if (!hash.startsWith('#guide-section-')) return;
+      const section = document.getElementById(hash.slice(1));
+      if (section?.classList.contains('reader-section')) section.open = true;
+    };
+    document.querySelectorAll('.reader-toc a').forEach(link => link.addEventListener('click', () => revealSection(link.hash)));
+    revealSection(window.location.hash);
+    window.addEventListener('hashchange', () => revealSection(window.location.hash));
+    let printState = [];
+    window.addEventListener('beforeprint', () => {
+      printState = readingSections.map(section => section.open);
+      readingSections.forEach(section => { section.open = true; });
+    });
+    window.addEventListener('afterprint', () => {
+      readingSections.forEach((section, i) => { section.open = printState[i] ?? true; });
+    });
+    updateToggle();
+  }
   const input = document.getElementById('guide-search');
   if (!input) return;
   const controls = document.querySelector('[data-search-control]');
   const cards = [...document.querySelectorAll('[data-guide]')];
   const status = document.getElementById('search-status');
   const empty = document.getElementById('search-empty');
+  const pageSize = window.matchMedia('(max-width: 620px)').matches ? 6 : 12;
+  let visibleLimit = pageSize;
+  const more = document.createElement('button');
+  more.type = 'button'; more.className = 'collection-more';
+  more.textContent = 'Show more guides';
+  if (cards.length) cards[0].parentElement.after(more);
   const filter = () => {
     const words = input.value.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
     let count = 0;
     cards.forEach(card => {
       const text = card.dataset.search.toLocaleLowerCase();
       const match = words.every(word => text.includes(word));
-      card.hidden = !match;
+      card.hidden = !match || count >= visibleLimit;
       if (match) count++;
     });
-    status.textContent = `${count} of ${cards.length} guides`;
+    status.textContent = `Showing ${Math.min(count, visibleLimit)} of ${count} matching guides`;
     empty.hidden = count !== 0;
+    more.hidden = count <= visibleLimit;
   };
-  input.addEventListener('input', filter);
+  more.addEventListener('click', () => { visibleLimit += pageSize; filter(); });
+  input.addEventListener('input', () => { visibleLimit = pageSize; filter(); });
   document.getElementById('clear-search').addEventListener('click', () => {
-    input.value = ''; filter(); input.focus();
+    input.value = ''; visibleLimit = pageSize; filter(); input.focus();
   });
   if (window.location.hash.startsWith('#search=')) {
     try { input.value = decodeURIComponent(window.location.hash.slice(8)); } catch (_) { input.value = ''; }
