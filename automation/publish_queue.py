@@ -5,8 +5,9 @@ Release queued drafts into the live post set, on a cadence.
 Editorial publishing policy
 ---------------------------
 Keep generation and release separate so each article can be checked before
-publication. Two posts per Korean calendar day is this site's editorial limit;
-it is not an AdSense approval requirement or a way to guarantee approval.
+publication. Four posts per Korean calendar day is this site's editorial
+limit (raised 2026-10-29 from 2); it is not an AdSense approval requirement
+or a way to guarantee approval.
 
 So generation and publication are now separate. A writer (human or agent)
 drops finished posts into content/drafts/ whenever they are ready. This script
@@ -35,10 +36,11 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DRAFTS = os.path.join(BASE, "content", "drafts")
 POSTS = os.path.join(BASE, "content", "posts")
 
-# Hard ceiling per run. The scheduled workflow fires twice a day, so this
-# being 1 is what makes "2 posts a day" the maximum rather than a burst.
+# Hard ceiling per run. The scheduled workflow fires four times a day
+# (raised 2026-10-29 from two), so this being 1 is what makes "4 posts a
+# day" the maximum rather than a burst.
 MAX_PER_RUN = 1
-MAX_PER_DAY = 2
+MAX_PER_DAY = 4
 KST = timezone(timedelta(hours=9))
 
 

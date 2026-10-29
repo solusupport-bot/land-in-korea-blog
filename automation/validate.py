@@ -120,8 +120,9 @@ PLACEHOLDERS = re.compile(
 #
 # Google's scaled-content-abuse policy is about volume published at once.
 # Twelve posts sharing one date is the pattern that got this site flagged.
+# Raised 2026-10-29 from 2 to match publish_queue.py's MAX_PER_DAY.
 # --------------------------------------------------------------------------
-MAX_POSTS_PER_DATE = 2
+MAX_POSTS_PER_DATE = 4
 
 REQUIRED_FIELDS = ("title", "date", "category", "description", "slug")
 VALID_CATEGORIES = {

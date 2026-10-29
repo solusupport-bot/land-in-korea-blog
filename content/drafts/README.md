@@ -4,9 +4,10 @@ Finished posts go here, not straight into `content/posts/`.
 
 `automation/publish_queue.py` runs on a schedule (see
 `.github/workflows/scheduled-publish.yml`) and moves **at most one** draft per
-run into `content/posts/`, stamping it with that day's date. Two scheduled runs
-a day means a maximum of two posts a day, and the script refuses to go past two
-even if it is triggered manually in between.
+run into `content/posts/`, stamping it with that day's date. Four scheduled
+runs a day (raised 2026-10-29 from two) means a maximum of four posts a day,
+and the script refuses to go past that even if it is triggered manually in
+between.
 
 This separation is deliberate. The site was rejected by AdSense in October 2026
 for low-value content, and one of the signals was twelve posts all dated
