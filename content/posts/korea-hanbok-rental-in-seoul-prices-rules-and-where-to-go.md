@@ -7,6 +7,7 @@ slug: korea-hanbok-rental-in-seoul-prices-rules-and-where-to-go
 image_query: hanbok rental Gyeongbokgung Palace Seoul
 map_regions: seoul
 map_areas: seoul:Jongno-gu
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-hanbok-rental-in-seoul-prices-rules-and-where-to-go-1793278844580.jpg
 ---
 ## Why the rental shops cluster around one palace
 

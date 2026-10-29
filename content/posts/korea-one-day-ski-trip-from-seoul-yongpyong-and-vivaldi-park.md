@@ -6,6 +6,7 @@ description: Korea's ski season runs December to March. How shuttle-bus packages
 slug: korea-one-day-ski-trip-from-seoul-yongpyong-and-vivaldi-park
 image_query: ski resort snow slope Gangwon Korea
 map_regions: gangwon
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-one-day-ski-trip-from-seoul-yongpyong-and-vivaldi-park-1793278874132.jpg
 ---
 ## Two resorts, two different day trips
 

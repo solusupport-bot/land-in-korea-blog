@@ -7,6 +7,7 @@ slug: korea-korean-cooking-classes-in-seoul-what-to-expect-and-book
 image_query: Korean cooking class kimchi making Seoul
 map_regions: seoul
 map_areas: seoul:Jongno-gu
+image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-korean-cooking-classes-in-seoul-what-to-expect-and-book-1793278849035.jpg
 ---
 ## Kimchi-making is the default, not the only option
 
