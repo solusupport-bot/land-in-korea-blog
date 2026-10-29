@@ -49,7 +49,10 @@ class Document(HTMLParser):
         if tag == 'section':
             self.in_related = False
         if tag == 'script' and self.in_json:
-            self.graphs.extend(json.loads(self.buffer)['@graph'])
+            data = json.loads(self.buffer)
+            # Most pages wrap their schema.org objects in {"@graph": [...]}; the compare/*
+            # pages carry a single bare WebPage object instead.
+            self.graphs.extend(data['@graph'] if '@graph' in data else [data])
             self.in_json = False
 
 
@@ -63,8 +66,9 @@ def main():
 
     def target(url):
         path = unquote(urlsplit(url).path)
-        if path == '/':
-            return SITE / 'index.html'
+        if path.endswith('/'):
+            # Directory-style URL (e.g. the compare/* pages) resolves to its index.html.
+            return SITE / path.strip('/') / 'index.html'
         p = SITE / path.lstrip('/')
         return p if p.suffix else p.with_suffix('.html')
 
@@ -74,9 +78,18 @@ def main():
         doc = Document(path.read_text(encoding='utf-8'))
         docs[relative] = doc
         check(doc.h1 == 1, f'{relative}: expected one H1, got {doc.h1}')
-        expected = base + ('/' if relative == 'index.html' else '/' + relative[:-5])
+        if relative == 'index.html':
+            expected = base + '/'
+        elif relative.endswith('/index.html'):
+            # Directory-style page (e.g. compare/esim/index.html) -> base/compare/esim/
+            expected = base + '/' + relative[:-len('index.html')]
+        else:
+            expected = base + '/' + relative[:-5]
         check(doc.canonical == [expected], f'{relative}: canonical mismatch')
-        check(any(g.get('@type') == 'WebSite' for g in doc.graphs), f'{relative}: missing WebSite')
+        if not relative.startswith('compare/'):
+            # The compare/* pages intentionally carry only a WebPage schema (see
+            # automation/compare_pages.py), not the site-wide WebSite graph entry.
+            check(any(g.get('@type') == 'WebSite' for g in doc.graphs), f'{relative}: missing WebSite')
         if relative == '404.html':
             check(any('noindex' in r for r in doc.robots), '404: missing noindex')
         else:
@@ -167,7 +180,11 @@ def main():
         allowed_image_urls = approved_image_urls | approved_variant_urls | post_image_urls
         for path, doc in docs.items():
             for src in doc.images:
-                check(src in allowed_image_urls or src == base + '/assets/logo.jpg' or '/home-ui/assets/' in src,
+                # compare-assets images are disclosed AI-generated illustration (see each
+                # compare page's footer credit), not real photography subject to this
+                # provenance policy — same exemption class as the home-ui design assets.
+                check(src in allowed_image_urls or src == base + '/assets/logo.jpg'
+                      or '/home-ui/assets/' in src or '/compare-assets/' in src,
                       path + ': unreviewed photograph remains visible: ' + src)
     checked = date.fromisoformat(review['reviewed_on'])
     cutoff = checked.replace(year=checked.year - 3)

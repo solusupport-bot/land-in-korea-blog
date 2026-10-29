@@ -1683,6 +1683,9 @@ def build():
     write_ads_txt(cfg)
     write_css()
 
+    from compare_pages import write_compare_pages
+    write_compare_pages(SITE, base)
+
     print(f"Build complete: {len(posts)} posts + static pages")
     print(f"Output: {SITE}")
 
