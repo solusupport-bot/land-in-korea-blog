@@ -34,6 +34,9 @@ import re
 import sys
 from collections import defaultdict
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POSTS = os.path.join(BASE, "content", "posts")
 
