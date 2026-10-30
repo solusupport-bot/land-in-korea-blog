@@ -26,7 +26,7 @@ The round trip from Ulleungdo runs about four hours total, and if conditions all
 
 ## Booking and approval
 
-Because of the nature reserve designation, civilian visits require advance approval through the relevant Korean authorities rather than simply buying a walk-up ticket — build this into your planning timeline rather than assuming you can decide the day before. Reported per-person costs for the tour have run in the area of 300,000+ won, though pricing, exactly which agency handles approval, and current booking channels are all worth confirming directly before you commit, since these details shift and third-party sources don't agree.
+Because of the nature reserve designation, civilian visits require advance approval through the relevant Korean authorities rather than simply buying a walk-up ticket — build this into your planning timeline rather than assuming you can decide the day before. As of late October 2026, the Dodong Port-to-Dokdo ferry itself runs roughly 60,000-70,000 won one-way in economy class (around 70,000+ won for business class), so budget roughly 120,000-140,000 won round-trip per person for the boat alone — separate from your Ulleungdo ferry and any guided package you book around it. Fares vary by operator (Daezer Ferry runs the route) and season, and government support that used to subsidize fares for some veterans/national merit recipients on one operator's boat was cut in 2026, so that discount may no longer apply — book through the Korea Shipping Association's official ferry reservation site or your operator directly, and confirm the current fare and any discount eligibility before paying.
 
 ## When to go
 
@@ -40,17 +40,22 @@ Tourist sailings to Dokdo generally run in the warmer months, with winter largel
 - A landing gives you about 30 minutes ashore within a roughly 4-hour round trip — there's nothing resembling a town
 - No permanent civilian residents — just lighthouse, police, and administrative staff
 - Civilian visits need advance approval, not a walk-up ticket — plan ahead
+- The Dodong-to-Dokdo ferry alone runs roughly 60,000-70,000 won one-way economy (~120,000-140,000 won round-trip), separate from your Ulleungdo ferry
 - Sailings mostly run spring through autumn; winter weather largely closes the route
 
 ## Official sources
 
-This guide is checked against the [Ministry of Foreign Affairs of the Republic of Korea](https://www.mofa.go.kr) and [Korea Tourism Organization](https://english.visitkorea.or.kr). Visitor caps, approval procedures, and sailing schedules change — confirm current details before you book.
+This guide is checked against the [Ministry of Foreign Affairs of the Republic of Korea](https://www.mofa.go.kr) and [Korea Tourism Organization](https://english.visitkorea.or.kr). Ferry fares above are a late-October-2026 range gathered from current operator and news reporting, not a single official price list. Visitor caps, approval procedures, fares, and sailing schedules change — confirm current details with your ferry operator (Daezer Ferry runs this route) or the Korea Shipping Association's official booking system before you book.
 
 ## Frequently Asked Questions
 
 ### Can I visit Dokdo directly from mainland Korea?
 
 No. Every Dokdo trip departs from Ulleungdo's Dodong Port — there's no direct mainland-to-Dokdo ferry, so you'll need to reach Ulleungdo first.
+
+### How much does the Dokdo ferry cost?
+
+As of late October 2026, the Dodong Port-to-Dokdo ferry runs roughly 60,000-70,000 won one-way in economy class, so budget around 120,000-140,000 won round-trip per person — separate from the ferry you already took to reach Ulleungdo. Fares vary by operator and season, so confirm the current price before booking.
 
 ### Is landing on Dokdo guaranteed?
 

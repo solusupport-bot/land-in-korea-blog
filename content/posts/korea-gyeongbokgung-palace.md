@@ -19,6 +19,10 @@ Gyeongbokgung was built in 1395 as the primary royal palace of the newly founded
 
 Gyeongbokgung is Seoul's largest and most significant palace, and the grounds also hold the National Folk Museum of Korea, included in your visit at no extra cost. A useful way to think about the layout: you enter through the main gate, Gwanghwamun, cross a courtyard to the inner gate, Heungnyemun (where the guard ceremony happens), and reach Geunjeongjeon — the throne hall, and one of the largest wooden structures of its kind in Korea. Behind it, Gyeonghoeru Pavilion sits over an artificial pond and was used for state banquets; it's the building pictured on the 10,000 won bill, so it tends to draw a crowd once people recognize it. Further back, the smaller Hyangwonjeong pavilion sits on its own pond and is one of the most photographed corners of the whole complex. Budget more time than a quick walk-through — between the throne hall, the pavilions, and the museum, a rushed 20-minute stop misses most of it; two to three hours is more realistic if you actually want to see the back half of the grounds.
 
+## What it actually costs, and an hours cheat sheet
+
+Adult admission is 3,000 won (about $2.20); ages 7-18 pay 1,500 won; children under 7 and adults over 65 get in free. Opening hours shift with the season: 09:00-18:00 in spring and autumn (March-May, September-October), 09:00-18:30 in summer (June-August), and 09:00-17:00 in winter (November-February) — last entry is an hour before closing in all three. The Korea Heritage Service has proposed raising this fee, in stages, to 5,000 won within the next few years and eventually 10,000 won, with any change taking effect no earlier than January 1, 2027 — as of this check (late October 2026) the 3,000 won price is still in effect, but confirm on [royal.khs.go.kr](https://royal.khs.go.kr) if you're reading this after that date.
+
 ## The free ceremony most people miss
 
 The Royal Guard Changing Ceremony runs at the Heungnyemun Gate at set times, not continuously — currently around 10:00 and 14:00, with a shorter guard dispatch ceremony at 11:00 and 13:00. Showing up between those windows means missing it entirely, so check the schedule before you plan your visit around it. It's held daily except palace closure days, and it's completely free to watch. Arriving 10-15 minutes early gets you a spot near the front without having to push through a crowd that's already gathered.
@@ -33,7 +37,7 @@ Gyeongbokgung Station on subway Line 3 has an exit that leads almost directly to
 
 ## Combine tickets if you're visiting more than one palace
 
-If Gyeongbokgung is only one stop on a multi-palace day (Seoul has several, including Changdeokgung and Deoksugung), it's worth checking whether an integrated multi-palace ticket is available before buying single admission at each gate separately — Seoul has historically offered a combined ticket covering multiple royal palaces and the Jongmyo Shrine at a lower total cost than paying individually, though the exact price and which sites are included can change, so confirm current terms at the ticket booth or official tourism site before you buy.
+If Gyeongbokgung is only one stop on a multi-palace day, the integrated ticket covering all four royal palaces (Gyeongbokgung, Changdeokgung, Changgyeonggung, Deoksugung) plus Jongmyo Shrine runs 10,000 won for adults and 5,000 won for ages 7-18 — against 3,000 won just for Gyeongbokgung alone, it pays for itself once you're visiting two or more of the five sites. It's sold at any of the palace ticket windows, not online. As with single admission, treat this as the late-October-2026 price and confirm at the booth if a fee revision has since landed.
 
 ## Pair it with Bukchon
 
@@ -42,22 +46,28 @@ Bukchon Hanok Village sits within walking distance, making it a natural add-on a
 ## The short version
 
 - Closed Tuesdays (unless it's a holiday)
+- Adult admission is 3,000 won; 1,500 won for ages 7-18; free under 7 and over 65
+- Hours run 09:00-18:00 (spring/fall), 09:00-18:30 (summer), or 09:00-17:00 (winter) — last entry one hour before close
 - Guard ceremony runs on a schedule (currently ~10:00 and 14:00) — not continuous
 - A full hanbok gets you in free
 - Budget two to three hours, not 20 minutes — it's Seoul's largest palace with a museum on-site
 - Arrive at opening if you want to avoid tour-group crowds
 - Bukchon Hanok Village is a short walk away
-- Ask about a multi-palace combined ticket if you're seeing more than one site
+- The 4-palace + Jongmyo integrated ticket is 10,000 won adult / 5,000 won youth — worth it past one extra site
 
 ## Official sources
 
-This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr) and the [Korea Heritage Service](https://royal.khs.go.kr). Prices confirmed as of late October 2026; a fee revision has been proposed for Gyeongbokgung and other royal sites no earlier than January 1, 2027 — confirm current admission there before you rely on the figures above.
 
 ## Frequently Asked Questions
 
 ### What day is Gyeongbokgung Palace closed?
 
 Tuesdays — unless that Tuesday is a public holiday, in which case it stays open and the closure shifts to the next non-holiday day.
+
+### How much does Gyeongbokgung Palace admission cost?
+
+3,000 won for adults, 1,500 won for ages 7-18, and free for children under 7 and adults over 65 — as of late October 2026. A fee increase has been proposed but isn't set to take effect before January 1, 2027 at the earliest.
 
 ### How do I get free admission to Gyeongbokgung?
 
@@ -73,4 +83,4 @@ More than the 20 minutes most first-timers budget. Between the throne hall, the 
 
 ### Is it worth buying a multi-palace ticket instead of single admission?
 
-If you're planning to see more than one of Seoul's royal palaces (or Jongmyo Shrine) during your trip, it's worth asking at the ticket booth whether a combined ticket is available — it has historically worked out cheaper than paying full price at each site individually.
+Yes, past one extra site. The integrated ticket covering all four palaces plus Jongmyo Shrine is 10,000 won for adults — compared to 3,000 won for Gyeongbokgung alone, visiting even one more site on the list makes the combined ticket the cheaper option. It's sold at any palace ticket window, not online.

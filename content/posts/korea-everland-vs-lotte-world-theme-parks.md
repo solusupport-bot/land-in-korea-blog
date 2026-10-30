@@ -34,9 +34,9 @@ Lotte World Adventure is split into an indoor park, often described as the world
 
 Everland has no direct subway station — count on a direct bus from central Seoul or a shuttle service, and confirm the current pickup points and schedule on Everland's official site since bus routes and departure spots do change. If you're paying bus or subway fare either way, a [T-money card](https://landinkorea.com/posts/korea-t-money-transit-card.html) covers both and saves fumbling for cash. Lotte World, by contrast, is about as low-effort as Seoul attractions get: take Line 2 or Line 8 to Jamsil Station and follow the signs, no bus transfer needed.
 
-## Ticket types are similar, but confirm current prices yourself
+## What a one-day pass actually costs
 
-Both parks sell a standard one-day pass plus shorter options, such as a discounted ticket for entry later in the afternoon, aimed at visitors who only want a half-day. Travel agencies and booking apps also sell their own discounted versions of these same tickets, sometimes cheaper than buying at the gate. Exact ticket names, what they include, and current prices change often enough that quoting a specific figure here would likely be wrong by the time you read this — check Everland's or Lotte World Adventure's official site, or a booking app, before you commit to a ticket type.
+As of late October 2026, Everland's adult one-day pass runs roughly 52,000-68,000 won at the gate depending on the season and day of week, with foreigner-discount passes through booking apps running lower, around 38,000-48,000 won. Lotte World Adventure's adult one-day pass is more consistent across sources at around 62,000 won at the gate (54,000 won for teens, 46-47,000 won for children), with an After 4PM discounted ticket around 41,000 won and foreigner reseller passes running 40,000-45,000 won. Both parks' gate prices move with season and day of week, and booking apps routinely undercut the gate — so these are the current range to budget against, not a number to show up expecting exactly. Confirm the day-of price on Everland's or Lotte World Adventure's official site, or a booking app, before you buy.
 
 ## Weather matters more for Everland
 
@@ -52,16 +52,20 @@ Lotte World Tower, Korea's tallest building, and its Seoul Sky observation deck 
 - Lotte World sits right on Jamsil Station (Line 2 and Line 8), a few minutes' walk from the entrance
 - Everland's draw is Zootopia (Safari World, Lost Valley, Panda World) and the T Express wooden coaster
 - Lotte World splits into an indoor "Adventure" park (year-round) and an outdoor "Magic Island" (weather-dependent)
-- Both parks sell one-day and shorter afternoon-entry tickets — confirm current names and prices on the official site
+- Adult one-day pass: Everland roughly 52,000-68,000 won at the gate (38,000-48,000 won discounted), Lotte World around 62,000 won at the gate (40,000-45,000 won discounted) — both move with season, so confirm the day-of price
 - Everland runs spring flower festivals (Tulip Festival, then Rose Festival) that make it more weather-dependent
 - Lotte World Tower and its Seoul Sky observation deck sit next door but require a separate ticket
 - If your schedule is tight, Lotte World's subway access usually beats Everland's bigger rides
 
 ## Official sources
 
-This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Ticket prices above are an October 2026 snapshot gathered from multiple current booking platforms rather than a single official price list — gate prices move with season and day of week, so confirm the day-of price on Everland's or Lotte World's own site before you buy.
 
 ## Frequently Asked Questions
+
+### How much is a one-day ticket to Everland or Lotte World?
+
+As of late October 2026, Everland's adult gate price runs roughly 52,000-68,000 won depending on season and day, with foreigner-discount passes around 38,000-48,000 won. Lotte World's adult gate price sits closer to 62,000 won, with discounted passes around 40,000-45,000 won. Both move with the calendar, so treat these as a budgeting range and confirm the exact day-of price before buying.
 
 ### Which is better for young kids, Everland or Lotte World?
 

@@ -22,7 +22,7 @@ The 2026 edition is the **21st Busan Fireworks Festival**, and according to Kore
 - **Organizer:** Busan Metropolitan City, operated by the Busan Culture & Tourism Festival Organizing Committee
 - **Official site:** [busanfireworks.com](https://busanfireworks.com/)
 
-Admission to the beach area itself is free and this is how most people watch it — Gwangalli simply fills with a crowd. There are also **paid reserved-seating sections**; some secondary sources mention specific prices, but the organizing committee's own page only confirms seating is paid without listing a locked-in rate for 2026, so confirm the current price and availability directly on the official site or ticket platforms like NOL Ticket before planning around a specific number.
+Admission to the beach area itself is free and this is how most people watch it — Gwangalli simply fills with a crowd. There are also **paid reserved-seating sections**, set up on the sand in front of Hotel Aquapellis and Homers Hotel: R-seats cost 100,000 won and S-seats cost 70,000 won, per Busan Metropolitan City's own press release, the same rate as 2024 and 2025. Busan residents get a new 10% discount this year, capped at 4 tickets per person. Tickets sell through NOL Ticket (through November 6, 17:00) or the Busan Bank app (S-seats only, through November 1) — sales opened September 4 at 14:00, and discounted-ticket holders still have to collect a physical ticket at the venue on the day.
 
 The official notice also warns that festival logistics can shift depending on the organizer's circumstances — treat the date as solid (it's on both the government listing and ticket platforms) but double-check close to your trip.
 
@@ -85,7 +85,7 @@ Festival-night pricing spikes hard and books out early at this beach — if your
 
 ## Official sources
 
-This guide is checked against the [Ministry of Culture, Sports and Tourism festival listing](https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pSeq=11935) for the event date, time, location, and organizer, the [official Busan Fireworks Festival site](https://busanfireworks.com/) for ticketing, and live Google Maps transit routing and business listings for the subway directions, restaurants, and accommodations above. Prices, ratings, and festival logistics can change — confirm time-sensitive details there before you rely on them.
+This guide is checked against the [Ministry of Culture, Sports and Tourism festival listing](https://www.mcst.go.kr/site/s_culture/festival/festivalView.jsp?pSeq=11935) for the event date, time, location, and organizer, the [official Busan Fireworks Festival site](https://busanfireworks.com/) for ticketing, [Busan Metropolitan City's press release](https://www.busan.go.kr/nbtnewsBU/1752768) for the paid-seat prices and sales channels, and live Google Maps transit routing and business listings for the subway directions, restaurants, and accommodations above. Prices, ratings, and festival logistics can change — confirm time-sensitive details there before you rely on them.
 
 ## Frequently Asked Questions
 
@@ -93,7 +93,7 @@ This guide is checked against the [Ministry of Culture, Sports and Tourism festi
 Saturday, November 7, 2026, from 13:00 to 20:00, with the fireworks as the evening finale. It's held at Gwangalli Beach, with Haeundae and Igidae also usable as viewing spots.
 
 ### Do I need a ticket to watch?
-No — most of the crowd watches for free from the beach and surrounding area. Paid reserved seating also exists; check the official site or ticket platforms for current pricing, since it isn't locked in on the government listing.
+No — most of the crowd watches for free from the beach and surrounding area. Paid reserved seating also exists on the sand in front of Hotel Aquapellis and Homers Hotel: 100,000 won for R-seats, 70,000 won for S-seats, sold through NOL Ticket or the Busan Bank app (S-seats only). Busan residents get a 10% discount, up to 4 tickets.
 
 ### What subway station should I use?
 Gwangan Station on Busan Metro Line 2. It's a short walk from Gwangalli Beach.

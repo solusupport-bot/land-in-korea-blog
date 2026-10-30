@@ -22,7 +22,7 @@ If you've been researching this for a while, you've probably seen Go City's Seou
 
 ## What's actually available now
 
-The Discover Seoul Pass, run through Seoul's tourism authority, comes in two formats: a "Pick 3" version where you choose a set number of attractions, and a time-based version (activated on first use, running 72 or 120 hours) with unlimited entry to included sites in that window. Klook's Seoul pass works differently — you pick a number of attractions from a curated list and use them at your own pace within a set number of days, no clock running once you start. Both bundle in well-known paid sights like [N Seoul Tower](https://landinkorea.com/posts/korea-n-seoul-tower-namsan.html), though the exact list on either changes over time.
+The Discover Seoul Pass, run through Seoul's tourism authority, comes in two formats: a "Pick 3" version at around 70,000 won, and a time-based version with unlimited entry to included sites, sold as 24-hour (50,000 won), 48-hour (70,000 won), 72-hour (90,000 won), and 120-hour (130,000 won) options, counting down from first use. Klook's own Seoul Pass works differently — you pick a number of attractions (2 through 6) from a curated list of 15+ sites and use them at your own pace within a set window, no clock running once you start — but its price swings widely between listings (from roughly $31 to over $100 for the same 2-attraction tier depending on the seller), so check the live Klook price at checkout rather than trusting a quoted figure. Both bundle in well-known paid sights like [N Seoul Tower](https://landinkorea.com/posts/korea-n-seoul-tower-namsan.html), though the exact list on either changes over time.
 
 ## The math that actually decides if it's worth it
 
@@ -34,7 +34,7 @@ A fixed-duration pass (the Discover Seoul Pass's 72/120-hour option) starts a co
 
 ## If you're only here for palaces, skip the tourist pass
 
-None of the general attraction passes are the cheapest way to see multiple palaces. Seoul separately sells an integrated ticket covering all four major palaces — [Gyeongbokgung](https://landinkorea.com/posts/korea-gyeongbokgung-palace.html), Changdeokgung, Changgyeonggung, and Deoksugung — plus Jongmyo Shrine, sold at any palace ticket window for a fraction of a general attraction pass's cost. It doesn't include Changdeokgung's Secret Garden, which needs its own reservation-limited ticket, and it covers one visit per site rather than repeat entry. If palaces are your main goal and you're not also chasing N Seoul Tower or Lotte World, this integrated ticket beats any general pass on price.
+None of the general attraction passes are the cheapest way to see multiple palaces. Seoul separately sells an integrated ticket covering all four major palaces — [Gyeongbokgung](https://landinkorea.com/posts/korea-gyeongbokgung-palace.html), Changdeokgung, Changgyeonggung, and Deoksugung — plus Jongmyo Shrine, for 10,000 won adult / 5,000 won youth, sold at any palace ticket window. Compare that to the cheapest Discover Seoul Pass tier at 50,000 won, and the palace-only ticket wins by a wide margin if palaces are genuinely your main goal. It doesn't include Changdeokgung's Secret Garden, which needs its own reservation-limited ticket, and it covers one visit per site rather than repeat entry. If you're not also chasing N Seoul Tower or Lotte World, this integrated ticket beats any general pass on price.
 
 ## The extras bundled in, and why you should still double-check
 
@@ -48,6 +48,7 @@ Passes work best on days packed with paid attractions back-to-back — palace, t
 
 - Go City's Seoul pass closed in August 2024 — ignore any comparison that still lists it
 - The real options now are the official Discover Seoul Pass and Klook's Seoul pass, plus the separate palace integrated ticket
+- Discover Seoul Pass runs 50,000 won (24hr) to 130,000 won (120hr); the Pick 3 credit option is around 70,000 won; the four-palace integrated ticket is just 10,000 won
 - Fixed-duration passes (72/120-hour) start counting down at first scan; credit-based passes give you visits to use over a longer window
 - Credit-based passes suit trips with rest days mixed into the schedule; fixed-duration suits back-to-back sightseeing days
 - The four-palace-plus-Jongmyo integrated ticket beats any general pass if palaces are your main goal
@@ -57,9 +58,13 @@ Passes work best on days packed with paid attractions back-to-back — palace, t
 
 ## Official sources
 
-This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr) and [Seoul Metropolitan Government](https://english.seoul.go.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr) and [Seoul Metropolitan Government](https://english.seoul.go.kr). The won figures above are an October 2026 snapshot pulled from the pass resellers' own current listings, not a single official price page — confirm the live price before buying.
 
 ## Frequently Asked Questions
+
+### How much does the Discover Seoul Pass cost?
+
+As of late October 2026: 50,000 won for 24 hours, 70,000 won for 48 hours, 90,000 won for 72 hours, and 130,000 won for 120 hours, with a Pick 3 credit-based tier around 70,000 won. Compare that to the 10,000 won four-palace integrated ticket if palaces are most of your itinerary.
 
 ### Is the Discover Seoul Pass still worth buying in 2026?
 

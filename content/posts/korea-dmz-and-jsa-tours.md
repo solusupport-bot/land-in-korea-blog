@@ -13,11 +13,11 @@ A DMZ tour and a JSA (Joint Security Area/Panmunjom) tour get blurred together i
 
 ## What a standard DMZ tour actually covers
 
-Most DMZ day tours from Seoul gather at Imjingak Peace Park, then move through a set circuit: the Third Infiltration Tunnel, Dora Observatory, and Dorasan Station. The Third Tunnel was discovered running under the border in 1978, stretches roughly 1.6 km, and reaches about 73 meters underground — visitors walk down into it wearing a hard hat provided at the site. Dora Observatory looks directly across the buffer zone into North Korean territory, with binoculars along the viewing deck. Dorasan Station is the more symbolic stop: built as the last station on the South Korean side toward Pyongyang, it's functional but sees no regular passenger service north. A full DMZ day tour, with transport from Seoul and lunch included, typically fills most of a day.
+Most DMZ day tours from Seoul gather at Imjingak Peace Park, then move through a set circuit: the Third Infiltration Tunnel, Dora Observatory, and Dorasan Station. The Third Tunnel was discovered running under the border in 1978, stretches roughly 1.6 km, and reaches about 73 meters underground — visitors walk down into it wearing a hard hat provided at the site. Dora Observatory looks directly across the buffer zone into North Korean territory, with binoculars along the viewing deck. Dorasan Station is the more symbolic stop: built as the last station on the South Korean side toward Pyongyang, it's functional but sees no regular passenger service north. A full DMZ day tour, with transport from Seoul and lunch included, typically fills most of a day. As of late October 2026, a half-day standard DMZ tour runs roughly 50,000-60,000 won per person, and a full day with lunch included runs roughly 70,000-95,000 won — these are gathered across several current operator listings rather than one fixed official price, and they shift with fuel costs and the exact circuit included, so treat the range as a budgeting guide rather than a quote.
 
 ## What a JSA tour adds — and why it's a different trip
 
-The JSA was established at Panmunjom after the 1953 Armistice Agreement was signed there, and it's still the only spot where South and North Korean forces stand face to face. The blue conference buildings inside the compound straddle the Military Demarcation Line, and on a JSA tour you're taken inside one of them, where the line runs across the floor — for a few minutes, you're technically standing on the north side under UN Command escort. It's a site with real history behind the tension: in 1976, North Korean soldiers killed two U.S. Army officers overseeing a tree-trimming detail in the JSA, an incident that led to a major show-of-force operation days later. A JSA tour runs longer overall than a standard DMZ tour once transport and the security briefing are factored in, though the time actually spent inside the compound is brief.
+The JSA was established at Panmunjom after the 1953 Armistice Agreement was signed there, and it's still the only spot where South and North Korean forces stand face to face. The blue conference buildings inside the compound straddle the Military Demarcation Line, and on a JSA tour you're taken inside one of them, where the line runs across the floor — for a few minutes, you're technically standing on the north side under UN Command escort. It's a site with real history behind the tension: in 1976, North Korean soldiers killed two U.S. Army officers overseeing a tree-trimming detail in the JSA, an incident that led to a major show-of-force operation days later. A JSA tour runs longer overall than a standard DMZ tour once transport and the security briefing are factored in, though the time actually spent inside the compound is brief. Expect to pay more for it too: a full day combining DMZ, JSA, and the Third Tunnel typically runs 96,000-135,000 won per person across current operator listings, versus 70,000-95,000 won for a DMZ-only day — the JSA security processing and the UN Command escort are what account for the difference. A handful of operators also sell private VIP versions starting around 250,000 won.
 
 ## Booking and passport requirements
 
@@ -43,6 +43,7 @@ Neither the DMZ buffer zone nor the JSA can be reached independently or by publi
 
 - DMZ tours and JSA tours are different trips — don't assume they're interchangeable when booking
 - DMZ tours cover the Third Tunnel (discovered 1978, ~1.6 km, ~73 m deep), Dora Observatory, and Dorasan Station
+- DMZ-only day tours run roughly 70,000-95,000 won; adding JSA pushes it to roughly 96,000-135,000 won (private VIP tours start around 250,000 won)
 - JSA tours go inside the shared compound at the Military Demarcation Line and require advance passport vetting — a week at minimum, often two to three months during busier stretches
 - JSA access gets suspended entirely at times over diplomatic tensions, sometimes without warning — don't build a tight itinerary around it, and keep the standard DMZ tour as a fallback
 - A physical passport is mandatory at checkpoints for both — no photos or copies
@@ -53,9 +54,13 @@ Neither the DMZ buffer zone nor the JSA can be reached independently or by publi
 
 ## Official sources
 
-This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices, hours, and procedures change — confirm time-sensitive details there before you rely on them.
+This guide is checked against [Korea Tourism Organization](https://english.visitkorea.or.kr). Prices above are an October 2026 range gathered across several current operator listings, not one official price list, and can shift with fuel costs and tour inclusions — confirm the live quote with your operator before booking.
 
 ## Frequently Asked Questions
+
+### How much does a DMZ or JSA tour cost?
+
+As of late October 2026, a standard DMZ-only day tour runs roughly 70,000-95,000 won per person with lunch included (half-day versions run 50,000-60,000 won). Adding the JSA pushes a full day to roughly 96,000-135,000 won, and private VIP tours start around 250,000 won. Prices vary by operator and season — get a live quote before booking.
 
 ### Can I visit the JSA without a tour?
 
