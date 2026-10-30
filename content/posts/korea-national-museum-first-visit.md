@@ -1,5 +1,5 @@
 ---
-title: National Museum of Korea in Seoul: A First-Visit Guide
+title: National Museum of Korea in Seoul - A First Visit Guide
 date: 2026-10-29
 category: Practical info
 description: Plan a visit to the National Museum of Korea in Seoul, from Ichon Station to free galleries, changing hours and family facilities.
@@ -8,6 +8,8 @@ image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/medi
 map_regions: seoul
 map_areas: seoul:Yongsan-gu
 ---
+
+## What to know before visiting
 
 The National Museum of Korea makes a practical stop when you want a deeper look at Korean history without trying to pack another palace into the day. Its permanent galleries are free, Ichon Station is nearby, and the museum stays open later on two evenings each week. A little planning matters, though: the whole museum is not always available on the same schedule, and special exhibitions can have their own charges or arrangements.
 
@@ -27,7 +29,7 @@ Check the museum's current exhibition page before you go if a particular show is
 
 The museum lists regular indoor hours of 9:30 a.m. to 5:30 p.m. on Monday, Tuesday, Thursday, Friday and Sunday, and 9:30 a.m. to 9 p.m. on Wednesday and Saturday. Last admission is 30 minutes before closing. The outdoor exhibition area has a different schedule, listed as 7 a.m. to 10 p.m.
 
-Do not assume that every Monday is a closure day. The museum lists the first Monday of March, June, September and December as regular gallery closure dates, with exceptions possible. It also lists January 1, Lunar New Year's Day and Chuseok as museum closure days. Because holiday dates and special arrangements change, check the official visitor information for your exact date rather than copying an old itinerary. In 2026, the museum lists December 7 as a regular gallery closure day.
+Do not assume that every Monday is a closure day. The museum lists the first Monday of March, June, September and December as regular gallery closure dates, with exceptions possible. It also lists January 1, Lunar New Year's Day and Chuseok as museum closure days. Because holiday dates and special arrangements change, check the official visitor information for your exact date rather than copying an old itinerary. December 7, 2026 falls on the first Monday of December; check the museum’s current notice for any exception.
 
 Wednesday and Saturday evenings are useful if your day is already committed to another neighbourhood. Arriving near closing leaves less time than the opening-hours headline suggests, however, so check last admission and leave room to get from the station to the galleries.
 
@@ -53,7 +55,21 @@ Food and drinks are prohibited under the published visitor rules, so finish snac
 
 Check three things on the museum website: that the galleries you want are open on your date, whether a special exhibition needs a paid ticket, and whether a guided tour or children's session needs planning. Keep the [official visitor information](https://www.museum.go.kr/ENG/contents/E0101010000.do) and [subway directions](https://www.museum.go.kr/ENG/contents/E0105010000.do) handy; hours and services can change.
 
-The museum's Korean and English information number is +82-2-2077-9046. For the rest of your trip, our [Seoul subway guide](/posts/korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train) explains how to read exit numbers and plan transfers, while our [Monday closures guide](/posts/korea-the-closed-on-monday-trap-how-korean-palaces-and-museums-schedule-their-days-off) helps you check another sightseeing day.
+The museum's Korean and English information number is +82-2-2077-9046. For the rest of your trip, our [Seoul subway guide](https://landinkorea.com/posts/korea-seoul-subway-details-nobody-tells-you-exit-numbers-transfer-walks-express-trains-and-the-last-train.html) explains how to read exit numbers and plan transfers, while our [Monday closures guide](https://landinkorea.com/posts/korea-the-closed-on-monday-trap-how-korean-palaces-and-museums-schedule-their-days-off.html) helps you check another sightseeing day.
+
+## Frequently asked questions
+
+### Is admission to the National Museum of Korea free?
+
+The permanent exhibition halls and Children's Museum are free. Some special exhibitions charge a separate admission fee, so check the event details before booking.
+
+### Which subway station should I use for the museum?
+
+Use Ichon Station on Line 4 or the Gyeongui-Jungang Line and follow the museum's directions from Exit 2. An underground passage also connects the station and museum area.
+
+### Can I visit the National Museum of Korea on a Monday?
+
+Usually, yes. The permanent and special galleries close on the first Monday of March, June, September and December, with possible exceptions. The museum also lists New Year's Day, Lunar New Year's Day and Chuseok as closure days. Check the official notice for your date.
 
 ## Official sources
 
