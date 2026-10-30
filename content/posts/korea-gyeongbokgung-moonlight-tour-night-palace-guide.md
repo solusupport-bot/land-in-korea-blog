@@ -1,8 +1,8 @@
 ---
-title: Gyeongbokgung Moonlight Tour - How to See Seoul's Main Palace Lit Up at Night
+title: Gyeongbokgung Moonlight Tour 2026: Status & What to Do Now
 date: 2026-10-18
 category: Practical info
-description: Gyeongbokgung's 2026 ticketed night tour ran through October 24 and has now ended. Full schedule and booking details for reference, plus what to do instead right now.
+description: Gyeongbokgung's 2026 ticketed night tour ended October 24. Schedule and booking details for reference, plus what to do instead right now.
 slug: korea-gyeongbokgung-moonlight-tour-night-palace-guide
 image_query: Gyeongbokgung Palace night illuminated autumn Seoul
 image: https://raw.githubusercontent.com/solusupport-bot/land-in-korea-blog/media-assets/images/korea-gyeongbokgung-moonlight-tour-night-palace-guide-1792729782813.jpg
