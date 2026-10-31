@@ -33,7 +33,9 @@ Mid-range estimates cluster more tightly: $100-160 from most sources, with Seoul
 
 **Connectivity:** Covered in detail in our [eSIM and mobile data guide](https://landinkorea.com/posts/korea-esim-mobile-data.html) — budget roughly $9-19 for a 7-10 day eSIM data plan, per the price-comparison page we maintain (checked 2026-10-28, provider prices subject to change).
 
-**Attractions:** Palace entry fees are low individually (a few thousand won each), and several — including Gyeongbokgung on specific days — offer free entry with hanbok rental. The bigger attraction cost is usually a single splurge item: a theme park day (Everland or Lotte World) or a DMZ tour.
+**Attractions:** Palace entry fees are low individually (a few thousand won each), and several — including Gyeongbokgung on specific days — offer free entry with hanbok rental. The bigger attraction cost is usually a single splurge item: a theme park day (Everland or Lotte World) or a [DMZ tour](https://landinkorea.com/posts/korea-dmz-jsa-tour-price-comparison.html), which alone can run $35-200+ depending on tier.
+
+**One lever worth knowing about:** if your trip includes several paid attractions, bundling them through a marketplace like [Klook]({{klook}}) — which sells individual Seoul attraction tickets, combo passes, and tours together — can work out cheaper than buying each ticket separately, and it consolidates your attraction budget into a short list instead of cash or cards at a dozen different ticket windows. Worth comparing against walk-up prices for whatever's actually on your list before you commit to a bundle.
 
 ## A rough day, three ways
 
@@ -44,6 +46,10 @@ Mid-range estimates cluster more tightly: $100-160 from most sources, with Seoul
 **Comfort day:** Upscale hotel (~₩300,000+) + restaurant dining (~₩80,000+) + taxis instead of transit (~₩30,000+) + attractions/activities (~₩50,000+) ≈ ₩460,000+, or roughly $340+.
 
 These are illustrative, not quotes — your actual day will move with season, how many cities you cover, and how often you eat out versus cook or grab convenience-store food.
+
+## How season changes these numbers
+
+None of the ranges above account for seasonal swings, which are real in Korea. Cherry blossom season (late March-early April) and peak fall foliage (late October-early November) push hotel rates up across every travel style, sometimes substantially in popular neighborhoods — see our [cherry blossom and fall foliage timing guide](https://landinkorea.com/posts/korea-timing-cherry-blossoms-and-fall-foliage-in-korea-without-hitting-peak-crowds.html) for exact windows. Korean public holidays, especially Seollal and Chuseok, also spike domestic travel demand and prices as locals travel too, not just visitors. If your dates are flexible, shifting even a few days off a peak window can meaningfully change your lodging line item, which — per the section above — is the single biggest swing factor in your whole daily budget anyway.
 
 ## Official sources
 

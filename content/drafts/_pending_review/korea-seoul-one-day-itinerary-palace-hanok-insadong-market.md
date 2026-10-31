@@ -26,6 +26,8 @@ Full practical details — hours, ticket prices, the changing-of-the-guard cerem
 
 If you'd rather see a less-crowded palace with a famous secret garden instead, Changdeokgung is the commonly recommended swap — but its Secret Garden section needs a same-day or advance-booked timed ticket, so it doesn't drop into a loose itinerary as easily as Gyeongbokgung does.
 
+**Want the hanbok discount without arranging a rental yourself?** Wearing a hanbok gets you free entry to Gyeongbokgung (and several other palaces) — a genuine, official discount, not a tourist gimmick. [Klook]({{klook}}) lists rental shops right at the palace with English booking and photos included, which is faster than finding a shop in person if you want to be dressed before the gates open. Note the free-entry exception: Gyeongbokgung doesn't waive entry for hanbok-wearers on its Tuesday closure day, same as everyone else.
+
 ## 2. Walk to Bukchon Hanok Village
 
 From Gyeongbokgung's eastern exit, it's about a 10-15 minute walk uphill into Bukchon. This matters for expectations: Bukchon is a residential neighborhood of traditional hanok houses, not a recreated tourist attraction. People live here. Keep voices down on the narrow lanes, especially around the well-known photo spots, and stay off private stairs and doorsteps.
@@ -56,6 +58,14 @@ Two common swaps if this itinerary feels too light or too packed:
 
 - **Swap Bukchon for Ikseon-dong Hanok Village** — smaller, less crowded, but its specialty cafes can mean a real wait at peak hours.
 - **Add Namsan/N Seoul Tower as a sunset close** instead of ending at the market, if you'd rather finish with a view than a meal.
+
+## If you'd rather not plan it yourself
+
+Everything in this itinerary is doable independently with no booking required (aside from the Changdeokgung swap). If you'd rather have someone else handle the route, pacing, and explanations, guided versions of roughly this exact combination exist — [Klook]({{klook}}) lists Seoul day tours that pair Gyeongbokgung, a hanok village stop, and a market visit with a guide, which is worth comparing against doing it yourself if you'd rather not navigate or research on the day.
+
+## What this day actually costs
+
+Entry fees along this route are modest individually: Gyeongbokgung's ticket price is low by international standards, Bukchon and Insadong don't charge entry at all (you're walking public streets), and Jogyesa Temple is free. The real cost variables are hanbok rental if you want one (a genuine but optional add-on) and whatever you spend on food at the closing market. Transit between stops is covered by a few T-money taps at most, since the whole route is walkable with public transit as a backup rather than a requirement. Compared to a day built around paid attractions (a theme park, a DMZ tour), this is one of the cheaper full days you can build in Seoul.
 
 ## Getting between stops
 

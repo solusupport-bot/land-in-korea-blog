@@ -28,6 +28,8 @@ Walking into a food alley with no plan is how people end up pointing at random a
 
 A reasonable approach for a first visit: split 2-3 dishes between two people rather than ordering one full dish each, since portions at food-alley stalls are usually meant for sharing or grazing across several stalls.
 
+**If you'd rather not guess which stall is good:** a guided food tour removes the guesswork — a local guide walks you through a set rotation of stalls (typically 10-12 dishes across the visit) rather than you picking blind. [Klook]({{klook}}) lists a couple of these for Gwangjang specifically, including an English-language version and a separate vegan/vegetarian-focused tour if the meat- and seafood-heavy dishes above don't work for your diet.
+
 ## Payment: bring cash
 
 This is the single most common first-timer mistake. Many market stalls, including well-known food stalls at both Gwangjang and Namdaemun, take cash only — no cards, and often no mobile pay either. Withdraw cash before you go (ATMs at major subway stations work reliably with foreign cards) rather than discovering this standing at a stall with a line behind you.
@@ -44,6 +46,10 @@ If a stall does take cards, it will usually have a visible card reader or a sign
 ## When to go
 
 Both markets are busiest at lunch (roughly 12-1:30 PM) and, for Gwangjang specifically, in the early evening once it shows up in more people's "what to do tonight" plans. If you want a calmer walk-through with shorter lines, aim for a 10-11 AM arrival, after stalls have opened but before the lunch rush.
+
+## Namdaemun's late-night and wholesale side
+
+Namdaemun has a character the "largest traditional market" label doesn't fully convey: parts of it function as a wholesale district, which is why some sections run genuinely late or around the clock, catering to buyers restocking shops rather than tourists. If your schedule only allows a late-evening or very early visit, Namdaemun is the more realistic option of the two — Gwangjang's food alley, while it runs until 11 PM, is built around dinner-hour crowds and winds down earlier than Namdaemun's latest sections. Don't expect the same lively food-hall atmosphere late at night, though; it's a different, quieter market after the dinner rush than during the day.
 
 ## Getting there and getting around after
 
@@ -69,4 +75,8 @@ It's busier than it used to be, partly from international food-show coverage, bu
 
 ### What if I have dietary restrictions?
 
-Vegetarian options are limited at both markets — most of the well-known dishes involve meat or seafood-based broths. Bindaetteok (the mung bean pancake) is usually vegetarian-friendly, but confirm with the vendor since some versions include pork.
+Vegetarian options are limited at both markets if you're ordering blind — most of the well-known dishes involve meat or seafood-based broths, and stall staff may not have the English vocabulary to explain every ingredient. Bindaetteok (the mung bean pancake) is usually vegetarian-friendly, but confirm with the vendor since some versions include pork. A dedicated vegan/vegetarian food tour (see above) is the more reliable route if dietary restrictions matter and you don't want to navigate it stall-by-stall yourself.
+
+### How much should I budget for a market meal?
+
+Street food here is genuinely cheap by sit-down-restaurant standards — individual dishes at food-alley stalls typically run a few thousand won each, so grazing across 3-4 stalls for two people usually costs less than one restaurant meal would. A guided food tour (see above) costs more than DIY grazing since you're paying for the curation and guide, not just the food.

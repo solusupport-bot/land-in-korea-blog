@@ -37,6 +37,17 @@ One aggregator (momondo) puts the overall Seoul average around $89/night, with H
 - **Want the absolute lowest number and don't mind a less touristy base:** Dongdaemun.
 - **Business trip or want Seoul's upscale dining/nightlife scene:** Gangnam.
 
+## What's actually walkable from each base
+
+Picking a neighborhood also decides what you can do without a subway ride first thing in the morning or last thing at night:
+
+- **Myeongdong:** [Namdaemun Market](https://landinkorea.com/posts/korea-namdaemun-market.html) and Myeongdong's own shopping district are a walk away, and it's a short subway ride from here to [Insadong and Bukchon Hanok Village](https://landinkorea.com/posts/korea-seoul-one-day-itinerary-palace-hanok-insadong-market.html) if you're doing the classic first-timer route.
+- **Hongdae:** walkable nightlife and live-music venues, plus easy airport rail access (AREX connects through Hongik University Station), which matters if you're optimizing for a smooth arrival or departure day.
+- **Gangnam:** walkable upscale dining and the COEX/Bongeunsa area; less walkable to the palace-and-hanok cluster most first-timers prioritize, so expect more subway time if that's on your list.
+- **Dongdaemun:** walkable to Dongdaemun Design Plaza and its night markets; furthest of the four from the Myeongdong/Insadong historic core.
+
+If you want to book a specific activity near wherever you land rather than researching it separately, [Klook]({{klook}}) lists tours and tickets by Seoul neighborhood, which is a quicker way to see what's actually bookable near your hotel than searching each attraction individually.
+
 ## Booking timing
 
 None of the sources above are live, checked-today rates — hotel pricing shifts constantly with season and specific dates. The practical move: use the neighborhood comparison above to pick where you want to be, then check live rates on your actual booking platform of choice for your specific travel dates before committing. A neighborhood that looks mid-range in October can price very differently during cherry blossom season or a major holiday week.
