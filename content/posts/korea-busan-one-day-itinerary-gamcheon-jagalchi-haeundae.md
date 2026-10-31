@@ -1,4 +1,5 @@
 ---
+date: 2026-10-31
 title: Busan in One Day - Gamcheon, Jagalchi Market and Haeundae Beach
 category: Practical info
 description: A realistic one-day Busan route covering Gamcheon Culture Village, Jagalchi fish market and Haeundae Beach, with timing and transit notes.
