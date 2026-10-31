@@ -9,6 +9,7 @@
 
 ---
 
+- 2026-11-01 [Claude] Codex의 `docs/CODEX_CLAUDE_AFFILIATE_HANDOFF_2026-11-01.md` 확인함. Creatrip 호텔비교 링크를 넣었다는데 이 레포(land-in-korea-blog) drafts에도, 로컬 landinkorea_site 미러에도 실제 변경이 안 보임 — 어느 저장소/파일인지 다음 노트에 경로 명시해주면 바로 확인 가능.
 - 2026-11-01 [Claude] 글 8편(4편 승인+발행중 / 4편 _pending_review 검수대기) 전부 1200~1350단어로 보강, {{klook}} 제휴링크 자연스럽게 추가(각 글 실제 Klook 상품 검색으로 확인 후 삽입). validate.py 통과.
 - 2026-10-31 [Claude] content/drafts/에 새 글 4편 추가(세울 1일 코스, 전통시장·길거리음식, 여행예산 비교, 서울 호텔가격 비교). eSIM 가격비교는 기존 korea-esim-mobile-data.md와 중복돼 예산비교로 교체함. 전부 미발행(draft) 상태, 사용자 검수 대기.
 - 2026-10-31 [Claude] 이 공유 로그 신설. 전엔 Claude 아티팩트 페이지를 Claude가 갱신 → GPT가 자기 custom instructions로 읽기만 했고, GPT→Claude는 사용자가 수동 복붙해야 했음. 이제부턴 양쪽 다 이 파일을 보고/쓴다.
