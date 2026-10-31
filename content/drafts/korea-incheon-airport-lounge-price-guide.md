@@ -42,9 +42,19 @@ Typical pay-per-use lounge access includes: buffet-style food and non-alcoholic 
 
 Most of these passes can be bought same-day at the lounge desk if space is available, or pre-booked online through the lounge operator, Priority Pass-style aggregators, or general travel marketplaces. Pre-booking is worth it during peak holiday travel — walk-up access isn't guaranteed if the lounge is full.
 
+Pre-booking also removes one source of friction: paying and reserving in a currency and language you're comfortable with before you're standing at a desk mid-layover. [Klook]({{klook}}) sells Incheon lounge passes directly — its listing lets you pick a 3-hour duration and choose Terminal 1 (Sky Hub Lounge, west wing) or Terminal 2, sends a mobile voucher rather than a paper ticket, and (per its listing terms at the time we checked) allows free cancellation before redemption. That's useful if you're already comparing it against an eSIM or airport transfer booked through the same marketplace — one checkout instead of several, and cancellation flexibility if your layover plans change.
+
+## Combining a lounge pass with the rest of your arrival or departure
+
+If you're landing and your onward flight or next activity is hours away, a lounge pass is one piece of a bigger "first few hours in Korea" plan. See our [eSIM and mobile data guide](https://landinkorea.com/posts/korea-esim-mobile-data.html) for getting connected the moment you land, and our [airport transfer guide](https://landinkorea.com/posts/korea-airport-transfer-options.html) for getting from Incheon into Seoul once you're through. On departure day, the same logic runs in reverse — a lounge pass is most useful for a long wait after you've already cleared security, not as a substitute for arriving with enough buffer time before your flight.
+
+## A note on families and accessibility
+
+Several lounges market themselves as family-friendly with separate quiet zones, but shower facilities and some seating areas are adult-oriented by default — if traveling with small children matters for your choice, ask specifically about family rooms or children's areas when booking rather than assuming every lounge has one. Wheelchair accessibility is generally good across Incheon's major lounges, consistent with the airport's broader accessibility reputation, but confirm specific accommodation needs (step-free shower access, for example) directly with the lounge rather than assuming.
+
 ## Official sources
 
-Lounge pricing and hours above are drawn from aggregator and reseller listings accessed 2026-10-31: [AirConnect's Incheon lounge directory](https://airconnect.live/en/airports/seoul-incheon-airport-lounges), [LayoverIndex's ICN lounge guide](https://layoverindex.com/icn/lounges/), and [Turis's Terminal 1 lounge roundup](https://blog.turis.io/en/2025/10/07/all-lounges-at-incheon-airport-terminal-1/). These are third-party listings, not prices Land in Korea confirmed directly with the lounge operators — and as noted above, they don't fully agree with each other. For official airport information, see [Incheon International Airport's own site](https://www.airport.kr/ap_en/index.do).
+Lounge pricing and hours above are drawn from aggregator and reseller listings accessed 2026-10-31: [AirConnect's Incheon lounge directory](https://airconnect.live/en/airports/seoul-incheon-airport-lounges), [LayoverIndex's ICN lounge guide](https://layoverindex.com/icn/lounges/), [Turis's Terminal 1 lounge roundup](https://blog.turis.io/en/2025/10/07/all-lounges-at-incheon-airport-terminal-1/), and [Klook's Incheon lounge pass listing](https://www.klook.com/activity/128530-incheon-international-airport-lounge-pass-terminal-1/). These are third-party listings, not prices Land in Korea confirmed directly with the lounge operators — and as noted above, they don't fully agree with each other. For official airport information, see [Incheon International Airport's own site](https://www.airport.kr/ap_en/index.do).
 
 ## Frequently Asked Questions
 

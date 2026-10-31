@@ -39,6 +39,16 @@ It's rarely the destination — it's what's bundled and who's guiding:
 
 DMZ tours depart from Seoul and typically run as half-day (morning or afternoon) trips, making them easy to combine with another half-day activity. Unlike most attractions in this city, you cannot simply show up — every DMZ/JSA tour requires advance booking (passport details submitted ahead for security clearance), so book at least a few days out, longer if you specifically want a JSA slot during a busy season.
 
+**Where to actually compare operators side by side:** rather than checking each tour operator's own site one at a time, a marketplace like [Klook]({{klook}}) lists multiple DMZ and JSA tour options together, which makes it easier to compare what's included (JSA access, lunch, suspension bridge) and current departure times before you commit to one. Cross-check whatever you find there against the specific inclusions list, not just the headline price — see the comparison points above.
+
+## How far in advance should you book?
+
+Passport-clearance requirements mean DMZ/JSA tours aren't a same-day decision the way most Seoul attractions are. For a standard DMZ-only tour, a few days' notice is usually enough outside of peak season. For a JSA-inclusive tour, especially during Korean public holidays or peak cherry-blossom/fall-foliage travel weeks, booking 1-2 weeks ahead is the safer move — JSA slots are limited by the site's own operating schedule, not just by tour-operator capacity, so a sold-out JSA date can't simply be solved by trying a different operator.
+
+## What the day actually feels like
+
+Whichever tier you book, the format is similar: a bus pickup from central Seoul (often near a major hotel area or subway exit), a 1-1.5 hour drive north, then a sequence of stops that typically includes an observatory looking into North Korean territory, one of the infiltration tunnels (a real Cold War-era tunnel discovered running under the border, which you walk through — note it involves stairs and a low ceiling in sections), and, for JSA-inclusive tours, the security area itself with a uniformed guide explaining the site's history. Most tours run 4-8 hours door to door depending on tier and whether lunch is included.
+
 ## Official sources
 
 Pricing figures are drawn from tour listings and comparison guides accessed 2026-10-31: [iVisitKorea's DMZ tour comparison](https://www.ivisitkorea.com/dmz-tours), [Klook's DMZ/JSA listing](https://www.klook.com/en-AU/activity/163734-3rd-infiltration-tunnel-joint-security-area-jsa-half-day-historical-tour/), and [Mileasia's 2026 DMZ guide](https://mileasia.com/korea/dmz/). These are third-party operator and aggregator prices, not verified live quotes from Land in Korea — confirm current pricing and JSA availability directly with the operator before booking. For general visitor guidance, see [Korea Tourism Organization](https://english.visitkorea.or.kr).

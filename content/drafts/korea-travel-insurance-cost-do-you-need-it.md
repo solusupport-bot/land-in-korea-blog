@@ -36,6 +36,18 @@ Estimates vary more than most price comparisons on this site, because "travel in
 - **Pre-existing conditions.** As with most travel insurance globally, pre-existing condition coverage usually requires either an add-on or a policy specifically marketed as covering it — check this before assuming you're covered.
 - **How claims actually work from Korea.** Confirm whether the insurer has English-language claims support and whether you pay upfront and get reimbursed (common at Korean hospitals for foreign visitors without local insurance) or whether the insurer coordinates directly with the hospital.
 
+## Where "adventure activity" exclusions actually bite
+
+This isn't theoretical. If your Korea itinerary includes a booked activity tour — [DMZ and JSA tours](https://landinkorea.com/posts/korea-dmz-jsa-tour-price-comparison.html), a [ski day trip](https://landinkorea.com/posts/korea-one-day-ski-trip-from-seoul-yongpyong-and-vivaldi-park.html), or hiking something more serious than a city park — check your policy's activity list against what you've actually booked, not just the general category. A policy that covers "hiking" might still exclude a specific trail if it's classified as technical or requires gear rental. Tour operators and marketplaces like [Klook]({{klook}}) sometimes note recommended insurance or minimum coverage levels directly on an activity's booking page for exactly this reason — worth reading before you assume your existing policy already covers whatever you've booked.
+
+## How to actually buy a policy before you go
+
+1. **Get quotes from at least two providers** using your real trip dates, destination (South Korea specifically, not "Asia" generally, since some policies price by broader region), and age. The percentage-of-trip-cost rule of thumb above is a sanity check, not a substitute for an actual quote.
+2. **Decide between single-trip and annual multi-trip cover** if you travel internationally more than once or twice a year — annual policies often work out cheaper per trip once you're taking 3+ trips a year, though they usually cap each individual trip's length.
+3. **Read the medical coverage limit and the adventure-activity list before price-comparing.** Two policies priced $10 apart can have very different coverage ceilings — comparing on price alone before checking coverage is the most common mistake.
+4. **Buy before departure**, ideally right after booking non-refundable flights or tours, since trip-cancellation cover specifically protects against events between booking and departure.
+5. **Save the policy document and emergency claims number somewhere accessible offline** — a hospital visit is the wrong time to be searching your email for a PDF.
+
 ## A simple way to decide
 
 If your trip is short (under a week), you're young and healthy, and your home insurance has some international component, you might reasonably decide the medical-only risk is manageable without buying a separate policy — that's a real judgment call, not something this guide can make for you. If any of the following apply, insurance is worth the relatively small cost: longer trip, older traveler, planned adventure activities (hiking, skiing), a Jeju leg vulnerable to weather delay, or a non-refundable trip cost large enough that cancellation would genuinely hurt.
