@@ -36,6 +36,8 @@ Our [Jeju Island overview](https://landinkorea.com/posts/korea-jeju-island.html)
 
 As on the rest of Jeju, a rental car is the practical default — our [Jeju Island overview](https://landinkorea.com/posts/korea-jeju-island.html) covers why bus routes run sparser here than on the mainland, and Seongsan, on the island's eastern edge, is a real drive from Jeju City or the airport, not a quick hop. If you're relying on public buses, routes do connect Jeju City and Seogwipo along the east coast past Seongsan, but trip times run well over an hour and schedules are worth checking same-day through the Jeju Bus app or a live-arrival service rather than an older blog post. One genuinely useful update: as of October 2024, Jeju's city buses stopped accepting cash fares entirely, so bring a T-money or Cashbee card (see our [T-money guide](https://landinkorea.com/posts/korea-t-money-transit-card.html)) regardless of how you plan the rest of the trip.
 
+Without a car, an east-Jeju day tour is the simplest way to pair the peak with Udo or Seopjikoji; several are listed on [Klook]({{klook}}). Most tours arrive mid-morning, so they do not work for sunrise — for that, stay overnight in Seongsan.
+
 ## The short version
 
 - Formed underwater roughly 6,700 years ago and was originally a separate islet before sediment connected it to Jeju

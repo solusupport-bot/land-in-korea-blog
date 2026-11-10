@@ -43,6 +43,8 @@ A few details decide whether this is a smooth hour or a frustrating one:
 - **Check the day's visibility, not just the forecast.** Rain isn't the problem; haze is. If the skyline already looks washed out from the ground, the paid deck won't fix it, and the free plaza is the better use of that hour.
 - **Combine it with the neighborhood below.** Namsan sits directly above Myeongdong, so the tower works better as the end of an afternoon there than as a standalone trip across the city.
 
+Observatory admission can be bought at the tower on the day. Combination deals that pair the ticket with a meal or a transfer from Myeongdong are sold in advance on [Klook]({{klook}}); they are worth a look only if you wanted the add-on anyway.
+
 ## The short version
 
 - The free plaza view already beats most of the city skyline

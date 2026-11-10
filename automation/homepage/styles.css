@@ -101,3 +101,6 @@ a.atlas-article{display:block;position:relative;text-align:left;color:inherit;te
  .recent-grid>a,.interest-grid>a{min-width:0;overflow-wrap:anywhere}
  .atlas-region-photo .atlas-detail-photo{max-height:none}
 }
+
+/* 2026-11-11: guide search is the default planner tab; the sample label belongs to the route tab only. */
+.planner-heading:has(#guide-tab[aria-selected="true"]) .preview-label{display:none}

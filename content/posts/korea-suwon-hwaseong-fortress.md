@@ -35,6 +35,8 @@ A tourist trolley shaped like a dragon head runs the interior of the fortress ro
 
 Subway Line 1 runs directly from central Seoul to Suwon Station, about 50 minutes from Seoul Station on the same [T-money card](https://landinkorea.com/posts/korea-t-money-transit-card.html) you'd use anywhere else. For a faster option, KTX or ITX trains cover the same route in roughly 20 to 30 minutes — see [KTX vs. SRT vs. intercity bus](https://landinkorea.com/posts/korea-ktx-vs-srt-vs-intercity-bus-for-long-distance-travel.html) for how they compare on cost. From Suwon Station, Paldalmun (the south gate) is about a 10-minute walk.
 
+Guided day tours from Seoul that pair the fortress with the Korean Folk Village are listed on [Klook]({{klook}}) for anyone who would rather not handle the transfers; going by subway or train remains the cheaper option.
+
 ## How it's different from Seoul's palaces
 
 If you've already done [Gyeongbokgung](https://landinkorea.com/posts/korea-gyeongbokgung-palace.html) or one of Seoul's other palaces, Hwaseong is a different kind of site: it's a fortification wrapped around a living city, not a self-contained palace complex you enter and exit. Modern Suwon still exists inside and around the wall, so you're walking a working perimeter with restaurants and homes mixed in, not a preserved compound behind a single gate. There's also no single closing time for the fortress itself — Haenggung and the museums keep their own hours, but the wall doesn't lock up at night.

@@ -35,6 +35,8 @@ Petite France is a French-village-themed park built in 2008 in Gapyeong, a short
 
 Public transport between Nami Island, Petite France, the Garden of Morning Calm, and the Gangchon Rail Bike isn't direct, so most visitors book a combined day tour rather than arranging each transfer themselves. These are commonly sold as four-in-one packages running roughly 12 to 13 hours door-to-door from Seoul. It's possible to string the stops together independently with taxis and local buses, but the packaged tours exist because doing it yourself eats a large chunk of the day in transfers alone.
 
+If stitching the train, ferry and local buses together sounds like more planning than you want, day tours from Seoul that bundle Nami Island with Petite France — often adding the Garden of Morning Calm or the Gangchon rail bike — are listed on [Klook]({{klook}}). A tour costs more than going independently and fixes your time at each stop; what it buys is the transfers between sites, which are the awkward part of this route.
+
 ## When to go and how to budget your day
 
 Autumn foliage season and spring are the busiest stretches for both Nami Island and Petite France; a weekday visit noticeably thins the crowds along the main paths. Round-trip travel from central Seoul runs about one to one and a half hours each way before you factor in transfers between attractions, which is why this works better as a full-day plan than a quick add-on to another Seoul itinerary.

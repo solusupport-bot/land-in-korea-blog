@@ -17,6 +17,8 @@ Haeundae is Busan's most famous beach, a wide stretch of sand backed by a dense 
 
 There's more to the area than the sand itself. Dongbaekseom, a small pine-covered headland park at one end of the beach, gives a quieter walking path and a good photo angle back toward the coastline. The Busan Aquarium sits right at the beachfront if the weather turns. And Haeundae Blueline Park — a coastal line running along a converted former railway toward Songjeong, ridden either as an open-air sky capsule or a beachside rail-bike — is one of the more distinctive things to do in the area if you want a slower, scenic add-on beyond just lying on the sand.
 
+If the Blueline Park sky capsule is the part you care about, small-group Busan tours that include a reserved capsule seat are listed on [Klook]({{klook}}) — useful when your dates are fixed and you would rather not gamble on same-day availability.
+
 {{map: Haeundae Beach, Busan}}
 
 ## Gamcheon: stairs, not sand

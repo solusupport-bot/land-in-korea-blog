@@ -36,6 +36,8 @@ You can buy a T-money card at any convenience store in Korea: GS25, CU, Emart24,
 
 That's it. The card is ready to use immediately after purchase. No activation required.
 
+If you would rather have the card sorted before you fly, [Klook]({{klook}}) sells a T-money card for pick-up in Korea, and some of its SIM and eSIM bundles include one. A convenience-store card works identically, so this is about convenience on arrival, not a better card.
+
 ## How to Load Money Onto Your T-money Card
 
 Once you have the card, you need to add money to it. This is called "charging" or "loading."

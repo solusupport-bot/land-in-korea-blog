@@ -21,6 +21,8 @@ Nearly every rental car in Korea is automatic transmission — it's the standard
 
 Rental desks typically offer a basic insurance package included in the quoted price, plus one or two higher tiers that reduce or eliminate your out-of-pocket liability (excess) if the car is damaged. The basic tier usually leaves you responsible for a real amount toward any damage; the upgraded tiers cost more per day but cap or remove that exposure. Agents will push the upgrade at the counter — it's worth a few minutes' thought rather than an automatic yes or no, especially if your own credit card already includes rental car coverage worth checking before you fly.
 
+Booking ahead lets you compare agencies and insurance inclusions side by side instead of at the desk; [Klook]({{klook}}) lists Jeju rental cars from several agencies. Whichever channel you use, check what the quoted insurance tier actually covers before you pay.
+
 ## One-way rentals cost more, but solve real routing problems
 
 Picking a car up in one city and dropping it off in another — Seoul to a Busan or Jeju airport, for example — is generally possible but comes with a one-way fee on top of the normal rate, since the company has to get the car back. For an itinerary that's genuinely point-to-point rather than a loop back to where you started, that fee is usually still cheaper than backtracking just to return the car, but confirm the exact drop-off location is supported before booking — not every branch accepts every other branch's returns.
