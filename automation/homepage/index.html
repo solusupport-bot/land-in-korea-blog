@@ -51,8 +51,8 @@
 
   <section id="trip-planner" class="planner-wrap content-width" aria-label="Trip planner">
     <div class="planner">
-      <div class="planner-heading"><div class="planner-tabs" role="tablist" aria-label="Search type"><button id="route-tab" role="tab" aria-selected="true" aria-controls="route-panel" data-i18n="routeTab">Plan a route</button><button id="guide-tab" role="tab" aria-selected="false" aria-controls="guide-panel" data-i18n="guideTab">Find a guide</button></div><span class="preview-label" data-i18n="previewLabel">Sample route planner</span></div>
-      <div id="route-panel" role="tabpanel" aria-labelledby="route-tab">
+      <div class="planner-heading"><div class="planner-tabs" role="tablist" aria-label="Search type"><button id="guide-tab" role="tab" aria-selected="true" aria-controls="guide-panel" data-i18n="guideTab">Find a guide</button><button id="route-tab" role="tab" aria-selected="false" aria-controls="route-panel" data-i18n="routeTab">Plan a route</button></div><span class="preview-label" data-i18n="previewLabel">Sample route planner</span></div>
+      <div id="route-panel" role="tabpanel" aria-labelledby="route-tab" hidden>
         <form id="route-form" novalidate>
           <div class="route-fields">
             <label class="input-place"><span class="field-caption"><span class="origin-dot" aria-hidden="true"></span><span data-i18n="from">FROM</span></span><input id="origin" name="origin" list="places" autocomplete="off" placeholder="Where are you starting?" data-i18n-placeholder="originPlaceholder" aria-describedby="route-error" required></label>
@@ -65,12 +65,12 @@
           <p id="route-error" class="form-error" role="alert" hidden></p>
         </form>
       </div>
-      <div id="guide-panel" role="tabpanel" aria-labelledby="guide-tab" hidden>
+      <div id="guide-panel" role="tabpanel" aria-labelledby="guide-tab">
         <form id="guide-form" class="guide-search"><label><span class="field-caption" data-i18n="guideLabel">WHAT WOULD YOU LIKE TO KNOW?</span><input id="guide-query" placeholder="Try Busan, airport, eSIM…" data-i18n-placeholder="guidePlaceholder" aria-label="Search travel guides"></label><button class="button-primary" type="submit"><span data-i18n="searchGuides">Search guides</span><span aria-hidden="true">→</span></button></form>
         <div id="guide-results" class="guide-results" aria-live="polite"></div>
       </div>
     </div>
-    <div class="first-visit"><span data-i18n="firstVisit">First time in Korea?</span><a href="https://landinkorea.com/posts/korea-airport-transfer-options" data-i18n="airport">Airport transfers</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-esim-mobile-data" data-i18n="sim">SIM & eSIM</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-currency-card-payments" data-editorial="payments">Card payments</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-luggage-storage-forwarding-services" data-editorial="bags">Luggage storage</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-t-money-transit-card" data-i18n="transitCards">Transit cards</a></div>
+    <div class="first-visit"><span data-i18n="firstVisit">First time in Korea?</span><a href="https://landinkorea.com/posts/korea-airport-transfer-options" data-i18n="airport">Airport transfers</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/compare/esim/" data-i18n="sim">SIM & eSIM</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-currency-card-payments" data-editorial="payments">Card payments</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-luggage-storage-forwarding-services" data-editorial="bags">Luggage storage</a><span aria-hidden="true">·</span><a href="https://landinkorea.com/posts/korea-t-money-transit-card" data-i18n="transitCards">Transit cards</a></div>
   </section>
 
   <section id="explore-map" class="explore-section content-width" aria-labelledby="explore-title">

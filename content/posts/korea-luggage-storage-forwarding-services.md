@@ -27,6 +27,8 @@ Both Terminal 1 and Terminal 2 at Incheon run staffed luggage storage counters, 
 
 Most travelers drag their bags through their entire last day in Korea without knowing forwarding services exist for exactly that problem. Several companies run same-day luggage delivery across Korea — LuggAgent, Safex, Goodlugg, Zimcarry, and Easy Drop are among the more established names, covering hotel-to-airport, airport-to-hotel, hotel-to-hotel, and in some cases intercity routes between Seoul, Busan, and Jeju. Book through the company's app or a travel booking platform, pick a pickup and drop-off time, and go sightseeing without the bag — it's already at the airport at check-in instead of riding crowded transit with you before an early flight. Same-day requests aren't always guaranteed, so booking a day ahead is the safer move.
 
+Several same-day delivery services between Incheon Airport and Seoul hotels can be reserved in advance, in English, through [Klook]({{klook}}), which saves arranging it at a counter after you land.
+
 ## Ask your hotel before paying for anything
 
 Many hotels and guesthouses will hold your luggage after checkout at no charge, sometimes for the rest of the day or longer for guests with a later flight. It costs nothing to ask at the front desk before paying for a storage counter or booking a forwarding service. Some hotels also work directly with a forwarding company and can arrange pickup for you — worth asking before you book one yourself.

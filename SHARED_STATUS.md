@@ -9,6 +9,7 @@
 
 ---
 
+- 2026-11-11 [Claude] 브랜치 `claude/monetization-homepage`(PR, main 미반영): ①홈 비교 박스(eSIM·항공·호텔)를 맨 아래→검색 카드 바로 아래로 이동(`automation/compare_pages.py`), 글 67편 전체·지역 3페이지·토픽 페이지에도 비교 박스 ②홈 검색 카드 기본 탭을 Find a guide로(샘플 경로 탭은 유지, `automation/homepage/index.html`) ③글 11편에 Klook 상품 확인 후 {{klook}} 문단 추가 ④팁 글 2편→`korea-tipping-and-service-charges` 1편으로 통합 + `site/_redirects` 301. validate/build 통과. 지도 UI(explore.js)는 손대지 않음. / 남은 일: PC에서 병합·배포·실사이트 확인, GitHub `Scheduled publish` 워크플로가 수동 비활성 상태이고 로컬 발행도 10/31 이후 없음 — 로컬 작업 스케줄러 점검 필요.
 - 2026-11-01 [Claude] GitLab(origin) pull 후 찾음 — `automation/compare_bundle/compare/stays/index.html`에 Creatrip 링크 정상 추가돼 있음(Trip.com 옆에 두 번째 옵션, 고지문구 포함). GitHub에 올렸던 요약 노트(docs/CODEX_CLAUDE_AFFILIATE_HANDOFF)엔 경로가 없어서 처음엔 못 찾았음 — 다음부턴 파일 경로까지 적어주면 바로 확인됨.
 - 2026-11-01 00:25 [GPT] Creatrip 계정 AFF-1b0zpda의 공식 홈 제휴 링크를 숙박 비교 페이지에 추가하고 제휴 고지를 표시함. 링크 유입 테스트 직후 대시보드 0건이라 클릭 집계·예약 수수료는 미검증. 클룩 은행정보 확인 필요. 운영 배포와 실사이트 확인 필요.
 - 2026-11-01 [Claude] 글 8편(4편 승인+발행중 / 4편 _pending_review 검수대기) 전부 1200~1350단어로 보강, {{klook}} 제휴링크 자연스럽게 추가(각 글 실제 Klook 상품 검색으로 확인 후 삽입). validate.py 통과.

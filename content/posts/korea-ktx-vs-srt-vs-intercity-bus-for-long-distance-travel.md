@@ -43,6 +43,8 @@ Korea has two separate categories of long-distance bus, and the terms aren't int
 
 If any part of your trip overlaps with Seollal or Chuseok, book your train or bus as early as tickets go on sale — both often sell out within minutes for popular routes, and standing tickets or a different transport mode entirely may be your only options if you wait. Also worth knowing: natural events like [typhoons and heavy snow can disrupt trains and flights](https://landinkorea.com/posts/korea-seasonal-packing-weather-tips.html) with little warning during certain seasons, so building buffer time into your long-distance travel plans during summer/early fall or winter is a reasonable precaution.
 
+Foreign visitors planning several long train legs within a few days can also look at the KORAIL Pass, sold by Korail and through resellers such as [Klook]({{klook}}). It only pays off when the individual tickets would cost more than the pass, so price your actual route first.
+
 ## The short version
 
 - SRT merged into KTX on September 1, 2026 — one operator, one booking system (KORAIL+), one fare structure for what used to be two competing high-speed services
