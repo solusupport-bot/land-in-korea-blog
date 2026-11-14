@@ -16,3 +16,39 @@
 # 통합(나중 글의 고유 내용은 옮겨 담음). 나중에 발행된 쪽은 삭제하고 301로 넘긴다.
 /posts/korea-tipping-in-korea-why-you-shouldn-t-and-what-to-do-instead.html /posts/korea-tipping-and-service-charges.html 301
 /posts/korea-tipping-in-korea-why-you-shouldn-t-and-what-to-do-instead /posts/korea-tipping-and-service-charges 301
+# 2026-11-14: 서치콘솔 "찾을 수 없음(404)" 정리. 예전에 slug를 바꾸거나 통합하면서
+# 삭제된 글 주소를 구글이 아직 크롤링하고 있어, 같은 주제의 현재 글로 301 연결한다.
+# .html 주소와 확장자 없는 주소를 모두 등록하고, 최종 주소(확장자 없음)로 바로 보내
+# 리다이렉트가 두 번 일어나지 않게 한다.
+/posts/korea-travel-apps-comparison.html /posts/korea-useful-travel-apps 301
+/posts/korea-travel-apps-comparison /posts/korea-useful-travel-apps 301
+/posts/korea-etiquette-mistakes.html /posts/korea-first-timer-etiquette-common-mistakes 301
+/posts/korea-etiquette-mistakes /posts/korea-first-timer-etiquette-common-mistakes 301
+/posts/korea-currency-card-payment-mistake.html /posts/korea-currency-card-payments 301
+/posts/korea-currency-card-payment-mistake /posts/korea-currency-card-payments 301
+/posts/korea-luggage-storage-forwarding.html /posts/korea-luggage-storage-forwarding-services 301
+/posts/korea-luggage-storage-forwarding /posts/korea-luggage-storage-forwarding-services 301
+/posts/korea-tour-pass-worth-it.html /posts/korea-seoul-attraction-pass-comparison 301
+/posts/korea-tour-pass-worth-it /posts/korea-seoul-attraction-pass-comparison 301
+/posts/tmoney-first-timer-mistake.html /posts/korea-t-money-transit-card 301
+/posts/tmoney-first-timer-mistake /posts/korea-t-money-transit-card 301
+/posts/korea-convenience-store-guide.html /posts/korea-convenience-store-hacks 301
+/posts/korea-convenience-store-guide /posts/korea-convenience-store-hacks 301
+/posts/korea-esim-comparison.html /posts/korea-esim-mobile-data 301
+/posts/korea-esim-comparison /posts/korea-esim-mobile-data 301
+/posts/korea-safety-vs-weather-risk.html /posts/korea-travel-advisories-safety-notices 301
+/posts/korea-safety-vs-weather-risk /posts/korea-travel-advisories-safety-notices 301
+/posts/incheon-airport-transfer-comparison.html /posts/korea-airport-transfer-options 301
+/posts/incheon-airport-transfer-comparison /posts/korea-airport-transfer-options 301
+/posts/korea-busan-one-day-itinerary-gamcheon-jagalchi-haeundae.html /posts/korea-busan-haeundae-beach-gamcheon-culture-village 301
+/posts/korea-busan-one-day-itinerary-gamcheon-jagalchi-haeundae /posts/korea-busan-haeundae-beach-gamcheon-culture-village 301
+/posts/korea-jjimjilbang-guide.html /posts/korea-jjimjilbang-etiquette 301
+/posts/korea-jjimjilbang-guide /posts/korea-jjimjilbang-etiquette 301
+/posts/korea-tax-refund-mistake.html /posts/korea-tax-refund-tax-free-shopping 301
+/posts/korea-tax-refund-mistake /posts/korea-tax-refund-tax-free-shopping 301
+/posts/korea-emergency-numbers-pharmacy-guide.html /posts/korea-emergency-numbers-24hr-pharmacies 301
+/posts/korea-emergency-numbers-pharmacy-guide /posts/korea-emergency-numbers-24hr-pharmacies 301
+/posts/korea-seasonal-packing-guide.html /posts/korea-seasonal-packing-weather-tips 301
+/posts/korea-seasonal-packing-guide /posts/korea-seasonal-packing-weather-tips 301
+/posts/korea-dmz-jsa-tour-guide.html /posts/korea-dmz-and-jsa-tours 301
+/posts/korea-dmz-jsa-tour-guide /posts/korea-dmz-and-jsa-tours 301
